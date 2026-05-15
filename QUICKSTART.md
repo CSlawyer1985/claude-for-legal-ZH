@@ -2,6 +2,46 @@
 
 **60 秒**即可开始使用插件。
 
+本仓库原生支持 **Claude Code 插件 marketplace**，并提供 **Codex Desktop / Codex CLI** 适配层。Claude Code 用户按下方 Claude Code 流程安装；Codex 用户可直接跳到「在 Codex 中安装」。
+
+## 在 Codex 中安装
+
+在仓库根目录运行：
+
+```bash
+scripts/install-codex.sh
+```
+
+默认会把 `.agents/skills/chinese-legal-*` 链接到：
+
+```text
+~/.codex/skills
+```
+
+安装后请重启 Codex Desktop 或重新打开 Codex CLI 会话。
+
+Codex 中不需要输入 Claude Code slash command，直接用自然语言提出任务即可，例如：
+
+```text
+请审查这份供应商合同，重点看责任限制、解除、赔偿、数据处理和争议解决。
+```
+
+```text
+我们准备上线用户画像推荐功能，请判断是否需要个人信息保护影响评估。
+```
+
+更多说明见 [INSTALL_CODEX.md](INSTALL_CODEX.md)。
+
+## Claude Code 一键添加 marketplace
+
+Claude Code 用户也可以先运行：
+
+```bash
+scripts/install-claude-code.sh
+```
+
+脚本会添加本地 marketplace，并打印可安装插件列表。安装具体插件时仍建议选择用户级（user scope）。
+
 ## 在 Claude Code 中安装
 
 1. **打开 Claude Code**（在终端中）。

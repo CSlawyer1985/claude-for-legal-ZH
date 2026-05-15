@@ -1,5 +1,6 @@
 {
   "name": "claude-for-legal-zh",
+  "description": "面向中国法律实务的 Claude Code 插件集合，并提供 Codex Desktop/CLI 适配入口。",
   "owner": {
     "name": "陈石 律师"
   },
