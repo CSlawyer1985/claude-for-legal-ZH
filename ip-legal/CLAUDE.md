@@ -270,7 +270,7 @@ Rules for every skill, command, and agent in this plugin:
 
 ### 知识库检索路由
 
-按 `/Users/CS/Documents/知识库/.claude/rules/knowledge-routing.md` 配置执行。
+知识库检索路由统一遵循 `company-profile.md`「本地知识库」段的约定（变量 `[KB_ROOT]`、路由算法、未配置时的降级行为均在该段定义）。该约定为全插件单一来源，本处不重复。
 
 ---
 
