@@ -314,7 +314,7 @@ Rules for every skill, command, and agent in this plugin:
 
 ### 知识库检索路由
 
-在非知识库工作区遇到法律问题时，从 `company-profile.md` 的「本地知识库」段读取 `[知识库根目录]`，再读取 `[知识库根目录]/.claude/rules/knowledge-routing.md` 获取路由配置，按效力分级执行检索。未配置知识库根目录时跳过本地检索，退化为 yuan dian MCP / 联网检索 + 模型知识，相应引用打 `[模型知识 — 需验证]` 标签。
+知识库检索路由统一遵循 `company-profile.md`「本地知识库」段的约定（变量 `[KB_ROOT]`、路由算法、未配置时的降级行为均在该段定义）。该约定为全插件单一来源，本处不重复。
 
 ---
 
