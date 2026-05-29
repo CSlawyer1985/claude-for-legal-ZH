@@ -198,12 +198,14 @@ Rules for every skill, command, and agent in this plugin:
 
 ## 知识库检索路由
 
-本插件优先使用本地法律知识库进行检索。当需要知识库数据支撑时：
+本插件优先使用本地法律知识库进行检索。知识库根目录在 `company-profile.md` 的「本地知识库」段配置（`/cold-start-interview` 采集）。当需要知识库数据支撑时：
 
-1. 读取知识库路由配置：`/Users/CS/Documents/知识库/.claude/rules/knowledge-routing.md`
+1. 从 `company-profile.md` 读取 `[知识库根目录]`，再读取 `[知识库根目录]/.claude/rules/knowledge-routing.md` 路由配置
 2. 按路由表的优先源 → 警示源 → 一般源顺序执行检索
 3. 知识库不足时再补充 yuan dian MCP 或联网搜索
 4. 引用知识库内容时标注 `[本地知识库]` 标签
+
+**未配置知识库根目录时**：跳过本地检索，直接使用 yuan dian MCP / 联网检索 + 模型知识，相应引用打 `[模型知识 — 需验证]` 标签。绝不去读硬编码的绝对路径。
 
 ---
 

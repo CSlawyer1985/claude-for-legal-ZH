@@ -270,7 +270,7 @@ Rules for every skill, command, and agent in this plugin:
 
 ### 知识库检索路由
 
-按 `/Users/CS/Documents/知识库/.claude/rules/knowledge-routing.md` 配置执行。
+从 `company-profile.md` 的「本地知识库」段读取 `[知识库根目录]`，按 `[知识库根目录]/.claude/rules/knowledge-routing.md` 配置执行。未配置知识库根目录时跳过本地检索，退化为元典检索 / 联网检索 + 模型知识，相应引用打 `[模型知识 — 需验证]` 标签。
 
 ---
 
