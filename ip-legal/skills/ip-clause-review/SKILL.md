@@ -9,13 +9,13 @@ argument-hint: "[文件路径 | 网盘链接 | 粘贴文本]"
 
 # /ip-clause-review
 
-对照 `~/.claude/plugins/config/claude-for-legal/ip-legal/CLAUDE.md` 中的实务画像审查协议中的知识产权条款。
+对照 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/CLAUDE.md` 中的实务画像审查协议中的知识产权条款。
 标注权利归属缺陷、所有权模糊、许可范围问题及知识产权保证/赔偿问题。
 生成按风险排序的逐条审查备忘录，附建议修改语言。
 
 ## 使用说明
 
-1. **加载 `~/.claude/plugins/config/claude-for-legal/ip-legal/CLAUDE.md`。** 如含占位符，停止并提示："先运行 `/ip-legal:cold-start-interview`——在审查知识产权条款前，我需要了解你的实务画像。"
+1. **加载 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/CLAUDE.md`。** 如含占位符，停止并提示："先运行 `/ip-legal:cold-start-interview`——在审查知识产权条款前，我需要了解你的实务画像。"
 
 2. **获取协议：** 从文件路径、网盘链接或粘贴文本。如未提供，询问。
 
@@ -42,7 +42,7 @@ argument-hint: "[文件路径 | 网盘链接 | 粘贴文本]"
 
 ## 事项上下文
 
-**事项上下文。** 检查实务级 CLAUDE.md 中的 `## 事项工作区`。如 `Enabled` 为 `✗`（法务用户的默认状态），跳过本段其余内容——各技能使用实务级上下文，事项机制不可见。如已启用且无活跃事项，询问："此事项属于哪个案件？运行 `/ip-legal:matter-workspace switch <slug>` 或回复 `实务级`。"加载活跃事项的 `matter.md` 获取事项特定上下文和覆盖设置。将输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal/ip-legal/matters/<事项slug>/`。除非 `跨事项上下文` 开启，否则绝不读取其他事项的文件。
+**事项上下文。** 检查实务级 CLAUDE.md 中的 `## 事项工作区`。如 `Enabled` 为 `✗`（法务用户的默认状态），跳过本段其余内容——各技能使用实务级上下文，事项机制不可见。如已启用且无活跃事项，询问："此事项属于哪个案件？运行 `/ip-legal:matter-workspace switch <slug>` 或回复 `实务级`。"加载活跃事项的 `matter.md` 获取事项特定上下文和覆盖设置。将输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/matters/<事项slug>/`。除非 `跨事项上下文` 开启，否则绝不读取其他事项的文件。
 
 ---
 
@@ -54,7 +54,7 @@ argument-hint: "[文件路径 | 网盘链接 | 粘贴文本]"
 
 ## 前置条件：加载实务画像
 
-**阅读协议前，先读取 `~/.claude/plugins/config/claude-for-legal/ip-legal/CLAUDE.md`。** 如缺失或仍含占位符，停止并运行 `/ip-legal:cold-start-interview`。实务画像告诉你：
+**阅读协议前，先读取 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/CLAUDE.md`。** 如缺失或仍含占位符，停止并运行 `/ip-legal:cold-start-interview`。实务画像告诉你：
 
 - 管辖范围 — 影响著作人身权放弃是否可强制执行、职务作品规则是否适用、默示转让能否填补空白、许可授予可以多宽泛
 - 谁在什么严重程度批准偏差
@@ -107,7 +107,7 @@ argument-hint: "[文件路径 | 网盘链接 | 粘贴文本]"
 **建议修改：**
 > "[具体替代语言]"
 
-**升级：** 依据 `~/.claude/plugins/config/claude-for-legal/ip-legal/CLAUDE.md`，权利归属范围缺陷升级至[审批人]。
+**升级：** 依据 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/CLAUDE.md`，权利归属范围缺陷升级至[审批人]。
 ```
 
 > **转让能否覆盖AI生成内容？** 中国关于AI生成内容可版权性的规则正在发展中。北京互联网法院在(2023)京0491民初11279号案中认可了AI生成图片在特定条件下的可版权性。如承包方在工作成果的实质部分使用了AI工具，这些部分的权利状况是不确定的——转让条款只能传递既存的权利。
@@ -203,7 +203,7 @@ argument-hint: "[文件路径 | 网盘链接 | 粘贴文本]"
 
 ### 第六步：组装备忘录
 
-在 `~/.claude/plugins/config/claude-for-legal/ip-legal/CLAUDE.md` → `## 输出` 前附加工作成果页眉（因角色不同而异——见 `## 使用者`）。
+在 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/CLAUDE.md` → `## 输出` 前附加工作成果页眉（因角色不同而异——见 `## 使用者`）。
 
 本备忘录及审查的底层协议可能属于保密和/或特权保护。输出继承来源状态。仅在保密圈内分发；标记并存储在保密材料存放的位置；对外交付前去除工作成果页眉。
 

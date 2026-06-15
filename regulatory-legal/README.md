@@ -63,7 +63,7 @@
 
 ## 如何持续学习
 
-你的实务画像位于 `~/.claude/plugins/config/claude-for-legal/regulatory-legal/CLAUDE.md` 不是静态的——随着你使用插件不断改进。技能会告知你输出何时使用了应调整的默认值。`reg-change-monitor` 代理监测法规动态并对照你的政策库标注变化。你可以重新运行设置、直接编辑文件或告知技能记录新立场。
+你的实务画像位于 `~/.claude/plugins/config/claude-for-legal-zh/regulatory-legal/CLAUDE.md` 不是静态的——随着你使用插件不断改进。技能会告知你输出何时使用了应调整的默认值。`reg-change-monitor` 代理监测法规动态并对照你的政策库标注变化。你可以重新运行设置、直接编辑文件或告知技能记录新立场。
 
 ## 注意事项
 
@@ -73,4 +73,4 @@
 
 ## 配置
 
-你的配置存储在 `~/.claude/plugins/config/claude-for-legal/regulatory-legal/CLAUDE.md`，可跨插件更新保留——你只需运行设置一次。
+你的配置存储在 `~/.claude/plugins/config/claude-for-legal-zh/regulatory-legal/CLAUDE.md`，可跨插件更新保留——你只需运行设置一次。

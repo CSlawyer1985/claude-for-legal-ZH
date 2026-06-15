@@ -20,14 +20,14 @@ argument-hint: "[--init | --contracts | --report | --update | --export [--format
    - `--report`：模式3——生成状态报告
    - `--update`：模式4——手动更新或解析上传的状态文件
    - `--export`：模式5——CSV 或表格导出
-5. 读取/写入 `~/.claude/plugins/config/claude-for-legal/corporate-legal/deals/[代码]/integration-tracker.yaml`。
+5. 读取/写入 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/deals/[代码]/integration-tracker.yaml`。
 6. 任何写入后：展示变更摘要并呈现任何新标记。
 
 ---
 
 ## 事项上下文
 
-**事项上下文。** 检查实务级 CLAUDE.md 中的 `## 事项工作区`。如果 `Enabled` 为 `✗`（企业法务用户的默认值），跳过本段其余内容——技能使用实务级上下文，事项机制不可见。如果已启用且无活跃事项，询问："这是哪个事项？运行 `/corporate-legal:matter-workspace switch <事项简称>` 或说 `实务级`。"加载活跃事项的 `matter.md` 获取事项特定上下文和覆盖规则。输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal/corporate-legal/matters/<事项简称>/`。除非 `跨事项上下文` 为 `开`，否则绝不读取其他事项的文件。
+**事项上下文。** 检查实务级 CLAUDE.md 中的 `## 事项工作区`。如果 `Enabled` 为 `✗`（企业法务用户的默认值），跳过本段其余内容——技能使用实务级上下文，事项机制不可见。如果已启用且无活跃事项，询问："这是哪个事项？运行 `/corporate-legal:matter-workspace switch <事项简称>` 或说 `实务级`。"加载活跃事项的 `matter.md` 获取事项特定上下文和覆盖规则。输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/matters/<事项简称>/`。除非 `跨事项上下文` 为 `开`，否则绝不读取其他事项的文件。
 
 ---
 
@@ -39,7 +39,7 @@ argument-hint: "[--init | --contracts | --report | --update | --export [--format
 
 ## 追踪器文件
 
-存放于 `~/.claude/plugins/config/claude-for-legal/corporate-legal/deals/[代码]/integration-tracker.yaml`。读取 `deal-context.md` 获取交易代码、目标公司名称、交割日期和交易负责人。从 `closing-checklist.yaml`（如存在）继承任何交割后项目。
+存放于 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/deals/[代码]/integration-tracker.yaml`。读取 `deal-context.md` 获取交易代码、目标公司名称、交割日期和交易负责人。从 `closing-checklist.yaml`（如存在）继承任何交割后项目。
 
 ```yaml
 # integration-tracker.yaml
@@ -148,9 +148,9 @@ contracts:
 
 ### 第1步：加载交易上下文
 
-读取 `~/.claude/plugins/config/claude-for-legal/corporate-legal/deals/[代码]/deal-context.md`。如未找到：询问交易代号、目标公司、交割日期、交易负责人和外部律师。如 deal-context.md 不存在，写入。
+读取 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/deals/[代码]/deal-context.md`。如未找到：询问交易代号、目标公司、交割日期、交易负责人和外部律师。如 deal-context.md 不存在，写入。
 
-读取 `~/.claude/plugins/config/claude-for-legal/corporate-legal/deals/[代码]/closing-checklist.yaml`（如存在）。任何标记为交割后的项目成为 Day 1 或 Day 30 工作计划项（从交割检查表继承状态）。
+读取 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/deals/[代码]/closing-checklist.yaml`（如存在）。任何标记为交割后的项目成为 Day 1 或 Day 30 工作计划项（从交割检查表继承状态）。
 
 ### 第2步：读取交易输入
 
@@ -164,7 +164,7 @@ contracts:
 > - 交易摘要或条款清单（给我关键经济和时限）
 > - 来自外部律师的整合待办清单或交割后检查表
 > - 已有的工作计划或整合追踪器（我将导入并继续）
-> - 交割检查表——如由并购冷启动技能生成，我将自动从 `~/.claude/plugins/config/claude-for-legal/corporate-legal/deals/[代码]/closing-checklist.yaml` 继承
+> - 交割检查表——如由并购冷启动技能生成，我将自动从 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/deals/[代码]/closing-checklist.yaml` 继承
 > - 仅所需同意清单（如收购协议由外部律师持有）
 >
 > **如果你没有任何书面材料：** 用通俗语言告诉我交易——谁被收购、何时交割、主要未决项是什么——我将从标准 Day 1/30/90/180 工作计划构建入门追踪器供你编辑。

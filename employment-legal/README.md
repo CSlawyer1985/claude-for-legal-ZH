@@ -20,11 +20,11 @@
 /employment-legal:cold-start-interview
 ```
 
-你的配置存储于 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md`，不受插件更新影响。
+你的配置存储于 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md`，不受插件更新影响。
 
 ## 前置条件
 
-- **持久化数据路径。** 假期登记册、调查日志、跨省用工跟踪表写入 `~/.claude/plugins/config/claude-for-legal/employment-legal/`——版本无关路径，不受插件更新影响。这些文件含有人事敏感信息——请确保该目录已备份且权限受控。
+- **持久化数据路径。** 假期登记册、调查日志、跨省用工跟踪表写入 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/`——版本无关路径，不受插件更新影响。这些文件含有人事敏感信息——请确保该目录已备份且权限受控。
 - **法律检索工具。** 本插件中的技能故意不存储实体法律规则（最低工资标准、竞业限制经济补偿、经济补偿金计算基数、各地特殊规定等）。每一省/直辖市的口径差异在审查时实时检索并引用。请确保会话已接入你依赖的检索工具（yuan dian MCP、联网搜索、内部参考资料）。
 - **外部律师。** 涉及地方司法口径争议或新型用工问题的法律意见，应征询当地执业律师意见。
 
@@ -60,7 +60,7 @@
 
 ## 如何学习与进化
 
-你的实践画像存储在 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md`——它不是静态的，随你使用插件而优化。技能会提示你某个输出使用了应调优的默认值。你可以重新运行设置、直接编辑文件，或告诉技能记录新的立场。
+你的实践画像存储在 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md`——它不是静态的，随你使用插件而优化。技能会提示你某个输出使用了应调优的默认值。你可以重新运行设置、直接编辑文件，或告诉技能记录新的立场。
 
 ## 注意事项
 

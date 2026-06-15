@@ -2,7 +2,7 @@
 name: reg-change-monitor
 description: >
   Scheduled agent that checks regulatory feeds and posts a filtered digest.
-  Runs per the cadence in ~/.claude/plugins/config/claude-for-legal/regulatory-legal/CLAUDE.md. Filters by materiality threshold so the
+  Runs per the cadence in ~/.claude/plugins/config/claude-for-legal-zh/regulatory-legal/CLAUDE.md. Filters by materiality threshold so the
   digest is signal, not noise. Trigger: "reg digest", "what's new from
   regulators", or on schedule.
 model: sonnet
@@ -17,11 +17,11 @@ Nobody reads the Federal Register cover to cover. This agent reads the feeds, fi
 
 ## Schedule
 
-Per `~/.claude/plugins/config/claude-for-legal/regulatory-legal/CLAUDE.md` → Feed configuration → Check cadence. Default weekly; daily if the regulatory environment is active.
+Per `~/.claude/plugins/config/claude-for-legal-zh/regulatory-legal/CLAUDE.md` → Feed configuration → Check cadence. Default weekly; daily if the regulatory environment is active.
 
 ## What it does
 
-1. Read `~/.claude/plugins/config/claude-for-legal/regulatory-legal/CLAUDE.md` → watchlist, materiality threshold.
+1. Read `~/.claude/plugins/config/claude-for-legal-zh/regulatory-legal/CLAUDE.md` → watchlist, materiality threshold.
 2. Run reg-feed-watcher: pull each feed, filter.
 3. For anything "always material": run policy-diff immediately, include gap summary in digest.
 4. Post digest.

@@ -6,7 +6,7 @@ argument-hint: "[可选: --since DATE]"
 
 # /reg-feed-watcher
 
-1. 读取 `~/.claude/plugins/config/claude-for-legal/regulatory-legal/CLAUDE.md` → 监测清单、重要度阈值、动态源配置。
+1. 读取 `~/.claude/plugins/config/claude-for-legal-zh/regulatory-legal/CLAUDE.md` → 监测清单、重要度阈值、动态源配置。
 2. 使用以下工作流。
 3. 拉取每个动态源。按重要度过滤。
 4. 输出：新事项，按重要度层级分类。
@@ -19,7 +19,7 @@ argument-hint: "[可选: --since DATE]"
 
 ## 加载上下文
 
-`~/.claude/plugins/config/claude-for-legal/regulatory-legal/CLAUDE.md` → 监测清单、重要度阈值、动态源配置、摘要输出路径（如已设置）。
+`~/.claude/plugins/config/claude-for-legal-zh/regulatory-legal/CLAUDE.md` → 监测清单、重要度阈值、动态源配置、摘要输出路径（如已设置）。
 
 ## 工作流
 
@@ -32,7 +32,7 @@ argument-hint: "[可选: --since DATE]"
 
 如果存在明显缺口——例如用户监测清单包含"金融监管"类别但动态源中仅有"中国人民银行"，缺少"国家金融监督管理总局""中国证监会"——在摘要顶部提示一次：
 
-> **覆盖缺口提示：** 你的监测清单包含[类别]，但仅配置了[N]个动态源。建议添加[机构名称]的动态源。是否需要建议补充？运行 `/regulatory-legal:cold-start-interview --redo` 更新，或直接编辑 `~/.claude/plugins/config/claude-for-legal/regulatory-legal/CLAUDE.md`。
+> **覆盖缺口提示：** 你的监测清单包含[类别]，但仅配置了[N]个动态源。建议添加[机构名称]的动态源。是否需要建议补充？运行 `/regulatory-legal:cold-start-interview --redo` 更新，或直接编辑 `~/.claude/plugins/config/claude-for-legal-zh/regulatory-legal/CLAUDE.md`。
 
 不要反复提示同一缺口——如果用户已明确说"暂时不关注某监管机构"，尊重该决定并在 CLAUDE.md 中记录，以便持续有效。
 
@@ -87,7 +87,7 @@ argument-hint: "[可选: --since DATE]"
 
 ### 第2步：分类
 
-每个事项根据 `~/.claude/plugins/config/claude-for-legal/regulatory-legal/CLAUDE.md` 分配重要度层级：
+每个事项根据 `~/.claude/plugins/config/claude-for-legal-zh/regulatory-legal/CLAUDE.md` 分配重要度层级：
 
 | 事项类型 | 与阈值匹配 |
 |----------|-----------|
@@ -162,7 +162,7 @@ argument-hint: "[可选: --since DATE]"
 
 ## 配置相关的降级方案
 
-- **监测清单为空：** 停止并说明"你的配置中的监测清单为空。在不知道要监测哪些监管机构的情况下，我无法拉取动态源。运行 `/regulatory-legal:cold-start-interview --redo` 或编辑 `~/.claude/plugins/config/claude-for-legal/regulatory-legal/CLAUDE.md` 并添加至少一个监管机构。"
+- **监测清单为空：** 停止并说明"你的配置中的监测清单为空。在不知道要监测哪些监管机构的情况下，我无法拉取动态源。运行 `/regulatory-legal:cold-start-interview --redo` 或编辑 `~/.claude/plugins/config/claude-for-legal-zh/regulatory-legal/CLAUDE.md` 并添加至少一个监管机构。"
 - **重要度阈值为空：** 回退到默认层级并附加说明。
 - **动态源配置为空：** 仅运行中国政府网公告检查并附加说明。
 

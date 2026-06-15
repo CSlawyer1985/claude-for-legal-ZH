@@ -9,13 +9,13 @@ argument-hint: "[课程名称, 附历年考题或文件路径]"
 
 # /exam-forecast
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` → 课程、授课教师、考试形式、教学大纲。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` → 课程、授课教师、考试形式、教学大纲。
 2. 应用以下工作流。
 3. 接收历年考题（PDF、粘贴文本或文件路径）。确认样本量。
 4. 分析每份历年考题：格式、科目覆盖、题型风格、案例事实密度、反复出现的陷阱。
 5. 跨考题模式分析——哪些稳定，哪些变化。
 6. 结合当前教学大纲生成预测：科目权重、格式、教师偏好、复习重点。
-7. 写入 `~/.claude/plugins/config/claude-for-legal/law-student/exam-forecasts/[课程]/forecast-[YYYY-MM-DD].md`。定义为权重启发式，非确定预测。
+7. 写入 `~/.claude/plugins/config/claude-for-legal-zh/law-student/exam-forecasts/[课程]/forecast-[YYYY-MM-DD].md`。定义为权重启发式，非确定预测。
 
 ---
 
@@ -34,7 +34,7 @@ argument-hint: "[课程名称, 附历年考题或文件路径]"
 
 ## 加载上下文
 
-- `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` → 当前课程、考试形式、教学大纲（如有）
+- `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` → 当前课程、考试形式、教学大纲（如有）
 - 用户提供的历年考题（PDF、粘贴文本、路径）
 - 可选：当前课程的教学大纲（用于"截至目前已讲授内容"）
 
@@ -141,7 +141,7 @@ STUDY NOTES — NOT LEGAL ADVICE（学习笔记 — 非法律建议）
 
 ### 第5步：输出位置
 
-写入 `~/.claude/plugins/config/claude-for-legal/law-student/exam-forecasts/[课程]/forecast-[YYYY-MM-DD].md`。带版本——如果学生在学期中又获得了另一份历年考题，重新运行并追加。
+写入 `~/.claude/plugins/config/claude-for-legal-zh/law-student/exam-forecasts/[课程]/forecast-[YYYY-MM-DD].md`。带版本——如果学生在学期中又获得了另一份历年考题，重新运行并追加。
 
 ## 技能联动
 

@@ -3,7 +3,7 @@ CONFIGURATION LOCATION
 
 User-specific configuration for this plugin lives at a version-independent path that survives plugin updates:
 
-  ~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md
+  ~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md
 
 Rules for every skill, command, and agent in this plugin:
 1. READ configuration from that path. Not from this file.
@@ -15,7 +15,7 @@ Rules for every skill, command, and agent in this plugin:
 5. This file (the one you are reading) is the TEMPLATE. It ships with the plugin and shows the
    structure the config should have. It is replaced on every plugin update. Never write user data here.
 
-**Shared company profile.** Company-level facts (who you are, what you do, where you operate, your risk posture, key people) live in `~/.claude/plugins/config/claude-for-legal/company-profile.md` — one level above this file, shared by all 12 plugins. Read it before this plugin's practice profile. If it doesn't exist, this plugin's setup will create it.
+**Shared company profile.** Company-level facts (who you are, what you do, where you operate, your risk posture, key people) live in `~/.claude/plugins/config/claude-for-legal-zh/company-profile.md` — one level above this file, shared by all 12 plugins. Read it before this plugin's practice profile. If it doesn't exist, this plugin's setup will create it.
 -->
 
 # 个人信息保护实务画像
@@ -268,7 +268,7 @@ Rules for every skill, command, and agent in this plugin:
 
 **文件访问失败。** 无法读取用户指向的文件时，不保持沉默。
 
-**验证日志。** 当验证标记项目时，记录到 `~/.claude/plugins/config/claude-for-legal/privacy-legal/verification-log.md`，格式：`[YYYY-MM-DD] [引用或事实] 由 [姓名] 对照 [来源] 核实 —— [结论: 已确认 / 更正为 X / 无法核实]`
+**验证日志。** 当验证标记项目时，记录到 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/verification-log.md`，格式：`[YYYY-MM-DD] [引用或事实] 由 [姓名] 对照 [来源] 核实 —— [结论: 已确认 / 更正为 X / 无法核实]`
 
 ---
 

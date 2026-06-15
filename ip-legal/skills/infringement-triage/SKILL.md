@@ -16,7 +16,7 @@ argument-hint: "[描述事实和涉及的权利类型——或仅提供事实，
 
 ## 使用说明
 
-1. 读取 `~/.claude/plugins/config/claude-for-legal/ip-legal/CLAUDE.md`。如含
+1. 读取 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/CLAUDE.md`。如含
    `[PLACEHOLDER]`，停止并指引至 `/ip-legal:cold-start-interview`。
 2. 按以下工作流执行。
 3. 询问涉及哪项权利——商标 / 著作权 / 专利 / 商业秘密
@@ -80,7 +80,7 @@ argument-hint: "[描述事实和涉及的权利类型——或仅提供事实，
 
 ## 事项上下文
 
-**事项上下文。** 检查实务级 CLAUDE.md 中的 `## 事项工作区`。如 `Enabled` 为 `✗`（法务用户的默认状态），跳过本段其余内容——各技能使用实务级上下文，事项机制不可见。如已启用且无活跃事项，询问："此事项属于哪个案件？运行 `/ip-legal:matter-workspace switch <slug>` 或回复 `实务级`。"加载活跃事项的 `matter.md` 获取事项特定上下文和覆盖设置。将输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal/ip-legal/matters/<事项slug>/`。除非 `跨事项上下文` 开启，否则绝不读取其他事项的文件。
+**事项上下文。** 检查实务级 CLAUDE.md 中的 `## 事项工作区`。如 `Enabled` 为 `✗`（法务用户的默认状态），跳过本段其余内容——各技能使用实务级上下文，事项机制不可见。如已启用且无活跃事项，询问："此事项属于哪个案件？运行 `/ip-legal:matter-workspace switch <slug>` 或回复 `实务级`。"加载活跃事项的 `matter.md` 获取事项特定上下文和覆盖设置。将输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/matters/<事项slug>/`。除非 `跨事项上下文` 开启，否则绝不读取其他事项的文件。
 
 侵权筛查通常导向侵权警告函起草或删除通知路由。如无活跃事项且实务为私人执业，
 创建一个——筛查、警告函及任何后续回复属于同一工作区。
@@ -89,7 +89,7 @@ argument-hint: "[描述事实和涉及的权利类型——或仅提供事实，
 
 ## 首先加载实务画像
 
-读取 `~/.claude/plugins/config/claude-for-legal/ip-legal/CLAUDE.md`。提取：
+读取 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/CLAUDE.md`。提取：
 
 - **角色** 来自 `## 使用者`.
 - **维权立场** 来自 `## 维权立场` — 筛查输出应以与声明的立场一致的路由建议收尾
@@ -344,7 +344,7 @@ argument-hint: "[描述事实和涉及的权利类型——或仅提供事实，
 
 ## 输出格式（所有模式适用）
 
-在输出前附加 `~/.claude/plugins/config/claude-for-legal/ip-legal/CLAUDE.md` `## 输出` 中的工作成果页眉。
+在输出前附加 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/CLAUDE.md` `## 输出` 中的工作成果页眉。
 
 ```markdown
 [工作成果页眉]
@@ -394,7 +394,7 @@ argument-hint: "[描述事实和涉及的权利类型——或仅提供事实，
 - [证据保全和保存 — 如诉讼时效在走]
 - [决定前需补充的事实 — 如访问日志、审查历史、
   市场调查、问卷证据]
-- [按 `~/.claude/plugins/config/claude-for-legal/ip-legal/CLAUDE.md`
+- [按 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/CLAUDE.md`
   `## 维权立场` 的路由建议，如立场为积极维权]
 
 ## 引文核实
@@ -431,9 +431,9 @@ argument-hint: "[描述事实和涉及的权利类型——或仅提供事实，
 ## 输出位置
 
 如事项工作区已启用且有活跃事项，写入
-`~/.claude/plugins/config/claude-for-legal/ip-legal/matters/<事项slug>/outputs/infringe-<模式>-<主题slug>-YYYY-MM-DD.md`。
+`~/.claude/plugins/config/claude-for-legal-zh/ip-legal/matters/<事项slug>/outputs/infringe-<模式>-<主题slug>-YYYY-MM-DD.md`。
 否则写入
-`~/.claude/plugins/config/claude-for-legal/ip-legal/outputs/infringe-<模式>-<主题slug>-YYYY-MM-DD.md`
+`~/.claude/plugins/config/claude-for-legal-zh/ip-legal/outputs/infringe-<模式>-<主题slug>-YYYY-MM-DD.md`
 并显示路径。
 
 如存在活跃事项，在事项的 `history.md` 中追加一行记录。

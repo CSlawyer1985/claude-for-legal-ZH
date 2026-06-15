@@ -6,7 +6,7 @@ condition.
 
 The categories are stable framing concepts. What counts as "Needs work" vs.
 "Blocker" *within* a category depends on the applicable jurisdictions, sector
-regimes, and the company's own calibration in `~/.claude/plugins/config/claude-for-legal/product-legal/CLAUDE.md`. Research the
+regimes, and the company's own calibration in `~/.claude/plugins/config/claude-for-legal-zh/product-legal/CLAUDE.md`. Research the
 regulatory regimes applicable to the product's sector, audience, and
 jurisdictions before concluding that a specific fact pattern is or isn't a
 problem.

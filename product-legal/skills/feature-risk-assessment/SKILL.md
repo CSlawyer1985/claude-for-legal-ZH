@@ -11,7 +11,7 @@ description: >
 
 ## 事项上下文
 
-**事项上下文。** 检查实务级 CLAUDE.md 中的 `## 事项工作空间`。如果 `Enabled` 为 `✗`（企业法务用户的默认值），跳过本段其余内容——技能使用实务级上下文，事项机制不可见。如果已启用且无活跃事项，询问："这是哪个事项？运行 `/product-legal:matter-workspace switch <事项简称>` 或说 `实务级`。"加载活跃事项的 `matter.md` 获取事项特定上下文和覆盖规则。输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal/product-legal/matters/<事项简称>/`。除非 `跨事项上下文` 为 `开`，否则绝不读取其他事项的文件。
+**事项上下文。** 检查实务级 CLAUDE.md 中的 `## 事项工作空间`。如果 `Enabled` 为 `✗`（企业法务用户的默认值），跳过本段其余内容——技能使用实务级上下文，事项机制不可见。如果已启用且无活跃事项，询问："这是哪个事项？运行 `/product-legal:matter-workspace switch <事项简称>` 或说 `实务级`。"加载活跃事项的 `matter.md` 获取事项特定上下文和覆盖规则。输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal-zh/product-legal/matters/<事项简称>/`。除非 `跨事项上下文` 为 `开`，否则绝不读取其他事项的文件。
 
 ---
 
@@ -107,7 +107,7 @@ description: >
 
 ## 校准检查
 
-定稿前，对照 `~/.claude/plugins/config/claude-for-legal/product-legal/CLAUDE.md` → 风险校准检查：
+定稿前，对照 `~/.claude/plugins/config/claude-for-legal-zh/product-legal/CLAUDE.md` → 风险校准检查：
 
 - 这份风险评估是针对*这家公司*校准的，还是泛泛的？
 - 对处于承诺整改协议下的公司可能是"高"风险，对不在该情况下的公司可能是"中"
@@ -121,11 +121,11 @@ description: >
 
 ## 输出格式
 
-独立文件，2-4页。冠以 `~/.claude/plugins/config/claude-for-legal/product-legal/CLAUDE.md` `## 输出规范` 中的工作成果页眉（因用户角色而异——参见 `## 使用者`）。
+独立文件，2-4页。冠以 `~/.claude/plugins/config/claude-for-legal-zh/product-legal/CLAUDE.md` `## 输出规范` 中的工作成果页眉（因用户角色而异——参见 `## 使用者`）。
 
 不是PPT演示稿，不是备忘录——是一份供阅读后决策的决策文件。
 
-保存到 `~/.claude/plugins/config/claude-for-legal/product-legal/CLAUDE.md` → 上线审查流程规定的审查文件存放位置。如果文件将被分享给保密范围外的任何人（例如发布到广泛共享的工单上），仅为该对外版本去除工作成果页眉，在事项文件中保留保密原始版本。
+保存到 `~/.claude/plugins/config/claude-for-legal-zh/product-legal/CLAUDE.md` → 上线审查流程规定的审查文件存放位置。如果文件将被分享给保密范围外的任何人（例如发布到广泛共享的工单上），仅为该对外版本去除工作成果页眉，在事项文件中保留保密原始版本。
 
 ## 引用检查
 

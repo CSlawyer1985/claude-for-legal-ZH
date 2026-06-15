@@ -13,7 +13,7 @@ argument-hint: "[需要更改的内容描述]"
 
 > **实践配置定制**——调整配置设置，但不重新运行完整的冷启动访谈。不改变技能逻辑；仅改变实践层面的默认立场。
 
-覆盖 `~/.claude/plugins/config/claude-for-legal/ai-governance-legal/CLAUDE.md` 中的指定字段。其他一切保持不变。
+覆盖 `~/.claude/plugins/config/claude-for-legal-zh/ai-governance-legal/CLAUDE.md` 中的指定字段。其他一切保持不变。
 
 ```
 /ai-governance-legal:customize "将我们的AI风险偏好从'中性'调整为'保守'"
@@ -25,7 +25,7 @@ argument-hint: "[需要更改的内容描述]"
 
 ## 工作流
 
-1. 读取 `~/.claude/plugins/config/claude-for-legal/ai-governance-legal/CLAUDE.md` → 当前配置。
+1. 读取 `~/.claude/plugins/config/claude-for-legal-zh/ai-governance-legal/CLAUDE.md` → 当前配置。
 2. 解析变更描述。确定影响的字段。如果描述模糊，在编辑前提问澄清。
 3. 显示拟议变更的差异对比。
 4. 在用户确认后应用。仅编辑目标字段。

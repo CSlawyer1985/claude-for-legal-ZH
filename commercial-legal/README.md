@@ -17,7 +17,7 @@
 
 首次使用时，插件将通过对话形式对您进行访谈——约十分钟——了解您团队的实际运作方式。询问您的合同手册立场、审批上报规则以及让您在材料到桌时头疼的事项。然后要求您提供5-10份近期已签署协议（越多越好，20份能呈现更清晰的模式），以便实地观察您的立场。
 
-将学习到的内容写入 `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md` —— 一份关于您团队的通俗英语文档，所有其他技能在工作前均会读取。您编辑的是文档，而非配置文件。
+将学习到的内容写入 `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md` —— 一份关于您团队的通俗英语文档，所有其他技能在工作前均会读取。您编辑的是文档，而非配置文件。
 
 ```
 /commercial-legal:cold-start-interview
@@ -41,7 +41,7 @@
 
 | 技能 | 用途 |
 |---|---|
-| **cold-start-interview** | 首次运行访谈，写入 `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md` |
+| **cold-start-interview** | 首次运行访谈，写入 `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md` |
 | **vendor-agreement-review** | 完整合同手册对合同偏差分析，附修订文本 |
 | **nda-review** | 快速 GREEN/YELLOW/RED 分流，法务仅阅读需要介入的保密协议 |
 | **saas-msa-review** | SaaS订阅专属叠加层：自动续约、价格递增、数据迁出、SLA |
@@ -88,7 +88,7 @@
 
 约十分钟。准备好5-10份近期已签署协议以供分享（越多越好，20份能呈现更清晰的模式）。
 
-您的配置存储于 `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md` 并在插件更新后继续生效。
+您的配置存储于 `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md` 并在插件更新后继续生效。
 
 ### 2. 审查合同
 
@@ -108,7 +108,7 @@
 
 ## 如何学习
 
-您在 `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md` 中的实务画像并非一成不变——它会随着您使用插件而持续改进。技能会告知您何时某次输出使用了应予调整的默认值。`playbook-monitor` 代理在您的实务操作偏离合同手册时提议更新。您可以重新运行设置、直接编辑文件或告知某项技能记录新的立场。
+您在 `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md` 中的实务画像并非一成不变——它会随着您使用插件而持续改进。技能会告知您何时某次输出使用了应予调整的默认值。`playbook-monitor` 代理在您的实务操作偏离合同手册时提议更新。您可以重新运行设置、直接编辑文件或告知某项技能记录新的立场。
 
 ## 文件结构
 

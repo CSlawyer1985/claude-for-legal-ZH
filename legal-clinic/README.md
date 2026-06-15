@@ -88,7 +88,7 @@ cold-start 访谈要求指导老师选择：
 2. **可配置标记，非正式审查** — 某些触发器将输出标记为"与指导老师确认"，无队列机制
 3. **较轻触** — 所有内容标准保障标签，指导老师通过现有诊所结构（案件讨论会、一对一）进行指导
 
-之后可通过编辑 `~/.claude/plugins/config/claude-for-legal/legal-clinic/CLAUDE.md` 更改。你的配置存储在该版本无关路径中，插件更新时不受影响。
+之后可通过编辑 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/CLAUDE.md` 更改。你的配置存储在该版本无关路径中，插件更新时不受影响。
 
 ## 学期轮换：`/ramp` 解决方案
 
@@ -141,7 +141,7 @@ cold-start 访谈要求指导老师选择：
 
 ## 它是如何学习的
 
-你在 `~/.claude/plugins/config/claude-for-legal/legal-clinic/CLAUDE.md` 中的实践画像不是静态的 — 它随着你使用插件而改善。技能会在输出使用了默认设置时提示你应该调整的地方。你可以重新运行设置、直接编辑文件，或者告诉某个技能记录新的偏好。
+你在 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/CLAUDE.md` 中的实践画像不是静态的 — 它随着你使用插件而改善。技能会在输出使用了默认设置时提示你应该调整的地方。你可以重新运行设置、直接编辑文件，或者告诉某个技能记录新的偏好。
 
 ## 文件结构
 

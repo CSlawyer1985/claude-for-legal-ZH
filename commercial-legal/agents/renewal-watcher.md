@@ -2,7 +2,7 @@
 name: renewal-watcher
 description: >
   Scheduled agent that checks the renewal register and posts what's coming up.
-  Runs weekly by default. Posts to the channel named in `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md` → House style
+  Runs weekly by default. Posts to the channel named in `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md` → House style
   → Renewal alerts. Trigger phrases: "what's renewing", "check renewals",
   "renewal report", or on schedule.
 model: sonnet
@@ -21,7 +21,7 @@ Weekly, Monday morning. Configurable — if the contracts volume is high, daily 
 
 ## What it does
 
-1. Read `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md` to get the alert destination (Slack channel or email list).
+1. Read `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md` to get the alert destination (Slack channel or email list).
 2. Load the renewal-tracker skill, run Mode 2 (next 90 days).
 3. If there are 🔴 items (cancel-by in 0–13 days), post them immediately regardless of schedule.
 4. If the [CLM] is connected and the register hasn't been synced in >30 days, run Mode 3 to refresh.

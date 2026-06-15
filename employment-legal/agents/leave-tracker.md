@@ -34,7 +34,7 @@ tools: ["Read", "Write", "mcp__*__query", "mcp__*__search", "mcp__*__list"]
 
 不追踪：事假、年休假以外的福利假、补休、无法律硬性期限的内部假期。
 
-> **在依赖追踪器之前检索适用法规。** 对于 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` 中的每个管辖地，识别当前有效的假期法规、用人单位覆盖门槛、员工资格要求以及任何修正或新的地方性假期规定。引用控制性法规及实施规定并附精确引注。核实时效性——各省/直辖市的计生条例奖励假在持续更新。如果你对任何管辖地的现行法律状态不确定，标记出来，不陈述未经核实的规则。
+> **在依赖追踪器之前检索适用法规。** 对于 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md` 中的每个管辖地，识别当前有效的假期法规、用人单位覆盖门槛、员工资格要求以及任何修正或新的地方性假期规定。引用控制性法规及实施规定并附精确引注。核实时效性——各省/直辖市的计生条例奖励假在持续更新。如果你对任何管辖地的现行法律状态不确定，标记出来，不陈述未经核实的规则。
 
 ## 排程
 
@@ -44,7 +44,7 @@ tools: ["Read", "Write", "mcp__*__query", "mcp__*__search", "mcp__*__list"]
 
 ### 第1步 —— 读取实践画像
 
-读取 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md`。提取：
+读取 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md`。提取：
 - 管辖范围以及团队已检索并记录的任何管辖地特定假期规则
 - HRIS 系统和假期数据访问（`## 系统` 段）
 - 上报矩阵
@@ -55,7 +55,7 @@ tools: ["Read", "Write", "mcp__*__query", "mcp__*__search", "mcp__*__list"]
 查询所有具有活跃假期状态的员工。提取：员工标识、管辖地、假期类型、起始日期、已用时间（对年休假和医疗期至关重要——按该员工的正常工作时间记录，不硬编码为每周40小时）、预计返岗日期、假期审批状态、医疗证明状态（如适用）。
 
 **如果是手动：**
-读取 `~/.claude/plugins/config/claude-for-legal/employment-legal/leave-register.yaml`。如果该文件不存在，提示：
+读取 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/leave-register.yaml`。如果该文件不存在，提示：
 > "我没有看到假期登记册。请连接你的 HRIS 或将当前的假期表格放在这里，我将加载它。你也可以使用 `/employment-legal:log-leave` 逐条添加假期记录。"
 在数据提供之前停止。
 
@@ -115,7 +115,7 @@ tools: ["Read", "Write", "mcp__*__query", "mcp__*__search", "mcp__*__list"]
 
 仅呈现需要决定或行动的条目。不呈现无即将到期期限的干净假期。
 
-预警层级（阈值为 agent 级默认——可在 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` 中按团队偏好调整）：
+预警层级（阈值为 agent 级默认——可在 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md` 中按团队偏好调整）：
 - 立即行动：3个工作日内有决定或期限
 - 本周需处理：7天内
 - 即将到来：约30天内
@@ -225,11 +225,11 @@ tools: ["Read", "Write", "mcp__*__query", "mcp__*__search", "mcp__*__list"]
 
 ### 第6步 —— 更新登记册
 
-运行后，用重新计算的字段更新 `~/.claude/plugins/config/claude-for-legal/employment-legal/leave-register.yaml`（如通过 HRIS 获取的已用时间、last_checked 时间戳、状态变更）。不得覆盖律师手动添加的任何 `notes` 字段。
+运行后，用重新计算的字段更新 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/leave-register.yaml`（如通过 HRIS 获取的已用时间、last_checked 时间戳、状态变更）。不得覆盖律师手动添加的任何 `notes` 字段。
 
 ## 假期登记册格式
 
-`~/.claude/plugins/config/claude-for-legal/employment-legal/leave-register.yaml`:
+`~/.claude/plugins/config/claude-for-legal-zh/employment-legal/leave-register.yaml`:
 
 ```yaml
 - employee_id: [姓名、岗位或匿名标识]

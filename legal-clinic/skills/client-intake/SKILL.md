@@ -9,7 +9,7 @@ argument-hint: "[可选：实践领域提示]"
 
 # /client-intake
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/legal-clinic/CLAUDE.md` → 实践领域、接待模板、指导风格、标记触发条件。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/CLAUDE.md` → 实践领域、接待模板、指导风格、标记触发条件。
 2. 使用以下工作流。
 3. 路由到实践领域模板。全过程中关注跨领域问题。
 4. 利益冲突检查标记。分流分类。
@@ -29,11 +29,11 @@ argument-hint: "[可选：实践领域提示]"
 
 ## 加载上下文
 
-`~/.claude/plugins/config/claude-for-legal/legal-clinic/CLAUDE.md` → 实践领域、接待模板（各部分如有）、指导风格、管辖地、标记触发条件。
+`~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/CLAUDE.md` → 实践领域、接待模板（各部分如有）、指导风格、管辖地、标记触发条件。
 
 ## 阅读指导老师指南
 
-检查 `~/.claude/plugins/config/claude-for-legal/legal-clinic/guides/<实践领域>.md` 是否存在实践领域指南。如果存在，使用其接待问题、红旗信号和适格标准，替代以下通用默认值。如果不存在，使用通用接待并在案件摘要末尾注明："此为通用接待——你的指导老师可使用 `/legal-clinic:build-guide` 为你的诊所类型定制问题。"
+检查 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/guides/<实践领域>.md` 是否存在实践领域指南。如果存在，使用其接待问题、红旗信号和适格标准，替代以下通用默认值。如果不存在，使用通用接待并在案件摘要末尾注明："此为通用接待——你的指导老师可使用 `/legal-clinic:build-guide` 为你的诊所类型定制问题。"
 
 当接待在实践领域被路由之前就开始了（工作流第1步），在路由之后重新检查指南——指南路径取决于接待落在哪个实践领域。
 
@@ -49,7 +49,7 @@ argument-hint: "[可选：实践领域提示]"
 
 ### 第2步：实践领域特定接待
 
-每个实践领域问不同的问題。使用 `~/.claude/plugins/config/claude-for-legal/legal-clinic/CLAUDE.md` 中该领域的模板。如无提供，默认如下：
+每个实践领域问不同的问題。使用 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/CLAUDE.md` 中该领域的模板。如无提供，默认如下：
 
 **劳动争议：**
 - 用人单位、岗位、入职时间、劳动合同签订情况
@@ -94,7 +94,7 @@ argument-hint: "[可选：实践领域提示]"
 
 ### 第4步：利益冲突检查标记
 
-按照 `~/.claude/plugins/config/claude-for-legal/legal-clinic/CLAUDE.md` 所述的冲突检查流程。参照《律师法》第11条、第39条、第41条，《律师执业管理办法》第26-28条。至少包含：
+按照 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/CLAUDE.md` 所述的冲突检查流程。参照《律师法》第11条、第39条、第41条，《律师执业管理办法》第26-28条。至少包含：
 
 - 对方当事人名称——诊所是否代理或曾代理过？
 - 关联方——学生或诊所是否可能与任何其他人存在冲突？
@@ -115,7 +115,7 @@ argument-hint: "[可选：实践领域提示]"
 
 ### 第6步：指导标记检查
 
-按 `~/.claude/plugins/config/claude-for-legal/legal-clinic/CLAUDE.md` 指导风格和标记触发条件。如正式审查队列或可配置标记已启用，且存在触发条件（提到截止日期、家庭暴力指标、移民身份问题等），注明该标记。
+按 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/CLAUDE.md` 指导风格和标记触发条件。如正式审查队列或可配置标记已启用，且存在触发条件（提到截止日期、家庭暴力指标、移民身份问题等），注明该标记。
 
 ### 第7步：截止日期移交——必需交付物
 

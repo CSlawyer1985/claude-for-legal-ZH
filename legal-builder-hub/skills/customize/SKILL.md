@@ -16,7 +16,7 @@ argument-hint: "[节名称，或描述你想更改的内容]"
 
 ## 做什么
 
-1. **读取配置。** 读取 `~/.claude/plugins/config/claude-for-legal/legal-builder-hub/CLAUDE.md`。如果不存在或仍包含占位符，提示先运行设置。
+1. **读取配置。** 读取 `~/.claude/plugins/config/claude-for-legal-zh/legal-builder-hub/CLAUDE.md`。如果不存在或仍包含占位符，提示先运行设置。
 
 2. **展示可定制的图谱。** 列出内容，分组，附当前值摘要：
 

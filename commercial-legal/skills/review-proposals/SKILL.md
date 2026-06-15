@@ -9,7 +9,7 @@ argument-hint: "[无需参数——从待处理建议文件工作]"
 
 # /review-proposals
 
-逐步审查来自监控代理的待处理审查指引更新建议，并将批准的变更应用到 `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md`。
+逐步审查来自监控代理的待处理审查指引更新建议，并将批准的变更应用到 `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md`。
 
 ## 指令
 

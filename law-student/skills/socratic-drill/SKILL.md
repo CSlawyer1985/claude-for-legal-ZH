@@ -8,7 +8,7 @@ argument-hint: "[科目或主题]"
 
 # /socratic-drill
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` → 学习风格、课程、薄弱领域。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` → 学习风格、课程、薄弱领域。
 2. 应用以下工作流。
 3. 就该主题提问。等待回答。
 4. 追问。提出后续问题。不直接给答案。
@@ -32,13 +32,13 @@ argument-hint: "[科目或主题]"
 
 ## 加载上下文
 
-`~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` → 学习风格（追问训练型 vs 讲解引导型——本技能默认追问训练型，但语气可调整），薄弱领域，当前课程。
+`~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` → 学习风格（追问训练型 vs 讲解引导型——本技能默认追问训练型，但语气可调整），薄弱领域，当前课程。
 
 ## 训练过程
 
 ### 第1步：选定主题
 
-由用户指定，或从 `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` 中的薄弱领域提取。如果学生持续回避某个科目，这正是需要训练的科目。
+由用户指定，或从 `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` 中的薄弱领域提取。如果学生持续回避某个科目，这正是需要训练的科目。
 
 ### 第2步：提问
 
@@ -66,7 +66,7 @@ argument-hint: "[科目或主题]"
 
 这不是给答案。这是在教学生信任并核实自己的材料——这才是能带到考场上的能力。一个脑子里装着错误规则、笔记里写着正确规则的法科生，应该被指出矛盾，而不是被要求回去重读教材。学生仍需自己判断哪个正确及为什么正确；技能只是拒绝让他们走过一个可以看到的矛盾。仅在以下条件同时满足时适用：
 
-1. 学生确实上传了 `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` → 种子材料中引用的材料（笔记、大纲、案例摘要、记忆卡片），且
+1. 学生确实上传了 `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` → 种子材料中引用的材料（笔记、大纲、案例摘要、记忆卡片），且
 2. 学生陈述的规则与上传材料中的规则存在具体实质差异——不是表述不同，不是详细程度不同，而是实质性矛盾。
 
 不要从你自己的知识中提供纠正。不要引用教材。只把学生自己的材料引用回给他们。

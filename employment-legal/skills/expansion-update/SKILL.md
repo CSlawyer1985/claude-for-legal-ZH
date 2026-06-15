@@ -13,9 +13,9 @@ argument-hint: "[省/直辖市/地域名称]"
 
 ## 指令
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md`。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md`。
 
-2. 识别追踪文件：`~/.claude/plugins/config/claude-for-legal/employment-legal/expansion-[slug].yaml`。如不存在，响应："未找到[地域]的扩张追踪文件。运行 `/employment-legal:expansion-kickoff [地域]` 来启动一个。"
+2. 识别追踪文件：`~/.claude/plugins/config/claude-for-legal-zh/employment-legal/expansion-[slug].yaml`。如不存在，响应："未找到[地域]的扩张追踪文件。运行 `/employment-legal:expansion-kickoff [地域]` 来启动一个。"
 
 3. 读取追踪文件。显示当前状态：
 

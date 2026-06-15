@@ -14,7 +14,7 @@ argument-hint: "[技能名称]"
 安全规则：
 
 1. **仅卸载通过本中心安装的社区技能。** 检查
-   `~/.claude/plugins/config/claude-for-legal/legal-builder-hub/install-log.yaml`
+   `~/.claude/plugins/config/claude-for-legal-zh/legal-builder-hub/install-log.yaml`
    和 CLAUDE.md 已安装入门包表。如果该技能未记录在其中，拒绝并告知用户。
 2. **绝不卸载第一方插件的技能。** claude-for-legal 附带的 12 个核心插件
    对此命令是不可触碰的。如果命名技能解析到这些插件之一的路径内，拒绝。

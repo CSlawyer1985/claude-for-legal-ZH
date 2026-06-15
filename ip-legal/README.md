@@ -21,7 +21,7 @@
 
 首次使用时，插件对你进行访谈——十至十五分钟，对话式——以了解你的实务如何实际运作。询问你的业务领域组合、管辖区域范围、维权姿态、审批矩阵和升级触发条件。然后要求你提供知识产权组合清单、品牌指南（如有）、侵权警告函模板（如有）、维权操作手册和开源政策（如有）——你有多少就给多少，以便提取而非要求你重新输入。
 
-它把学到的东西写入 `~/.claude/plugins/config/claude-for-legal/ip-legal/CLAUDE.md`——一份关于你实务的简明文件，其他每个技能在执行前都会读取。你编辑的是文件，不是配置文件。
+它把学到的东西写入 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/CLAUDE.md`——一份关于你实务的简明文件，其他每个技能在执行前都会读取。你编辑的是文件，不是配置文件。
 
 ```
 /ip-legal:cold-start-interview
@@ -47,7 +47,7 @@
 
 | 技能 | 用途 |
 |---|---|
-| **cold-start-interview** | 首次运行访谈，写入 `~/.claude/plugins/config/claude-for-legal/ip-legal/CLAUDE.md` |
+| **cold-start-interview** | 首次运行访谈，写入 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/CLAUDE.md` |
 | **cease-desist** | 起草或分类侵权警告函；发送前通过审批矩阵 |
 | **takedown** | 信息网络传播权通知、回应收到的通知或反通知 |
 | **clearance** | 相同/近似检索 + 混淆可能性初筛，针对拟议标识 |
@@ -95,7 +95,7 @@
 
 十至十五分钟。准备好你的知识产权组合清单、品牌指南（如有）、侵权警告函模板（如有）和开源政策（如有）。
 
-你的配置存储在 `~/.claude/plugins/config/claude-for-legal/ip-legal/CLAUDE.md`，可跨插件更新保留。
+你的配置存储在 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/CLAUDE.md`，可跨插件更新保留。
 
 ### 2. 商标可注册性检索
 
@@ -140,7 +140,7 @@ ip-legal/
 
 ## 如何持续学习
 
-你的实务画像位于 `~/.claude/plugins/config/claude-for-legal/ip-legal/CLAUDE.md` 不是静态的——随着你使用插件不断改进。技能会告知你输出何时使用了应调整的默认值。`ip-renewal-watcher` 代理跟踪知识产权组合登记并在你的频率下提示即将到期的续展期限。你可以重新运行设置、直接编辑文件或告知技能记录新立场。
+你的实务画像位于 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/CLAUDE.md` 不是静态的——随着你使用插件不断改进。技能会告知你输出何时使用了应调整的默认值。`ip-renewal-watcher` 代理跟踪知识产权组合登记并在你的频率下提示即将到期的续展期限。你可以重新运行设置、直接编辑文件或告知技能记录新立场。
 
 ## 注意事项
 

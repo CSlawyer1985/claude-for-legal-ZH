@@ -9,7 +9,7 @@ argument-hint: "[案例名称, 或粘贴案例文本, 或阅读材料路径]"
 
 # /cold-call-prep
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` → 课程列表、授课教师、学习风格。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` → 课程列表、授课教师、学习风格。
 2. 应用以下工作流。
 3. 识别阅读材料（案例名称 + 来源、授课教师、课程、教学大纲背景）。
 4. 预测跨类别的 6-10 个可能问题（基本案情 / 裁判要旨 / 裁判理由 / 法律适用 / 理论政策），按教师已知倾向加权。
@@ -40,7 +40,7 @@ argument-hint: "[案例名称, 或粘贴案例文本, 或阅读材料路径]"
 
 ## 加载上下文
 
-- `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` → 当前课程、授课教师、学习风格
+- `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` → 当前课程、授课教师、学习风格
 - 用户提供：案例名称 / 案例文本 / 教材页码 / 阅读清单
 
 ## 工作流
@@ -48,7 +48,7 @@ argument-hint: "[案例名称, 或粘贴案例文本, 或阅读材料路径]"
 ### 第1步：识别阅读材料 + 授课教师
 
 - 案例名称和来源
-- 授课教师（从 `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` 课程列表——语气和关注重点因教师而异）
+- 授课教师（从 `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` 课程列表——语气和关注重点因教师而异）
 - 课程/学科领域
 - 该案例在教学大纲中的位置（用于背景判断——这是该主题的第一个案例、限缩性案例、还是反例？）
 
@@ -80,7 +80,7 @@ argument-hint: "[案例名称, 或粘贴案例文本, 或阅读材料路径]"
 - 法院保护的政策目标是什么？
 - 该规则是否合理？替代方案有哪些？
 
-**教师个人风格（来自 `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` 备注）：**
+**教师个人风格（来自 `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` 备注）：**
 - 如果教师以假设情景密集著称，加权法律适用/假设问题
 - 如果以政策理论著称，加权政策/理论问题
 - 如果以事实型苏格拉底式追问著称（传统法学院互动式风格），加权基本案情 + 裁判要旨
@@ -129,4 +129,4 @@ argument-hint: "[案例名称, 或粘贴案例文本, 或阅读材料路径]"
 - **扮演老师。** 实际的课堂提问可能走向任何方向。本技能预测模式；老师会带来意外。
 - **替代阅读案例。** 如果你没读案例，本技能帮不了你——问题需要你已经吸收的文本。
 - **在没有先让你尝试的情况下给你裁判要旨。** 训练模式：我问，你答。
-- **预测特定法域的细分问题。** 如果教师有已知的个人偏好，将其记录在 `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` 课程备注中，技能可以据此加权；否则，技能按一般模式工作。
+- **预测特定法域的细分问题。** 如果教师有已知的个人偏好，将其记录在 `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` 课程备注中，技能可以据此加权；否则，技能按一般模式工作。

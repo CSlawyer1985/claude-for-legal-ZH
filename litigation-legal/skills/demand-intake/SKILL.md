@@ -10,11 +10,11 @@ argument-hint: "[标题] [--full]"
 
 # /demand-intake
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md` → 律师函实践、风险校准。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/CLAUDE.md` → 律师函实践、风险校准。
 2. 遵循以下工作流。
 3. 运行适应性委托登记（核心8项始终；策略块在实质重要或 `--full` 时询问）。
 4. 从标题 + 对方当事人 + 年月生成 slug。
-5. 写入 `~/.claude/plugins/config/claude-for-legal/litigation-legal/demand-letters/[slug]/intake.md`。
+5. 写入 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/demand-letters/[slug]/intake.md`。
 6. 与用户确认："委托登记已保存。准备就绪时运行 `/litigation-legal:demand-draft [slug]`。"
 
 ---
@@ -27,7 +27,7 @@ argument-hint: "[标题] [--full]"
 
 ## 加载上下文
 
-- `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md` → 律师函实践。
+- `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/CLAUDE.md` → 律师函实践。
 
 ## 委托登记
 
@@ -96,7 +96,7 @@ argument-hint: "[标题] [--full]"
 
 ## 写入委托登记
 
-### `~/.claude/plugins/config/claude-for-legal/litigation-legal/demand-letters/[slug]/intake.md`
+### `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/demand-letters/[slug]/intake.md`
 
 ```markdown
 [工作成果标题]

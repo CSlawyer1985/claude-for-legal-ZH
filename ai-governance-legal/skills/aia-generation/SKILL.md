@@ -10,7 +10,7 @@ argument-hint: "[系统名称或AI用例描述]"
 
 # /aia-generation
 
-1. 读取 `~/.claude/plugins/config/claude-for-legal/ai-governance-legal/CLAUDE.md` → 监管注册表（适用法规、阈值、义务）、AI系统清单、科技伦理审查配置。
+1. 读取 `~/.claude/plugins/config/claude-for-legal-zh/ai-governance-legal/CLAUDE.md` → 监管注册表（适用法规、阈值、义务）、AI系统清单、科技伦理审查配置。
 2. 运行以下工作流。
 3. 判定走快速轨还是全面轨。提取系统描述 → 确定监管角色和风险等级 → 生成评估。
 4. 输出：定级 + 评估文件，包含具体行动项、负责人和截止日期。
@@ -25,7 +25,7 @@ argument-hint: "[系统名称或AI用例描述]"
 
 ## 事务上下文
 
-**事务上下文。** 检查实践级 CLAUDE.md 中的 `## 事务工作区`。如果 `已启用` 为 `✗`（法务内部用户的默认值），跳过本段其余部分——技能使用实践级上下文，事务机制不可见。如果已启用且无活跃事务，询问："此事务属于哪个事务？运行 `/ai-governance-legal:matter-workspace switch <slug>` 或回答 `实践级`。" 加载活跃事务的 `matter.md` 获取事务特定上下文和覆盖项。将输出写入事务文件夹 `~/.claude/plugins/config/claude-for-legal/ai-governance-legal/matters/<matter-slug>/`。除非 `跨事务上下文` 为 `开`，否则绝不读取其他事务的文件。
+**事务上下文。** 检查实践级 CLAUDE.md 中的 `## 事务工作区`。如果 `已启用` 为 `✗`（法务内部用户的默认值），跳过本段其余部分——技能使用实践级上下文，事务机制不可见。如果已启用且无活跃事务，询问："此事务属于哪个事务？运行 `/ai-governance-legal:matter-workspace switch <slug>` 或回答 `实践级`。" 加载活跃事务的 `matter.md` 获取事务特定上下文和覆盖项。将输出写入事务文件夹 `~/.claude/plugins/config/claude-for-legal-zh/ai-governance-legal/matters/<matter-slug>/`。除非 `跨事务上下文` 为 `开`，否则绝不读取其他事务的文件。
 
 ---
 
@@ -45,7 +45,7 @@ argument-hint: "[系统名称或AI用例描述]"
 
 ## 加载当前状态
 
-读取 `~/.claude/plugins/config/claude-for-legal/ai-governance-legal/CLAUDE.md`：
+读取 `~/.claude/plugins/config/claude-for-legal-zh/ai-governance-legal/CLAUDE.md`：
 - `## AI系统清单` — 系统中每个AI系统的角色和等级
 - `## 监管注册表` — 适用的法规及阈值
 - `## 科技伦理审查配置` — 伦理审查委员会设置和审查触发条件
@@ -195,7 +195,7 @@ argument-hint: "[系统名称或AI用例描述]"
 
 ### 第6步：输出和归档
 
-将评估文件保存到 `~/.claude/plugins/config/claude-for-legal/ai-governance-legal/outputs/aia-[系统简称]-[日期].md`。同时更新 `## AI系统清单` 中的相应条目——添加评估日期和结论。
+将评估文件保存到 `~/.claude/plugins/config/claude-for-legal-zh/ai-governance-legal/outputs/aia-[系统简称]-[日期].md`。同时更新 `## AI系统清单` 中的相应条目——添加评估日期和结论。
 
 ## 重新评估触发条件
 

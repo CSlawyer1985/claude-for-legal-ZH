@@ -17,7 +17,7 @@
 
 插件访谈你以了解：你是个人信息处理者还是受托处理者、哪些法规实际适用、你在个人信息处理协议中愿意和不愿意同意的条款。然后读取三份种子文件——你的隐私政策（个人信息处理规则）、你的个人信息处理协议模板、一份你认可的影响评估——并学习你的真实立场和内部风格。
 
-你的配置存储在 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md`，可跨插件更新保留。
+你的配置存储在 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md`，可跨插件更新保留。
 
 ```
 /privacy-legal:cold-start-interview
@@ -93,7 +93,7 @@
 
 ## 如何持续学习
 
-你的实务画像位于 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md` 不是静态的——随着你使用插件不断改进。技能会告知你输出何时使用了应调整的默认值。`policy-monitor` 技能监测政策与实践之间的偏差并提议更新。你可以重新运行设置、直接编辑文件或告知技能记录新立场。
+你的实务画像位于 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md` 不是静态的——随着你使用插件不断改进。技能会告知你输出何时使用了应调整的默认值。`policy-monitor` 技能监测政策与实践之间的偏差并提议更新。你可以重新运行设置、直接编辑文件或告知技能记录新立场。
 
 ## 文件结构
 

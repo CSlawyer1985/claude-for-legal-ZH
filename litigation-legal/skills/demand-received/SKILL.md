@@ -10,11 +10,11 @@ argument-hint: "[来函文件路径] [--slug=自定义代号]"
 # /demand-received
 
 1. 读取提供的来函文件。
-2. 加载 `~/.claude/plugins/config/claude-for-legal/litigation-legal/matters/_log.yaml` 用于案件组合交叉检索。
-3. 加载 `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md` → 风险校准、执业背景、律师函实务惯例。
+2. 加载 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/matters/_log.yaml` 用于案件组合交叉检索。
+3. 加载 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/CLAUDE.md` → 风险校准、执业背景、律师函实务惯例。
 4. 按以下工作流操作。
 5. 提取关键字段；交叉检索案件组合；评估实质理由；提出方案并附建议。
-6. 写入 `~/.claude/plugins/config/claude-for-legal/litigation-legal/inbound/[slug]/triage.md`。将来函复制或链接至 `~/.claude/plugins/config/claude-for-legal/litigation-legal/inbound/[slug]/incoming.[ext]`。
+6. 写入 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/inbound/[slug]/triage.md`。将来函复制或链接至 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/inbound/[slug]/incoming.[ext]`。
 7. 按用户选择转交：
    - 创建案件 → 预填充的 `/matter-intake`
    - 回复律师函 → 预填充的 `/demand-intake`
@@ -32,8 +32,8 @@ argument-hint: "[来函文件路径] [--slug=自定义代号]"
 ## 加载上下文
 
 - 来函文件（用户提供路径或在会话中发送）
-- `~/.claude/plugins/config/claude-for-legal/litigation-legal/matters/_log.yaml` —— 扫描关联案件（相同对方、通过实体关系关联的对方、或同类案件类型+近期日期）
-- `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md` → 风险校准（用于实质理由评估）、执业背景（发函方是否为经常性对手？）、律师函实务惯例（事务所语调和回复默认策略）
+- `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/matters/_log.yaml` —— 扫描关联案件（相同对方、通过实体关系关联的对方、或同类案件类型+近期日期）
+- `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/CLAUDE.md` → 风险校准（用于实质理由评估）、执业背景（发函方是否为经常性对手？）、律师函实务惯例（事务所语调和回复默认策略）
 
 ## 工作流
 
@@ -75,7 +75,7 @@ argument-hint: "[来函文件路径] [--slug=自定义代号]"
 - **对方胜算** —— 如果对方明天起诉，ta的诉讼逻辑是什么？
 - **我方抗辩** —— 我们可能的抗辩事由是什么？
 - **索赔金额 vs. 合理判赔** —— 对方的请求与其胜诉后法院可能支持的金额是否成比例？
-- **筹码与压力** —— 对方是否真的准备起诉？是否有诉讼能力？是否属于 `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md` 中记录的常发性对手？
+- **筹码与压力** —— 对方是否真的准备起诉？是否有诉讼能力？是否属于 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/CLAUDE.md` 中记录的常发性对手？
 
 输出分流评级：**有实质根据 / 有争议空间 / 较弱 / 无依据**。直说——用户在做分流，不是在写代理词。
 
@@ -119,7 +119,7 @@ argument-hint: "[来函文件路径] [--slug=自定义代号]"
 
 ### 步骤6：撰写分流意见
 
-输出：`~/.claude/plugins/config/claude-for-legal/litigation-legal/inbound/[slug]/triage.md`。
+输出：`~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/inbound/[slug]/triage.md`。
 
 ```markdown
 [工作成果标头——根据插件配置 ## 输出——因角色不同；见 `## 使用者`]
@@ -220,7 +220,7 @@ argument-hint: "[来函文件路径] [--slug=自定义代号]"
 - 创建案件 → 转交 `/matter-intake`：预填充对方、类型、`source: demand-letter`（收函），初始理论以防御姿态构建。
 - 回复律师函 → 转交 `/demand-intake`：预填充对方、分流上下文、期望回复结果。
 - 关联既有案件 → 更新该案件在 `_log.yaml` 中的 `related_matters`；追加事件至其 `history.md`。
-- 独立归档 → 保留在 `~/.claude/plugins/config/claude-for-legal/litigation-legal/inbound/`；不更新案件组合。
+- 独立归档 → 保留在 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/inbound/`；不更新案件组合。
 
 ## 以下一步决策树收尾
 

@@ -10,7 +10,7 @@ argument-hint: "[录用通知书文件，或描述录用情况]"
 
 # /hiring-review
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` → 管辖范围、录用审查触发条件、竞业限制政策。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md` → 管辖范围、录用审查触发条件、竞业限制政策。
 2. 使用以下工作流。
 3. 检查：管辖地、工时制度分类、竞业限制/保密条款、背景调查合规。
 4. 标记任何触发管辖地特定上报表的事项。
@@ -29,11 +29,11 @@ argument-hint: "[录用通知书文件，或描述录用情况]"
 
 ## 加载上下文
 
-`~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` → 管辖范围、录用审查触发条件、竞业限制政策、录用通知书模板位置。
+`~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md` → 管辖范围、录用审查触发条件、竞业限制政策、录用通知书模板位置。
 
 ## 输出标题
 
-从 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` → `## Outputs` 预置工作成果标题（根据用户角色不同——见 `## Who's using this`）。
+从 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md` → `## Outputs` 预置工作成果标题（根据用户角色不同——见 `## Who's using this`）。
 
 ## 工作流
 
@@ -43,7 +43,7 @@ argument-hint: "[录用通知书文件，或描述录用情况]"
 
 如果远程：其家庭所在省/直辖市/国家管辖。如果混合办公：通常是其家庭所在地，但检查录用通知书中的适用法律条款（可能有效也可能无效）。
 
-检查 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` 中该省/直辖市/国家的管辖地表。如果不在表中——新管辖地——标记："在[管辖地]的首次录用。管辖地表未覆盖此项。录用通知发出前需要研究。"
+检查 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md` 中该省/直辖市/国家的管辖地表。如果不在表中——新管辖地——标记："在[管辖地]的首次录用。管辖地表未覆盖此项。录用通知发出前需要研究。"
 
 ### 步骤2：工时制度分类
 
@@ -73,7 +73,7 @@ argument-hint: "[录用通知书文件，或描述录用情况]"
 >
 > 引用一手来源。核实时效。
 
-按 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` 竞业限制政策：此次录用是否应该附加竞业限制？有些公司选择性使用。先适用公司政策，再研究管辖地的叠加要求。
+按 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md` 竞业限制政策：此次录用是否应该附加竞业限制？有些公司选择性使用。先适用公司政策，再研究管辖地的叠加要求。
 
 > **不自作补充。** 如果对配置的法律研究工具的查询返回零结果或极少结果，报告已找到的内容并停止。不要不询问就从联网搜索或模型知识填补空白。说："搜索从[工具]返回了[N]条结果。[管辖地/主题]的覆盖范围似乎很薄。选项：(1)扩大搜索查询，(2)尝试其他研究工具，(3)搜索网络——结果将标注`[联网检索——需复核]`，依赖前应核实，(4)标记为未经核实并停止。您希望选哪个？"由律师决定是否接受较低可信度的来源。
 >
@@ -81,7 +81,7 @@ argument-hint: "[录用通知书文件，或描述录用情况]"
 
 ### 步骤4：管辖地特定要求
 
-检查 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` 中该管辖地的表格。每次录用需要研究的常见类别：
+检查 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md` 中该管辖地的表格。每次录用需要研究的常见类别：
 
 - **个人信息保护**——背景调查和入职信息收集是否遵守《个人信息保护法》（单独同意、必要性原则、最小范围原则）？
 - **就业歧视禁止**——招聘过程中是否涉及《就业促进法》第3条禁止的歧视理由（民族、种族、性别、宗教信仰等）`[法条原文]`？录用条件是否合法合理？
@@ -142,7 +142,7 @@ argument-hint: "[录用通知书文件，或描述录用情况]"
 
 ## 后续行动门槛（发出录用通知）
 
-**在做出"可以发出"的建议或发出最终录用通知书供签署前：** 读取 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` 中的 `## Who's using this`。如果角色是**非律师**：
+**在做出"可以发出"的建议或发出最终录用通知书供签署前：** 读取 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md` 中的 `## Who's using this`。如果角色是**非律师**：
 
 > 发出录用通知具有法律后果——录用通知书构成要约，竞业限制、工时制度分类和管辖地特定条款一旦发出就很难撤销。您是否已与律师审查过此录用？如已审查，继续。如未审查，以下是带去给律师的简要材料：
 >

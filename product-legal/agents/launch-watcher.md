@@ -23,7 +23,7 @@ Run daily. Set a morning reminder (calendar block, cron, or team ritual) to invo
 
 ## What it does
 
-1. Read `~/.claude/plugins/config/claude-for-legal/product-legal/CLAUDE.md` → launch tracker location, calibration table, escalation channel.
+1. Read `~/.claude/plugins/config/claude-for-legal-zh/product-legal/CLAUDE.md` → launch tracker location, calibration table, escalation channel.
 2. Query the tracker for tickets with a target date ≤30 days out.
 3. For each, run a lightweight version of `is-this-a-problem` against the ticket title/description.
 4. Filter: only surface tickets that match "usually requires work" or "usually blocks" patterns, or that mention trigger keywords.

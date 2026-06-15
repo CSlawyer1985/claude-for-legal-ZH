@@ -9,7 +9,7 @@ argument-hint: "[--redo 在已配置插件上重新运行] [--check-integrations
 
 # /cold-start-interview
 
-运行冷启动访谈。首次运行写入 `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md`；后续使用 `--redo` 运行则重新访谈并在覆盖前展示差异。
+运行冷启动访谈。首次运行写入 `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md`；后续使用 `--redo` 运行则重新访谈并在覆盖前展示差异。
 
 ## 指令
 
@@ -54,7 +54,7 @@ argument-hint: "[--redo 在已配置插件上重新运行] [--check-integrations
 
 ## 检查共享公司配置
 
-查找 `~/.claude/plugins/config/claude-for-legal/company-profile.md`。如果存在：读取并确认。如果不存在：先询问公司问题并写入共享配置。
+查找 `~/.claude/plugins/config/claude-for-legal-zh/company-profile.md`。如果存在：读取并确认。如果不存在：先询问公司问题并写入共享配置。
 
 ## 安装范围检查
 
@@ -216,7 +216,7 @@ argument-hint: "[--redo 在已配置插件上重新运行] [--check-integrations
 
 展示插件功能、提示连接研究工具、建议起始技能、提供试运行、注明可修改性。
 
-> 完成。你的业务领域配置位于 `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md`。
+> 完成。你的业务领域配置位于 `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md`。
 
 ## 语气
 

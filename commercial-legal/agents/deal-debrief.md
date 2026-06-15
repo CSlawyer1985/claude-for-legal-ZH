@@ -16,7 +16,7 @@ tools: ["Read", "Write", "mcp__*__search", "mcp__*__fetch", "mcp__*__query", "mc
 
 Deals close, everyone moves on, and the institutional knowledge about *why* a deviation was accepted walks out the door. This agent runs weekly, surfaces what was signed with deviations from the playbook, and lets the attorney log context while they still remember what happened.
 
-The output feeds `~/.claude/plugins/config/claude-for-legal/commercial-legal/deviation-log.yaml`. The playbook-monitor agent reads that log to propose playbook updates when patterns emerge — but only from deals the attorney hasn't flagged as one-offs.
+The output feeds `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/deviation-log.yaml`. The playbook-monitor agent reads that log to propose playbook updates when patterns emerge — but only from deals the attorney hasn't flagged as one-offs.
 
 ## Schedule
 
@@ -26,14 +26,14 @@ Weekly, Monday morning. Configurable — if deal volume is high, run Thursday af
 
 ### Step 1 — Read the practice profile
 
-Read `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md` in full. Extract:
+Read `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md` in full. Extract:
 - All playbook positions (standard, acceptable fallbacks, never accept) for each clause category
 - The signed contracts repository location (`Where signed contracts live` field)
 - The one thing (deal-breaker clause)
 
 ### Step 2 — Pull recently signed agreements
 
-Using the repository location from `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md`:
+Using the repository location from `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md`:
 
 - **If CLM connected:** query for agreements with status = executed/signed in the last 7 days using `mcp__*__search` or `mcp__*__query`.
 - **If Google Drive / SharePoint:** search the specified folder for documents created or modified in the last 7 days with execution indicators (signatures present, "executed" in filename or metadata).
@@ -48,7 +48,7 @@ If no agreements are found and no upload is provided, stop:
 For each agreement retrieved:
 
 1. Identify the agreement type from the title (MSA, NDA, SOW, SaaS subscription, etc.).
-2. Identify the applicable playbook section(s) from `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md`.
+2. Identify the applicable playbook section(s) from `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md`.
 3. Extract key clause positions from the signed agreement: liability cap, indemnification, data protection, term and termination, governing law, and any clause in "the one thing."
 4. Compare each position against the playbook:
    - **No deviation:** matches standard position or an acceptable fallback → skip, do not surface
@@ -86,7 +86,7 @@ For each row the attorney marked Y, present sequentially:
 
 ```
 [#] [Deal] — [Clause]
-Playbook position: [standard position from `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md`]
+Playbook position: [standard position from `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md`]
 Signed position: [what the agreement actually says]
 Severity: [Minor / Moderate / ⚠️ Critical]
 
@@ -119,7 +119,7 @@ All other deviations (rows marked N, and deviations on non-flagged deals) log wi
 
 ### Step 6 — Write to deviation-log.yaml
 
-Append a structured entry to `~/.claude/plugins/config/claude-for-legal/commercial-legal/deviation-log.yaml` for each agreement processed.
+Append a structured entry to `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/deviation-log.yaml` for each agreement processed.
 
 For agreements with deviations:
 
@@ -162,7 +162,7 @@ Debrief complete.
 [N] agreements reviewed | [N] with deviations | [N] deviation entries logged
 ⚠️ Critical deviations this week: [N — list counterparty names, or "none"]
 🚫 Excluded from pattern analysis: [N deals flagged as one-offs, or "none"]
-Logged to: ~/.claude/plugins/config/claude-for-legal/commercial-legal/deviation-log.yaml
+Logged to: ~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/deviation-log.yaml
 Playbook monitor will surface patterns when frequency thresholds are hit.
 ```
 

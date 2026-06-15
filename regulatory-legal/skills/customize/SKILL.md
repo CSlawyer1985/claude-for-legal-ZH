@@ -16,7 +16,7 @@ argument-hint: "[配置节名称，或描述你要变更的内容]"
 
 ## 做什么
 
-1. **读取配置。** 读取 `~/.claude/plugins/config/claude-for-legal/regulatory-legal/CLAUDE.md`。如果插件配置不存在或仍包含 `[PLACEHOLDER]` 值，说明："你还没有运行设置。先运行 `/regulatory-legal:cold-start-interview`——定制功能用于调整已有的配置。"
+1. **读取配置。** 读取 `~/.claude/plugins/config/claude-for-legal-zh/regulatory-legal/CLAUDE.md`。如果插件配置不存在或仍包含 `[PLACEHOLDER]` 值，说明："你还没有运行设置。先运行 `/regulatory-legal:cold-start-interview`——定制功能用于调整已有的配置。"
 
 2. **展示可定制的清单。** 列出配置中的内容，分组，附当前值的一行摘要：
 
@@ -38,7 +38,7 @@ argument-hint: "[配置节名称，或描述你要变更的内容]"
    - *收紧重要度阈值：* "摘要将更简短——低于新阈值的事项将不再出现在摘要中。"
    - *将新政策添加到库中：* "`/policy-diff` 在将新法规与库匹配时将包含此政策。"
 
-5. **对共享配置的变更**（公司名称、行业、管辖区域、执业设置、阶段）：写入 `~/.claude/plugins/config/claude-for-legal/company-profile.md` 并注明此变更影响所有插件。
+5. **对共享配置的变更**（公司名称、行业、管辖区域、执业设置、阶段）：写入 `~/.claude/plugins/config/claude-for-legal-zh/company-profile.md` 并注明此变更影响所有插件。
 
 6. **关闭。** "完成。你的下一次输出将反映该变更。还有别的吗？你可以随时运行 `/regulatory-legal:customize`。"
 

@@ -11,7 +11,7 @@ user-invocable: false
 
 ## 事项上下文
 
-**事项上下文。** 检查业务领域级 CLAUDE.md 中的 `## 事项工作区`。如果 `Enabled` 为 `✗`（法务用户的默认值），跳过本段其余内容——技能使用业务领域级上下文，事项机制不可见。如果已启用且没有活动事项，询问："这是哪个事项的？运行 `/commercial-legal:matter-workspace switch <slug>` 或说 `practice-level`。"加载活动事项的 `matter.md` 获取事项特定上下文和覆盖设置。将输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal/commercial-legal/matters/<matter-slug>/`。除非 `跨事项上下文` 为 `on`，否则绝不读取其他事项的文件。
+**事项上下文。** 检查业务领域级 CLAUDE.md 中的 `## 事项工作区`。如果 `Enabled` 为 `✗`（法务用户的默认值），跳过本段其余内容——技能使用业务领域级上下文，事项机制不可见。如果已启用且没有活动事项，询问："这是哪个事项的？运行 `/commercial-legal:matter-workspace switch <slug>` 或说 `practice-level`。"加载活动事项的 `matter.md` 获取事项特定上下文和覆盖设置。将输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/matters/<matter-slug>/`。除非 `跨事项上下文` 为 `on`，否则绝不读取其他事项的文件。
 
 ---
 
@@ -29,13 +29,13 @@ user-invocable: false
 
 **哪一方？** 在适用审查指引之前，确定公司在此保密协议中处于哪一方。通常从上下文即可明显判断：如果对方是评估你产品的供应商或合作伙伴，你是销售方；如果你在评估对方的产品，你是采购方。相互保密协议仍然有方向——用的是谁的模板，评估方向是什么。如果不明显，询问。从配置中读取匹配的审查指引部分（`### 销售方审查指引` 或 `### 采购方审查指引`）。在输出中注明适用方向，以便审查者知道适用的是哪个审查指引。如果匹配方向为 `[未配置]`，停止并告知用户在进行此分类前运行 `/commercial-legal:cold-start-interview --side <side>`。
 
-**在进行任何分类前，阅读 `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md` → `## 审查指引` → 匹配方向 → `保密协议分类标准`。** 该部分是关于对*本*团队在*本*方向下，什么使保密协议成为绿色、黄色或红色的真实来源。本技能不附带关于保密协议条款的默认立场——法律、市场和每个团队的风险容忍度差异太大，无法安全使用硬编码默认值。
+**在进行任何分类前，阅读 `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md` → `## 审查指引` → 匹配方向 → `保密协议分类标准`。** 该部分是关于对*本*团队在*本*方向下，什么使保密协议成为绿色、黄色或红色的真实来源。本技能不附带关于保密协议条款的默认立场——法律、市场和每个团队的风险容忍度差异太大，无法安全使用硬编码默认值。
 
-如果 `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md` 尚无 `保密协议分类标准` 部分，或在你审查的保密协议中遇到该部分未涉及的条款，询问用户：
+如果 `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md` 尚无 `保密协议分类标准` 部分，或在你审查的保密协议中遇到该部分未涉及的条款，询问用户：
 
-> 你的审查指引未涵盖 [条款——如"残留信息条款""保密期限""你作为接收方的单方保密协议"]。你的默认立场是什么——何时应为绿色，何时黄色，何时红色？我会将其添加到 `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md` 中，以便下次审查保持一致。
+> 你的审查指引未涵盖 [条款——如"残留信息条款""保密期限""你作为接收方的单方保密协议"]。你的默认立场是什么——何时应为绿色，何时黄色，何时红色？我会将其添加到 `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md` 中，以便下次审查保持一致。
 
-然后将答案记录到 `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md` 中，并使用新立场继续分类。
+然后将答案记录到 `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md` 中，并使用新立场继续分类。
 
 ## 范围检查
 
@@ -49,11 +49,11 @@ user-invocable: false
 
 ## 分类
 
-将保密协议分为三档，适用来自 `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md` 的立场。以下分档定义是稳定的；填充各分档的*标准*来自审查指引。
+将保密协议分为三档，适用来自 `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md` 的立场。以下分档定义是稳定的；填充各分档的*标准*来自审查指引。
 
 ### 绿色——直接签字
 
-保密协议满足团队审查指引中的每一项立场，且无任何条款触发审查指引中的红色标志。审查指引通常涵盖的检查项示例：相互性、保密期限、保密信息存续期、例外排除、管辖法律、限制性约定、律师费转嫁。在与 `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md` 逐一确认后方可判定绿色。
+保密协议满足团队审查指引中的每一项立场，且无任何条款触发审查指引中的红色标志。审查指引通常涵盖的检查项示例：相互性、保密期限、保密信息存续期、例外排除、管辖法律、限制性约定、律师费转嫁。在与 `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md` 逐一确认后方可判定绿色。
 
 **绿色需要经过律师审查的审查指引立场。** 绿色是唯一无需律师审查即可签字的路径。不能在默认或缺位立场上发出绿色。在发出绿色之前，检查：业务领域配置是否具有经律师审查的 `## 保密协议分类标准` 部分？如果没有：
 
@@ -63,7 +63,7 @@ user-invocable: false
 
 **输出：**
 
-在输出前加上来自 `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md` `## 输出` 的工作成果文件头（因用户角色而异——见 `## 谁在使用本插件`）。
+在输出前加上来自 `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md` `## 输出` 的工作成果文件头（因用户角色而异——见 `## 谁在使用本插件`）。
 
 ```markdown
 [工作成果文件头 — 按插件配置 ## 输出]
@@ -78,12 +78,12 @@ user-invocable: false
 
 | 检查项 | 状态 | 审查指引引用 |
 |---|---|---|
-| [各审查指引检查项] | [通过/未通过] | [`~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md` 部分] |
+| [各审查指引检查项] | [通过/未通过] | [`~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md` 部分] |
 
-**下一步：** [提交至 [合同管理系统] 标准保密协议工作流 | 发送给 [`~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md` 中的审批人] 签字]
+**下一步：** [提交至 [合同管理系统] 标准保密协议工作流 | 发送给 [`~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md` 中的审批人] 签字]
 ```
 
-**在超过绿色进入签字前：** 阅读 `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md` 中的 `## 使用者`。如果角色为非律师：
+**在超过绿色进入签字前：** 阅读 `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md` 中的 `## 使用者`。如果角色为非律师：
 
 > 此步骤具有法律后果（签署保密协议使公司受约束）。你是否已与律师审阅？如果是，继续。如果不是，这是一份可以带给律师的简报：
 >
@@ -99,14 +99,14 @@ user-invocable: false
 
 **输出：**
 
-在输出前加上来自 `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md` `## 输出` 的工作成果文件头（因用户角色而异——见 `## 谁在使用本插件`）。
+在输出前加上来自 `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md` `## 输出` 的工作成果文件头（因用户角色而异——见 `## 谁在使用本插件`）。
 
 ```markdown
 [工作成果文件头 — 按插件配置 ## 输出]
 
 ## 保密协议分类：[对方当事人]
 
-黄色——标注待 [`~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md` 中的审批人名称] 审阅
+黄色——标注待 [`~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md` 中的审批人名称] 审阅
 
 ### 执行摘要
 
@@ -127,7 +127,7 @@ user-invocable: false
 
 | 检查项 | 状态 | 审查指引引用 |
 |---|---|---|
-| [通过的审查指引检查项] | 通过 | [`~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md` 部分] |
+| [通过的审查指引检查项] | 通过 | [`~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md` 部分] |
 
 **下一步：** 就标注事项询问 [审批人]，如果可以接受则转入签字流程。
 ```
@@ -138,7 +138,7 @@ user-invocable: false
 
 **输出：**
 
-在输出前加上来自 `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md` `## 输出` 的工作成果文件头（因用户角色而异——见 `## 谁在使用本插件`）。
+在输出前加上来自 `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md` `## 输出` 的工作成果文件头（因用户角色而异——见 `## 谁在使用本插件`）。
 
 ```markdown
 [工作成果文件头 — 按插件配置 ## 输出]
@@ -159,7 +159,7 @@ user-invocable: false
    **法律风险：** [🔴/🟠/🟡/🟢] | **商业摩擦：** [🔴阻碍交易 / 🟠减缓交易 / 🟡困扰客户 / 🟢不可见]
    建议回应：[使用我方模板 | 附带具体条款驳回 | 终止]
 
-**下一步：** 将此分类发送给 [`~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md` 中的法务负责人或指定的上报对象]。不要发送给 [合同管理系统或审批工作流]。不要告知对方我们将签署。
+**下一步：** 将此分类发送给 [`~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md` 中的法务负责人或指定的上报对象]。不要发送给 [合同管理系统或审批工作流]。不要告知对方我们将签署。
 ```
 
 ## 修订粒度
@@ -177,7 +177,7 @@ user-invocable: false
 
 ## 管辖假设
 
-本分类适用 `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md` 中记录的管辖法律和限制性约定立场。法律规定因法域不同而存在实质差异。中国法下，竞业限制主要适用于劳动合同关系（《劳动合同法》第23-24条 `[法条原文]`），商业合同中的竞业限制约定受《民法典》合同编约束，其可执行性需结合合理性和公共利益考量。如果保密协议涉及团队配置立场之外的法域，在输出中标注，并说明本分类可能不能照搬。
+本分类适用 `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md` 中记录的管辖法律和限制性约定立场。法律规定因法域不同而存在实质差异。中国法下，竞业限制主要适用于劳动合同关系（《劳动合同法》第23-24条 `[法条原文]`），商业合同中的竞业限制约定受《民法典》合同编约束，其可执行性需结合合理性和公共利益考量。如果保密协议涉及团队配置立场之外的法域，在输出中标注，并说明本分类可能不能照搬。
 
 ## 输出规则
 
@@ -189,11 +189,11 @@ user-invocable: false
 
 ## 详细检查参考
 
-对于以下每项检查，分类归档（绿色/黄色/红色）由 `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md` 决定。本技能列出需要检查的*类别*；不硬编码阈值。
+对于以下每项检查，分类归档（绿色/黄色/红色）由 `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md` 决定。本技能列出需要检查的*类别*；不硬编码阈值。
 
 ### 相互性
 
-保密协议是相互的还是单方的？适用 `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md` 中的团队立场。如果审查指引未涉及此场景下的单方保密协议，运行以下单方保密协议问卷并将结果提交人工决策。
+保密协议是相互的还是单方的？适用 `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md` 中的团队立场。如果审查指引未涉及此场景下的单方保密协议，运行以下单方保密协议问卷并将结果提交人工决策。
 
 **单方保密协议问卷**
 
@@ -205,7 +205,7 @@ user-invocable: false
 > 2. 这是为了有限、特定的披露目的——例如将你的技术分享给将为其工作的供应商？
 > 3. 这是否涉及并购、雇佣或投资？（如果是，停止——本技能仅适用于商业相互保密协议。转法务。）
 
-使用答案及 `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md` 的立场来决定绿色/黄色/红色。
+使用答案及 `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md` 的立场来决定绿色/黄色/红色。
 
 ### 保密信息的定义
 
@@ -245,7 +245,7 @@ user-invocable: false
 
 ### 管辖法律
 
-按 `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md` 的管辖法律和管辖地。中国法下，《民法典》第467条规定当事人可以协议选择适用法律 `[法条原文]`，但涉及中国强制性规定或公共利益的合同应适用中国法。
+按 `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md` 的管辖法律和管辖地。中国法下，《民法典》第467条规定当事人可以协议选择适用法律 `[法条原文]`，但涉及中国强制性规定或公共利益的合同应适用中国法。
 
 ## 对方当事人背景
 
@@ -269,7 +269,7 @@ user-invocable: false
 
 ## 收尾操作
 
-阅读 `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md` → `## 保密协议分流偏好` → `closing_action`。
+阅读 `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md` → `## 保密协议分流偏好` → `closing_action`。
 
 如果已配置，在每个输出的末尾逐字附加收尾操作。
 

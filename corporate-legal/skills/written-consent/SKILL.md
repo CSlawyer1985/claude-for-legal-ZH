@@ -10,11 +10,11 @@ argument-hint: "[描述需要董事会批准的行动]"
 
 # /written-consent
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` → 董事会与公司秘书（决议存储库、决议措辞、注册地、董事会组成）。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` → 董事会与公司秘书（决议存储库、决议措辞、注册地、董事会组成）。
 2. 使用以下工作流。
 3. 识别行动并进行分类（常规/审查标记）。
 4. 如为审查标记：展示外部律师警示并在继续前确认。
-5. 搜索决议存储库中最接近的先例。如无存储库：使用 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` 中的种子决议。
+5. 搜索决议存储库中最接近的先例。如无存储库：使用 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` 中的种子决议。
 6. 以内部格式、以先例为基础起草决议。
 7. 输出：决议草案 + 签署人检查表 + 审查提示。
 
@@ -22,7 +22,7 @@ argument-hint: "[描述需要董事会批准的行动]"
 
 ## 事项上下文
 
-**事项上下文。** 检查实务级 CLAUDE.md 中的 `## 事项工作区`。如果 `Enabled` 为 `✗`（企业法务用户的默认值），跳过本段其余内容——技能使用实务级上下文，事项机制不可见。如果已启用且无活跃事项，询问："这是哪个事项？运行 `/corporate-legal:matter-workspace switch <事项简称>` 或说 `实务级`。"加载活跃事项的 `matter.md` 获取事项特定上下文和覆盖规则。输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal/corporate-legal/matters/<事项简称>/`。除非 `跨事项上下文` 为 `开`，否则绝不读取其他事项的文件。
+**事项上下文。** 检查实务级 CLAUDE.md 中的 `## 事项工作区`。如果 `Enabled` 为 `✗`（企业法务用户的默认值），跳过本段其余内容——技能使用实务级上下文，事项机制不可见。如果已启用且无活跃事项，询问："这是哪个事项？运行 `/corporate-legal:matter-workspace switch <事项简称>` 或说 `实务级`。"加载活跃事项的 `matter.md` 获取事项特定上下文和覆盖规则。输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/matters/<事项简称>/`。除非 `跨事项上下文` 为 `开`，否则绝不读取其他事项的文件。
 
 ---
 
@@ -70,7 +70,7 @@ argument-hint: "[描述需要董事会批准的行动]"
 
 ## 加载上下文
 
-- `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` → `## 董事会与公司秘书`：
+- `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` → `## 董事会与公司秘书`：
   - 决议存储库位置
   - 内部决议措辞
   - 注册地（用于通知要求）
@@ -105,7 +105,7 @@ argument-hint: "[描述需要董事会批准的行动]"
 - **批准什么？**（一句话。）
 - **任何支持细节？** 例如：被任免的高管姓名、股权授予的数额和价格、合同审批的对方当事人和合同金额。
 - **生效日期：** 今天，还是特定日期？
-- **签署人：** 全体董事会，还是特定委员会？如果 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` 中的书面决议范围说某些行动需要会议而非决议，此时标记。
+- **签署人：** 全体董事会，还是特定委员会？如果 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` 中的书面决议范围说某些行动需要会议而非决议，此时标记。
 - **是否有董事冲突？** 是否有董事在被批准的行动中存在重大利益？如有：标记。有冲突的董事可能仍然可以签署，取决于适用法律和冲突的性质，但决议应披露，用户应确认。
 
 ### 行动分类
@@ -158,7 +158,7 @@ argument-hint: "[描述需要董事会批准的行动]"
 
 ### 如果无存储库（仅有种子文件）
 
-从 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` 中的种子决议提取格式。注意：无先例检索可用——草案将遵循内部格式但无实质先例匹配。向用户标记：
+从 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` 中的种子决议提取格式。注意：无先例检索可用——草案将遵循内部格式但无实质先例匹配。向用户标记：
 
 > 无决议存储库已连接，因此我从种子文件中获取格式。对于此特定行动类型，你可能需要检查是否有先前决议可作为实质起点。
 
@@ -216,7 +216,7 @@ _______________________________
 
 ## 第4步：确认注册地的决议规则
 
-检查 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` 中的注册地。在起草前研究该注册地对书面决议的要求：
+检查 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` 中的注册地。在起草前研究该注册地对书面决议的要求：
 
 - 董事会书面决议是否需要全体一致，还是允许较低门槛？
 - 是否需要通知未签署的董事？什么时间安排？
@@ -226,13 +226,13 @@ _______________________________
 
 引用所依赖的控制性法条和任何章程/章程细则条款。核实时效性——公司法规定会定期修订。在陈述一项你未确认的规则时标记不确定性供律师核实。
 
-如果 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` 记录了在这些问题上的内部立场，适用之并说明所依赖的法律支撑。在输出中加入一个简短的"适用法律通知"块，总结你确认（或标记）的内容，使用户不会悬而未解。
+如果 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` 记录了在这些问题上的内部立场，适用之并说明所依赖的法律支撑。在输出中加入一个简短的"适用法律通知"块，总结你确认（或标记）的内容，使用户不会悬而未解。
 
 ---
 
 ## 第4.5步：后果性行动准入（签署决议）
 
-**在进入输出前：** 读取 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` 中的 `## 使用者`。如果角色为**非法务人员**：
+**在进入输出前：** 读取 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` 中的 `## 使用者`。如果角色为**非法务人员**：
 
 > 签署书面决议具有法律后果——它约束公司并成为公司记录。你是否已与律师审查？如已审查，继续。如未审查，以下是带给律师的简要说明：
 >
@@ -252,7 +252,7 @@ _______________________________
 
 产出：
 
-1. **决议草案**——完整，可审查和分发。已签署的书面决议本身是公司记录，不受特权保护；不要对分发的决议套用工作成果页眉。起草说明、签署人追踪器和以下分析是工作成果——冠以 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` `## 输出规范` 中的工作成果页眉（因用户角色而异——参见 `## 使用者`）：
+1. **决议草案**——完整，可审查和分发。已签署的书面决议本身是公司记录，不受特权保护；不要对分发的决议套用工作成果页眉。起草说明、签署人追踪器和以下分析是工作成果——冠以 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` `## 输出规范` 中的工作成果页眉（因用户角色而异——参见 `## 使用者`）：
 
    ```
    [工作成果页眉 — 按插件配置 ## 输出规范 — 因角色而异；参见 `## 使用者`]
@@ -268,7 +268,7 @@ _______________________________
 □ [董事姓名 1]
 □ [董事姓名 2]
 □ [董事姓名 3]
-[等等——从 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` 的董事会组成中提取]
+[等等——从 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` 的董事会组成中提取]
 
 冲突披露：
 [无 / [董事姓名]具有已披露的利益——确认是否需回避或披露]

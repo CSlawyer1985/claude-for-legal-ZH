@@ -25,7 +25,7 @@ user-invocable: false
 
 ## 前提条件：加载审查指引
 
-**在阅读合同之前，阅读 `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md`。** 如果文件缺失或仍有占位符，弹出以下提示：
+**在阅读合同之前，阅读 `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md`。** 如果文件缺失或仍有占位符，弹出以下提示：
 
 > 我注意到你尚未配置业务领域配置。运行 `/commercial-legal:cold-start-interview`（2分钟）配置你的业务领域。或说 **"临时模式"** 我将按通用默认值审查——中国法管辖、中等风险偏好、律师角色、无审查指引。每个输出标注 `[临时模式]`。
 
@@ -33,7 +33,7 @@ user-invocable: false
 
 本技能通常用于采购方合同（供应商向你提供），但方向检查仍然适用。
 
-`~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md` 中的审查指引是真实来源。它告诉你本团队的标准立场、曾经接受的让步、从不接受的内容、审批权限以及需要首先检查的deal-breaker。
+`~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md` 中的审查指引是真实来源。它告诉你本团队的标准立场、曾经接受的让步、从不接受的内容、审批权限以及需要首先检查的deal-breaker。
 
 ## 工作流
 

@@ -9,7 +9,7 @@ argument-hint: "[可选：具体需聚焦的问题]"
 
 # /memo
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/legal-clinic/CLAUDE.md` → 实践领域、管辖地。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/CLAUDE.md` → 实践领域、管辖地。
 2. 使用以下工作流。阅读接待摘要/案件笔记。
 3. 将问题框定为疑问句。为每个问题搭建 IRAC 框架——规则部分是"待检索"，应用部分是"学生分析"提示，结论部分留空。
 4. 有利因素/不利因素/待解决问题。检索缺口摘要。
@@ -31,12 +31,12 @@ argument-hint: "[可选：具体需聚焦的问题]"
 
 ## 加载上下文
 
-`~/.claude/plugins/config/claude-for-legal/legal-clinic/CLAUDE.md` → 实践领域、管辖地、指导风格。
+`~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/CLAUDE.md` → 实践领域、管辖地、指导风格。
 接待摘要和案件笔记用于获取事实。
 
 ## 教学检查
 
-读取该实践领域的指导老师指南，路径为 `~/.claude/plugins/config/claude-for-legal/legal-clinic/guides/<实践领域>.md`。检查 `pedagogy_posture` 设置：
+读取该实践领域的指导老师指南，路径为 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/guides/<实践领域>.md`。检查 `pedagogy_posture` 设置：
 
 - **`guide`（默认）：** 产出 IRAC 结构和检索缺口清单。要求学生自行从检索中撰写每段规则陈述，而非直接给出框架。对学生所写内容给予反馈。仅当学生已尝试一次后，才为某节提供填充框架规则。
 - **`assist`：** 产出备忘录框架并填充可填充内容。标注事项供学生审查。学生通过审查编辑来学习。（注意：本备忘录技能始终将 `[学生分析]` 和 `[学生结论]` 块留空——`assist` 指技能产出 IRAC 框架和框架规则陈述；不产出应用或结论。）

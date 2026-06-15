@@ -9,7 +9,7 @@ argument-hint: "[--apply 更新全部，否则仅通知]"
 
 # /auto-updater
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/legal-builder-hub/CLAUDE.md` → 已安装技能 + 自动更新偏好。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/legal-builder-hub/CLAUDE.md` → 已安装技能 + 自动更新偏好。
 2. 使用以下工作流。
 3. 检查每个已安装技能的源是否有更新版本。
 4. 按偏好：应用 / 通知 / 展示差异。
@@ -26,7 +26,7 @@ argument-hint: "[--apply 更新全部，否则仅通知]"
 
 ## 加载上下文
 
-`~/.claude/plugins/config/claude-for-legal/legal-builder-hub/CLAUDE.md` → 已安装技能（附版本/提交 SHA）、更新偏好（通知 / 手动）。
+`~/.claude/plugins/config/claude-for-legal-zh/legal-builder-hub/CLAUDE.md` → 已安装技能（附版本/提交 SHA）、更新偏好（通知 / 手动）。
 
 ## 工作流
 

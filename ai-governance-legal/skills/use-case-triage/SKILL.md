@@ -10,7 +10,7 @@ argument-hint: "[描述提议的AI用例或功能]"
 
 # /use-case-triage
 
-1. 读取 `~/.claude/plugins/config/claude-for-legal/ai-governance-legal/CLAUDE.md` → 已注册的AI系统、红线清单、审批工作流。
+1. 读取 `~/.claude/plugins/config/claude-for-legal-zh/ai-governance-legal/CLAUDE.md` → 已注册的AI系统、红线清单、审批工作流。
 2. 运行以下工作流。
 3. 如果注册表中已有匹配项 → 返回当前状态，不重新分类。
 4. 如果没有匹配项 → 按风险层级分类：检查红线 → 残余风险分级 → 输出分类和理由。
@@ -29,7 +29,7 @@ argument-hint: "[描述提议的AI用例或功能]"
 
 ## 加载当前状态
 
-读取 `~/.claude/plugins/config/claude-for-legal/ai-governance-legal/CLAUDE.md`：
+读取 `~/.claude/plugins/config/claude-for-legal-zh/ai-governance-legal/CLAUDE.md`：
 - `## AI系统清单` — 已批准、已附条件或已拒绝的系统
 - `## 红线` — 绝对禁止的用例或技术
 - `## 算法备案` — 已完成的算法备案记录（依据《互联网信息服务算法推荐管理规定》第24条 `[法条原文]`）

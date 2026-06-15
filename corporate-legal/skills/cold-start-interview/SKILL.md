@@ -11,12 +11,12 @@ argument-hint: "[--redo | --new-deal | --check-integrations | --module [m&a | bo
 
 # /cold-start-interview
 
-1. 检查 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md`。如果 `--new-deal`，跳至逐项交易设置。如果 `--check-integrations`，跳过访谈——仅重新运行第0部分"连接了什么？"检查并重写 CLAUDE.md 中的 `## 可用集成` 表。探测时：仅在实际MCP工具调用成功后报告 ✓。已配置但未测试的连接器应标记为 ⚪ 并附一行确认方式。绝不基于 `.mcp.json` 声明报告 ✓——这会误导用户认为某项已接通而实际并未。
+1. 检查 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md`。如果 `--new-deal`，跳至逐项交易设置。如果 `--check-integrations`，跳过访谈——仅重新运行第0部分"连接了什么？"检查并重写 CLAUDE.md 中的 `## 可用集成` 表。探测时：仅在实际MCP工具调用成功后报告 ✓。已配置但未测试的连接器应标记为 ⚪ 并附一行确认方式。绝不基于 `.mcp.json` 声明报告 ✓——这会误导用户认为某项已接通而实际并未。
 2. 运行以下访谈（先第0部分——角色 + 集成——然后模块）。
 3. 种子文件：尽调需求清单 + 一份先前问题备忘录。
 4. 提取：类别、阈值、备忘录格式、AI 工具配置。
 5. 迁移：如果缓存路径存在已填充的 CLAUDE.md（无 `[PLACEHOLDER]` 标记）但配置路径不存在，复制到配置路径并告知用户迁移了什么。
-6. 写入 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md`（按需创建父目录）。对 `--new-deal`，写入 `~/.claude/plugins/config/claude-for-legal/corporate-legal/deals/[代码]/deal-context.md`。
+6. 写入 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md`（按需创建父目录）。对 `--new-deal`，写入 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/deals/[代码]/deal-context.md`。
 
 ---
 
@@ -26,7 +26,7 @@ argument-hint: "[--redo | --new-deal | --check-integrations | --module [m&a | bo
 
 ## 冷启动检查
 
-读取 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md`：
+读取 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md`：
 - **不存在** → 开始访谈。
 - **包含 `<!-- SETUP PAUSED AT: -->`** → 问候用户并提供从该部分恢复。
 - **包含 `[PLACEHOLDER]` 标记但无暂停注释** → 模板从未完成；提供重新开始或从占位符开始处恢复。
@@ -44,7 +44,7 @@ argument-hint: "[--redo | --new-deal | --check-integrations | --module [m&a | bo
 
 ## 检查共享公司配置
 
-查找 `~/.claude/plugins/config/claude-for-legal/company-profile.md`。
+查找 `~/.claude/plugins/config/claude-for-legal-zh/company-profile.md`。
 
 - **如果存在：** 读取。展示一行确认："你是[姓名]，[执业场景]，在[公司]，[行业]，在[法域]运营。对吗？（或说'更新'来修改共享画像。）"如果确认，跳过公司问题——直接进入插件专属问题。
 - **如果不存在：** 你将是用户设置的第一个插件。在引导和分流后，询问公司问题并将其写入共享画像（按插件根目录中 `references/company-profile-template.md` 的模板），然后继续插件专属问题。告知用户："我已保存你的公司画像——其他法律插件将读取并跳过这些问题。"
@@ -441,7 +441,7 @@ argument-hint: "[--redo | --new-deal | --check-integrations | --module [m&a | bo
 
 以可修改性说明收尾：
 
-> "你的实务画像在 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md`——一个你可以直接阅读和编辑的纯文本文件。你回答的一切都可以更改：
+> "你的实务画像在 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md`——一个你可以直接阅读和编辑的纯文本文件。你回答的一切都可以更改：
 >
 > - 直接编辑文件做快速修改（新阈值、新增法域、委员会更名）
 > - 运行 `/corporate-legal:cold-start-interview --redo` 做完整重新访谈
@@ -478,7 +478,7 @@ argument-hint: "[--redo | --new-deal | --check-integrations | --module [m&a | bo
 - 任何交易特定的阈值差异（一笔5000万元的交易可能审查比一笔10亿元交易更小的合同）
 - 此交易的外部律所和牵头律师
 
-写入 `~/.claude/plugins/config/claude-for-legal/corporate-legal/deals/[代号]/deal-context.md`。技能同时读取插件配置（内部）和 `deal-context.md`（此笔交易），deal-context.md 在冲突时优先。
+写入 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/deals/[代号]/deal-context.md`。技能同时读取插件配置（内部）和 `deal-context.md`（此笔交易），deal-context.md 在冲突时优先。
 
 ---
 

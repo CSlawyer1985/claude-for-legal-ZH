@@ -9,10 +9,10 @@ argument-hint: "[科目] [--generate | --drill | --review | --stats | --session 
 
 # /flashcards
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` → 当前课程、薄弱科目、大纲位置。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` → 当前课程、薄弱科目、大纲位置。
 2. 应用以下框架。
 3. 按标志路由：
-   - `--generate`：从来源（大纲路径、笔记、教材）按卡片编写规则构建卡片。写入 `~/.claude/plugins/config/claude-for-legal/law-student/flashcards/[科目]/cards.md`。
+   - `--generate`：从来源（大纲路径、笔记、教材）按卡片编写规则构建卡片。写入 `~/.claude/plugins/config/claude-for-legal-zh/law-student/flashcards/[科目]/cards.md`。
    - `--drill`（默认）：优先到期卡片 + 新卡片；显示问题，等待回答，显示答案，接受自我评估，更新记忆桶 + 下次复习时间。
    - `--review`：按记忆桶浏览卡片组。
    - `--stats`：进度快照；标记卡住的卡片建议进行口头训练。
@@ -45,8 +45,8 @@ argument-hint: "[科目] [--generate | --drill | --review | --stats | --session 
 
 ## 加载上下文
 
-- `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` → 当前课程、薄弱科目、现有大纲
-- `~/.claude/plugins/config/claude-for-legal/law-student/flashcards/[科目]/cards.md`（如存在）（增量构建）
+- `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` → 当前课程、薄弱科目、现有大纲
+- `~/.claude/plugins/config/claude-for-legal-zh/law-student/flashcards/[科目]/cards.md`（如存在）（增量构建）
 - 用户提供的来源（大纲路径、笔记、教材节选）（如有）
 
 ## 模式
@@ -57,7 +57,7 @@ argument-hint: "[科目] [--generate | --drill | --review | --stats | --session 
 
 当学生说"来做5张合同法卡片"或运行 `/law-student:session 合同法 5 --flashcards` 时。
 
-- 加载 `~/.claude/plugins/config/claude-for-legal/law-student/study-plan.yaml`（如存在）并读取该科目的 `session_history`。
+- 加载 `~/.claude/plugins/config/claude-for-legal-zh/law-student/study-plan.yaml`（如存在）并读取该科目的 `session_history`。
 - 优先级：之前标记错误的卡片 > 到期卡片 > 新卡片。
 - 按 `--drill` 流程逐张运行 N 张卡片。
 - 练习结束时，将结果追加到 `study-plan.yaml` → `session_history`：
@@ -74,13 +74,13 @@ session_history:
     stuck_topics: [合同的订立-要约与承诺]
 ```
 
-- 如果无 `study-plan.yaml`，改为写入 `~/.claude/plugins/config/claude-for-legal/law-student/session-history.yaml`。
+- 如果无 `study-plan.yaml`，改为写入 `~/.claude/plugins/config/claude-for-legal-zh/law-student/session-history.yaml`。
 
 ### `--generate` — 创建卡片
 
 **输入：**
 - 科目（课程名称或主题）
-- 来源（大纲路径、笔记，或"使用我在 ~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md 中的现有大纲"）
+- 来源（大纲路径、笔记，或"使用我在 ~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md 中的现有大纲"）
 - 可选：目标卡片数量（默认每次 10-20 张）
 
 **卡片结构：**

@@ -3,7 +3,7 @@ CONFIGURATION LOCATION
 
 User-specific configuration for this plugin lives at a version-independent path that survives plugin updates:
 
-  ~/.claude/plugins/config/claude-for-legal/ai-governance-legal/CLAUDE.md
+  ~/.claude/plugins/config/claude-for-legal-zh/ai-governance-legal/CLAUDE.md
 
 Rules for every skill, command, and agent in this plugin:
 1. READ configuration from that path. Not from this file.
@@ -15,7 +15,7 @@ Rules for every skill, command, and agent in this plugin:
 5. This file (the one you are reading) is the TEMPLATE. It ships with the plugin and shows the
    structure the config should have. It is replaced on every plugin update. Never write user data here.
 
-**Shared company profile.** Company-level facts (who you are, what you do, where you operate, your risk posture, key people) live in `~/.claude/plugins/config/claude-for-legal/company-profile.md` — one level above this file, shared by all 12 plugins. Read it before this plugin's practice profile. If it doesn't exist, this plugin's setup will create it.
+**Shared company profile.** Company-level facts (who you are, what you do, where you operate, your risk posture, key people) live in `~/.claude/plugins/config/claude-for-legal-zh/company-profile.md` — one level above this file, shared by all 12 plugins. Read it before this plugin's practice profile. If it doesn't exist, this plugin's setup will create it.
 -->
 
 # AI 治理实务画像
@@ -89,7 +89,7 @@ Rules for every skill, command, and agent in this plugin:
 
 ## AI 系统清单
 
-**清单文件：** `~/.claude/plugins/config/claude-for-legal/ai-governance-legal/ai-systems.yaml`
+**清单文件：** `~/.claude/plugins/config/claude-for-legal-zh/ai-governance-legal/ai-systems.yaml`
 
 在中国 AI 监管框架下，**角色和风险层级按 AI 系统评估，不按公司。** 一个组织可以是系统A的提供者、系统B的部署者——每个组合触发不同的义务集合。本清单每条记录对应一个系统。
 
@@ -273,7 +273,7 @@ Rules for every skill, command, and agent in this plugin:
 
 **文件访问失败。** 不保持沉默。
 
-**验证日志。** 记录到 `~/.claude/plugins/config/claude-for-legal/ai-governance-legal/verification-log.md`。
+**验证日志。** 记录到 `~/.claude/plugins/config/claude-for-legal-zh/ai-governance-legal/verification-log.md`。
 
 ---
 

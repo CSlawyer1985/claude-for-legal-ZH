@@ -9,7 +9,7 @@ argument-hint: "[预约 | 文件索取 | 状态更新]"
 
 # /client-letter
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/legal-clinic/CLAUDE.md` → 通俗语言标准、指导风格、诊所联系信息。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/CLAUDE.md` → 通俗语言标准、指导风格、诊所联系信息。
 2. 使用以下模板和工作流。
 3. 匹配类型到模板。通俗语言检查。
 4. 输出附 AI 辅助标签、指导路由。
@@ -36,11 +36,11 @@ argument-hint: "[预约 | 文件索取 | 状态更新]"
 
 ## 加载上下文
 
-`~/.claude/plugins/config/claude-for-legal/legal-clinic/CLAUDE.md` → 通俗语言标准、指导风格、诊所联系信息。
+`~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/CLAUDE.md` → 通俗语言标准、指导风格、诊所联系信息。
 
 ## 教学检查
 
-读取该实践领域的指导老师指南，路径为 `~/.claude/plugins/config/claude-for-legal/legal-clinic/guides/<实践领域>.md`。检查 `pedagogy_posture` 设置：
+读取该实践领域的指导老师指南，路径为 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/guides/<实践领域>.md`。检查 `pedagogy_posture` 设置：
 
 - **`guide`（默认）：** 产出结构和核查清单（必要元素、通俗语言目标、依学生实践规则签字）。要求学生自行起草每节。对其草稿给予反馈（语域、阅读水平、必要元素、遗漏之处）。仅当学生已尝试一次后，才为某节提供填充。
 - **`assist`：** 产出信函。标注事项供学生审查。学生通过审查编辑来学习。
@@ -133,11 +133,11 @@ argument-hint: "[预约 | 文件索取 | 状态更新]"
 
 ## 发送前
 
-向当事人发送信函是一项具有法律后果的行为。本插件的门控是 `~/.claude/plugins/config/claude-for-legal/legal-clinic/CLAUDE.md` 中 `## 指导风格` 描述的指导工作流程，由确认持证指导律师拥有诊所设置的 Part 0 身份检查强化。该门控仍有效：每封信函在离开诊所前均需通过审查。
+向当事人发送信函是一项具有法律后果的行为。本插件的门控是 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/CLAUDE.md` 中 `## 指导风格` 描述的指导工作流程，由确认持证指导律师拥有诊所设置的 Part 0 身份检查强化。该门控仍有效：每封信函在离开诊所前均需通过审查。
 
 在发送上述任何信函前，确认：
 
-1. 草稿已按 `~/.claude/plugins/config/claude-for-legal/legal-clinic/CLAUDE.md` 中的指导协议审查（队列 / 标记 / 较轻触）。
+1. 草稿已按 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/CLAUDE.md` 中的指导协议审查（队列 / 标记 / 较轻触）。
 2. 所有内部审查标签（`[AI辅助草稿]`、任何 `[待核实]` 或 `[需补充事实]` 标签）已从当事人可见版本中移除。
 3. 签字符合你所在法域关于法学学生签署信函的学生实践规则。
 
@@ -145,11 +145,11 @@ argument-hint: "[预约 | 文件索取 | 状态更新]"
 
 ## 通俗语言检查
 
-按 `~/.claude/plugins/config/claude-for-legal/legal-clinic/CLAUDE.md` 标准。短句。无法律术语。强制阅读水平目标。如果上述模板中包含当事人可能不理解的法律术语，首次出现时解释："我们已提交了'答辩状'——这是向法院说明您对案件看法的文件。"
+按 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/CLAUDE.md` 标准。短句。无法律术语。强制阅读水平目标。如果上述模板中包含当事人可能不理解的法律术语，首次出现时解释："我们已提交了'答辩状'——这是向法院说明您对案件看法的文件。"
 
 ## 指导路由
 
-按 `~/.claude/plugins/config/claude-for-legal/legal-clinic/CLAUDE.md`。常规信函是否触发标记取决于指导老师选择的指导风格。如为较轻触：信函经学生审查后直接发送，无需队列步骤。如为正式队列：即使是常规信函也需排队。
+按 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/CLAUDE.md`。常规信函是否触发标记取决于指导老师选择的指导风格。如为较轻触：信函经学生审查后直接发送，无需队列步骤。如为正式队列：即使是常规信函也需排队。
 
 ## 本技能不做什么
 

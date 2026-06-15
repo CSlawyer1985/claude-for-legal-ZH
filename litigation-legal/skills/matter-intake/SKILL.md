@@ -10,13 +10,13 @@ argument-hint: "[可选案件名称]"
 
 # /matter-intake
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md` → 风险校准（用于分流）、执业背景（用于上下文、冲突检索方法）、相关方（用于抄送人员）。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/CLAUDE.md` → 风险校准（用于分流）、执业背景（用于上下文、冲突检索方法）、相关方（用于抄送人员）。
 2. 按以下工作流操作。
 3. 运行统一登记：标识信息、利益冲突检索、来源、风险分流、重要性、外聘律师、内部负责人、证据保全、关键日期、初始姿态。
 4. 从案件名称生成代号（小写、连字符、年份）。
-5. 创建 `~/.claude/plugins/config/claude-for-legal/litigation-legal/matters/[slug]/matter.md` —— 完整记述式登记。
-6. 创建 `~/.claude/plugins/config/claude-for-legal/litigation-legal/matters/[slug]/history.md` —— 以本次登记作为首条记录。
-7. 追加结构化行至 `~/.claude/plugins/config/claude-for-legal/litigation-legal/matters/_log.yaml`。
+5. 创建 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/matters/[slug]/matter.md` —— 完整记述式登记。
+6. 创建 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/matters/[slug]/history.md` —— 以本次登记作为首条记录。
+7. 追加结构化行至 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/matters/_log.yaml`。
 8. 与用户确认："这是我将写入的行——需要修改吗？"
 
 ---
@@ -29,8 +29,8 @@ argument-hint: "[可选案件名称]"
 
 ## 加载上下文
 
-- `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md` —— 风险校准（分流门槛、重要性、和解阶梯）、执业背景（相关方、外聘律师库）。
-- `~/.claude/plugins/config/claude-for-legal/litigation-legal/matters/_log.yaml` —— 确认代号唯一性。
+- `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/CLAUDE.md` —— 风险校准（分流门槛、重要性、和解阶梯）、执业背景（相关方、外聘律师库）。
+- `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/matters/_log.yaml` —— 确认代号唯一性。
 
 ## 登记内容
 
@@ -46,10 +46,10 @@ argument-hint: "[可选案件名称]"
 
 ### 2. 利益冲突检索
 
-在进一步操作前，按 `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md` → 利益冲突审查运行冲突检索步骤。
+在进一步操作前，按 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/CLAUDE.md` → 利益冲突审查运行冲突检索步骤。
 
 - **状态：** `已通过 | 待定 | 未运行 | 已豁免`
-- **方式：** 匹配 `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md` 声明的方式。
+- **方式：** 匹配 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/CLAUDE.md` 声明的方式。
 - **审查人：** 姓名/团队/律所
 - **审查日期：** YYYY-MM-DD
 - **审查对象：** 简要列出实际运行的特定名称/主体（对方、已知关联方、对方律师（如已知）、关键证人）。数量少没关系；"无"不行。
@@ -62,9 +62,9 @@ argument-hint: "[可选案件名称]"
 - `已豁免` → 罕见；需有冲突豁免理由（起草豁免书超出本技能——记录其存在、签署人和存放位置）。
 - `未运行` → **停止。此处为门禁。** 冲突姿态解决前不创建 `matter.md`、`history.md` 或 `_log.yaml` 条目。三条可接受路径：
 
-  **路径1 —— 现在运行冲突检索。** 暂停本登记。按 `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md` 的冲突审查完成。返回时带 `status: cleared` 或 `status: waived` 附理由。
+  **路径1 —— 现在运行冲突检索。** 暂停本登记。按 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/CLAUDE.md` 的冲突审查完成。返回时带 `status: cleared` 或 `status: waived` 附理由。
 
-  **路径2 —— 标注待定，附负责人+截止日期。** 仅在 `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md` 的冲突审查声明允许平行登记时可用。记录：谁在运行冲突检索、预计何时返回、检查哪些主体。登记继续；案件行携带 `conflicts.status: pending`；`/portfolio-status` 每次运行均标注；`/matter-update` 重复提示直至解决。
+  **路径2 —— 标注待定，附负责人+截止日期。** 仅在 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/CLAUDE.md` 的冲突审查声明允许平行登记时可用。记录：谁在运行冲突检索、预计何时返回、检查哪些主体。登记继续；案件行携带 `conflicts.status: pending`；`/portfolio-status` 每次运行均标注；`/matter-update` 重复提示直至解决。
 
   **路径3 —— 附书面理由绕过。** 仅在用户明确确认绕过时可用。在 `conflicts.override` 中记录：
 
@@ -86,7 +86,7 @@ argument-hint: "[可选案件名称]"
 
 ### 4. 风险分流——对照事务所校准
 
-- 严重性：高 | 中 | 低（参考 `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md` 的严重性分级）
+- 严重性：高 | 中 | 低（参考 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/CLAUDE.md` 的严重性分级）
 - 可能性：高 | 中 | 低（参考可能性分级）
 - 综合风险评级（矩阵结果）：高 | 中 | 低 | 危急
 - 赔偿敞口范围（最佳估计）
@@ -94,7 +94,7 @@ argument-hint: "[可选案件名称]"
 
 ### 5. 重要性
 
-对照 `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md` 中的事务所门槛：
+对照 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/CLAUDE.md` 中的事务所门槛：
 - `需计提 | 已披露 | 监控中 | 不适用`
 
 ### 6. 外聘律师
@@ -108,7 +108,7 @@ argument-hint: "[可选案件名称]"
 
 ### 7. 内部负责人
 
-来自 `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md` 执业背景——哪些内部相关方需要参与？
+来自 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/CLAUDE.md` 执业背景——哪些内部相关方需要参与？
 - 业务负责人
 - HR 负责人（如是劳动争议）
 - 公关联系人（如有声誉风险）
@@ -144,7 +144,7 @@ argument-hint: "[可选案件名称]"
 
 写入前在 `_log.yaml` 中确认代号唯一。
 
-### `~/.claude/plugins/config/claude-for-legal/litigation-legal/matters/[slug]/matter.md`
+### `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/matters/[slug]/matter.md`
 
 ```markdown
 [工作成果标头——根据插件配置 ## 输出——因角色不同；见 `## 使用者`]
@@ -207,7 +207,7 @@ argument-hint: "[可选案件名称]"
 [任何尚未知晓但重要的事项——如"保险通知待定"、"是否涵盖X事项尚不明确"]
 ```
 
-### `~/.claude/plugins/config/claude-for-legal/litigation-legal/matters/[slug]/history.md`
+### `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/matters/[slug]/history.md`
 
 播种历史文件，以本次登记作为第零条记录：
 
@@ -223,7 +223,7 @@ argument-hint: "[可选案件名称]"
 [来源、由谁引入、初始分流摘要、外聘律师指定情况、证据保全发出情况（是/否）。]
 ```
 
-### 追加至 `~/.claude/plugins/config/claude-for-legal/litigation-legal/matters/_log.yaml`
+### 追加至 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/matters/_log.yaml`
 
 按模式添加行。示例：
 

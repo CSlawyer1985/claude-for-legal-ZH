@@ -14,7 +14,7 @@ argument-hint: "[--days N 变更窗口 | --missed 查看已过期的窗口]"
 
 ## 指令
 
-1. **读取 `~/.claude/plugins/config/claude-for-legal/commercial-legal/renewal-register.yaml`**（配置目录——插件更新后仍保留）。
+1. **读取 `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/renewal-register.yaml`**（配置目录——插件更新后仍保留）。
 
 2. **默认模式：** 模式2——未来90天内即将到来的事项，按紧急程度分组。
 
@@ -42,7 +42,7 @@ argument-hint: "[--days N 变更窗口 | --missed 查看已过期的窗口]"
 
 ## 登记册
 
-位于 `~/.claude/plugins/config/claude-for-legal/commercial-legal/renewal-register.yaml`。
+位于 `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/renewal-register.yaml`。
 
 ```yaml
 - counterparty: "Acme SaaS Inc."

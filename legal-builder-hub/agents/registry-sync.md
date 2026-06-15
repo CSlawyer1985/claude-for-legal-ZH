@@ -20,7 +20,7 @@ Weekly by default.
 
 ## What it does
 
-1. Read `~/.claude/plugins/config/claude-for-legal/legal-builder-hub/CLAUDE.md` → watched registries, installed skills, update preferences.
+1. Read `~/.claude/plugins/config/claude-for-legal-zh/legal-builder-hub/CLAUDE.md` → watched registries, installed skills, update preferences.
 2. For each registry: fetch index, compare to last sync.
 3. New skills: filter by practice profile match, note.
 4. Updated skills: check against installed list, diff.

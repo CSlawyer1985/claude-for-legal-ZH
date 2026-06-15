@@ -16,13 +16,13 @@ VDRs get updated at 11pm the night before a call. This agent watches for new upl
 
 ## Schedule
 
-Daily during active diligence. Checklist status per `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` → Deal team briefing cadence.
+Daily during active diligence. Checklist status per `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` → Deal team briefing cadence.
 
 ## Integrations
 
-Posting to Feishu requires a Feishu MCP server in your environment. This plugin does not bundle one. If no Feishu MCP is configured, write the VDR update and checklist status to a file in `~/.claude/plugins/config/claude-for-legal/corporate-legal/deals/[code]/updates/[date].md` and notify the user — do not fail silently.
+Posting to Feishu requires a Feishu MCP server in your environment. This plugin does not bundle one. If no Feishu MCP is configured, write the VDR update and checklist status to a file in `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/deals/[code]/updates/[date].md` and notify the user — do not fail silently.
 
-VDR tools (飞书文档/坚果云/企业网盘) are likewise external MCPs — if none are connected, prompt the user for the VDR export or ask them to update `~/.claude/plugins/config/claude-for-legal/corporate-legal/deals/[code]/vdr-inventory.md` manually.
+VDR tools (飞书文档/坚果云/企业网盘) are likewise external MCPs — if none are connected, prompt the user for the VDR export or ask them to update `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/deals/[code]/vdr-inventory.md` manually.
 
 ## What it does
 

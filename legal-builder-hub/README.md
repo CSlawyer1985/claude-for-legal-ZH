@@ -16,13 +16,13 @@
 /legal-builder-hub:cold-start-interview
 ```
 
-你的配置存储在 `~/.claude/plugins/config/claude-for-legal/legal-builder-hub/CLAUDE.md`，插件更新时不受影响。
+你的配置存储在 `~/.claude/plugins/config/claude-for-legal-zh/legal-builder-hub/CLAUDE.md`，插件更新时不受影响。
 
 ## 安全态势
 
 安装的社区技能以你对客户数据、事项文件以及团队策略手册（playbook）的访问权限运行。中心将每次安装和每次更新视为一次信任决策。四层防御，任何单独一层均不充分：
 
-- **白名单（Allowlist — 管理员控制）：**`~/.claude/plugins/config/claude-for-legal/legal-builder-hub/allowlist.yaml` 声明社区技能可以使用的注册表、发布者和 MCP 连接器。`permissive` 模式（默认）对列表外的任何内容发出警告；`restrictive` 模式（推荐用于律所/企业部署）予以拒绝。白名单在安装器读取任何第三方内容之前检查。参见 `skills/skill-installer/references/allowlist.md` 了解模式。
+- **白名单（Allowlist — 管理员控制）：**`~/.claude/plugins/config/claude-for-legal-zh/legal-builder-hub/allowlist.yaml` 声明社区技能可以使用的注册表、发布者和 MCP 连接器。`permissive` 模式（默认）对列表外的任何内容发出警告；`restrictive` 模式（推荐用于律所/企业部署）予以拒绝。白名单在安装器读取任何第三方内容之前检查。参见 `skills/skill-installer/references/allowlist.md` 了解模式。
 - **原始源文件，非摘要：**安装器在写入任何内容之前向你展示完整的原始 `SKILL.md` — 非 AI 摘要。摘要是便利；一个做了不当行为的技能必须在原始显示将展示的文本中做出。
 - **启发式扫描：**安装器和 `skills-qa` 都对技能进行提示注入模式扫描（覆盖/权威声明、越权读写、外部 URL、隐藏 Unicode、shell 执行、凭证请求）。这些是 AI 启发式扫描，已明确标注 — 干净的扫描不是安全审计，而是提示你亲自阅读文本。
 - **每次均需人工批准：**未经全新输入的 `yes`，无任何内容写入磁盘。批准不从先前的消息推断。为纵深防御，安装器建议在只读子代理中运行获取/分析，使写入能力仅在批准后才可用。
@@ -34,7 +34,7 @@
 ## 前置条件
 
 - 来自 registry-sync 代理的 Slack 通知需要环境中配置了 Slack MCP 服务器。没有则代理将其摘要写入文件。
-- `~/.claude/plugins/config/claude-for-legal/legal-builder-hub/CLAUDE.md` 中的默认注册表列表初始为空，仅含 `lpm-skills`。通过 `/legal-builder-hub:registry-browser` 添加你信任的注册表，或编辑配置文件。
+- `~/.claude/plugins/config/claude-for-legal-zh/legal-builder-hub/CLAUDE.md` 中的默认注册表列表初始为空，仅含 `lpm-skills`。通过 `/legal-builder-hub:registry-browser` 添加你信任的注册表，或编辑配置文件。
 
 ## 命令列表
 
@@ -73,7 +73,7 @@
 
 ## 已关注注册表（默认）
 
-默认白名单预配置了我们已审核的社区注册表。编辑仓库中的 `references/allowlist-default.yaml` 或你的每安装白名单 `~/.claude/plugins/config/claude-for-legal/legal-builder-hub/allowlist.yaml`，以添加、删除或在限制模式与宽松模式之间切换。
+默认白名单预配置了我们已审核的社区注册表。编辑仓库中的 `references/allowlist-default.yaml` 或你的每安装白名单 `~/.claude/plugins/config/claude-for-legal-zh/legal-builder-hub/allowlist.yaml`，以添加、删除或在限制模式与宽松模式之间切换。
 
 - **lpm-skills** — 法律项目管理（Scott Margetts / LegalOps Consulting） — `github.com/legalopsconsulting/lpm-skills`
 - **Lawvable / awesome-legal-skills** — 法律工作 AI 代理技能的精选列表 — `github.com/lawvable/awesome-legal-skills`
@@ -82,7 +82,7 @@
 
 ## 它是如何学习的
 
-你在 `~/.claude/plugins/config/claude-for-legal/legal-builder-hub/CLAUDE.md` 中的实践画像不是静态的 — 它随着你使用插件而改善。中心在每次 `/legal-builder-hub:registry-browser` 和 `/legal-builder-hub:related-skills-surfacer` 时重新读取它，因此调整你的实践类型、行业或已关注注册表能优化未来的推荐。直接编辑文件或在工作变化时重新运行 `/legal-builder-hub:cold-start-interview --redo`。
+你在 `~/.claude/plugins/config/claude-for-legal-zh/legal-builder-hub/CLAUDE.md` 中的实践画像不是静态的 — 它随着你使用插件而改善。中心在每次 `/legal-builder-hub:registry-browser` 和 `/legal-builder-hub:related-skills-surfacer` 时重新读取它，因此调整你的实践类型、行业或已关注注册表能优化未来的推荐。直接编辑文件或在工作变化时重新运行 `/legal-builder-hub:cold-start-interview --redo`。
 
 ## 注意事项
 

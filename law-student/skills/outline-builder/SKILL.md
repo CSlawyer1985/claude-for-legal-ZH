@@ -9,7 +9,7 @@ argument-hint: "[科目, 或指向课堂笔记/教材章节]"
 
 # /outline-builder
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` → 大纲偏好、现有大纲。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` → 大纲偏好、现有大纲。
 2. 应用以下工作流。
 3. 按学生格式构建。如果扩展已有大纲，精确匹配其结构。
 
@@ -63,14 +63,14 @@ argument-hint: "[科目, 或指向课堂笔记/教材章节]"
 
 这不是替学生写——这是将学生指向他们已有的两件事并请他们协调。一个大一法学新生把一条错误规则写进大纲并据此复习，正是本技能存在要防止的失败模式。仅在以下条件同时满足时适用：
 
-1. 学生确实上传或撰写了技能可以引用的材料（`~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` → 种子材料，或正在被扩展的大纲的前面章节），且
+1. 学生确实上传或撰写了技能可以引用的材料（`~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` → 种子材料，或正在被扩展的大纲的前面章节），且
 2. 学生陈述的规则与他们自己材料中的内容存在具体的实质性分歧——不是措辞差异，不是详细程度差异。
 
 不要从你自己的知识中主动提供纠正。不要引用教材除非学生上传了。只把学生自己的材料引用回给他们。目标是训练学生信任并核实自己的作品，而非直接交付正确答案。
 
 ## 加载上下文
 
-`~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` → 大纲偏好（格式、深度、现有大纲位置）。
+`~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` → 大纲偏好（格式、深度、现有大纲位置）。
 
 如果存在现有大纲：读一份。精确匹配其结构。标题、深度、案例如何整合、是否有假设题目。
 

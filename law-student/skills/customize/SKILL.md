@@ -16,7 +16,7 @@ argument-hint: "[配置章节名称, 或描述你想修改的内容]"
 ## 做什么
 
 1. **读取配置。** 读取
-   `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md`。
+   `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md`。
    如果插件配置不存在或仍包含 `[PLACEHOLDER]` 值，说：
 
    > 你还没运行设置。先运行 `/law-student:cold-start-interview`

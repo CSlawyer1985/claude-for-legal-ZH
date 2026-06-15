@@ -10,7 +10,7 @@ argument-hint: "[描述解除情形，或附解除相关文件]"
 
 # /termination-review
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` → 解除审查触发条件、高风险标记、经济补偿惯例、管辖地规则。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md` → 解除审查触发条件、高风险标记、经济补偿惯例、管辖地规则。
 2. 使用以下工作流。
 3. 逐项检查清单。检查每个高风险标记。
 4. 按员工管辖地确定最终工资支付时点。经济补偿/赔偿金 + 协商解除协议（如适用）。
@@ -30,11 +30,11 @@ argument-hint: "[描述解除情形，或附解除相关文件]"
 
 ## 加载上下文
 
-`~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` → 解除审查触发条件、高风险标记、标准经济补偿、管辖地表。
+`~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md` → 解除审查触发条件、高风险标记、标准经济补偿、管辖地表。
 
 ## 输出标题
 
-从 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` → `## Outputs` 预置工作成果标题（根据用户角色不同——见 `## Who's using this`）。如配置中有种子解除备忘录，匹配其备忘录格式。工作成果标题始终在最前。
+从 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md` → `## Outputs` 预置工作成果标题（根据用户角色不同——见 `## Who's using this`）。如配置中有种子解除备忘录，匹配其备忘录格式。工作成果标题始终在最前。
 
 ## 工作流
 
@@ -50,7 +50,7 @@ argument-hint: "[描述解除情形，或附解除相关文件]"
 
 ### 步骤2：高风险标记扫描
 
-这是最重要的一步。检查 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` 中的每一个标记。默认组合：
+这是最重要的一步。检查 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md` 中的每一个标记。默认组合：
 
 | 标记 | 为何高风险 | 检查 |
 |---|---|---|
@@ -65,7 +65,7 @@ argument-hint: "[描述解除情形，或附解除相关文件]"
 
 **标准工时/综合工时/不定时工作制分类错误标记。** 同时满足以下全部条件时触发：
 
-1. 员工所在省/直辖市对工时制度审批和执行有严格规定——**北京、上海、广东、江苏、浙江**（及 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` → `## 工资与工时` → 已知认定风险区域中列明的其他省/直辖市）——**且**
+1. 员工所在省/直辖市对工时制度审批和执行有严格规定——**北京、上海、广东、江苏、浙江**（及 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md` → `## 工资与工时` → 已知认定风险区域中列明的其他省/直辖市）——**且**
 2. 员工执行的是**标准工时制外的特殊工时制**（综合计算工时制或不定时工作制）——**且**
 3. 员工岗位名称包含**"主管""组长""协调员""分析师""行政""专员"**（不区分大小写，及实务画像中标记为风险的任何等效应岗位）。
 
@@ -77,7 +77,7 @@ argument-hint: "[描述解除情形，或附解除相关文件]"
 
 **如本审查中涉及补发工资计算（经济补偿建模、和解姿态、风险敞口估计），不在本技能中计算。** 路由至 `wage-hour-qa` → 步骤2a 并使用其计算框架：加班费计算基数、加班时长、150%/200%/300%倍数、以及劳动争议仲裁时效（《劳动争议调解仲裁法》第27条——一年）。所有补发工资数字标注 `[需核实——在主张或支付前咨询劳动法律师]`。此处一个表面正确但实际错误的数字是本框架旨在防止的具体失败模式。
 
-**任何标记触发 → 在解除进行前按 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` 上报。** 在解除之前，不待事后。
+**任何标记触发 → 在解除进行前按 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md` 上报。** 在解除之前，不待事后。
 
 ### 步骤3：管辖地特定要求
 
@@ -97,7 +97,7 @@ argument-hint: "[描述解除情形，或附解除相关文件]"
 
 ### 步骤4：经济补偿/赔偿金与协商解除协议
 
-按 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` → 标准经济补偿：
+按 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md` → 标准经济补偿：
 
 - 是否提供经济补偿？按法定公式还是双方协商？
 - 是否需要签署协商解除协议？（支付额外补偿时通常需要——协商一致解除的法律依据为《劳动合同法》第36条 `[法条原文]`）
@@ -128,9 +128,9 @@ argument-hint: "[描述解除情形，或附解除相关文件]"
 
 > **研究连接器预检。** 在发出备忘录前，检查本次会话是否可连接法律研究工具——yuan dian MCP 或任何其他配置的研究工具。将结果收集到审查备注中；如果步骤3中无连接器返回结果（或运行时未配置），记录在审查备注的**来源：**行中——例如 `未连接——引用来自模型知识；解除法备忘录中编造风险最高的主题是最终工资支付时点、各省/直辖市工资支付条例、经济性裁员的法定程序和司法实践——请优先核验`。逐条 `[模型知识——需验证]` 标签保持内联。不在备忘录上方输出独立横幅。
 
-> **管辖地假设。** 本审查假定员工的管辖地如步骤1所述，以及 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` → 管辖范围中的默认值。解除规则、最终工资支付时点、通知义务和经济补偿标准因省/直辖市和国家而显著不同。如果员工在另一个省/直辖市或国家工作，或适用法律有争议，本分析可能不适用。
+> **管辖地假设。** 本审查假定员工的管辖地如步骤1所述，以及 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md` → 管辖范围中的默认值。解除规则、最终工资支付时点、通知义务和经济补偿标准因省/直辖市和国家而显著不同。如果员工在另一个省/直辖市或国家工作，或适用法律有争议，本分析可能不适用。
 
-匹配 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` 中引用的种子解除备忘录格式。如没有：
+匹配 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md` 中引用的种子解除备忘录格式。如没有：
 
 ```markdown
 [工作成果标题——根据插件配置 ## Outputs——因角色不同；见 `## Who's using this`]
@@ -195,7 +195,7 @@ argument-hint: "[描述解除情形，或附解除相关文件]"
 
 ## 后续行动门槛（解除劳动合同）
 
-**在做出"可以解除"的建议或标注为已就绪的解除当日检查清单前：** 读取 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` 中的 `## Who's using this`。如果角色是**非律师**：
+**在做出"可以解除"的建议或标注为已就绪的解除当日检查清单前：** 读取 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md` 中的 `## Who's using this`。如果角色是**非律师**：
 
 > 解除劳动合同具有法律后果——违法解除、歧视、报复和工资争议均溯源至此决策的结构方式。您是否已与律师审查过此解除？如已审查，继续。如未审查，以下是带去给律师的简要材料：
 >

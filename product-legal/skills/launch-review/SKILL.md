@@ -9,7 +9,7 @@ argument-hint: "[PRD文件 | 飞书文档链接 | 追踪工单号]"
 
 # /launch-review
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/product-legal/CLAUDE.md` → 框架 + 校准。如为占位符则停止。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/product-legal/CLAUDE.md` → 框架 + 校准。如为占位符则停止。
 2. 获取PRD + 相关文档。如追踪器已连接，拉取工单和评论。
 3. 使用下述工作流遍历每个框架类别。
 4. 将每个发现对照校准表进行校准。全新 = 明确标记。
@@ -24,7 +24,7 @@ argument-hint: "[PRD文件 | 飞书文档链接 | 追踪工单号]"
 
 ## 事项上下文
 
-**事项上下文。** 检查实务级 CLAUDE.md 中的 `## 事项工作空间`。如果 `Enabled` 为 `✗`（企业法务用户的默认值），跳过本段其余内容——技能使用实务级上下文，事项机制不可见。如果已启用且无活跃事项，询问："这是哪个事项？运行 `/product-legal:matter-workspace switch <事项简称>` 或说 `实务级`。"加载活跃事项的 `matter.md` 获取事项特定上下文和覆盖规则。输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal/product-legal/matters/<事项简称>/`。除非 `跨事项上下文` 为 `开`，否则绝不读取其他事项的文件。
+**事项上下文。** 检查实务级 CLAUDE.md 中的 `## 事项工作空间`。如果 `Enabled` 为 `✗`（企业法务用户的默认值），跳过本段其余内容——技能使用实务级上下文，事项机制不可见。如果已启用且无活跃事项，询问："这是哪个事项？运行 `/product-legal:matter-workspace switch <事项简称>` 或说 `实务级`。"加载活跃事项的 `matter.md` 获取事项特定上下文和覆盖规则。输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal-zh/product-legal/matters/<事项简称>/`。除非 `跨事项上下文` 为 `开`，否则绝不读取其他事项的文件。
 
 ---
 
@@ -34,11 +34,11 @@ argument-hint: "[PRD文件 | 飞书文档链接 | 追踪工单号]"
 
 ## 目的
 
-阅读PRD，检查该团队框架中的每个类别，对照在此实际阻断什么进行校准（依据 `~/.claude/plugins/config/claude-for-legal/product-legal/CLAUDE.md`），并以内部格式输出审查。目标：产品经理读完就知道上线前必须完成什么。
+阅读PRD，检查该团队框架中的每个类别，对照在此实际阻断什么进行校准（依据 `~/.claude/plugins/config/claude-for-legal-zh/product-legal/CLAUDE.md`），并以内部格式输出审查。目标：产品经理读完就知道上线前必须完成什么。
 
 ## 加载校准
 
-读取 `~/.claude/plugins/config/claude-for-legal/product-legal/CLAUDE.md`：
+读取 `~/.claude/plugins/config/claude-for-legal-zh/product-legal/CLAUDE.md`：
 - `## 审查框架`——需检查的类别
 - `## 风险校准`——在*这家公司*什么阻断vs.什么是FYI告知
 - `## 产品上线审查流程`——输出格式
@@ -73,7 +73,7 @@ argument-hint: "[PRD文件 | 飞书文档链接 | 追踪工单号]"
 
 ### 第3步：遍历框架
 
-对 `~/.claude/plugins/config/claude-for-legal/product-legal/CLAUDE.md` → 审查框架中的每个类别。如果团队没有，使用以下8类默认框架。类别是稳定的框架概念；在每个类别内，在校准严重程度之前，检索适用于产品领域、受众和法域的监管制度。在一个法域或领域是阻断的，可能在另一个是常规——`~/.claude/plugins/config/claude-for-legal/product-legal/CLAUDE.md` 捕获团队的校准。
+对 `~/.claude/plugins/config/claude-for-legal-zh/product-legal/CLAUDE.md` → 审查框架中的每个类别。如果团队没有，使用以下8类默认框架。类别是稳定的框架概念；在每个类别内，在校准严重程度之前，检索适用于产品领域、受众和法域的监管制度。在一个法域或领域是阻断的，可能在另一个是常规——`~/.claude/plugins/config/claude-for-legal-zh/product-legal/CLAUDE.md` 捕获团队的校准。
 
 | # | 类别 | 关键问题 | 自动跳过条件 |
 |---|---|---|---|
@@ -129,7 +129,7 @@ argument-hint: "[PRD文件 | 飞书文档链接 | 追踪工单号]"
 
 ### 第4步：校准严重程度
 
-对每个发现，对照 `~/.claude/plugins/config/claude-for-legal/product-legal/CLAUDE.md` 中的校准表检查：
+对每个发现，对照 `~/.claude/plugins/config/claude-for-legal-zh/product-legal/CLAUDE.md` 中的校准表检查：
 
 - 如果匹配"通常FYI告知"模式 → 注明，不阻断
 - 如果匹配"通常需付出工作量" → 指明具体工作，从表中预估时限
@@ -138,7 +138,7 @@ argument-hint: "[PRD文件 | 飞书文档链接 | 追踪工单号]"
 
 ### 第5步：组装审查
 
-格式依据 `~/.claude/plugins/config/claude-for-legal/product-legal/CLAUDE.md` → 产品上线审查流程 → 输出格式。冠以 `~/.claude/plugins/config/claude-for-legal/product-legal/CLAUDE.md` `## 输出规范` 中的工作成果页眉（因用户角色而异——参见 `## 使用者`）。如无内部格式指定：
+格式依据 `~/.claude/plugins/config/claude-for-legal-zh/product-legal/CLAUDE.md` → 产品上线审查流程 → 输出格式。冠以 `~/.claude/plugins/config/claude-for-legal-zh/product-legal/CLAUDE.md` `## 输出规范` 中的工作成果页眉（因用户角色而异——参见 `## 使用者`）。如无内部格式指定：
 
 ```markdown
 [工作成果页眉 — 按插件配置 ## 输出规范]
@@ -156,7 +156,7 @@ argument-hint: "[PRD文件 | 飞书文档链接 | 追踪工单号]"
 
 **判断：**[可上线 | 有条件上线 | 因X而阻断 | 需上报]
 
-> **在对"可上线"或"有条件上线"判断输出前：** 读取 `~/.claude/plugins/config/claude-for-legal/product-legal/CLAUDE.md` 中的 `## 使用者`。如果角色为非法务人员：
+> **在对"可上线"或"有条件上线"判断输出前：** 读取 `~/.claude/plugins/config/claude-for-legal-zh/product-legal/CLAUDE.md` 中的 `## 使用者`。如果角色为非法务人员：
 >
 > > 通过一项上线是一项法律行为——一旦产品上线，公司即承诺于此文件记录的法律立场。您是否已与律师审查？如已审查，继续。如未审查，以下是带给律师的简要说明：
 > >
@@ -205,7 +205,7 @@ argument-hint: "[PRD文件 | 飞书文档链接 | 追踪工单号]"
 
 **以下两项均为本技能的必需输出。** 两者都不是可选的。按下述顺序打印，两者之间有清晰分隔线，以便用户不会遗漏净化后的内容块。
 
-**输出1——保密上线审查备忘录。** 第5步组装的完整分析：工作成果页眉、底线、按类别分列发现（含风险理由）、行动事项、上报事项、下次注意事项、引用检查。这是内部法务工作成果。保存在您的事项文件中（飞书云文档、DMS或 `~/.claude/plugins/config/claude-for-legal/product-legal/CLAUDE.md` 规定的审查文件存放位置）。仅分发给保密范围内的人员。
+**输出1——保密上线审查备忘录。** 第5步组装的完整分析：工作成果页眉、底线、按类别分列发现（含风险理由）、行动事项、上报事项、下次注意事项、引用检查。这是内部法务工作成果。保存在您的事项文件中（飞书云文档、DMS或 `~/.claude/plugins/config/claude-for-legal-zh/product-legal/CLAUDE.md` 规定的审查文件存放位置）。仅分发给保密范围内的人员。
 
 **输出2——净化后工单评论块——安全发布至追踪器。** 在备忘录后，以清晰 `---` 分隔线和标题 `## 安全发布至追踪器（非保密）`，产出一个简短评论块，仅包含：
 
@@ -248,4 +248,4 @@ argument-hint: "[PRD文件 | 飞书文档链接 | 追踪工单号]"
 
 - 它不替代与产品经理的对话。通常PRD是错误的或过时的——审查揭示问题，人提问。
 - 它不批准上线。它为批准提供信息。
-- 它不追溯校准。如果本次上线结果良好（或糟糕）且应以某种方式更新校准表，由人工更新 `~/.claude/plugins/config/claude-for-legal/product-legal/CLAUDE.md`。
+- 它不追溯校准。如果本次上线结果良好（或糟糕）且应以某种方式更新校准表，由人工更新 `~/.claude/plugins/config/claude-for-legal-zh/product-legal/CLAUDE.md`。

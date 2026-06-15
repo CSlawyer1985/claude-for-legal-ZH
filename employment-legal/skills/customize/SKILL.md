@@ -19,8 +19,8 @@ argument-hint: "[章节名称，或描述你要修改的内容]"
 ## 做什么
 
 1. **读取配置。** 读取
-   `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md`
-   （和上一级的 `~/.claude/plugins/config/claude-for-legal/company-profile.md`）。
+   `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md`
+   （和上一级的 `~/.claude/plugins/config/claude-for-legal-zh/company-profile.md`）。
    如果插件配置不存在或仍包含 `[PLACEHOLDER]` 值，说：
 
    > 你尚未运行设置。先运行 `/employment-legal:cold-start-interview`——customize 是用于调整已有画像的。
@@ -51,7 +51,7 @@ argument-hint: "[章节名称，或描述你要修改的内容]"
    - *风险姿态从中等改为保守：* "我将标记更多解除供上报，建议更强的保护性协议语言，并在竞业限制上更严格。"
 
 5. **对于共享画像变更**（公司名称、行业、管辖地、执业场景、阶段）：写入
-   `~/.claude/plugins/config/claude-for-legal/company-profile.md` 并注明：
+   `~/.claude/plugins/config/claude-for-legal-zh/company-profile.md` 并注明：
 
    > 此变更影响所有法律插件——任何读取管辖范围的插件现在看到[新值]。
 

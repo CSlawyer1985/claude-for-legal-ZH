@@ -16,18 +16,18 @@ argument-hint: "<new | list | switch | close | none> [slug]"
 - `/ai-governance-legal:matter-workspace new <slug>` — 创建新的事务工作区，运行简短录入，写入 `matter.md`
 - `/ai-governance-legal:matter-workspace list` — 列出事务及其状态和活跃标记
 - `/ai-governance-legal:matter-workspace switch <slug>` — 设置活跃事务
-- `/ai-governance-legal:matter-workspace close <slug>` — 归档事务（移动到 `~/.claude/plugins/config/claude-for-legal/ai-governance-legal/matters/_archived/`，不删除）
+- `/ai-governance-legal:matter-workspace close <slug>` — 归档事务（移动到 `~/.claude/plugins/config/claude-for-legal-zh/ai-governance-legal/matters/_archived/`，不删除）
 - `/ai-governance-legal:matter-workspace none` — 解除活跃事务，仅在实践层面工作
 
 ## 指令
 
-1. 读取 `~/.claude/plugins/config/claude-for-legal/ai-governance-legal/CLAUDE.md` — 确认 `## 事务工作区` 部分已填充。如果 `已启用` 为 `✗`，告知用户："事务工作区已关闭——你被配置为法务内部实践，只有一个客户，因此插件自动从实践级上下文工作。如果你实际上跨多个客户工作，请重新运行 `/ai-governance-legal:cold-start-interview --redo` 并选择私人执业设置。否则，你不需要 `/ai-governance-legal:matter-workspace`。" 不要报错——关闭状态是法务内部用户的预期状态。
+1. 读取 `~/.claude/plugins/config/claude-for-legal-zh/ai-governance-legal/CLAUDE.md` — 确认 `## 事务工作区` 部分已填充。如果 `已启用` 为 `✗`，告知用户："事务工作区已关闭——你被配置为法务内部实践，只有一个客户，因此插件自动从实践级上下文工作。如果你实际上跨多个客户工作，请重新运行 `/ai-governance-legal:cold-start-interview --redo` 并选择私人执业设置。否则，你不需要 `/ai-governance-legal:matter-workspace`。" 不要报错——关闭状态是法务内部用户的预期状态。
 2. 按照以下子命令逻辑操作。
 3. 根据 `$ARGUMENTS` 的第一个词分发：
-   - `new` → 运行录入访谈，写入 `~/.claude/plugins/config/claude-for-legal/ai-governance-legal/matters/<slug>/matter.md`，种子化 `history.md` 和 `notes.md`。
-   - `list` → 枚举 `~/.claude/plugins/config/claude-for-legal/ai-governance-legal/matters/*/matter.md`，打印表格，标记活跃事务。
+   - `new` → 运行录入访谈，写入 `~/.claude/plugins/config/claude-for-legal-zh/ai-governance-legal/matters/<slug>/matter.md`，种子化 `history.md` 和 `notes.md`。
+   - `list` → 枚举 `~/.claude/plugins/config/claude-for-legal-zh/ai-governance-legal/matters/*/matter.md`，打印表格，标记活跃事务。
    - `switch` → 更新实践级 CLAUDE.md 中的 `活跃事务：` 行。
-   - `close` → 将 `~/.claude/plugins/config/claude-for-legal/ai-governance-legal/matters/<slug>/` 移动到 `~/.claude/plugins/config/claude-for-legal/ai-governance-legal/matters/_archived/<slug>/`，在 `history.md` 中记录关闭日期。
+   - `close` → 将 `~/.claude/plugins/config/claude-for-legal-zh/ai-governance-legal/matters/<slug>/` 移动到 `~/.claude/plugins/config/claude-for-legal-zh/ai-governance-legal/matters/_archived/<slug>/`，在 `history.md` 中记录关闭日期。
    - `none` → 将 `活跃事务：` 设置为 `无 — 仅实践级上下文`。
 4. 向用户展示变更内容，确认后再写入。
 
@@ -50,7 +50,7 @@ argument-hint: "<new | list | switch | close | none> [slug]"
 所有事务数据位于：
 
 ```
-~/.claude/plugins/config/claude-for-legal/ai-governance-legal/
+~/.claude/plugins/config/claude-for-legal-zh/ai-governance-legal/
 ├── CLAUDE.md                       # 实践级实践配置文件
 └── matters/
     ├── <slug>/

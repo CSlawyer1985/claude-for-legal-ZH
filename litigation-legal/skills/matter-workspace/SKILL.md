@@ -16,20 +16,20 @@ argument-hint: "<new | list | switch | close | none> [代号]"
 - `/litigation-legal:matter-workspace new <代号>` —— 创建新案件工作空间，运行简要登记，写入 `matter.md`
 - `/litigation-legal:matter-workspace list` —— 列出案件及其状态和活跃标记
 - `/litigation-legal:matter-workspace switch <代号>` —— 设置活跃案件
-- `/litigation-legal:matter-workspace close <代号>` —— 归档案件（移至 `~/.claude/plugins/config/claude-for-legal/litigation-legal/matters/_archived/`，永不清除）
+- `/litigation-legal:matter-workspace close <代号>` —— 归档案件（移至 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/matters/_archived/`，永不清除）
 - `/litigation-legal:matter-workspace none` —— 脱离任何活跃案件，仅在实务级工作
 
 注意：`/litigation-legal:matter-briefing [代号]`（无子命令）是单独的命令，生成特定案件的简报——适用于法务案件组合审查。案件工作空间管理在此。
 
 ## 指令
 
-1. 读取 `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md` —— 确认 `## 案件工作空间` 部分已填充。如果 `Enabled` 为 `✗`，告知用户："案件工作空间已关闭——你配置为单一客户的法务实践，插件自动使用实务级上下文。如果你确实服务于多个客户，重新运行 `/litigation-legal:cold-start-interview --redo` 并选择外部执业设置。否则，你完全不需要 `/matter-workspace`。"不要报错——禁用状态是法务用户的预期状态。
+1. 读取 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/CLAUDE.md` —— 确认 `## 案件工作空间` 部分已填充。如果 `Enabled` 为 `✗`，告知用户："案件工作空间已关闭——你配置为单一客户的法务实践，插件自动使用实务级上下文。如果你确实服务于多个客户，重新运行 `/litigation-legal:cold-start-interview --redo` 并选择外部执业设置。否则，你完全不需要 `/matter-workspace`。"不要报错——禁用状态是法务用户的预期状态。
 2. 按以下工作流操作。
 3. 按 `$ARGUMENTS` 的第一个 token 分发：
-   - `new` → 运行登记访谈，写入 `~/.claude/plugins/config/claude-for-legal/litigation-legal/matters/<代号>/matter.md`，播种 `history.md`。
-   - `list` → 枚举 `~/.claude/plugins/config/claude-for-legal/litigation-legal/matters/*/matter.md`，打印表格，标记活跃案件。
+   - `new` → 运行登记访谈，写入 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/matters/<代号>/matter.md`，播种 `history.md`。
+   - `list` → 枚举 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/matters/*/matter.md`，打印表格，标记活跃案件。
    - `switch` → 更新实务级 CLAUDE.md 中的 `Active matter:` 行。
-   - `close` → 将 `~/.claude/plugins/config/claude-for-legal/litigation-legal/matters/<代号>/` 移至 `~/.claude/plugins/config/claude-for-legal/litigation-legal/matters/_archived/<代号>/`，在 `history.md` 中记录关闭日期。
+   - `close` → 将 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/matters/<代号>/` 移至 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/matters/_archived/<代号>/`，在 `history.md` 中记录关闭日期。
    - `none` → 设置 `Active matter:` 为 `none — 仅实务级上下文`。
 4. 展示变更内容并在写入前确认。
 
@@ -52,7 +52,7 @@ argument-hint: "<new | list | switch | close | none> [代号]"
 所有案件数据存放在：
 
 ```
-~/.claude/plugins/config/claude-for-legal/litigation-legal/
+~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/
 ├── CLAUDE.md                       # 实务级实践画像
 └── matters/
     ├── <代号>/

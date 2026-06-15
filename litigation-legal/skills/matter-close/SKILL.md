@@ -13,8 +13,8 @@ argument-hint: "[代号]"
 2. 确认代号和当前状态。
 3. 捕获结果：结案类型（和解、撤诉、判决我方胜诉/败诉、撤回、合并）、日期、最终敞口/成本、反思教训。
 4. 更新 `_log.yaml`：`status: closed`，添加 `closed: YYYY-MM-DD` 和 `outcome:` 字段。
-5. 向 `~/.claude/plugins/config/claude-for-legal/litigation-legal/matters/[slug]/history.md` 追加最终条目。
-6. 案件保留在 `_log.yaml` 和 `~/.claude/plugins/config/claude-for-legal/litigation-legal/matters/[slug]/` 中——不删除。`/portfolio-status` 从活跃汇总中过滤。
+5. 向 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/matters/[slug]/history.md` 追加最终条目。
+6. 案件保留在 `_log.yaml` 和 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/matters/[slug]/` 中——不删除。`/portfolio-status` 从活跃汇总中过滤。
 
 ---
 
@@ -26,9 +26,9 @@ argument-hint: "[代号]"
 
 ## 加载上下文
 
-- `~/.claude/plugins/config/claude-for-legal/litigation-legal/matters/_log.yaml` —— 找到对应行
-- `~/.claude/plugins/config/claude-for-legal/litigation-legal/matters/[slug]/matter.md` —— 参考（登记时上下文）
-- `~/.claude/plugins/config/claude-for-legal/litigation-legal/matters/[slug]/history.md` —— 追加目标
+- `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/matters/_log.yaml` —— 找到对应行
+- `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/matters/[slug]/matter.md` —— 参考（登记时上下文）
+- `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/matters/[slug]/history.md` —— 追加目标
 
 **冲突门禁——不可绕过。** 结案前，检查 `_log.yaml` 中是否存在该案件代号。如果案件不在 `_log.yaml` 中，拒绝并路由：
 
@@ -72,7 +72,7 @@ argument-hint: "[代号]"
 
 ## 写入
 
-**在结案（产生后果的行为——案件被归档且停止主动追踪）之前：** 读取 `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md` 中的 `## 使用者`。如果角色是**非律师**：
+**在结案（产生后果的行为——案件被归档且停止主动追踪）之前：** 读取 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/CLAUDE.md` 中的 `## 使用者`。如果角色是**非律师**：
 
 > 结案具有法律后果——它结束主动追踪，可能影响相关联的证据保全（如适用，另行运行 `/legal-hold --release`），并建立公司依赖的最终记录。您是否已与律师审查过此事？如已审查，继续。如未审查，以下是带去给律师的简要材料：
 >
@@ -82,7 +82,7 @@ argument-hint: "[代号]"
 
 未收到明确确认之前，不写入结案字段或追加结案条目。
 
-### 更新 `~/.claude/plugins/config/claude-for-legal/litigation-legal/matters/_log.yaml`
+### 更新 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/matters/_log.yaml`
 
 ```yaml
 status: closed
@@ -94,7 +94,7 @@ last_updated: [今天]   # 结案是最后的触及；记录它
 
 保留所有既有字段。不删除日志行。
 
-### 向 `~/.claude/plugins/config/claude-for-legal/litigation-legal/matters/[slug]/history.md` 追加最终条目
+### 向 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/matters/[slug]/history.md` 追加最终条目
 
 ```markdown
 ## [YYYY-MM-DD] —— 案件结案：[结案类型]
@@ -110,7 +110,7 @@ last_updated: [今天]   # 结案是最后的触及；记录它
 **关联文件：** [和解协议 / 终局裁定 / 等，如有提供]
 ```
 
-### 触及 `~/.claude/plugins/config/claude-for-legal/litigation-legal/matters/[slug]/matter.md`
+### 触及 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/matters/[slug]/matter.md`
 
 在末尾添加结案块（不修改前面各节——它们是历史登记记录）：
 

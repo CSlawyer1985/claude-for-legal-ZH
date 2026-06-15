@@ -17,8 +17,8 @@ argument-hint: "[部分名称，或描述你想修改的内容]"
 ## 操作
 
 1. **读取配置。** 读取
-   `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md`
-   （及上一级目录的 `~/.claude/plugins/config/claude-for-legal/company-profile.md`）。
+   `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/CLAUDE.md`
+   （及上一级目录的 `~/.claude/plugins/config/claude-for-legal-zh/company-profile.md`）。
    如插件配置不存在或仍含 `[PLACEHOLDER]` 值，说：
 
    > 你尚未运行设置。请先运行 `/litigation-legal:cold-start-interview`
@@ -49,7 +49,7 @@ argument-hint: "[部分名称，或描述你想修改的内容]"
    - *为知识产权案件新增外聘律师：* "`/oc-status` 将在知识产权标记案件的每周扫查中包含此律所。"
 
 5. **对于共享画像的变更**（公司名称、行业、管辖地、执业场景）：写入
-   `~/.claude/plugins/config/claude-for-legal/company-profile.md` 并注明：
+   `~/.claude/plugins/config/claude-for-legal-zh/company-profile.md` 并注明：
 
    > 此变更影响全部插件——任何读取你管辖地范围的插件现在看到的是[新值]。
 

@@ -28,7 +28,7 @@ Cold-start 访谈编写*事务所/法务部*级别的实践画像——跨所有
 /litigation-legal:cold-start-interview
 ```
 
-你的配置存储于 `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md`，不受插件更新影响。
+你的配置存储于 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/CLAUDE.md`，不受插件更新影响。
 
 ## 命令
 
@@ -120,7 +120,7 @@ litigation-legal/
 
 ## 注意事项
 
-- 每个技能首先从 `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md` 读取配置。如果你的风险偏好变化或增加了新的外部律师，更新该文件——不要在个案中覆盖。
+- 每个技能首先从 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/CLAUDE.md` 读取配置。如果你的风险偏好变化或增加了新的外部律师，更新该文件——不要在个案中覆盖。
 - `_log.yaml` 是案件组合状态的唯一事实来源。保持整洁。
 - 案件历史仅追加。如果之前记录有误，以新条目记录更正——不修改既往记录。
 - 已结案案件保留在 `_log.yaml` 中（可搜索历史）。`/portfolio-status` 默认过滤已结案案件。

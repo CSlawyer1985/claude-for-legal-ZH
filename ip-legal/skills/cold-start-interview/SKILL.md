@@ -10,12 +10,12 @@ argument-hint: "[--redo 对已配置插件重新运行] [--check-integrations �
 
 # /cold-start-interview
 
-运行冷启动面谈。首次运行写入 `~/.claude/plugins/config/claude-for-legal/ip-legal/CLAUDE.md`；
+运行冷启动面谈。首次运行写入 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/CLAUDE.md`；
 后续运行使用 `--redo` 重新面谈并在覆盖前显示差异。
 
 ## 使用说明
 
-1. **检查当前状态：** 读取 `~/.claude/plugins/config/claude-for-legal/ip-legal/CLAUDE.md`。如含 `[PLACEHOLDER]` 或 `[你的公司名称]`，继续全新面谈。如已填充且未传 `--redo`，询问："看起来你已经设置好了。要重新运行面谈吗？这将覆盖 `~/.claude/plugins/config/claude-for-legal/ip-legal/CLAUDE.md`（我先给你看差异）。"
+1. **检查当前状态：** 读取 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/CLAUDE.md`。如含 `[PLACEHOLDER]` 或 `[你的公司名称]`，继续全新面谈。如已填充且未传 `--redo`，询问："看起来你已经设置好了。要重新运行面谈吗？这将覆盖 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/CLAUDE.md`（我先给你看差异）。"
 
 2. **按以下面谈脚本执行。**
 
@@ -25,18 +25,18 @@ argument-hint: "[--redo 对已配置插件重新运行] [--check-integrations �
 
 5. **迁移：** 如有已填充的 CLAUDE.md（无 `[PLACEHOLDER]` 标记）在 `~/.claude/plugins/cache/claude-for-legal/ip-legal/*/CLAUDE.md` 但不在配置路径，将其复制至配置路径并展示迁移内容。
 
-6. **写入 `~/.claude/plugins/config/claude-for-legal/ip-legal/CLAUDE.md`**（按需创建父目录），按下文结构撰写。尽可能使用律师自己的措辞。
+6. **写入 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/CLAUDE.md`**（按需创建父目录），按下文结构撰写。尽可能使用律师自己的措辞。
 
-7. **种子组合登记簿** 如用户分享了组合导出或知识产权管理系统访问：写入 `~/.claude/plugins/config/claude-for-legal/ip-legal/portfolio.yaml`。如未分享任何内容，留下占位指针供组合追踪器稍后填充。
+7. **种子组合登记簿** 如用户分享了组合导出或知识产权管理系统访问：写入 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/portfolio.yaml`。如未分享任何内容，留下占位指针供组合追踪器稍后填充。
 
 8. **展示摘要 + 建议下一步：**
-   - "以下是我听到的 — `~/.claude/plugins/config/claude-for-legal/ip-legal/CLAUDE.md` 已写就。我说错了什么？"
+   - "以下是我听到的 — `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/CLAUDE.md` 已写就。我说错了什么？"
    - 提供测试："想投一个商标名称到确权筛查看看效果，或查看组合登记簿上即将到期的内容吗？"
    - 如已连接知识产权管理系统：建议批量导入组合登记簿并展示即将到期的续展。
 
 ## `--check-integrations`
 
-重新运行集成可用性检查（知识产权管理系统、专利研究、法律研究、文件存储、Slack）并更新 `~/.claude/plugins/config/claude-for-legal/ip-legal/CLAUDE.md` 中的 `## 可用集成`。不重新面谈。用于你连接或断开 MCP 后想让插件注意到而无需重新运行完整设置。
+重新运行集成可用性检查（知识产权管理系统、专利研究、法律研究、文件存储、Slack）并更新 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/CLAUDE.md` 中的 `## 可用集成`。不重新面谈。用于你连接或断开 MCP 后想让插件注意到而无需重新运行完整设置。
 
 探测时：仅当 MCP 工具调用实际成功时报告 ✓。已配置但未测试的连接器应标记 ⚪ 附确认方法说明。绝不基于 `.mcp.json` 声明报告 ✓——那误导用户以为某物已接通实则不然。
 
@@ -64,7 +64,7 @@ argument-hint: "[--redo 对已配置插件重新运行] [--check-integrations �
 
 ## "冷启动"含义
 
-读取 `~/.claude/plugins/config/claude-for-legal/ip-legal/CLAUDE.md`：
+读取 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/CLAUDE.md`：
 - **不存在** → 开始面谈。
 - **含 `<!-- 设置暂停于：-->`** → 向用户问候并询问是否从该节继续。
 - **含 `[PLACEHOLDER]` 或 `[你的公司名称]` 标记但无暂停注释** → 模板从未完成；询问是否全新开始或从占位符出现处继续。
@@ -78,7 +78,7 @@ argument-hint: "[--redo 对已配置插件重新运行] [--check-integrations �
 
 ## 检查共享的公司画像
 
-查找 `~/.claude/plugins/config/claude-for-legal/company-profile.md`。
+查找 `~/.claude/plugins/config/claude-for-legal-zh/company-profile.md`。
 
 - **如存在：** 读取。显示一行确认："你是[姓名]，[执业类型]，在[公司]，[行业]，运营在[管辖]。对吗？（或回复'更新'以更改共享画像。）"如确认，跳过公司问题——直接进入插件特定问题。
 - **如不存在：** 你将是用户设置的第一个插件。在定位和分叉后，提出公司问题并写入共享画像（按模板），然后继续插件特定问题。告知用户："我已保存你的公司画像——其他法律插件将读取它并跳过这些问题。"
@@ -132,7 +132,7 @@ argument-hint: "[--redo 对已配置插件重新运行] [--check-integrations �
 - **对于上传和种子文件：** "粘贴内容、分享文件路径或说'暂时跳过'。如跳过，我会在实务画像中标注该空缺让你之后填写。"然后真正等。
 - **写实务画像前：** 回顾面谈并列出跳过或用占位符回答的问题——特别是维权立场、审批矩阵和组合清单。说："在写入你的实务画像前，以下仍为未填：[清单]。要现在填写其中任何一个，还是留为占位符？"然后等。
 - **绝不**撰写含静默空白的实务画像。每个占位符应是被用户故意选择跳过的，非滚动过去的问题。
-- **暂停并恢复。** 提前告诉用户："如需停下，说'暂停'（或'stop'、或'let me come back to this'）我会保存进度。稍后运行 `/ip-legal:cold-start-interview` 我将在你停下的地方继续。"当用户暂停时，写入部分配置至 `~/.claude/plugins/config/claude-for-legal/ip-legal/CLAUDE.md`，顶部附 `<!-- 设置暂停于：[分区名称] — 运行 /ip-legal:cold-start-interview 继续 -->` 注释，未回答字段上使用 `[PENDING]` 标记（区别于 `[PLACEHOLDER]`）。当设置重新运行并发现暂停的配置时，问候用户："欢迎回来。你暂停在[分区]。你先前的回答已保存。从之前的地方继续，还是重新开始？"不重新提问已回答的问题。
+- **暂停并恢复。** 提前告诉用户："如需停下，说'暂停'（或'stop'、或'let me come back to this'）我会保存进度。稍后运行 `/ip-legal:cold-start-interview` 我将在你停下的地方继续。"当用户暂停时，写入部分配置至 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/CLAUDE.md`，顶部附 `<!-- 设置暂停于：[分区名称] — 运行 /ip-legal:cold-start-interview 继续 -->` 注释，未回答字段上使用 `[PENDING]` 标记（区别于 `[PLACEHOLDER]`）。当设置重新运行并发现暂停的配置时，问候用户："欢迎回来。你暂停在[分区]。你先前的回答已保存。从之前的地方继续，还是重新开始？"不重新提问已回答的问题。
 
 **在设置过程中核实用户陈述的法律事实。** 当用户用具体的规则引用、法条编号、案例名称、截止日期、门槛、管辖或注册号回答面谈问题时——且是你可以检查的——在写入配置前执行检查。如他们说的与你理解或与他们粘贴的某个内容冲突，指出来："你说门槛是X；我的理解是Y——能确认哪个写入画像吗？`[前提标注 — 请核实]`"写入 CLAUDE.md 的错误事实会传播进每个将来的输出；在此处捕获它是产品中杠杆最高的时刻之一。
 
@@ -371,7 +371,7 @@ argument-hint: "[--redo 对已配置插件重新运行] [--check-integrations �
 
 撰写前，重新阅读第3部分期间分享的任何文件——组合、模板、手册、开源政策。不依赖面谈前段的记忆。
 
-写入 `~/.claude/plugins/config/claude-for-legal/ip-legal/CLAUDE.md`（按需创建父目录）。如用户分享了组合导出，同时种子 `~/.claude/plugins/config/claude-for-legal/ip-legal/portfolio.yaml` 写入提取的注册信息。
+写入 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/CLAUDE.md`（按需创建父目录）。如用户分享了组合导出，同时种子 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/portfolio.yaml` 写入提取的注册信息。
 
 **角色条件工作成果页眉。** 在撰写的 `## 输出` 分区中，基于 `## 使用者` 选择正确的页眉。不同时写入两种变体。律师 → 特权/工作成果；非律师 → 研究笔记。
 
@@ -409,7 +409,7 @@ argument-hint: "[--redo 对已配置插件重新运行] [--check-integrations �
 
 4. **以可变更性说明收尾。** 类似以下内容收尾：
 
-   > "完成。你的实务画像在 `~/.claude/plugins/config/claude-for-legal/ip-legal/CLAUDE.md`——是一个可直接阅读和编辑的纯文本文件。你回答的任何内容均可更改：
+   > "完成。你的实务画像在 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/CLAUDE.md`——是一个可直接阅读和编辑的纯文本文件。你回答的任何内容均可更改：
    >
    > - 直接编辑文件做快速修改（新审批人、修订监视清单、管辖变更）
    > - 运行 `/ip-legal:cold-start-interview --redo` 做完整重新面谈

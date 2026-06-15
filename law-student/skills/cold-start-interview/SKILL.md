@@ -9,14 +9,14 @@ argument-hint: "[--redo] [--check-integrations]"
 
 # /cold-start-interview
 
-1. 检查 `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md`。如已填充且无 `--redo`，在覆盖前确认。如果在 `~/.claude/plugins/cache/claude-for-legal/law-student/*/CLAUDE.md` 存在已填充的 CLAUDE.md（无 `[PLACEHOLDER]` 标记）但不在配置路径，将其复制到配置路径并告知用户迁移了什么。
+1. 检查 `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md`。如已填充且无 `--redo`，在覆盖前确认。如果在 `~/.claude/plugins/cache/claude-for-legal/law-student/*/CLAUDE.md` 存在已填充的 CLAUDE.md（无 `[PLACEHOLDER]` 标记）但不在配置路径，将其复制到配置路径并告知用户迁移了什么。
 2. 应用以下访谈工作流。
 3. 逐步推进 Part 0（谁在使用 / 什么已连接——学生 vs. 毕业生 vs. 其他；文件存储可用性）、Part 1（你在哪里）、Part 2（你如何学习——追问训练型 vs 讲解引导型）、Part 3（强项/薄弱处/回避处）、Part 4（材料收录——目标 10-20 项）。
 4. 重读已记录的回答。捕捉矛盾、漂移的具体细节、现在值得指出的缺口。
-5. 写入 `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md`（按需创建父目录），包括 `## 谁在使用这个插件` 和 `## 可用集成`。如分享的材料少于10份，添加 `LIMITED DATA` 标记。
+5. 写入 `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md`（按需创建父目录），包括 `## 谁在使用这个插件` 和 `## 可用集成`。如分享的材料少于10份，添加 `LIMITED DATA` 标记。
 6. 与用户确认："这是我记录的内容——有什么不对的吗？"
 
-**`--check-integrations`：** 仅重新运行 Part 0 集成可用性检查。更新 `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` 中的 `## 可用集成`，不触及身份或画像其余部分。在添加或移除 MCP 连接器后使用。
+**`--check-integrations`：** 仅重新运行 Part 0 集成可用性检查。更新 `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` 中的 `## 可用集成`，不触及身份或画像其余部分。在添加或移除 MCP 连接器后使用。
 
 探测时：仅在实际 MCP 工具调用成功时报告 ✓。已配置但未测试的连接器应标记为 ⚪ 并附一行确认方法。绝不基于 `.mcp.json` 声明单独报告 ✓——这会误导用户以为某些东西已接入而实际未接入。
 
@@ -28,7 +28,7 @@ argument-hint: "[--redo] [--check-integrations]"
 
 ## 冷启动检查
 
-读取 `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md`：
+读取 `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md`：
 - **不存在** → 开始访谈。
 - **包含 `<!-- SETUP PAUSED AT: -->`** → 欢迎学生并提供从该节恢复。
 - **包含 `[PLACEHOLDER]` 标记但无暂停注释** → 模板从未完成；提供从头开始或从占位符起始处恢复。
@@ -36,7 +36,7 @@ argument-hint: "[--redo] [--check-integrations]"
 
 ## 检查共享机构画像
 
-查找 `~/.claude/plugins/config/claude-for-legal/company-profile.md`。
+查找 `~/.claude/plugins/config/claude-for-legal-zh/company-profile.md`。
 
 - **如存在：** 读取它。展示一行确认。如确认，跳过机构相关问题——直接进入插件特定问题。
 - **如不存在：** 你将是用户设置的第一个插件。在导览后，询问机构相关问题并写入共享画像，然后继续插件特定问题。
@@ -262,7 +262,7 @@ argument-hint: "[--redo] [--check-integrations]"
 
 然后以"你可以稍后更改任何内容"结束：
 
-> 完成。你的配置位于 `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md`——一份你可以直接阅读和编辑的纯文本文件。你的任何回答都可以更改。
+> 完成。你的配置位于 `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md`——一份你可以直接阅读和编辑的纯文本文件。你的任何回答都可以更改。
 >
 > 学生后期最常调整的事项：你的课程列表（替换为下学期的）、你的法考报考地或考试日期、以及你的学习风格默认值（追问训练型 vs 讲解引导型）。你的配置将随着你使用插件而改进——如果某份提纲感觉不对或某次课堂提问准备遗漏了你授课教师实际关心的内容，修复通常在这里。
 

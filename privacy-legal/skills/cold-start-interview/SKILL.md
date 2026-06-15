@@ -9,16 +9,16 @@ argument-hint: "[--redo 重新运行] [--check-integrations 仅重新探测集�
 
 # /cold-start-interview
 
-1. 检查 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md` — 如已填充且无 `--redo`，覆盖前先确认。
+1. 检查 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md` — 如已填充且无 `--redo`，覆盖前先确认。
 2. 运行以下访谈工作流。
 3. 种子文档：个人信息处理规则（URL或文件）、DPA模板、一份参考PIA。全部读取。
 4. 抽取：处理规则承诺、DPA立场（标注与声明的差异）、PIA结构。
 5. 迁移：如果已填充的 CLAUDE.md（无 `[占位符]` 标记）存在于旧缓存路径但不在配置路径，复制到配置路径并向用户展示迁移了什么。
-6. 写入 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md`（按需创建父目录）。展示摘要。提供首次任务。
+6. 写入 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md`（按需创建父目录）。展示摘要。提供首次任务。
 
 ## `--check-integrations`
 
-重新运行集成可用性检查（文档存储、即时通讯、定时任务）并更新 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md` 中的 `## 可用集成`。不重新访谈。当你连接或断开一个 MCP 并希望插件在不重新运行完整设置的情况下感知时使用。
+重新运行集成可用性检查（文档存储、即时通讯、定时任务）并更新 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md` 中的 `## 可用集成`。不重新访谈。当你连接或断开一个 MCP 并希望插件在不重新运行完整设置的情况下感知时使用。
 
 探测时：仅在实际 MCP 工具调用成功时报告 ✓。已配置但未测试的连接器应标记为 ⚪ 并附一行确认方法。绝不基于单独的 `.mcp.json` 声明报告 ✓——这会误导用户以为某物已接通而实际没有。
 
@@ -36,13 +36,13 @@ argument-hint: "[--redo 重新运行] [--check-integrations 仅重新探测集�
 
 ## 目的
 
-了解*这个*隐私团队如何工作——什么法规实际适用于他们，他们在 DPA 中愿意/不愿意接受什么，一份好的 PIA 在这里和别处有什么不同。写入 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md`，使每个其他技能从同一理解中读取。
+了解*这个*隐私团队如何工作——什么法规实际适用于他们，他们在 DPA 中愿意/不愿意接受什么，一份好的 PIA 在这里和别处有什么不同。写入 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md`，使每个其他技能从同一理解中读取。
 
 隐私实践因公司而异。一家 B2B SaaS 受托处理者与一家面向消费者的应用处理者几乎没有共同之处。访谈在任何其他事情之前搞清楚这是哪一种。
 
 ## 冷启动检查
 
-读取 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md`：
+读取 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md`：
 - **不存在** → 开始访谈。
 - **包含 `<!-- 设置暂停于：-->`** → 问候用户并提供从该节恢复。
 - **包含 `[占位符]` 标记但无暂停注释** → 模板从未完成；提供从头开始或从占位符起始处恢复。
@@ -54,7 +54,7 @@ argument-hint: "[--redo 重新运行] [--check-integrations 仅重新探测集�
 
 ## 检查共享的公司档案
 
-查找 `~/.claude/plugins/config/claude-for-legal/company-profile.md`。
+查找 `~/.claude/plugins/config/claude-for-legal-zh/company-profile.md`。
 
 - **如果存在：** 读取。显示一行确认："你是[姓名]，[执业环境]，在[公司]，[行业]，运营于[法域]。对吗？（或说'更新'以更改共享档案。）"如果确认，跳过公司问题——直接进入插件特定问题。
 - **如果不存在：** 你将是该用户设置的第一个插件。在定位和分叉之后，提问公司问题并将其写入共享档案（按插件根目录下 `references/company-profile-template.md` 的模板），然后继续插件特定问题。告诉用户："我已保存你的公司档案——其他法律插件将读取它并跳过这些问题。"
@@ -110,7 +110,7 @@ argument-hint: "[--redo 重新运行] [--check-integrations 仅重新探测集�
 - **对于种子文件上传：** "粘贴内容、分享文件路径或 URL，或说'暂时跳过。'如果跳过，我会在你的实践档案中标注该缺口以便以后填补。"然后实际等待。
 - **在写入实践档案前：** 回顾访谈。列出任何被跳过或以占位符回答的问题（特别是三份种子文件和 DPA 立场）。说："在我写入你的实践档案之前，以下仍待处理：[列表]。想现在填补这些，还是保留为占位符？"然后等待回答。
 - **绝不**写出带有静默缺口的实践档案。每个 `[占位符]` 应是用户选择跳过的有意决定，而非滚过去的问题。如果 DPA 模板或参考 PIA 被跳过，标注 `[立场未测试]` 以使下游技能知道。
-- **暂停和恢复。** 预先告诉用户："如果你需要停止，说'暂停'（或'停'，或'让我回头再来'）我会保存你的进度。稍后再次运行 `/privacy-legal:cold-start-interview` 我会从你停下的地方继续。"当用户暂停时，向 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md` 写入部分配置，并在顶部附 `<!-- 设置暂停于：[章节名称] — 运行 /privacy-legal:cold-start-interview 以恢复 -->` 注释，未填写的字段用 `[待处理]` 标记（区别于 `[占位符]`）。当设置重新运行并发现暂停的配置时，问候用户："欢迎回来。你暂停于[章节]。你此前的回答已保存。从停下的地方继续，还是从头开始？"不要重新提问已回答的问题。
+- **暂停和恢复。** 预先告诉用户："如果你需要停止，说'暂停'（或'停'，或'让我回头再来'）我会保存你的进度。稍后再次运行 `/privacy-legal:cold-start-interview` 我会从你停下的地方继续。"当用户暂停时，向 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md` 写入部分配置，并在顶部附 `<!-- 设置暂停于：[章节名称] — 运行 /privacy-legal:cold-start-interview 以恢复 -->` 注释，未填写的字段用 `[待处理]` 标记（区别于 `[占位符]`）。当设置重新运行并发现暂停的配置时，问候用户："欢迎回来。你暂停于[章节]。你此前的回答已保存。从停下的地方继续，还是从头开始？"不要重新提问已回答的问题。
 
 **在设置过程中即时核实用户陈述的法律事实。** 当用户用具体规则引用、法条编号、案例名称、期限、阈值、法域或注册号回答访谈问题时——且是你可以做合理性检查的——在写进配置前进行检查。如果他们说的与你的理解或他们粘贴的某物冲突，呈现出来："你说阈值是X；我的理解是Y——能否确认哪个放入档案？`[前提已标注 — 请核实]`"一个被写进 CLAUDE.md 的错误事实会传播到每个未来的输出中；在此处捕捉它是产品的最高杠杆时刻之一。
 
@@ -455,7 +455,7 @@ argument-hint: "[--redo 重新运行] [--check-integrations 仅重新探测集�
 
 5. **以"你可以以后更改任何东西"的提示结束：**
 
-   > "你的实践档案位于 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md`——一份你可以直接阅读和编辑的纯文本文件。你回答的任何内容都可以更改：
+   > "你的实践档案位于 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md`——一份你可以直接阅读和编辑的纯文本文件。你回答的任何内容都可以更改：
    >
    > - 直接编辑文件进行快速更改
    > - 运行 `/privacy-legal:cold-start-interview --redo` 进行完整重新访谈

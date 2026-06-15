@@ -15,7 +15,7 @@ argument-hint: "[描述拟议的用工安排，或直接开始，我将提问]"
 
 ## 指令
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` → 管辖范围、升级表。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md` → 管辖范围、升级表。
 2. 运行以下完整工作流。
 3. 如果律师提前提供详细信息，提取已有的内容，仅就缺口提问。不重复询问已提供的信息。
 
@@ -92,11 +92,11 @@ argument-hint: "[描述拟议的用工安排，或直接开始，我将提问]"
 
 ## 加载上下文
 
-读取 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` → 管辖范围、任何既有的认定历史或先前争议记录、升级表，以及团队记录的任何内部用工政策。
+读取 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md` → 管辖范围、任何既有的认定历史或先前争议记录、升级表，以及团队记录的任何内部用工政策。
 
 ## 输出标题
 
-从 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` → `## Outputs` 预置工作成果标题（根据用户角色不同——见 `## Who's using this`）。
+从 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md` → `## Outputs` 预置工作成果标题（根据用户角色不同——见 `## Who's using this`）。
 
 ## 工作流
 
@@ -153,7 +153,7 @@ argument-hint: "[描述拟议的用工安排，或直接开始，我将提问]"
 > **区分劳动关系与劳务关系**：劳务关系适用《民法典》合同编，不受《劳动合同法》调整。`[法条原文]`
 > **区分劳动关系与承揽关系**：承揽关系适用《民法典》第770条以下（承揽合同），定作人不承担劳动法下用人单位义务。`[法条原文]`
 
-如果 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` 记录了公司内部认定政策，先适用该政策，并标识与研究标准之间的任何冲突。
+如果 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md` 记录了公司内部认定政策，先适用该政策，并标识与研究标准之间的任何冲突。
 
 > **不自作补充。** 如果对配置的法律研究工具的查询返回零结果或极少结果，报告已找到的内容并停止。不要不询问就从网络搜索或模型知识填补空白。说："搜索从[工具]返回了[N]条结果。[管辖地/问题/标准]的覆盖范围似乎很薄。选项：(1)扩大搜索查询，(2)尝试其他研究工具，(3)搜索网络——结果将标注`[联网检索——需复核]`，依赖前应核实，(4)标注为未经核实并停止。您希望选哪个？"由律师决定是否接受较低可信度的来源。
 >
@@ -293,7 +293,7 @@ argument-hint: "[描述拟议的用工安排，或直接开始，我将提问]"
 
 ## 后续行动门槛（认定用工关系）
 
-**在做出"可以按劳务关系/劳动关系/派遣/外包进行"的最终建议前：** 读取 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` 中的 `## Who's using this`。如果角色是**非律师**：
+**在做出"可以按劳务关系/劳动关系/派遣/外包进行"的最终建议前：** 读取 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md` 中的 `## Who's using this`。如果角色是**非律师**：
 
 > 认定用工关系具有法律后果——错误认定可能使企业面临补缴社会保险费、支付加班费和未休年休假工资、承担工伤保险责任以及行政处罚的风险。您是否已与律师审查过此认定？如已审查，继续。如未审查，以下是带去给律师的简要材料：
 >

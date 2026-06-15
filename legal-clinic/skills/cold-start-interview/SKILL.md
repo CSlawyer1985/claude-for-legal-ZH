@@ -10,19 +10,19 @@ argument-hint: "[--redo] [--check-integrations]"
 
 # /cold-start-interview
 
-1. 检查 `~/.claude/plugins/config/claude-for-legal/legal-clinic/CLAUDE.md`。如已填充且无 `--redo`，在覆盖前确认。
+1. 检查 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/CLAUDE.md`。如已填充且无 `--redo`，在覆盖前确认。
 2. 运行以下指导老师访谈，从 Part 0 开始（指导老师身份检查 → 伦理前置条件 → 集成可用性）。如果用户不是指导老师，停止并重定向。
 3. 种子文件：诊所手册、提交指南、本地法院规则、接待表格、一份已脱敏的示例文件。
 4. 关键决定：指导风格（正式队列 / 标记 / 较轻触）。
 5. 迁移：如果在 `~/.claude/plugins/cache/claude-for-legal/legal-clinic/*/CLAUDE.md` 存在已填充的 CLAUDE.md（无 `[PLACEHOLDER]` 标记）但不在配置路径，将其复制到配置路径并告知用户迁移了什么。
-6. 写入 `~/.claude/plugins/config/claude-for-legal/legal-clinic/CLAUDE.md`，包括 `## 谁在使用这个插件` 和 `## 可用集成`。展示指导风格选择和实践领域模板供确认。
+6. 写入 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/CLAUDE.md`，包括 `## 谁在使用这个插件` 和 `## 可用集成`。展示指导风格选择和实践领域模板供确认。
 7. 提供 `/legal-clinic:ramp` 预览。
 
 ```
 /legal-clinic:cold-start-interview
 ```
 
-**`--check-integrations`：** 仅重新运行 Part 0 集成可用性检查。更新 `~/.claude/plugins/config/claude-for-legal/legal-clinic/CLAUDE.md` 中的 `## 可用集成`，不触及身份、伦理前置条件、指导风格或实践领域模板。在添加或移除 MCP 连接器后使用。
+**`--check-integrations`：** 仅重新运行 Part 0 集成可用性检查。更新 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/CLAUDE.md` 中的 `## 可用集成`，不触及身份、伦理前置条件、指导风格或实践领域模板。在添加或移除 MCP 连接器后使用。
 
 探测时：仅在实际 MCP 工具调用成功时报告 ✓。已配置但未测试的连接器应标记为 ⚪ 并附一行确认方法。绝不基于 `.mcp.json` 声明单独报告 ✓——这会误导用户以为某些东西已接入而实际未接入。
 
@@ -42,7 +42,7 @@ argument-hint: "[--redo] [--check-integrations]"
 
 ## 冷启动检查
 
-读取 `~/.claude/plugins/config/claude-for-legal/legal-clinic/CLAUDE.md`：
+读取 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/CLAUDE.md`：
 - **不存在** → 开始访谈。
 - **包含 `<!-- SETUP PAUSED AT: -->`** → 欢迎用户并提供从该节恢复。
 - **包含 `[PLACEHOLDER]` 标记但无暂停注释** → 模板从未完成；提供从头开始或从占位符起始处恢复。
@@ -50,7 +50,7 @@ argument-hint: "[--redo] [--check-integrations]"
 
 ## 检查共享机构画像
 
-查找 `~/.claude/plugins/config/claude-for-legal/company-profile.md`。
+查找 `~/.claude/plugins/config/claude-for-legal-zh/company-profile.md`。
 
 - **如存在：** 读取它。展示一行确认："你是[姓名]，[执业设置]，在[机构]，[行业]，在[管辖地]执业。对吗？（或说'更新'来更改共享画像）"如确认，跳过机构相关问题——直接进入插件特定问题。
 - **如不存在：** 你将是用户设置的第一个插件。在导览和分叉后，询问机构相关问题并写入共享画像（按插件根目录下 `references/company-profile-template.md` 的模板），然后继续插件特定问题。告诉用户："我已保存你的机构画像——其他法律插件将读取它并跳过这些问题。"
@@ -105,7 +105,7 @@ argument-hint: "[--redo] [--check-integrations]"
 - **写入实践画像前：** 回顾访谈。列出每个被跳过或用占位符回答的问题——仍待处理的伦理前置条件、无模板的实践领域、未设定的指导标记触发条件、承诺但未上传的手册。说："在我写入你的实践画像前，以下是仍待处理的内容：[列表]。现在要补充吗，还是留作占位符？"然后等待。
 - **绝不**写入带有静默缺口的实践画像。每个占位符应是指导律师做出的有意跳过选择——而非滚过去的问题。
 - **批量大小——计算子问题。** "一轮不超过2-3个问题"意味着2-3个*可回答的提示*，计算子问题。一个有5个子问题的问题是5个问题。检验：用户能不用滚动就回答吗？如果问题不能在一个屏幕中放下，就太多了。尽可能使用结构化快速点击问题——它们不需要滚动或输入。
-- **暂停与恢复。** 提前告诉指导律师："如果你需要停下，说'暂停'（或'停止'或'让我回来再继续'），我将保存你的进度。之后再次运行 `/legal-clinic:cold-start-interview` 我会从你离开的地方继续。"当律师暂停时，将部分配置写入 `~/.claude/plugins/config/claude-for-legal/legal-clinic/CLAUDE.md`，在顶部附 `<!-- SETUP PAUSED AT: [节名称] — 运行 /legal-clinic:cold-start-interview 继续 -->` 注释，未回答字段使用 `[PENDING]` 标记（区别于 `[PLACEHOLDER]`）。当设置重新运行并发现暂停的配置时，问候律师："欢迎回来。你暂停在[节]。你早先的回答已保存。从离开的地方继续，还是重新开始？"不重问已回答的问题。
+- **暂停与恢复。** 提前告诉指导律师："如果你需要停下，说'暂停'（或'停止'或'让我回来再继续'），我将保存你的进度。之后再次运行 `/legal-clinic:cold-start-interview` 我会从你离开的地方继续。"当律师暂停时，将部分配置写入 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/CLAUDE.md`，在顶部附 `<!-- SETUP PAUSED AT: [节名称] — 运行 /legal-clinic:cold-start-interview 继续 -->` 注释，未回答字段使用 `[PENDING]` 标记（区别于 `[PLACEHOLDER]`）。当设置重新运行并发现暂停的配置时，问候律师："欢迎回来。你暂停在[节]。你早先的回答已保存。从离开的地方继续，还是重新开始？"不重问已回答的问题。
 
 **在设置中核实用户陈述的法律事实。** 当用户以具体的规则引注、法条编号、案例名称、日期、截止日期、阈值、管辖地或注册号回答访谈问题时——且是你可以做合理性检查的——在写入配置前进行检查。如果用户所述与你的理解或他们已粘贴的内容冲突，浮现出来："你说阈值是X；我的理解是Y——能否确认哪个写入画像？`[前提已标记 — 需核实]`"一个写入 CLAUDE.md 的错误事实会传播到每个未来输出中；在此处捕捉它是产品中最高杠杆的时刻之一。
 
@@ -330,7 +330,7 @@ argument-hint: "[--redo] [--check-integrations]"
 
 7. **以"你可以稍后更改任何内容"结束：**
 
-> 完成。你诊所的配置位于 `~/.claude/plugins/config/claude-for-legal/legal-clinic/CLAUDE.md`——一份你可以直接阅读和编辑的纯文本文件。你的任何回答都可以更改：
+> 完成。你诊所的配置位于 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/CLAUDE.md`——一份你可以直接阅读和编辑的纯文本文件。你的任何回答都可以更改：
 >
 > - 直接编辑文件以快速更改
 > - 运行 `/legal-clinic:cold-start-interview --redo` 进行全面重新访谈

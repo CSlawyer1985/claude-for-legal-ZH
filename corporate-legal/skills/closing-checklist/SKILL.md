@@ -9,7 +9,7 @@ argument-hint: "[可选：项目ID + 状态更新]"
 
 # /closing-checklist
 
-1. 读取 `~/.claude/plugins/config/claude-for-legal/corporate-legal/deals/[代码]/closing-checklist.yaml` 并使用以下模式。
+1. 读取 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/deals/[代码]/closing-checklist.yaml` 并使用以下模式。
 2. 如有状态更新：模式3（更新项目）。
 3. 否则模式4：阻碍项、关键路径、距交割天数。
 
@@ -17,7 +17,7 @@ argument-hint: "[可选：项目ID + 状态更新]"
 
 ## 事项上下文
 
-**事项上下文。** 检查实务级 CLAUDE.md 中的 `## 事项工作区`。如果 `Enabled` 为 `✗`（企业法务用户的默认值），跳过本段其余内容——技能使用实务级上下文，事项机制不可见。如果已启用且无活跃事项，询问："这是哪个事项？运行 `/corporate-legal:matter-workspace switch <事项简称>` 或说 `实务级`。"加载活跃事项的 `matter.md` 获取事项特定上下文和覆盖规则。输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal/corporate-legal/matters/<事项简称>/`。除非 `跨事项上下文` 为 `开`，否则绝不读取其他事项的文件。
+**事项上下文。** 检查实务级 CLAUDE.md 中的 `## 事项工作区`。如果 `Enabled` 为 `✗`（企业法务用户的默认值），跳过本段其余内容——技能使用实务级上下文，事项机制不可见。如果已启用且无活跃事项，询问："这是哪个事项？运行 `/corporate-legal:matter-workspace switch <事项简称>` 或说 `实务级`。"加载活跃事项的 `matter.md` 获取事项特定上下文和覆盖规则。输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/matters/<事项简称>/`。除非 `跨事项上下文` 为 `开`，否则绝不读取其他事项的文件。
 
 ---
 
@@ -27,7 +27,7 @@ argument-hint: "[可选：项目ID + 状态更新]"
 
 ## 检查表
 
-存放于 `~/.claude/plugins/config/claude-for-legal/corporate-legal/deals/[代码]/closing-checklist.yaml`。结构：
+存放于 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/deals/[代码]/closing-checklist.yaml`。结构：
 
 ```yaml
 deal_code: "Project Falcon"
@@ -182,7 +182,7 @@ CP-002: Acme 已回应，同意表格已附，需要副签
 
 ## 后果性行动准入（证明交割）
 
-**在产出"已可交割/全部交割先决条件已满足"认证或交割备忘录前：** 读取 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` 中的 `## 使用者`。如果角色为**非法务人员**：
+**在产出"已可交割/全部交割先决条件已满足"认证或交割备忘录前：** 读取 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` 中的 `## 使用者`。如果角色为**非法务人员**：
 
 > 证明交割先决条件已满足（或出具如此主张的交割备忘录）具有法律后果——这是推动资金流转和交割后义务的信号。你是否已与律师审查？如已审查，继续。如未审查，以下是带给律师的简要说明：
 >

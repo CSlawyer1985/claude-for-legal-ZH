@@ -9,7 +9,7 @@ argument-hint: "[粘贴文案，或文件路径]"
 
 # /marketing-claims-review
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/product-legal/CLAUDE.md` → 营销宣传标准。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/product-legal/CLAUDE.md` → 营销宣传标准。
 2. 应用下述宣传分类法和审查工作流。
 3. 提取每一条宣传主张。分类：夸大/事实性/比较性/暗示性/绝对性。
 4. 对每条非夸大宣传：证实性检查、建议修改。
@@ -24,7 +24,7 @@ argument-hint: "[粘贴文案，或文件路径]"
 
 ## 事项上下文
 
-**事项上下文。** 检查实务级 CLAUDE.md 中的 `## 事项工作空间`。如果 `Enabled` 为 `✗`（企业法务用户的默认值），跳过本段其余内容——技能使用实务级上下文，事项机制不可见。如果已启用且无活跃事项，询问："这是哪个事项？运行 `/product-legal:matter-workspace switch <事项简称>` 或说 `实务级`。"加载活跃事项的 `matter.md` 获取事项特定上下文和覆盖规则。输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal/product-legal/matters/<事项简称>/`。除非 `跨事项上下文` 为 `开`，否则绝不读取其他事项的文件。
+**事项上下文。** 检查实务级 CLAUDE.md 中的 `## 事项工作空间`。如果 `Enabled` 为 `✗`（企业法务用户的默认值），跳过本段其余内容——技能使用实务级上下文，事项机制不可见。如果已启用且无活跃事项，询问："这是哪个事项？运行 `/product-legal:matter-workspace switch <事项简称>` 或说 `实务级`。"加载活跃事项的 `matter.md` 获取事项特定上下文和覆盖规则。输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal-zh/product-legal/matters/<事项简称>/`。除非 `跨事项上下文` 为 `开`，否则绝不读取其他事项的文件。
 
 ---
 
@@ -34,7 +34,7 @@ argument-hint: "[粘贴文案，或文件路径]"
 
 ## 加载标准
 
-读取 `~/.claude/plugins/config/claude-for-legal/product-legal/CLAUDE.md` → `## 营销宣传`：
+读取 `~/.claude/plugins/config/claude-for-legal-zh/product-legal/CLAUDE.md` → `## 营销宣传`：
 - 比较性宣传政策（允许附证实/不鼓励/绝不）
 - 证实标准（宣传发布前需要什么）
 - 常见被驳回的宣传主张（从历史中学习）
@@ -91,7 +91,7 @@ argument-hint: "[粘贴文案，或文件路径]"
 | "唯一能做X的平台" | 如果任何人也能做X则为虚假——"第一个做X的平台……"（如果真实）或删除"唯一" |
 | "[竞争对手]做不到这个" | 展示您的功能。让观众比较。 |
 
-根据 `~/.claude/plugins/config/claude-for-legal/product-legal/CLAUDE.md`——如果比较性宣传为"绝不"，标记全部。如果"允许附证实"，检查证实。
+根据 `~/.claude/plugins/config/claude-for-legal-zh/product-legal/CLAUDE.md`——如果比较性宣传为"绝不"，标记全部。如果"允许附证实"，检查证实。
 
 ### 暗示性宣传
 
@@ -142,7 +142,7 @@ argument-hint: "[粘贴文案，或文件路径]"
 
 ### 第4步：输出
 
-冠以 `~/.claude/plugins/config/claude-for-legal/product-legal/CLAUDE.md` `## 输出规范` 中的工作成果页眉（因用户角色而异——参见 `## 使用者`）。
+冠以 `~/.claude/plugins/config/claude-for-legal-zh/product-legal/CLAUDE.md` `## 输出规范` 中的工作成果页眉（因用户角色而异——参见 `## 使用者`）。
 
 ```markdown
 [工作成果页眉 — 按插件配置 ## 输出规范]
@@ -160,7 +160,7 @@ argument-hint: "[粘贴文案，或文件路径]"
 
 **可发布：**[是 | 经以下修改后 | 否——需重写]
 
-> **在对"可发布：是"（即批准某宣传用于外部发布）输出前：** 读取 `~/.claude/plugins/config/claude-for-legal/product-legal/CLAUDE.md` 中的 `## 使用者`。如果角色为非法务人员：
+> **在对"可发布：是"（即批准某宣传用于外部发布）输出前：** 读取 `~/.claude/plugins/config/claude-for-legal-zh/product-legal/CLAUDE.md` 中的 `## 使用者`。如果角色为非法务人员：
 >
 > > 批准一项营销宣传对外发布是一项法律行为——一旦发布，证实缺口和比较性宣传曝光即成为执法或竞争对手挑战风险。您是否已与律师审查？如已审查，继续。如未审查，以下是带给律师的简要说明：
 > >

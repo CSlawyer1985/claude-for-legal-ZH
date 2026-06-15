@@ -11,8 +11,8 @@ argument-hint: "<科目> <n> [--客观题 | --主观题 | --记忆卡片]"
 
 1. 解析 `$ARGUMENTS`——科目和 N。如果缺失，问：
    > 什么科目，多少道题？（例如 `刑法 10` 或 `民法 5 --主观题`。）
-2. 加载 `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` → 考试类型、薄弱科目。
-3. 加载 `~/.claude/plugins/config/claude-for-legal/law-student/study-plan.yaml`（如存在）。读取该科目的 `session_history`，将子主题权重倾向学生曾经薄弱的地方。
+2. 加载 `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` → 考试类型、薄弱科目。
+3. 加载 `~/.claude/plugins/config/claude-for-legal-zh/law-student/study-plan.yaml`（如存在）。读取该科目的 `session_history`，将子主题权重倾向学生曾经薄弱的地方。
 4. 按方法标志路由：
    - `--客观题`（法考备考科目默认）：加载 `bar-prep-questions` 技能，运行 N 道客观题。适用省级口径处理（见该技能的 `## 省级口径处理`）。每题标注 `[全国统一规定]` 或 `[省级口径]`。
    - `--主观题`：加载 `bar-prep-questions`，运行 N 道主观题。按主观题评分标准批改。
@@ -20,7 +20,7 @@ argument-hint: "<科目> <n> [--客观题 | --主观题 | --记忆卡片]"
 5. 逐题运行 N 题。每题后解释对/错，当法域存在差异时标注适用的规则体系。
 6. 练习结束时，写入练习结果：
    - 如果 `study-plan.yaml` 存在：按 `study-plan` 技能中的 schema 追加到 `session_history`。
-   - 否则：写入 `~/.claude/plugins/config/claude-for-legal/law-student/session-history.yaml`。
+   - 否则：写入 `~/.claude/plugins/config/claude-for-legal-zh/law-student/session-history.yaml`。
 7. 报告：
    - 得分：X/N（百分比）
    - 错题：列表附子主题标签

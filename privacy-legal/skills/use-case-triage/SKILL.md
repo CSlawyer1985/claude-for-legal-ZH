@@ -10,7 +10,7 @@ argument-hint: "[描述个人信息处理活动或功能]"
 
 # /use-case-triage
 
-1. 读取 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md`。确认隐私实践已配置——如未配置，停止并引导至设置。
+1. 读取 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md`。确认隐私实践已配置——如未配置，停止并引导至设置。
 2. 执行以下工作流。如活动描述模糊，先澄清。
 3. 内部触发检查 → 法定评估检查（个保法第55条四类情形）→ 个人信息处理规则冲突检查。
 4. 输出：分类（可直接推进 / 需影响评估 / 法定评估强制触发 / 停止）、理由、条件表（如需）、跨插件交接。
@@ -26,7 +26,7 @@ argument-hint: "[描述个人信息处理活动或功能]"
 
 ## 事项上下文
 
-**事项上下文。** 检查实践级 CLAUDE.md 中的 `## 事项工作区`。如果 `已启用` 为 `✗`（法务用户的默认值），跳过本段——技能使用实践级上下文，事项机制不可见。如果已启用且无活动事项，询问："这是哪个事项？运行 `/privacy-legal:matter-workspace switch <slug>` 或说 `实践级`。"加载活动事项的 `matter.md` 获取事项特定上下文和覆盖项。将输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal/privacy-legal/matters/<matter-slug>/`。除非 `跨事项上下文` 为 `开启`，否则绝不读取其他事项的文件。
+**事项上下文。** 检查实践级 CLAUDE.md 中的 `## 事项工作区`。如果 `已启用` 为 `✗`（法务用户的默认值），跳过本段——技能使用实践级上下文，事项机制不可见。如果已启用且无活动事项，询问："这是哪个事项？运行 `/privacy-legal:matter-workspace switch <slug>` 或说 `实践级`。"加载活动事项的 `matter.md` 获取事项特定上下文和覆盖项。将输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/matters/<matter-slug>/`。除非 `跨事项上下文` 为 `开启`，否则绝不读取其他事项的文件。
 
 ---
 
@@ -52,7 +52,7 @@ argument-hint: "[描述个人信息处理活动或功能]"
 
 ## 先读配置
 
-分诊前，始终读取 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md`。其中的 PIA 触发标准、监管覆盖范围和个人信息处理规则承诺是权威来源。通用隐私法推理不能替代公司实际作出的承诺。
+分诊前，始终读取 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md`。其中的 PIA 触发标准、监管覆盖范围和个人信息处理规则承诺是权威来源。通用隐私法推理不能替代公司实际作出的承诺。
 
 如果文件缺失或包含 `[占位符]`，弹出此提示：
 
@@ -90,7 +90,7 @@ argument-hint: "[描述个人信息处理活动或功能]"
 
 ### 第2步：检查内部触发标准
 
-读取 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md` → `## PIA 内部规范` → 触发标准。适用这些标准。
+读取 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md` → `## PIA 内部规范` → 触发标准。适用这些标准。
 
 如果内部触发条件满足 → 至少 **需影响评估**。
 
@@ -113,7 +113,7 @@ argument-hint: "[描述个人信息处理活动或功能]"
 >
 > 如果任一项为是：行业监管通常提供主导性的实体性限制，而不仅是个保法的豁免。请研究并引用具体规定后再继续。
 
-然后，对 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md` → `## 监管覆盖范围` 中的每个法域，**检索当前有效的法定个人信息保护影响评估触发条件**。引用现行有效的法律、行政法规、部门规章或网信办指引，附精准引用。注意生效日期——国家标准和部门规章更新频繁，不得依赖静态清单。不确定时标示供律师核实，而非猜测。
+然后，对 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md` → `## 监管覆盖范围` 中的每个法域，**检索当前有效的法定个人信息保护影响评估触发条件**。引用现行有效的法律、行政法规、部门规章或网信办指引，附精准引用。注意生效日期——国家标准和部门规章更新频繁，不得依赖静态清单。不确定时标示供律师核实，而非猜测。
 
 **个保法第55条法定评估触发情形（四类+兜底）** `[法条原文]`：
 
@@ -139,7 +139,7 @@ argument-hint: "[描述个人信息处理活动或功能]"
 
 ### 第4步：个人信息处理规则冲突检查
 
-读取 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md` → `## 个人信息处理规则承诺`。逐项检查拟议活动是否与每项已声明的承诺一致。
+读取 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md` → `## 个人信息处理规则承诺`。逐项检查拟议活动是否与每项已声明的承诺一致。
 
 **常见的需捕捉的冲突：**
 - 处理规则说"我们收集 X、Y、Z"——本活动收集 W。需先更新处理规则，或停止收集 W。

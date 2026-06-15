@@ -17,8 +17,8 @@ argument-hint: "[配置部分名称，或描述你想修改的内容]"
 ## 做什么
 
 1. **读取配置。** 读取
-   `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md`
-   （以及上一级目录的 `~/.claude/plugins/config/claude-for-legal/company-profile.md`）。
+   `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md`
+   （以及上一级目录的 `~/.claude/plugins/config/claude-for-legal-zh/company-profile.md`）。
    如果插件配置不存在或仍包含 `[PLACEHOLDER]`，说：
 
    > 你还没有运行设置。先运行 `/corporate-legal:cold-start-interview`

@@ -3,7 +3,7 @@ CONFIGURATION LOCATION
 
 User-specific configuration for this plugin lives at a version-independent path that survives plugin updates:
 
-  ~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md
+  ~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md
 
 Rules for every skill, command, and agent in this plugin:
 1. READ configuration from that path. Not from this file.
@@ -15,7 +15,7 @@ Rules for every skill, command, and agent in this plugin:
 5. This file (the one you are reading) is the TEMPLATE. It ships with the plugin and shows the
    structure the config should have. It is replaced on every plugin update. Never write user data here.
 
-**Shared company profile.** Company-level facts (who you are, what you do, where you operate, your risk posture, key people) live in `~/.claude/plugins/config/claude-for-legal/company-profile.md` — one level above this file, shared by all 12 plugins. Read it before this plugin's practice profile. If it doesn't exist, this plugin's setup will create it.
+**Shared company profile.** Company-level facts (who you are, what you do, where you operate, your risk posture, key people) live in `~/.claude/plugins/config/claude-for-legal-zh/company-profile.md` — one level above this file, shared by all 12 plugins. Read it before this plugin's practice profile. If it doesn't exist, this plugin's setup will create it.
 -->
 
 # 商事合同实务画像
@@ -389,7 +389,7 @@ before doing anything. Fix something here and it's fixed everywhere.*
 
 **文件读取失败。** 当无法读取用户指向的文件时，不要无声失败。说明情况："无法读取[路径]。通常原因包括：(a) 插件以项目范围安装而文件位于[项目目录]之外——重新以用户范围安装或将文件移至此目录；(b) 路径存在笔误；(c) 文件格式无法读取。能否直接粘贴内容，或尝试以上修正之一？"无声的文件读取失败听起来像是插件忽略了用户的材料。
 
-**验证日志。** 当您或用户核实了一个标记项——对照原始来源确认引用、对照地方规则检查期限、对照现行法规核实阈值——记录下来，避免下次重复核实。将单行记录写入 `~/.claude/plugins/config/claude-for-legal/commercial-legal/verification-log.md`：
+**验证日志。** 当您或用户核实了一个标记项——对照原始来源确认引用、对照地方规则检查期限、对照现行法规核实阈值——记录下来，避免下次重复核实。将单行记录写入 `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/verification-log.md`：
 
 `[YYYY-MM-DD] [引用或事实] 由[姓名]对照[来源]核实 —— [结论：已确认 / 更正为X / 无法核实]`
 
@@ -431,7 +431,7 @@ before doing anything. Fix something here and it's fixed everywhere.*
 
 ## 本领域的即席问题
 
-当用户在本插件业务领域提出问题——不仅限于调用技能时——首先读取 `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md`（及 `~/.claude/plugins/config/claude-for-legal/company-profile.md`），并加以适用。如已填充完毕，以已配置的助手身份回答：
+当用户在本插件业务领域提出问题——不仅限于调用技能时——首先读取 `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md`（及 `~/.claude/plugins/config/claude-for-legal-zh/company-profile.md`），并加以适用。如已填充完毕，以已配置的助手身份回答：
 
 - 使用其法域范围、风险偏好、合同手册立场和审批上报链条
 - 即便没有技能运行也适用安全机制：来源归属、引用规范、法域识别、决策姿态、审查备注格式
@@ -503,7 +503,7 @@ before doing anything. Fix something here and it's fixed everywhere.*
 **活跃事项：** 无
 **跨事项上下文：** 关闭
 
-当事项工作空间启用时，技能在活跃事项的上下文中工作。技能读取本业务层面CLAUDE.md获取业务画像级别规则（合同手册、审批上报矩阵、行文风格），并读取事项的 `matter.md` 获取事项特定事实和覆盖规则。输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal/commercial-legal/matters/<事项简称>/`。
+当事项工作空间启用时，技能在活跃事项的上下文中工作。技能读取本业务层面CLAUDE.md获取业务画像级别规则（合同手册、审批上报矩阵、行文风格），并读取事项的 `matter.md` 获取事项特定事实和覆盖规则。输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/matters/<事项简称>/`。
 
 当跨事项上下文关闭时（默认），在事项A中工作的技能绝不读取事项B的文件。需跨事项传递的经验写入本业务层面CLAUDE.md，而非事项文件夹。
 

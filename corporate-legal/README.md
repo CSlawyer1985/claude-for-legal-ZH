@@ -20,7 +20,7 @@
 /corporate-legal:cold-start-interview
 ```
 
-依次完成模块选择，然后针对每个活跃业务领域进行简短访谈。将模块化的实务画像写入 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md`，仅包含相关章节。您的配置存储于该路径并在插件更新后继续生效。
+依次完成模块选择，然后针对每个活跃业务领域进行简短访谈。将模块化的实务画像写入 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md`，仅包含相关章节。您的配置存储于该路径并在插件更新后继续生效。
 
 逐项交易设置（仅并购模块）：
 
@@ -90,7 +90,7 @@
 
 ## 如何学习
 
-您在 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` 中的实务画像并非一成不变——它会随着您使用插件而持续改进。技能会告知您何时某次输出使用了应予调整的默认值。您可以重新运行设置、直接编辑文件或告知某项技能记录新的立场。
+您在 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` 中的实务画像并非一成不变——它会随着您使用插件而持续改进。技能会告知您何时某次输出使用了应予调整的默认值。您可以重新运行设置、直接编辑文件或告知某项技能记录新的立场。
 
 ## 并购说明
 

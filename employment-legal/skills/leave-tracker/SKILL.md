@@ -13,9 +13,9 @@ argument-hint: "[无需参数——从假期登记册 leave-register.yaml 读取
 
 ## 指令
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` → 管辖地表和假期管理部分。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md` → 管辖地表和假期管理部分。
 
-2. 如果 `~/.claude/plugins/config/claude-for-legal/employment-legal/leave-register.yaml` 不存在或无数据，提示律师上传假期电子表格或使用 `/employment-legal:log-leave` 添加条目。
+2. 如果 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/leave-register.yaml` 不存在或无数据，提示律师上传假期电子表格或使用 `/employment-legal:log-leave` 添加条目。
 
 3. 仅对需要行动的假期发出预警。无问题的假期每项一行总结。
 

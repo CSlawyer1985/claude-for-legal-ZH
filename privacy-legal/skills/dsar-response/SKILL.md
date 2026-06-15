@@ -10,7 +10,7 @@ argument-hint: "[粘贴请求，或描述请求]"
 
 # /dsar-response
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md` → DSAR 流程（系统清单、验证方式、SLA）。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md` → DSAR 流程（系统清单、验证方式、SLA）。
 2. 执行以下工作流。
 3. 分类请求类型。检查升级触发条件——如有触发，先路由再继续。
 4. 逐步执行：验证身份 → 遍历系统清单 → 豁免分析 → 起草。
@@ -30,7 +30,7 @@ argument-hint: "[粘贴请求，或描述请求]"
 
 ## 事项上下文
 
-**事项上下文。** 检查实践级 CLAUDE.md 中的 `## 事项工作区`。如果 `已启用` 为 `✗`（法务用户的默认值），跳过本段——技能使用实践级上下文，事项机制不可见。如果已启用且无活动事项，询问："这是哪个事项？运行 `/privacy-legal:matter-workspace switch <slug>` 或说 `实践级`。"加载活动事项的 `matter.md` 获取事项特定上下文和覆盖项。将输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal/privacy-legal/matters/<matter-slug>/`。除非 `跨事项上下文` 为 `开启`，否则绝不读取其他事项的文件。
+**事项上下文。** 检查实践级 CLAUDE.md 中的 `## 事项工作区`。如果 `已启用` 为 `✗`（法务用户的默认值），跳过本段——技能使用实践级上下文，事项机制不可见。如果已启用且无活动事项，询问："这是哪个事项？运行 `/privacy-legal:matter-workspace switch <slug>` 或说 `实践级`。"加载活动事项的 `matter.md` 获取事项特定上下文和覆盖项。将输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/matters/<matter-slug>/`。除非 `跨事项上下文` 为 `开启`，否则绝不读取其他事项的文件。
 
 ---
 
@@ -48,7 +48,7 @@ argument-hint: "[粘贴请求，或描述请求]"
 
 ## 加载流程
 
-读取 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md` → `## DSAR 流程`。该节包含：
+读取 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md` → `## DSAR 流程`。该节包含：
 - 系统清单（用户数据所在的每个位置）
 - 身份验证方式
 - 回复 SLA
@@ -82,7 +82,7 @@ argument-hint: "[粘贴请求，或描述请求]"
 
 ### 第2步：验证身份
 
-按 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md` 中的验证方式。常见方式：
+按 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md` 中的验证方式。常见方式：
 
 - **已登录验证：** 请求来自已验证的会话内 → 身份已确认
 - **邮件匹配：** 请求来自档案中的电子邮件 → 通常对低风险请求足够
@@ -100,7 +100,7 @@ argument-hint: "[粘贴请求，或描述请求]"
 
 ### 第3步：定位数据
 
-遍历 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md` 中的系统清单。对每个系统：
+遍历 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md` 中的系统清单。对每个系统：
 
 | 系统 | 已查询？ | 查到数据？ | 什么数据 |
 |---|---|---|---|
@@ -141,7 +141,7 @@ argument-hint: "[粘贴请求，或描述请求]"
 - **第5a步 — 确认函。** 在收到请求后数日内发出（目标：当日到3-5日内，始终远远在制度法定时限内）。确认收到，说明处理者理解的请求内容，说明回复时限和目标日期，询问任何仍未完成的身份验证材料。不包含实质披露。及时的确认函是监管机关看到的第一个信号，表明 DSAR 流程在运转；它也降低了重复请求或过早投诉的风险。
 - **第5b步 — 实质回复函。** 实际的披露、删除确认或查阅/复制导出。在法定期限（或更严格的内部 SLA）内发出。仅在身份验证完成且第3步/第4步的数据定位+豁免分析完成后才发出。
 
-**在将任一函件发送给个人信息主体之前：** 读取 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md` 中的 `## 谁在使用`。如果角色为非律师：
+**在将任一函件发送给个人信息主体之前：** 读取 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md` 中的 `## 谁在使用`。如果角色为非律师：
 
 > 发送个人信息主体权利回复具有法律后果——内容、主张的豁免和遗漏均可由监管机关审查，错误陈述构成执法风险敞口。你是否已请律师审查过？如已审查，继续。如未审查，以下是你带给律师的简要材料：
 >
@@ -151,7 +151,7 @@ argument-hint: "[粘贴请求，或描述请求]"
 
 未经明确同意，不得越过此关口。
 
-> **注意：** 两份 DSAR 函件均为对外发送给个人信息主体的文件。**勿**在两份函件上包含 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md` `## 输出` 中的工作成果抬头。函件附随的内部笔记、日志和豁免分析是律师工作成果——将这些分开保存并冠以工作成果抬头。
+> **注意：** 两份 DSAR 函件均为对外发送给个人信息主体的文件。**勿**在两份函件上包含 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md` `## 输出` 中的工作成果抬头。函件附随的内部笔记、日志和豁免分析是律师工作成果——将这些分开保存并冠以工作成果抬头。
 
 > **发送任一函件前：** 这是供律师审核的草稿，不是准备发送的回复。发送使处理者对一项立场负责，可能放弃豁免，可能启动监管机关的时限计算。由执业律师审核、编辑和批准后函件方可发送给个人信息主体。勿发送未经审核的函件。
 
@@ -254,7 +254,7 @@ argument-hint: "[粘贴请求，或描述请求]"
 
 ## 升级触发条件
 
-按 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md` → 升级表，以下情况升级：
+按 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md` → 升级表，以下情况升级：
 
 - 请求人是（或可能是）原告、对方律师或记者
 - 请求范围异常（"包括关于我的内部沟通在内的所有数据"）
@@ -268,7 +268,7 @@ argument-hint: "[粘贴请求，或描述请求]"
 
 **检索被行使的具体权利和适用法域下的当前有效回复期限。** 检查是否存在延期机制，可额外给予多少时间，以及必须向个人信息主体发送什么通知才能使用延期。识别时限从何时起算（收到 vs. 验证 vs. 其他触发规则——默认规则是收到；逐制度核实）。引用现行有效的规定附精准引用。注意生效日期——数据保护回复时限经常修订，新法出台引入各自的时限。
 
-如果 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md` → `## DSAR 流程` 记录了一个比法定期限更严格的内部 SLA，使用内部 SLA 并注明法定底线。
+如果 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md` → `## DSAR 流程` 记录了一个比法定期限更严格的内部 SLA，使用内部 SLA 并注明法定底线。
 
 如果你将需要延期，在初始期限到来前很久就发送"我们需要更多时间"的通知。最后一天才延期看起来不好。
 

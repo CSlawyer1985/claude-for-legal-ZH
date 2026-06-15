@@ -10,7 +10,7 @@ argument-hint: "[--init | --report [--days N] | --update [--from-report] | --swe
 
 # /entity-compliance
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` → `## 主体管理`（主体清单、注册地、工商登记代办机构）。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` → `## 主体管理`（主体清单、注册地、工商登记代办机构）。
 2. 按以下标志路由到正确的模式：
    - 无标志或 `--init`：模式1——从主体清单初始化追踪器
    - `--report`：模式2——呈现即将到来的截止日和逾期项
@@ -18,7 +18,7 @@ argument-hint: "[--init | --report [--days N] | --update [--from-report] | --swe
    - `--sweep`：模式3c——逐项排查未知/逾期项
    - `--audit`：模式4——全面健康审计
    - `--export`：模式5——产出 CSV 或表格导出
-3. 读取/写入 `~/.claude/plugins/config/claude-for-legal/corporate-legal/entities/compliance-tracker.yaml`。
+3. 读取/写入 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/entities/compliance-tracker.yaml`。
 4. 任何更新后：展示变更摘要和下一步行动。
 
 ---
@@ -33,7 +33,7 @@ argument-hint: "[--init | --report [--days N] | --update [--from-report] | --swe
 
 ## 注册地假设
 
-> 本追踪器按每个主体记录的设立地或经营地计算截止日。申报规则、截止日机制和费用结构在不同注册地之间存在实质性差异。如果主体的实际业务范围与 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` 中记录的不同（未披露的外地经营备案、已注销主体、注册地迁移、由本地代理机构管理的跨省级申报），输出可能不完全适用——与工商登记代办机构或该辖区的当地律师确认。
+> 本追踪器按每个主体记录的设立地或经营地计算截止日。申报规则、截止日机制和费用结构在不同注册地之间存在实质性差异。如果主体的实际业务范围与 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` 中记录的不同（未披露的外地经营备案、已注销主体、注册地迁移、由本地代理机构管理的跨省级申报），输出可能不完全适用——与工商登记代办机构或该辖区的当地律师确认。
 
 ## 主体类型区分
 
@@ -53,7 +53,7 @@ argument-hint: "[--init | --report [--days N] | --update [--from-report] | --swe
 
 ## 追踪器文件
 
-存放于 `~/.claude/plugins/config/claude-for-legal/corporate-legal/entities/compliance-tracker.yaml`。结构：
+存放于 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/entities/compliance-tracker.yaml`。结构：
 
 ```yaml
 # 主体合规追踪器
@@ -110,7 +110,7 @@ entities:
 
 ### 第1步：加载主体清单
 
-读取 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` → `## 主体管理` → 主体清单。如果主体清单已填充（来自冷启动时的组织架构图上传），直接使用。如果未填充，请用户运行冷启动模块或提供主体清单。
+读取 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` → `## 主体管理` → 主体清单。如果主体清单已填充（来自冷启动时的组织架构图上传），直接使用。如果未填充，请用户运行冷启动模块或提供主体清单。
 
 ### 第2步：对每个主体 × 注册地，确认申报要求
 
@@ -164,7 +164,7 @@ custom_jurisdictions:
 
 ### 第3步：写入追踪器
 
-生成 `~/.claude/plugins/config/claude-for-legal/corporate-legal/entities/compliance-tracker.yaml`，包含全部主体及其计算出的申报要求。设置初始状态：
+生成 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/entities/compliance-tracker.yaml`，包含全部主体及其计算出的申报要求。设置初始状态：
 - `current` 如果 last_filed 在当前申报期内
 - `due_soon` 如果90天内到期且当期无 last_filed
 - `overdue` 如果截止日已过且当期无 last_filed
@@ -237,7 +237,7 @@ custom_jurisdictions:
 
 ### 后果性行动准入（填报年报/工商备案）
 
-**在指示或确认一项申报前：** 读取 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` 中的 `## 使用者`。如果角色为**非法务人员**：
+**在指示或确认一项申报前：** 读取 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` 中的 `## 使用者`。如果角色为**非法务人员**：
 
 > 向市场监督管理局提交年度报告、企业所得税申报或信息公示具有法律后果——这是主体的正式陈述，伴随费用，遗漏或不正确申报可能导致失去存续状态或处罚。在申报前你是否已与律师（或有资质的工商登记代办机构）审查？如已审查，继续记录申报。如未审查，以下是带给他们的简要说明：
 >
@@ -329,10 +329,10 @@ Claude 更新：
 - `confirmed_good_standing` 超过12个月的主体——过期；值得刷新，尤其如预期有并购或融资。
 
 **经营备案缺口：**
-- 基于 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` 的主体清单：公司的业务足迹中是否有省份（办事处、员工）主体未办理经营备案？这需要律师确认业务存在——Claude 可以提出问题但不能独立判断业务存在。
+- 基于 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` 的主体清单：公司的业务足迹中是否有省份（办事处、员工）主体未办理经营备案？这需要律师确认业务存在——Claude 可以提出问题但不能独立判断业务存在。
 
 **关联方交易协议订立情况：**
-- 从 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md`：如果关联方交易协议订立情况标记为部分或否，标记哪些主体关系可能需要协议（母子公司服务、知识产权许可、贷款）。
+- 从 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md`：如果关联方交易协议订立情况标记为部分或否，标记哪些主体关系可能需要协议（母子公司服务、知识产权许可、贷款）。
 
 输出格式：
 
@@ -355,8 +355,8 @@ Claude 更新：
 
 潜在缺口
   经营备案：[标记问题——确认以下地区的业务存在：]
-    [足迹在追踪器中未显示为已备案的省份列表，来自 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md`]
-  关联方交易协议订立：[来自 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` 的状态]
+    [足迹在追踪器中未显示为已备案的省份列表，来自 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md`]
+  关联方交易协议订立：[来自 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` 的状态]
 
 建议行动
   1. [最高优先级行动]

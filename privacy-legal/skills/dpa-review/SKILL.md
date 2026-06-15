@@ -9,7 +9,7 @@ argument-hint: "[文件 | 网盘链接 | 粘贴文本]"
 
 # /dpa-review
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md` → DPA 操作手册。如为占位符，停止并提示设置。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md` → DPA 操作手册。如为占位符，停止并提示设置。
 2. 获取 DPA。确定方向：我们是受托处理者（客户发来DPA）还是处理者（审供应商的DPA）？不明确时询问。
 3. 执行以下工作流——逐条对照相应的操作手册行。
 4. 执行个人信息处理规则一致性检查。
@@ -25,19 +25,19 @@ argument-hint: "[文件 | 网盘链接 | 粘贴文本]"
 
 ## 事项上下文
 
-**事项上下文。** 检查实践级 CLAUDE.md 中的 `## 事项工作区`。如果 `已启用` 为 `✗`（法务用户的默认值），跳过本段——技能使用实践级上下文，事项机制不可见。如果已启用且无活动事项，询问："这是哪个事项？运行 `/privacy-legal:matter-workspace switch <slug>` 或说 `实践级`。"加载活动事项的 `matter.md` 获取事项特定上下文和覆盖项。将输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal/privacy-legal/matters/<matter-slug>/`。除非 `跨事项上下文` 为 `开启`，否则绝不读取其他事项的文件。
+**事项上下文。** 检查实践级 CLAUDE.md 中的 `## 事项工作区`。如果 `已启用` 为 `✗`（法务用户的默认值），跳过本段——技能使用实践级上下文，事项机制不可见。如果已启用且无活动事项，询问："这是哪个事项？运行 `/privacy-legal:matter-workspace switch <slug>` 或说 `实践级`。"加载活动事项的 `matter.md` 获取事项特定上下文和覆盖项。将输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/matters/<matter-slug>/`。除非 `跨事项上下文` 为 `开启`，否则绝不读取其他事项的文件。
 
 ---
 
 ## 目的
 
-DPA 有两种形态，审查方向几乎完全相反。当客户发来他们的 DPA，我们在捍卫我们的运营灵活性。当我们给供应商发 DPA，我们在保护我们（及我们客户的）数据。两次审查都读同一份 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md` 操作手册，但从相反的行读取。
+DPA 有两种形态，审查方向几乎完全相反。当客户发来他们的 DPA，我们在捍卫我们的运营灵活性。当我们给供应商发 DPA，我们在保护我们（及我们客户的）数据。两次审查都读同一份 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md` 操作手册，但从相反的行读取。
 
 ## 首先：哪个方向？
 
 做任何事之前，先确定：
 
-- **我们是受托处理者** → 客户向我们发送他们的 DPA → 读取 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md` → "当我们是受托处理者时" 表（对应个保法第21条委托处理 `[法条原文]`）
+- **我们是受托处理者** → 客户向我们发送他们的 DPA → 读取 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md` → "当我们是受托处理者时" 表（对应个保法第21条委托处理 `[法条原文]`）
 - **我们是处理者** → 我们正向供应商发送 DPA（或审查他们的）→ 读取 "当我们是处理者时" 表
 
 如果不清楚，询问。方向搞错将颠倒每项建议。
@@ -48,7 +48,7 @@ DPA 有两种形态，审查方向几乎完全相反。当客户发来他们的 
 
 ## 加载关于本对方当事人/活动的先前上下文
 
-审查前，检查输出文件夹中关于本对方当事人或处理活动的先前工作。读取 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md` → `## 输出` 获取输出文件夹路径。扫描：
+审查前，检查输出文件夹中关于本对方当事人或处理活动的先前工作。读取 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md` → `## 输出` 获取输出文件夹路径。扫描：
 
 - **先前的 `use-case-triage` 结果** 涵盖同一对方当事人/处理活动——分诊产生风险评级和条件，本 DPA 审查应遵守或明确偏离。
 - **先前的 `pia-generation` 输出** 涵盖本对方当事人/处理活动——PIA 可能已标注需要 DPA 实施的风险缓解措施。
@@ -59,13 +59,13 @@ DPA 有两种形态，审查方向几乎完全相反。当客户发来他们的 
 > "先前的分诊（[日期]）将本活动评为[风险等级]，并以[X]为批准条件。本 DPA 审查与该发现一致。"——或——
 > "先前的分诊（[日期]）将本活动评为[风险等级]。本 DPA 审查偏离该发现因为[理由——新事实、不同范围、改变了图景的合同条款]。"
 
-**从上游继承严重程度作为底线**，遵循 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md` → `## 共享护栏` 中的跨技能严重程度底线规则。被分诊评为🔴的处理活动不能在 DPA 审查中静默降级为🟢；任何降级均应说明和解释。
+**从上游继承严重程度作为底线**，遵循 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md` → `## 共享护栏` 中的跨技能严重程度底线规则。被分诊评为🔴的处理活动不能在 DPA 审查中静默降级为🟢；任何降级均应说明和解释。
 
 如果未找到先前的输出（新对方当事人/新活动），在审查中明确说明——"输出文件夹中无关于本对方当事人的先前分诊或PIA"——以便审核律师知道检查已执行。
 
 ## 加载操作手册
 
-读取 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md` → `## DPA 操作手册`。同时读取 `## 个人信息处理规则承诺`——DPA 不能与处理规则承诺相矛盾。
+读取 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md` → `## DPA 操作手册`。同时读取 `## 个人信息处理规则承诺`——DPA 不能与处理规则承诺相矛盾。
 
 ## 行业监管叠加（在逐条审阅之前先问）
 
@@ -87,7 +87,7 @@ DPA 有两种形态，审查方向几乎完全相反。当客户发来他们的 
 
 ### 核心条款（每份 DPA 都查）
 
-逐条审查 DPA 的以下条款。*具体*的数值和实体立场（通知期限、泄露时限、可接受/不可接受底线）来自 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md` → `## DPA 操作手册`。任何 DPA 必须满足的监管底线来自主源法律——**检索每个适用制度的现行有效规则**并引用主源后再陈述底线。
+逐条审查 DPA 的以下条款。*具体*的数值和实体立场（通知期限、泄露时限、可接受/不可接受底线）来自 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md` → `## DPA 操作手册`。任何 DPA 必须满足的监管底线来自主源法律——**检索每个适用制度的现行有效规则**并引用主源后再陈述底线。
 
 > **禁止静默补充。** 如果检索查询返回结果很少或为零，报告找到的内容并停止。不要未经询问即从网络搜索或模型知识填补空白。说："搜索返回[N]条结果。覆盖显得薄弱。选项：(1) 扩大搜索查询，(2) 尝试不同的检索工具，(3) 搜索网页——结果将标记为 `[联网检索 — 需复核]`，(4) 标记为未验证并停止。你想选哪个？"由律师决定是否接受可信度较低的来源。
 >
@@ -164,7 +164,7 @@ DPA 有两种形态，审查方向几乎完全相反。当客户发来他们的 
 
 ## 输出
 
-冠以 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md` `## 输出` 中的工作成果抬头（因用户角色不同而异——见 `## 谁在使用`）。
+冠以 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md` `## 输出` 中的工作成果抬头（因用户角色不同而异——见 `## 谁在使用`）。
 
 ```markdown
 [工作成果抬头 — 按插件配置 ## 输出]
@@ -218,7 +218,7 @@ DPA 有两种形态，审查方向几乎完全相反。当客户发来他们的 
 
 审查 DPA 是研究。*签署*它——或指示某人代表我们签字盖章——是具有法律后果的行为。
 
-**在签署 DPA（包括返回已签署版本、在对方平台上同意自动执行、或指示签字人签署）之前：** 读取 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md` 中的 `## 谁在使用`。如果角色为非律师：
+**在签署 DPA（包括返回已签署版本、在对方平台上同意自动执行、或指示签字人签署）之前：** 读取 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md` 中的 `## 谁在使用`。如果角色为非律师：
 
 > 签署 DPA 是法律行为——它使公司受到具体的数据保护义务约束，这些义务流向监管机构和个人信息主体。你是否已请律师审查过？如已审查，继续。如未审查，以下是你带给律师的简要材料：
 >

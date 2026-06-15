@@ -10,12 +10,12 @@ argument-hint: "[--redo | --check-integrations]"
 
 # /cold-start-interview
 
-1. 检查 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md`。如果 `--check-integrations`，跳过访谈——仅重新运行 Part 0 `有什么连接？`检查并重写配置路径下的 `## Available integrations` 表格。探测时：只有 MCP 工具调用实际成功才报告 ✓。配置但未测试的连接器应标记 ⚪ 并附一行确认方法。绝不基于 `.mcp.json` 声明报告 ✓——这会误导用户以为某事已接通而实际没有。
+1. 检查 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md`。如果 `--check-integrations`，跳过访谈——仅重新运行 Part 0 `有什么连接？`检查并重写配置路径下的 `## Available integrations` 表格。探测时：只有 MCP 工具调用实际成功才报告 ✓。配置但未测试的连接器应标记 ⚪ 并附一行确认方法。绝不基于 `.mcp.json` 声明报告 ✓——这会误导用户以为某事已接通而实际没有。
 2. 运行以下访谈（Part 0 优先——角色 + 集成——然后是管辖范围）：省/直辖市、录用/解除审查触发条件、经济补偿惯例。
 3. 种子文件：劳动规章制度 + 3 份解除备忘录。
 4. 构建管辖地特定上报表。
 5. 如果缓存路径下存在已填充的 CLAUDE.md（无 `[PLACEHOLDER]` 标记）但配置路径下不存在，将其复制到配置路径并告诉用户迁移了什么。
-6. 写入 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md`，根据需要创建父目录。
+6. 写入 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md`，根据需要创建父目录。
 
 ---
 
@@ -27,7 +27,7 @@ argument-hint: "[--redo | --check-integrations]"
 
 ## 冷启动检查
 
-读取 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md`：
+读取 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md`：
 - **不存在** → 开始访谈。
 - **包含 `<!-- SETUP PAUSED AT: -->`** → 问候用户并提供从该节恢复。
 - **包含 `[PLACEHOLDER]` 标记但无暂停注释** → 模板从未完成；提供重新开始或从占位符开始处恢复。
@@ -37,7 +37,7 @@ argument-hint: "[--redo | --check-integrations]"
 
 ## 检查共享公司画像
 
-查找 `~/.claude/plugins/config/claude-for-legal/company-profile.md`。
+查找 `~/.claude/plugins/config/claude-for-legal-zh/company-profile.md`。
 
 - **如果存在：** 读取它。显示一行确认："你是[名称]，[执业场景]，在[公司]，[行业]，在[管辖地]运营。对吗？（或说'更新'来修改共享画像。）"如果确认，跳过公司问题——直接进入插件专属问题。
 - **如果不存在：** 你将是对此用户首个设置的插件。在定位和分叉后，询问公司问题并写入共享画像，然后继续插件专属问题。告诉用户："我已保存你的公司画像——其他法律插件将读取它并跳过这些问题。"
@@ -216,7 +216,7 @@ argument-hint: "[--redo | --check-integrations]"
 
 ### 以"你可以随时修改任何内容"结尾
 
-> "完成。你的配置在 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md`——一个你可以直接阅读和编辑的纯文本文件。你回答的任何内容都可以修改：
+> "完成。你的配置在 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md`——一个你可以直接阅读和编辑的纯文本文件。你回答的任何内容都可以修改：
 >
 > - 直接编辑文件进行快速修改
 > - 运行 `/employment-legal:cold-start-interview --redo` 进行完整重新访谈

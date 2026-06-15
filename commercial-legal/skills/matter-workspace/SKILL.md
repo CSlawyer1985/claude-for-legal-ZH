@@ -43,7 +43,7 @@ argument-hint: "<new | list | switch | close | none> [简称]"
 所有事项数据位于：
 
 ```
-~/.claude/plugins/config/claude-for-legal/commercial-legal/
+~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/
 ├── CLAUDE.md                       # 业务领域级审查指引
 └── matters/
     ├── <slug>/

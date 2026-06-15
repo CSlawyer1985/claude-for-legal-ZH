@@ -13,7 +13,7 @@ argument-hint: "[调查事项名称，然后粘贴或附上数据]"
 
 ## 指令
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md`。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md`。
 2. 运行添加数据模式：
    - 将新数据追加到调查日志
    - 按筛选标准评估：是否与调查要点相关？是否重要？

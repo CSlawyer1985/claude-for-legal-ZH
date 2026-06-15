@@ -10,7 +10,7 @@ description: >
 
 # /tabular-review
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` → 尽调结构、阈值、内部格式。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` → 尽调结构、阈值、内部格式。
 2. 确认：什么文件、什么列、输出到哪里。
 3. 构建类型化模式。写入 `.review-schema.yaml`。与用户确认。
 4. 样本运行（3-5份文件）。调整模式。确认。
@@ -39,7 +39,7 @@ description: >
 
 ## 事项上下文
 
-**事项上下文。** 检查实务级 CLAUDE.md 中的 `## 事项工作区`。如果 `Enabled` 为 `✗`（企业法务用户的默认值），跳过本段其余内容——技能使用实务级上下文，事项机制不可见。如果已启用且无活跃事项，询问："这是哪个事项？运行 `/corporate-legal:matter-workspace switch <事项简称>` 或说 `实务级`。"加载活跃事项的 `matter.md` 获取事项特定上下文和覆盖规则。输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal/corporate-legal/matters/<事项简称>/`。除非 `跨事项上下文` 为 `开`，否则绝不读取其他事项的文件。
+**事项上下文。** 检查实务级 CLAUDE.md 中的 `## 事项工作区`。如果 `Enabled` 为 `✗`（企业法务用户的默认值），跳过本段其余内容——技能使用实务级上下文，事项机制不可见。如果已启用且无活跃事项，询问："这是哪个事项？运行 `/corporate-legal:matter-workspace switch <事项简称>` 或说 `实务级`。"加载活跃事项的 `matter.md` 获取事项特定上下文和覆盖规则。输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/matters/<事项简称>/`。除非 `跨事项上下文` 为 `开`，否则绝不读取其他事项的文件。
 
 ---
 
@@ -53,8 +53,8 @@ description: >
 
 ## 加载上下文
 
-- `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` → 尽调结构、重要性阈值、内部格式偏好
-- `~/.claude/plugins/config/claude-for-legal/corporate-legal/deals/[代码]/deal-context.md`（如处理特定交易）
+- `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` → 尽调结构、重要性阈值、内部格式偏好
+- `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/deals/[代码]/deal-context.md`（如处理特定交易）
 - 用户已有的模式文件（`.review-schema.yaml`）
 
 ## 列类型系统

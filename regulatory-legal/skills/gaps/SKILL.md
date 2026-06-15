@@ -6,7 +6,7 @@ argument-hint: "[可选: --close GAP-ID | --accept GAP-ID]"
 
 # /gaps
 
-1. 读取位于 `~/.claude/plugins/config/claude-for-legal/regulatory-legal/gap-tracker.yaml` 的差距跟踪器。
+1. 读取位于 `~/.claude/plugins/config/claude-for-legal-zh/regulatory-legal/gap-tracker.yaml` 的差距跟踪器。
 2. 如果 `--close`：标记差距已关闭，附解决方案说明。
 3. 如果 `--accept`：记录风险接受理由和接受人，状态 → risk-accepted。
 4. 否则：按年龄和重要度报告开放差距。

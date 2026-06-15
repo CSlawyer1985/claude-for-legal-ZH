@@ -17,7 +17,7 @@ argument-hint: "[节名称，或描述你想更改的内容]"
 ## 做什么
 
 1. **读取配置。** 读取
-   `~/.claude/plugins/config/claude-for-legal/legal-clinic/CLAUDE.md`。
+   `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/CLAUDE.md`。
    如果插件配置不存在或仍包含 `[PLACEHOLDER]` 值，说：
 
    > 你还没有运行设置。先运行 `/legal-clinic:cold-start-interview`——customize 是用于调整你已有的画像。

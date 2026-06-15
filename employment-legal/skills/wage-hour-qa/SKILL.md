@@ -11,7 +11,7 @@ argument-hint: "[问题]"
 
 # /wage-hour-qa
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` → 管辖范围。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md` → 管辖范围。
 2. 使用以下工作流。
 3. 识别问题涉及的管辖地。如未指定，询问。
 4. 按该管辖地的规则回答。引用。标记是否为临界问题或法律在变动中。
@@ -30,7 +30,7 @@ argument-hint: "[问题]"
 
 ## 加载上下文
 
-`~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` → 管辖范围。如果问题未指定管辖地，询问——或以员工最多的管辖地回答并注明。
+`~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md` → 管辖范围。如果问题未指定管辖地，询问——或以员工最多的管辖地回答并注明。
 
 ## 回答
 

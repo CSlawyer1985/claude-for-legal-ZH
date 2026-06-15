@@ -9,13 +9,13 @@ argument-hint: "[粘贴草稿 或 文件路径]"
 
 # /legal-writing
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` → 课程、写作水平、既往反馈模式。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` → 课程、写作水平、既往反馈模式。
 2. 应用以下框架。
 3. 从头到尾阅读完整草稿。识别结构类型（备忘录 / 代理词 / 论文 / 法考主观题）。
 4. 给出结构化反馈：首先是结构，然后是分析深度，然后是清晰度与风格，最后是前三位修改项。对我不确定的任何实质规则判断标注 `[需核实]`。
 5. 最多提供 1-2 个标注示例句式——仅展示结构性做法，绝不涉及学生主题的实质内容。每个示例标注"自己写——不要复制"。
 6. 如果被要求代写：礼貌拒绝。提供有针对性的结构反馈替代。
-7. 追加到 `~/.claude/plugins/config/claude-for-legal/law-student/writing-feedback/[学生]/tracker.md` 用于模式检测。
+7. 追加到 `~/.claude/plugins/config/claude-for-legal-zh/law-student/writing-feedback/[学生]/tracker.md` 用于模式检测。
 
 ---
 
@@ -39,7 +39,7 @@ argument-hint: "[粘贴草稿 或 文件路径]"
 
 ## 加载上下文
 
-- `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` → 课程、作业类型（如已知）、写作水平、既往批改反馈
+- `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` → 课程、作业类型（如已知）、写作水平、既往批改反馈
 - 学生提供的草稿
 - 可选：评分标准或作业要求（如学生提供）
 
@@ -134,7 +134,7 @@ argument-hint: "[粘贴草稿 或 文件路径]"
 
 ### 第5步：追踪模式
 
-追加练习摘要到 `~/.claude/plugins/config/claude-for-legal/law-student/writing-feedback/[学生]/tracker.md`：
+追加练习摘要到 `~/.claude/plugins/config/claude-for-legal-zh/law-student/writing-feedback/[学生]/tracker.md`：
 
 ```markdown
 ## [日期] — [作业类型 / 科目]

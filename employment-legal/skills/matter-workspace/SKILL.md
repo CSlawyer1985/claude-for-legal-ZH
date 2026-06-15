@@ -17,18 +17,18 @@ argument-hint: "<new | list | switch | close | none> [slug]"
 - `/employment-legal:matter-workspace new <slug>` —— 创建新案件工作空间，运行简短立案登记，写入 `matter.md`
 - `/employment-legal:matter-workspace list` —— 列举案件及其状态和活跃标记
 - `/employment-legal:matter-workspace switch <slug>` —— 设置活跃案件
-- `/employment-legal:matter-workspace close <slug>` —— 归档案件（移至 `~/.claude/plugins/config/claude-for-legal/employment-legal/matters/_archived/`，永不删除）
+- `/employment-legal:matter-workspace close <slug>` —— 归档案件（移至 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/matters/_archived/`，永不删除）
 - `/employment-legal:matter-workspace none` —— 解除任何活跃案件，仅在实务级工作
 
 ## 指令
 
-1. 读取 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md`——确认 `## Matter workspaces` 部分已填充。如果 `Enabled` 为 `✗`，告诉用户："案件工作空间已关闭——你配置为法务单一客户模式，插件自动从实务级上下文运行。如果你实际跨多个客户工作，重新运行 `/employment-legal:cold-start-interview --redo` 并选择私人执业设置。否则你根本不需要 `/matter-workspace`。"不要报错——禁用状态是法务用户的预期状态。
+1. 读取 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md`——确认 `## Matter workspaces` 部分已填充。如果 `Enabled` 为 `✗`，告诉用户："案件工作空间已关闭——你配置为法务单一客户模式，插件自动从实务级上下文运行。如果你实际跨多个客户工作，重新运行 `/employment-legal:cold-start-interview --redo` 并选择私人执业设置。否则你根本不需要 `/matter-workspace`。"不要报错——禁用状态是法务用户的预期状态。
 2. 使用以下子命令逻辑。
 3. 根据首个匹配的指令分发：
-   - `new` → 运行立案访谈，写入 `~/.claude/plugins/config/claude-for-legal/employment-legal/matters/<slug>/matter.md`，生成 `history.md` 和 `notes.md`。
-   - `list` → 枚举 `~/.claude/plugins/config/claude-for-legal/employment-legal/matters/*/matter.md`，打印表格，标记活跃案件。
+   - `new` → 运行立案访谈，写入 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/matters/<slug>/matter.md`，生成 `history.md` 和 `notes.md`。
+   - `list` → 枚举 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/matters/*/matter.md`，打印表格，标记活跃案件。
    - `switch` → 更新实务级 CLAUDE.md 中的 `Active matter:` 行。
-   - `close` → 将 `~/.claude/plugins/config/claude-for-legal/employment-legal/matters/<slug>/` 移至 `~/.claude/plugins/config/claude-for-legal/employment-legal/matters/_archived/<slug>/`，在 `history.md` 中记录关闭日期。
+   - `close` → 将 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/matters/<slug>/` 移至 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/matters/_archived/<slug>/`，在 `history.md` 中记录关闭日期。
    - `none` → 将 `Active matter:` 设置为 `none — 仅实务级上下文`。
 4. 向用户显示变更内容并在写入前确认。
 
@@ -51,7 +51,7 @@ argument-hint: "<new | list | switch | close | none> [slug]"
 所有案件数据位于：
 
 ```
-~/.claude/plugins/config/claude-for-legal/employment-legal/
+~/.claude/plugins/config/claude-for-legal-zh/employment-legal/
 ├── CLAUDE.md                       # 实务级实践画像
 └── matters/
     ├── <slug>/

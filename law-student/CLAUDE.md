@@ -3,7 +3,7 @@ CONFIGURATION LOCATION
 
 User-specific configuration for this plugin lives at a version-independent path that survives plugin updates:
 
-  ~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md
+  ~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md
 
 Rules for every skill, command, and agent in this plugin:
 1. READ configuration from that path. Not from this file.
@@ -15,7 +15,7 @@ Rules for every skill, command, and agent in this plugin:
 5. This file (the one you are reading) is the TEMPLATE. It ships with the plugin and shows the
    structure the config should have. It is replaced on every plugin update. Never write user data here.
 
-**Shared company profile.** Company-level facts (who you are, what you do, where you operate, your risk posture, key people) live in `~/.claude/plugins/config/claude-for-legal/company-profile.md` — one level above this file, shared by all 12 plugins. Read it before this plugin's practice profile. If it doesn't exist, this plugin's setup will create it.
+**Shared company profile.** Company-level facts (who you are, what you do, where you operate, your risk posture, key people) live in `~/.claude/plugins/config/claude-for-legal-zh/company-profile.md` — one level above this file, shared by all 12 plugins. Read it before this plugin's practice profile. If it doesn't exist, this plugin's setup will create it.
 -->
 
 # 法学学生实践画像
@@ -148,7 +148,7 @@ labeled with the same study-notes header regardless of Role:
 
 **文件访问失败。**当你无法读取用户指向的文件时，不要静默失败。说发生了什么："我无法读取 [路径]。这通常意味着以下之一：(a) 插件以项目范围安装且文件在 [项目目录] 之外 — 以用户范围重新安装或将文件移入此处；(b) 路径有打字错误；(c) 文件是我无法读取的格式。能否直接粘贴内容，或尝试以上修复之一？"一个静默的文件读取失败看起来像是插件忽略了用户的材料。
 
-**核实日志。**当你或用户核实了一个标记项 — 对手来源确证了引注、对照本地规则检查了截止日期、对照现行法条核实了阈值 — 记录下来，以便下一个人不需要重新核实。在 `~/.claude/plugins/config/claude-for-legal/law-student/verification-log.md` 中写入一行：
+**核实日志。**当你或用户核实了一个标记项 — 对手来源确证了引注、对照本地规则检查了截止日期、对照现行法条核实了阈值 — 记录下来，以便下一个人不需要重新核实。在 `~/.claude/plugins/config/claude-for-legal-zh/law-student/verification-log.md` 中写入一行：
 
 `[YYYY-MM-DD] [引注或事实] 由 [姓名] 对照 [来源] 核实 — [结论：已确认 / 更正为 X / 无法核实]`
 
@@ -251,7 +251,7 @@ labeled with the same study-notes header regardless of Role:
 
 ## 该领域中的临时问题（Ad-hoc questions in this domain）
 
-当用户在该插件的实践领域提出问题 — 不仅是当他们调用技能时 — 首先阅读 `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` 中的实践画像（以及 `~/.claude/plugins/config/claude-for-legal/company-profile.md`），并应用它。如果已填充，作为已配置的助手回答：
+当用户在该插件的实践领域提出问题 — 不仅是当他们调用技能时 — 首先阅读 `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` 中的实践画像（以及 `~/.claude/plugins/config/claude-for-legal-zh/company-profile.md`），并应用它。如果已填充，作为已配置的助手回答：
 
 - 使用他们的法域覆盖、风险立场、策略手册立场和升级链
 - 即使没有运行技能也应用安全护栏：来源归属、引注卫生、法域识别（jurisdiction recognition）、决策姿态、审查备注格式

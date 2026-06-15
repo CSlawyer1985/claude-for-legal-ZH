@@ -12,8 +12,8 @@ argument-hint: "[可选: --decide CMT-ID]"
 
 ## 加载上下文
 
-`~/.claude/plugins/config/claude-for-legal/regulatory-legal/comment-tracker.yaml` → 所有已跟踪的征求意见稿及其状态。
-`~/.claude/plugins/config/claude-for-legal/regulatory-legal/CLAUDE.md` → 默认意见征集决策负责人。
+`~/.claude/plugins/config/claude-for-legal-zh/regulatory-legal/comment-tracker.yaml` → 所有已跟踪的征求意见稿及其状态。
+`~/.claude/plugins/config/claude-for-legal-zh/regulatory-legal/CLAUDE.md` → 默认意见征集决策负责人。
 
 ## 默认视图——开放的征求意见期
 

@@ -16,18 +16,18 @@ argument-hint: "<new | list | switch | close | none> [代号]"
 - `/privacy-legal:matter-workspace new <代号>` — 创建新事项工作区，运行简短录入，写入 `matter.md`
 - `/privacy-legal:matter-workspace list` — 列出事项并显示状态和活动标记
 - `/privacy-legal:matter-workspace switch <代号>` — 设置活动事项
-- `/privacy-legal:matter-workspace close <代号>` — 归档事项（移至 `~/.claude/plugins/config/claude-for-legal/privacy-legal/matters/_archived/`，绝不删除）
+- `/privacy-legal:matter-workspace close <代号>` — 归档事项（移至 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/matters/_archived/`，绝不删除）
 - `/privacy-legal:matter-workspace none` — 脱离任何活动事项，仅以实践级工作
 
 ## 指令
 
-1. 读取 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md` — 确认 `## 事项工作区` 节已填充。如果 `已启用` 为 `✗`，告诉用户："事项工作区关闭——你被配置为法务实践，单一客户，因此插件自动使用实践级上下文。如果你实际跨多个客户工作，重新运行 `/privacy-legal:cold-start-interview --redo` 并选择非单一客户设置。否则，你完全不需要 `/matter-workspace`。"不要报错——关闭状态是法务用户的预期状态。
+1. 读取 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md` — 确认 `## 事项工作区` 节已填充。如果 `已启用` 为 `✗`，告诉用户："事项工作区关闭——你被配置为法务实践，单一客户，因此插件自动使用实践级上下文。如果你实际跨多个客户工作，重新运行 `/privacy-legal:cold-start-interview --redo` 并选择非单一客户设置。否则，你完全不需要 `/matter-workspace`。"不要报错——关闭状态是法务用户的预期状态。
 2. 使用以下子命令逻辑。
 3. 根据 `$ARGUMENTS` 的第一个 token 分发：
-   - `new` → 运行录入访谈，写入 `~/.claude/plugins/config/claude-for-legal/privacy-legal/matters/<代号>/matter.md`，种子化 `history.md` 和 `notes.md`。
-   - `list` → 枚举 `~/.claude/plugins/config/claude-for-legal/privacy-legal/matters/*/matter.md`，打印表格，标记活动事项。
+   - `new` → 运行录入访谈，写入 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/matters/<代号>/matter.md`，种子化 `history.md` 和 `notes.md`。
+   - `list` → 枚举 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/matters/*/matter.md`，打印表格，标记活动事项。
    - `switch` → 更新实践级 CLAUDE.md 中的 `活动事项：` 行。
-   - `close` → 移动 `~/.claude/plugins/config/claude-for-legal/privacy-legal/matters/<代号>/` 至 `~/.claude/plugins/config/claude-for-legal/privacy-legal/matters/_archived/<代号>/`，在 `history.md` 中记录关闭日期。
+   - `close` → 移动 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/matters/<代号>/` 至 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/matters/_archived/<代号>/`，在 `history.md` 中记录关闭日期。
    - `none` → 将 `活动事项：` 设为 `无 — 仅实践级上下文`。
 4. 展示变更内容并在写入前请用户确认。
 
@@ -50,7 +50,7 @@ argument-hint: "<new | list | switch | close | none> [代号]"
 所有事项数据存放于：
 
 ```
-~/.claude/plugins/config/claude-for-legal/privacy-legal/
+~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/
 ├── CLAUDE.md                       # 实践级实践档案
 └── matters/
     ├── <代号>/

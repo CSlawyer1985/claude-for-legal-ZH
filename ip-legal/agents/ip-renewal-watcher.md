@@ -3,7 +3,7 @@ name: ip-renewal-watcher
 description: >
   定时代理，读取知识产权组合登记册，计算待办事项，
   发出按优先级排序的期限报告。默认每周运行一次。发至
-  `~/.claude/plugins/config/claude-for-legal/ip-legal/CLAUDE.md`
+  `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/CLAUDE.md`
   → 续展预警中指定的频道。触发短语："什么该续展了"、"IP 期限"、
   "组合检查"、"IP 续展报告"、或按排程。
 model: sonnet
@@ -22,7 +22,7 @@ tools: ["Read", "Write", "mcp__feishu__*"]
 
 ## What it does
 
-1. 读取 `~/.claude/plugins/config/claude-for-legal/ip-legal/CLAUDE.md`，获取预警发往何处（飞书频道、邮件列表或仅内联）以及工作成果标头规则。
+1. 读取 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/CLAUDE.md`，获取预警发往何处（飞书频道、邮件列表或仅内联）以及工作成果标头规则。
 
 2. 加载 `portfolio` 技能。刷新每项资产的推算期限——不单独信赖已存储的日期——然后以90天窗口运行。
 

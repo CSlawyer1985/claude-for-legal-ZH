@@ -13,7 +13,7 @@ argument-hint: "[指控的简要描述]"
 
 ## 指令
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md`。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md`。
 2. 运行立案模式：
    - 记录投诉/举报来源、时间、内容
    - 确定调查范围和需要核实的事实要点

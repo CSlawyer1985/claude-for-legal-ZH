@@ -10,7 +10,7 @@ argument-hint: "[--card 生成一页参考卡]"
 
 # /ramp
 
-1. 检查 `~/.claude/plugins/config/claude-for-legal/legal-clinic/CLAUDE.md` 是否已设置。如有占位符："请[指导老师]先运行 `/legal-clinic:cold-start-interview`。"
+1. 检查 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/CLAUDE.md` 是否已设置。如有占位符："请[指导老师]先运行 `/legal-clinic:cold-start-interview`。"
 2. 使用以下导览。
 3. 逐步讲解：诊所背景（来自手册）→ 命令 → 实践练习（模拟接待、练习起草、检索路线图）→ 核实习惯。
 4. `--card`：生成一页参考卡。
@@ -37,7 +37,7 @@ argument-hint: "[--card 生成一页参考卡]"
 
 ## 加载上下文
 
-`~/.claude/plugins/config/claude-for-legal/legal-clinic/CLAUDE.md` → 诊所画像、实践领域、管辖地、手册路径、指导风格、实践领域模板。
+`~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/CLAUDE.md` → 诊所画像、实践领域、管辖地、手册路径、指导风格、实践领域模板。
 
 如果该文件缺失或仍有占位符："诊所尚未设置。请[指导老师]先运行 `/cold-start-interview`。"
 
@@ -51,7 +51,7 @@ argument-hint: "[--card 生成一页参考卡]"
 
 ### 第1部分：这家诊所（5分钟）
 
-从 `~/.claude/plugins/config/claude-for-legal/legal-clinic/CLAUDE.md` 和已收录的手册中读取。以互动方式涵盖：
+从 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/CLAUDE.md` 和已收录的手册中读取。以互动方式涵盖：
 
 - **实践领域** — 诊所处理什么，不处理什么（以及当有人带着超出范围的问题来时该向哪里转介）
 - **当事人群体** — 他们是谁，面临什么，使用的语言

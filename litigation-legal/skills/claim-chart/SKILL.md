@@ -10,7 +10,7 @@ argument-hint: '[--patent | --civil] [--infringement | --invalidity | --review] 
 
 # /claim-chart
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md` → 角色、工作成果标头、决策姿态、文件存储。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/CLAUDE.md` → 角色、工作成果标头、决策姿态、文件存储。
 2. 如果案件工作空间已启用，确认或选择活跃案件；加载 `matter.md`（立场、管辖、阶段、案件理论、诉状）。
 3. 遵循以下工作流和参考材料。
 4. 模式选择：
@@ -186,7 +186,7 @@ argument-hint: '[--patent | --civil] [--infringement | --invalidity | --review] 
 
 ## 输出
 
-预置 `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md` `## Outputs` 中的工作成果标头。
+预置 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/CLAUDE.md` `## Outputs` 中的工作成果标头。
 
 ### Markdown 表格（始终输出）
 

@@ -16,7 +16,7 @@ argument-hint: "[配置部分名称，或描述你想修改的内容]"
 
 ## 做什么
 
-1. **读取配置。** 读取 `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md`。如果不存在或仍有占位符，说：你还没有运行设置。先运行 `/commercial-legal:cold-start-interview`——定制功能用于调整已有的配置。
+1. **读取配置。** 读取 `~/.claude/plugins/config/claude-for-legal-zh/commercial-legal/CLAUDE.md`。如果不存在或仍有占位符，说：你还没有运行设置。先运行 `/commercial-legal:cold-start-interview`——定制功能用于调整已有的配置。
 
 2. **展示可定制项目清单。** 按组列出配置中的内容：
    - **公司/你是谁** — 名称、行业、法域范围、执业场景

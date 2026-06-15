@@ -10,7 +10,7 @@ argument-hint: "[法规名称，或粘贴法规文本/摘要]"
 
 # /reg-gap-analysis
 
-1. 读取 `~/.claude/plugins/config/claude-for-legal/ai-governance-legal/CLAUDE.md` → AI系统清单、监管注册表、AI政策承诺。
+1. 读取 `~/.claude/plugins/config/claude-for-legal-zh/ai-governance-legal/CLAUDE.md` → AI系统清单、监管注册表、AI政策承诺。
 2. 运行以下工作流。
 3. 范围：该法规是否适用？（管辖权、阈值、行业）
 4. 提取要求 → 与当前状态对比 → 差距清单。
@@ -29,11 +29,11 @@ argument-hint: "[法规名称，或粘贴法规文本/摘要]"
 
 网信办发布新的AI管理规定。科技部更新伦理审查标准。某省出台AI治理细则。法规有所变化——现在你需要知道哪些地方需要跟进。
 
-此技能将新要求与你当前的AI实践（按照 `~/.claude/plugins/config/claude-for-legal/ai-governance-legal/CLAUDE.md` → AI系统清单 + AI使用政策承诺 + 已完成的评估记录）进行对比，产出差距清单和整改计划。
+此技能将新要求与你当前的AI实践（按照 `~/.claude/plugins/config/claude-for-legal-zh/ai-governance-legal/CLAUDE.md` → AI系统清单 + AI使用政策承诺 + 已完成的评估记录）进行对比，产出差距清单和整改计划。
 
 ## 加载当前状态
 
-读取 `~/.claude/plugins/config/claude-for-legal/ai-governance-legal/CLAUDE.md`：
+读取 `~/.claude/plugins/config/claude-for-legal-zh/ai-governance-legal/CLAUDE.md`：
 - `## AI系统清单` — 已部署、在评估和已退役的系统
 - `## 监管注册表` — 已经适用的法规
 - `## AI使用政策` — 已对外公开的AI使用承诺或内部AI治理政策

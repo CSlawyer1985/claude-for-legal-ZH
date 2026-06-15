@@ -8,8 +8,8 @@ argument-hint: "[科目, 或 --客观题 / --主观题 / --session <n>]"
 
 # /bar-prep-questions
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` → 考试类型（法考客观题/主观题）、薄弱科目、培训课程。
-2. 同时加载 `~/.claude/plugins/config/claude-for-legal/law-student/study-plan.yaml`（如存在）——它告诉你今天安排的科目和仍薄弱的子主题。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` → 考试类型（法考客观题/主观题）、薄弱科目、培训课程。
+2. 同时加载 `~/.claude/plugins/config/claude-for-legal-zh/law-student/study-plan.yaml`（如存在）——它告诉你今天安排的科目和仍薄弱的子主题。
 3. 应用以下框架。
 4. **考试类型门槛（不得跳过）。** 如果练习画像中没有指定考试类型（客观题/主观题/两者均需），生成题目之前必须先问清楚。法考客观题和主观题考查的内容范围和题型存在实质差异——做错了题型的备考是不可挽回的错误。提示考生参考司法部最新公告（<https://www.moj.gov.cn/>）确认考试科目范围。
 5. **省级司法口径门槛。** 如果考生所在省份对某些科目有地方性指导意见（如浙江省高级人民法院民商事审判指导意见、北京市高级人民法院相关会议纪要），且该科目存在全国统一规定与地方口径的差异，询问本次练习是否涉及省级口径，不要默不作声地混用。
@@ -38,7 +38,7 @@ argument-hint: "[科目, 或 --客观题 / --主观题 / --session <n>]"
 
 不要假设科目列表。在生成任何题目之前：
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` 并读取考试类型和考试日期。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` 并读取考试类型和考试日期。
 2. 如果练习画像没有指定考生参加的是客观题还是主观题，**先问**：
 
    > 你准备参加的是哪个阶段的法考？
@@ -118,13 +118,13 @@ argument-hint: "[科目, 或 --客观题 / --主观题 / --session <n>]"
 
 ## 加载上下文
 
-`~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` → 考试类型（客观题/主观题）、薄弱科目、培训课程。如果考试类型未指定，在继续之前运行上述"考试类型"门槛。如果指定了省份，适用 `## 省级口径处理` 规则——标注每道题适用的规则来源，明确标注差异。
+`~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` → 考试类型（客观题/主观题）、薄弱科目、培训课程。如果考试类型未指定，在继续之前运行上述"考试类型"门槛。如果指定了省份，适用 `## 省级口径处理` 规则——标注每道题适用的规则来源，明确标注差异。
 
-同时加载 `~/.claude/plugins/config/claude-for-legal/law-student/study-plan.yaml`（如存在，由 `study-plan` 技能写入）。如果计划中安排了今日练习或指定了需侧重训练的薄弱科目，遵照执行。
+同时加载 `~/.claude/plugins/config/claude-for-legal-zh/law-student/study-plan.yaml`（如存在，由 `study-plan` 技能写入）。如果计划中安排了今日练习或指定了需侧重训练的薄弱科目，遵照执行。
 
 ## Session 模式
 
-`--session <n>` 运行一场针对特定科目的 N 题集中练习，追踪表现，并将练习结果写回 `~/.claude/plugins/config/claude-for-legal/law-student/study-plan.yaml` 的 `session_history` 字段，以便学习计划动态调整。
+`--session <n>` 运行一场针对特定科目的 N 题集中练习，追踪表现，并将练习结果写回 `~/.claude/plugins/config/claude-for-legal-zh/law-student/study-plan.yaml` 的 `session_history` 字段，以便学习计划动态调整。
 
 考生可能使用的触发表述："来做5道民法题""给我出10道刑法题""/law-student:session 刑法10"。
 
@@ -161,7 +161,7 @@ session_history:
     jurisdiction_mode: national  # 或 provincial
 ```
 
-如果无 `study-plan.yaml` 存在，将练习历史写入 `~/.claude/plugins/config/claude-for-legal/law-student/session-history.yaml`，以便后续练习仍能适当调整权重。
+如果无 `study-plan.yaml` 存在，将练习历史写入 `~/.claude/plugins/config/claude-for-legal-zh/law-student/session-history.yaml`，以便后续练习仍能适当调整权重。
 
 ## 客观题模式
 
@@ -171,7 +171,7 @@ session_history:
 
 经典法考客观题格式：案例事实 + 设问 + 四个选项，一个正确答案。
 
-科目分配：在**考生考试实际考查的科目范围内**将权重倾向薄弱科目。如果 `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` 标明刑法和民法薄弱，60%的题目来自这两个科目。
+科目分配：在**考生考试实际考查的科目范围内**将权重倾向薄弱科目。如果 `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` 标明刑法和民法薄弱，60%的题目来自这两个科目。
 
 难度：法考级别。不是大学期末考试的分析深度（期末考可能更深）。法考题目的核心是准确掌握法律规定的要点并清晰适用。
 

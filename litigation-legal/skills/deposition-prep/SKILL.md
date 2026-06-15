@@ -9,7 +9,7 @@ argument-hint: "[证人姓名]"
 
 # /deposition-prep
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md` → 案件理论、关键事实。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/CLAUDE.md` → 案件理论、关键事实。
 2. 遵循以下工作流和参考材料。
 3. 提取证人撰写或被提及的文件。
 4. 构建提纲：背景、关键文件、与理论相关的要点、质证材料。
@@ -36,7 +36,7 @@ argument-hint: "[证人姓名]"
 
 ## 加载上下文
 
-`~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md` → 案件理论。
+`~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/CLAUDE.md` → 案件理论。
 
 ## 工作流
 

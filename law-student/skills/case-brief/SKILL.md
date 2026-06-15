@@ -8,7 +8,7 @@ argument-hint: "[案例名称或案号, 或粘贴案例文本]"
 
 # /case-brief
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` → 大纲/案例摘要偏好。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` → 大纲/案例摘要偏好。
 2. 应用以下工作流。
 3. 按学生选择的格式做案例摘要。如果是训练模式：要求学生先陈述裁判要旨。
 
@@ -30,7 +30,7 @@ argument-hint: "[案例名称或案号, 或粘贴案例文本]"
 
 ## 加载上下文
 
-`~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` → 大纲/案例摘要偏好（格式、深度），学习风格。
+`~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` → 大纲/案例摘要偏好（格式、深度），学习风格。
 
 ## "不要替我写摘要"规则（硬性规则）
 
@@ -64,7 +64,7 @@ argument-hint: "[案例名称或案号, 或粘贴案例文本]"
 
 技能产出的是**带问题的模板**，而非已填充的摘要。学生逐节填写；技能审查、追问、提示缺失内容。
 
-按 `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` 中学生的格式偏好。如未设置，默认格式：
+按 `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` 中学生的格式偏好。如未设置，默认格式：
 
 ```markdown
 ## [案例名称], [案号]
@@ -92,7 +92,7 @@ argument-hint: "[案例名称或案号, 或粘贴案例文本]"
 
 ## 深度校准
 
-按 `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` 设定——有些学生只需要一句话摘要（规则 + 案例），有些需要完整处理。匹配他们的格式。
+按 `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` 设定——有些学生只需要一句话摘要（规则 + 案例），有些需要完整处理。匹配他们的格式。
 
 如果他们是大一法学新生仍在学习阅读案例：更完整的摘要。如果他们是大三/大四在备考法考：只写规则即可。
 

@@ -12,7 +12,7 @@ user-invocable: false
 
 ## Matter context
 
-**Matter context.** Check `## Matter workspaces` in the practice-level CLAUDE.md. If `Enabled` is `✗` (the default for in-house users), skip the rest of this paragraph — skills use practice-level context and the matter machinery is invisible. If enabled and there is no active matter, ask: "Which matter is this for? Run `/employment-legal:matter-workspace switch <slug>` or say `practice-level`." Load the active matter's `matter.md` for matter-specific context and overrides. Write outputs to the matter folder at `~/.claude/plugins/config/claude-for-legal/employment-legal/matters/<matter-slug>/`. Never read another matter's files unless `Cross-matter context` is `on`.
+**Matter context.** Check `## Matter workspaces` in the practice-level CLAUDE.md. If `Enabled` is `✗` (the default for in-house users), skip the rest of this paragraph — skills use practice-level context and the matter machinery is invisible. If enabled and there is no active matter, ask: "Which matter is this for? Run `/employment-legal:matter-workspace switch <slug>` or say `practice-level`." Load the active matter's `matter.md` for matter-specific context and overrides. Write outputs to the matter folder at `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/matters/<matter-slug>/`. Never read another matter's files unless `Cross-matter context` is `on`.
 
 ---
 
@@ -38,12 +38,12 @@ on a stored reference table.
 
 ## Load context
 
-Read `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` → jurisdictional footprint, escalation table, any existing
+Read `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md` → jurisdictional footprint, escalation table, any existing
 expansion notes.
 
 ## Output header
 
-Prepend the work-product header from `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` → `## Outputs` (it differs by user role — see `## Who's using this`).
+Prepend the work-product header from `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md` → `## Outputs` (it differs by user role — see `## Who's using this`).
 
 ## Workflow
 
@@ -260,7 +260,7 @@ contact.
 
 ### Step 5 — Create the expansion tracker
 
-Write a new file to `~/.claude/plugins/config/claude-for-legal/employment-legal/expansion-[country-slug].yaml` with all open items
+Write a new file to `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/expansion-[country-slug].yaml` with all open items
 identified in Steps 2-4. This file persists across sessions.
 
 Format:
@@ -310,7 +310,7 @@ attributable to a single owner.
 **First hire target:** [date]
 **Headcount (12 months):** [N]
 **Roles:** [list]
-**Tracker:** ~/.claude/plugins/config/claude-for-legal/employment-legal/expansion-[slug].yaml
+**Tracker:** ~/.claude/plugins/config/claude-for-legal-zh/employment-legal/expansion-[slug].yaml
 
 ---
 

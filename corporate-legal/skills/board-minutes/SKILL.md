@@ -12,7 +12,7 @@ description: >
 
 ## 事项上下文
 
-**事项上下文。** 检查实务级 CLAUDE.md 中的 `## 事项工作区`。如果 `Enabled` 为 `✗`（企业法务用户的默认值），跳过本段其余内容——技能使用实务级上下文，事项机制不可见。如果已启用且无活跃事项，询问："这是哪个事项？运行 `/corporate-legal:matter-workspace switch <事项简称>` 或说 `实务级`。"加载活跃事项的 `matter.md` 获取事项特定上下文和覆盖规则。输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal/corporate-legal/matters/<事项简称>/`。除非 `跨事项上下文` 为 `开`，否则绝不读取其他事项的文件。
+**事项上下文。** 检查实务级 CLAUDE.md 中的 `## 事项工作区`。如果 `Enabled` 为 `✗`（企业法务用户的默认值），跳过本段其余内容——技能使用实务级上下文，事项机制不可见。如果已启用且无活跃事项，询问："这是哪个事项？运行 `/corporate-legal:matter-workspace switch <事项简称>` 或说 `实务级`。"加载活跃事项的 `matter.md` 获取事项特定上下文和覆盖规则。输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/matters/<事项简称>/`。除非 `跨事项上下文` 为 `开`，否则绝不读取其他事项的文件。
 
 ---
 
@@ -22,12 +22,12 @@ description: >
 
 ## 加载上下文
 
-- `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` → `## 董事会与公司秘书` 部分：
+- `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` → `## 董事会与公司秘书` 部分：
   - 纪要格式（详细记录式/决议式/混合式）
   - 从种子文件中提取的纪要模板（结构、决议措辞、页眉格式）
   - 董事会组成和委员会
   - 书面决议——用于什么以及任何限制
-- 如果 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` 没有纪要格式：先运行冷启动。不要以通用格式继续。
+- 如果 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` 没有纪要格式：先运行冷启动。不要以通用格式继续。
 
 ---
 
@@ -68,7 +68,7 @@ description: >
 询问出席名单，或如连接器已授权则从日历邀请中拉取。
 
 **出席董事：**
-- 从 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` 中的董事会组成作为起点
+- 从 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` 中的董事会组成作为起点
 - 询问实际谁出席了、谁缺席了，以及缺席董事是否事先收到通知
 
 **出席管理人员：**
@@ -111,7 +111,7 @@ description: >
 
 ## 第4步：起草纪要
 
-使用 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` 中的内部格式。不要默认使用通用格式。种子纪要是模板——复制其结构、页眉、决议措辞、讨论详细程度。
+使用 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` 中的内部格式。不要默认使用通用格式。种子纪要是模板——复制其结构、页眉、决议措辞、讨论详细程度。
 
 ### 标准结构（按内部格式调整）
 
@@ -137,7 +137,7 @@ description: >
 - 列席人员：[管理人员、外部律师、列席者——附角色]
 
 **前次会议纪要：**
-标准用语：批准前次会议纪要。如 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` 中的董事会日历可用，提取前次会议日期；否则保留为 [前次会议日期]。
+标准用语：批准前次会议纪要。如 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` 中的董事会日历可用，提取前次会议日期；否则保留为 [前次会议日期]。
 
 **议程项目——每项一节：**
 
@@ -151,7 +151,7 @@ description: >
 [如随后有决议：]
 经正式动议并附议，下列决议 [获一致通过 / 经 [N] 票赞成、[N] 票反对、[N] 票弃权表决通过]：
 
-决议如下：[使用 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` 中内部措辞的决议文本]。
+决议如下：[使用 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` 中内部措辞的决议文本]。
 ```
 
 **闭会：**
@@ -182,7 +182,7 @@ description: >
 
 ## 第4.5步：后果性行动准入（批准纪要）
 
-**在批准纪要定稿前：** 读取 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` 中的 `## 使用者`。如果角色为**非法务人员**：
+**在批准纪要定稿前：** 读取 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` 中的 `## 使用者`。如果角色为**非法务人员**：
 
 > 批准纪要使会议纪要为董事会决定的正式记录——它们是会议所采取行动的主要授权证据。你是否已与律师审查？如已审查，继续。如未审查，以下是带给律师的简要说明：
 >
@@ -200,7 +200,7 @@ description: >
 
 ## 第5步：输出和审查提示
 
-产出完整草案。纪要本身是公司记录，不受特权保护；不要对分发的纪要套用工作成果页眉。起草说明、占位符标记和以下审查检查表是工作成果——冠以 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` `## 输出规范` 中的工作成果页眉（因用户角色而异——参见 `## 使用者`）：
+产出完整草案。纪要本身是公司记录，不受特权保护；不要对分发的纪要套用工作成果页眉。起草说明、占位符标记和以下审查检查表是工作成果——冠以 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` `## 输出规范` 中的工作成果页眉（因用户角色而异——参见 `## 使用者`）：
 
 ```
 [工作成果页眉 — 按插件配置 ## 输出规范 — 因角色而异；参见 `## 使用者`]

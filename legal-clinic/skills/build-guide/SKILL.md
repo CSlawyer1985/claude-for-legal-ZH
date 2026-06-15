@@ -10,11 +10,11 @@ argument-hint: "[可选：实践领域 — 如 '劳动争议', '婚姻家庭']"
 
 # /build-guide
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/legal-clinic/CLAUDE.md` → 身份（必须为指导老师）、实践领域、管辖地。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/CLAUDE.md` → 身份（必须为指导老师）、实践领域、管辖地。
 2. 使用以下工作流。
 3. 如果用户不是指导老师，停止并重定向（学生运行 `/legal-clinic:ramp`）。
 4. 逐步推进：实践领域 → 接待问题 → 教学姿态 → 审查门控 → 跨插件检查 → 本地规则。
-5. 写入 `~/.claude/plugins/config/claude-for-legal/legal-clinic/guides/<实践领域>.md`。如需要，创建 `guides/` 目录。
+5. 写入 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/guides/<实践领域>.md`。如需要，创建 `guides/` 目录。
 6. 提供测试运行——在已配置的姿态下运行 `/legal-clinic:draft`，让指导老师看到学生视角。
 
 ```
@@ -56,7 +56,7 @@ argument-hint: "[可选：实践领域 — 如 '劳动争议', '婚姻家庭']"
 
 ### 第1步：检查身份
 
-这是指导老师技能。读取 `~/.claude/plugins/config/claude-for-legal/legal-clinic/CLAUDE.md` → `## 谁在使用这个插件` → 身份。如果身份不是"指导老师"，说：
+这是指导老师技能。读取 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/CLAUDE.md` → `## 谁在使用这个插件` → 身份。如果身份不是"指导老师"，说：
 
 > 本技能面向指导老师——它配置面向学生技能的行为。如果你是指导老师，请确保你的实践画像身份在 `/legal-clinic:cold-start-interview` 中设为"指导老师"。如果你是学生，这不是适合你的技能——运行 `/legal-clinic:ramp` 进行导入，或请你的指导老师为你的诊所撰写指南。
 
@@ -70,7 +70,7 @@ argument-hint: "[可选：实践领域 — 如 '劳动争议', '婚姻家庭']"
 
 检查 `CLAUDE.md` → `## 诊所画像` → 实践领域中列出的实践领域。如果选择的实践领域未在其中列出，注明："我将撰写这份指南，但你的实践画像未将[领域]列为你的诊所实践领域之一。没问题——你可以稍后通过 `/legal-clinic:cold-start-interview --redo` 添加——但在画像列出之前，面向学生技能不会将接待路由到该领域。"
 
-如果 `~/.claude/plugins/config/claude-for-legal/legal-clinic/guides/<实践领域>.md` 已存在指南，提供选项："[领域]的指南已存在于[路径]。你想(a)逐节修订，(b)重新开始并覆盖，还是(c)先看看现有内容？"
+如果 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/guides/<实践领域>.md` 已存在指南，提供选项："[领域]的指南已存在于[路径]。你想(a)逐节修订，(b)重新开始并覆盖，还是(c)先看看现有内容？"
 
 ### 第3步：接待问题
 
@@ -138,7 +138,7 @@ argument-hint: "[可选：实践领域 — 如 '劳动争议', '婚姻家庭']"
 
 ### 第8步：撰写指南
 
-写入 `~/.claude/plugins/config/claude-for-legal/legal-clinic/guides/<实践领域>.md`。如需要，创建 `guides/` 目录。使用以下结构：
+写入 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/guides/<实践领域>.md`。如需要，创建 `guides/` 目录。使用以下结构：
 
 ```markdown
 # 实践领域指南：[实践领域]
@@ -218,7 +218,7 @@ argument-hint: "[可选：实践领域 — 如 '劳动争议', '婚姻家庭']"
 
 然后告诉指导老师：
 
-> 你的指南位于 `~/.claude/plugins/config/claude-for-legal/legal-clinic/guides/<实践领域>.md`。每个使用诊所插件进行[实践领域]工作的学生，其技能将遵循它。直接编辑文件以更改任何内容，或重新运行 `/legal-clinic:build-guide` 修订某节。你可以有多份指南——每个实践领域一份。
+> 你的指南位于 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/guides/<实践领域>.md`。每个使用诊所插件进行[实践领域]工作的学生，其技能将遵循它。直接编辑文件以更改任何内容，或重新运行 `/legal-clinic:build-guide` 修订某节。你可以有多份指南——每个实践领域一份。
 
 ### 第9步：提供测试运行
 
@@ -228,7 +228,7 @@ argument-hint: "[可选：实践领域 — 如 '劳动争议', '婚姻家庭']"
 
 ## 输出
 
-本技能的"输出"是写入 `~/.claude/plugins/config/claude-for-legal/legal-clinic/guides/<实践领域>.md` 的文件。与指导老师的对话是访谈；写成的指南是产物。
+本技能的"输出"是写入 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/guides/<实践领域>.md` 的文件。与指导老师的对话是访谈；写成的指南是产物。
 
 写入后，展示简要确认：
 

@@ -9,12 +9,12 @@ argument-hint: "[--semester=YYYY-学期（默认：当前）] [--case=[案件编
 
 # /semester-handoff
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/legal-clinic/CLAUDE.md` → 诊所画像、学期日期、指导风格。
-2. 加载 `~/.claude/plugins/config/claude-for-legal/legal-clinic/deadlines.yaml` 和按案件的 `~/.claude/plugins/config/claude-for-legal/legal-clinic/client-comms/[案件编号]/log.md`。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/CLAUDE.md` → 诊所画像、学期日期、指导风格。
+2. 加载 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/deadlines.yaml` 和按案件的 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/client-comms/[案件编号]/log.md`。
 3. 使用以下工作流。
 4. 将活跃案件列表作为输入（如诊所无中心列表则询问）。映射离届 → 新接手人。
-5. 生成按案件交接备忘录 → `~/.claude/plugins/config/claude-for-legal/legal-clinic/handoffs/[学期]/[案件编号].md`。
-6. 生成群体摘要 → `~/.claude/plugins/config/claude-for-legal/legal-clinic/handoffs/[学期]/_summary.md`。
+5. 生成按案件交接备忘录 → `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/handoffs/[学期]/[案件编号].md`。
+6. 生成群体摘要 → `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/handoffs/[学期]/_summary.md`。
 7. 按指导模式路由——正式队列 / 可配置标记 / 较轻触。
 
 ---
@@ -33,9 +33,9 @@ argument-hint: "[--semester=YYYY-学期（默认：当前）] [--case=[案件编
 
 ## 加载上下文
 
-- `~/.claude/plugins/config/claude-for-legal/legal-clinic/CLAUDE.md` → 诊所画像、学期、实践领域、指导风格
-- `~/.claude/plugins/config/claude-for-legal/legal-clinic/deadlines.yaml` → 所有活跃截止日期，按案件分组
-- `~/.claude/plugins/config/claude-for-legal/legal-clinic/client-comms/[案件编号]/log.md`（按案件） → 沟通历史
+- `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/CLAUDE.md` → 诊所画像、学期、实践领域、指导风格
+- `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/deadlines.yaml` → 所有活跃截止日期，按案件分组
+- `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/client-comms/[案件编号]/log.md`（按案件） → 沟通历史
 - 诊所维护的案件文件 / 接待摘要
 - 学生名册——谁在交接中负责什么
 
@@ -43,7 +43,7 @@ argument-hint: "[--semester=YYYY-学期（默认：当前）] [--case=[案件编
 
 ### 第1步：识别案件和负责人
 
-- 拉取所有活跃案件（来自接待记录 + `~/.claude/plugins/config/claude-for-legal/legal-clinic/deadlines.yaml` 案件编号 + client-comms 文件夹）
+- 拉取所有活跃案件（来自接待记录 + `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/deadlines.yaml` 案件编号 + client-comms 文件夹）
 - 每个案件：当前负责学生是谁？他们是留任还是离开？
 - 映射：离届负责人 → 新接手人（如已知；否则标记"待定——指导老师分配"）
 
@@ -71,7 +71,7 @@ argument-hint: "[--semester=YYYY-学期（默认：当前）] [--case=[案件编
 
 ## 待处理截止日期
 
-*从 `~/.claude/plugins/config/claude-for-legal/legal-clinic/deadlines.yaml` 拉取。新接手学生的第一项工作是确认这些准确并已认领。*
+*从 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/deadlines.yaml` 拉取。新接手学生的第一项工作是确认这些准确并已认领。*
 
 | 截止日 | 类型 | 说明 | 备注 |
 |---|---|---|---|
@@ -102,7 +102,7 @@ argument-hint: "[--semester=YYYY-学期（默认：当前）] [--case=[案件编
 
 ## 沟通历史摘要
 
-*来自 `~/.claude/plugins/config/claude-for-legal/legal-clinic/client-comms/[案件编号]/log.md`。此处三段式摘要；新接手学生阅读完整日志。*
+*来自 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/client-comms/[案件编号]/log.md`。此处三段式摘要；新接手学生阅读完整日志。*
 
 [近期联系模式的简要摘要——如"自接待以来3次通话，当事人偏好晚上联系。最后联系：2026-04-15，确认了庭审通知地址。"]
 
@@ -127,7 +127,7 @@ argument-hint: "[--semester=YYYY-学期（默认：当前）] [--case=[案件编
 
 ### 第3步：群体摘要
 
-所有按案件备忘录完成后，产出 `~/.claude/plugins/config/claude-for-legal/legal-clinic/handoffs/[学期]/_summary.md`：
+所有按案件备忘录完成后，产出 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/handoffs/[学期]/_summary.md`：
 
 ```markdown
 # 群体交接摘要 — [结束学期]
@@ -162,9 +162,9 @@ argument-hint: "[--semester=YYYY-学期（默认：当前）] [--case=[案件编
 
 ### 第4步：指导老师审查（如指导模式要求）
 
-结案或将案件移交给新学生是一项具有法律后果的行为。门控是 `~/.claude/plugins/config/claude-for-legal/legal-clinic/CLAUDE.md` 中 `## 指导风格` 描述的指导工作流程，由确认持证指导律师拥有设置的 Part 0 身份检查强化。无论选择何种指导风格，结案备忘录在案件中标记为已关闭前始终获得指导老师签字。
+结案或将案件移交给新学生是一项具有法律后果的行为。门控是 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/CLAUDE.md` 中 `## 指导风格` 描述的指导工作流程，由确认持证指导律师拥有设置的 Part 0 身份检查强化。无论选择何种指导风格，结案备忘录在案件中标记为已关闭前始终获得指导老师签字。
 
-按 `~/.claude/plugins/config/claude-for-legal/legal-clinic/CLAUDE.md` 指导风格：
+按 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/CLAUDE.md` 指导风格：
 
 - **正式审查队列：** 每份交接备忘录在发给新接手学生前进入审查队列。指导老师批准、编辑或退回。
 - **可配置标记：** 备忘录携带"依赖前请与[指导老师]确认"——指导老师非正式审查，学生负责报到。
@@ -172,11 +172,11 @@ argument-hint: "[--semester=YYYY-学期（默认：当前）] [--case=[案件编
 
 ### 第5步：移交
 
-审查后，交接备忘录保存在 `~/.claude/plugins/config/claude-for-legal/legal-clinic/handoffs/[学期]/[案件编号].md`。新接手学生在下学期初的 `/ramp` 运行中读取它们——`/ramp` 应为新学生分配的案件浮现备忘录。
+审查后，交接备忘录保存在 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/handoffs/[学期]/[案件编号].md`。新接手学生在下学期初的 `/ramp` 运行中读取它们——`/ramp` 应为新学生分配的案件浮现备忘录。
 
 ## 联动
 
-- **`/ramp`：** 下学期初，读取 `~/.claude/plugins/config/claude-for-legal/legal-clinic/handoffs/[最近学期]/` 并为每个新学生接手的案件浮现按案件备忘录。
+- **`/ramp`：** 下学期初，读取 `~/.claude/plugins/config/claude-for-legal-zh/legal-clinic/handoffs/[最近学期]/` 并为每个新学生接手的案件浮现按案件备忘录。
 - **`/deadlines`：** 输入每份备忘录的待处理截止日期部分。
 - **`/client-comms-log`：** 输入沟通历史摘要。
 - **`/supervisor-review-queue`（如正式审查启用）：** 交接备忘录路由到此处等待指导老师批准。

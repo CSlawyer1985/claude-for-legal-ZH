@@ -9,7 +9,7 @@ argument-hint: "[法规名称，或粘贴法规文本/摘要]"
 
 # /reg-gap-analysis
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md` → 个人信息处理规则承诺、监管覆盖范围、DSAR系统。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md` → 个人信息处理规则承诺、监管覆盖范围、DSAR系统。
 2. 执行以下工作流。
 3. 范围界定：法规是否适用？（法域、门槛、行业）
 4. 提取要求 → 与现状差异对比 → 差距清单。
@@ -33,11 +33,11 @@ argument-hint: "[法规名称，或粘贴法规文本/摘要]"
 
 网信办发布了新规定。工信部出了新标准。国家数据局出了新指引。法规变化了——现在你需要知道，如果有的话，你必须改变什么。
 
-本技能将新要求与你当前的实际情况（按 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md` → 个人信息处理规则承诺 + PIA 中记录的实际做法）进行差异对比，并产出一份带整改计划的差距清单。
+本技能将新要求与你当前的实际情况（按 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md` → 个人信息处理规则承诺 + PIA 中记录的实际做法）进行差异对比，并产出一份带整改计划的差距清单。
 
 ## 加载现状
 
-读取 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md`：
+读取 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md`：
 - `## 个人信息处理规则承诺` — 你已公开承诺了什么
 - `## 监管覆盖范围` — 什么已适用
 - `## DSAR 流程` → 系统清单 — 你实际在运营上做什么
@@ -100,7 +100,7 @@ argument-hint: "[法规名称，或粘贴法规文本/摘要]"
 
 ### 第5步：整改计划
 
-冠以 `~/.claude/plugins/config/claude-for-legal/privacy-legal/CLAUDE.md` `## 输出` 中的工作成果抬头（因用户角色不同而异——见 `## 谁在使用`）。
+冠以 `~/.claude/plugins/config/claude-for-legal-zh/privacy-legal/CLAUDE.md` `## 输出` 中的工作成果抬头（因用户角色不同而异——见 `## 谁在使用`）。
 
 > **检索连接器预检。** 在输出整改计划前，检查法律检索连接器是否可访问。收集此信息到 CLAUDE.md `## 输出` 下的审核备注中：如果第2步或常见法规类别检索步骤中没有连接器返回结果，记录在审核备注的**来源：**行中——如 `未连接——引用来自训练知识；差距分析中最容易造假的是新法规的生效日期、执法开始日期和条号精准引用——优先核对这些`。逐条 `[模型知识 — 需验证]` 标签保持内联。不在输出上方发出独立横幅。
 

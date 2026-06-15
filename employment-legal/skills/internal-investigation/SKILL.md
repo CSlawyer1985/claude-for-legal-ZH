@@ -14,13 +14,13 @@ user-invocable: false
 
 ## Matter context
 
-**Matter context.** Check `## Matter workspaces` in the practice-level CLAUDE.md. If `Enabled` is `✗` (the default for in-house users), skip the rest of this paragraph — skills use practice-level context and the matter machinery is invisible. If enabled and there is no active matter, ask: "Which matter is this for? Run `/employment-legal:matter-workspace switch <slug>` or say `practice-level`." Load the active matter's `matter.md` for matter-specific context and overrides. Write outputs to the matter folder at `~/.claude/plugins/config/claude-for-legal/employment-legal/matters/<matter-slug>/`. Never read another matter's files unless `Cross-matter context` is `on`.
+**Matter context.** Check `## Matter workspaces` in the practice-level CLAUDE.md. If `Enabled` is `✗` (the default for in-house users), skip the rest of this paragraph — skills use practice-level context and the matter machinery is invisible. If enabled and there is no active matter, ask: "Which matter is this for? Run `/employment-legal:matter-workspace switch <slug>` or say `practice-level`." Load the active matter's `matter.md` for matter-specific context and overrides. Write outputs to the matter folder at `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/matters/<matter-slug>/`. Never read another matter's files unless `Cross-matter context` is `on`.
 
 ---
 
 ## Output header
 
-Prepend the work-product header from `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` → `## Outputs` (it differs by user role — see `## Who's using this`). Every file, log, memo, and summary produced by this skill opens with that header.
+Prepend the work-product header from `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md` → `## Outputs` (it differs by user role — see `## Who's using this`). Every file, log, memo, and summary produced by this skill opens with that header.
 
 > **Distribution discipline.** Every file this skill creates — log entries, memo drafts, audience summaries, document notes — inherits the privilege and confidentiality status of the underlying investigation. Distribution beyond the privilege circle (forwarding to non-attorneys outside the investigation team, cc'ing HR without scoping, handing to the business side) can waive privilege over the entire investigation. Store these files where privileged materials live, label per the work-product header, and make every distribution decision deliberately.
 
@@ -61,7 +61,7 @@ marking does and does not do.
 
 ## Load context
 
-Read `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` → escalation table, any investigation protocols noted.
+Read `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md` → escalation table, any investigation protocols noted.
 
 ---
 
@@ -114,7 +114,7 @@ adjusted.
 
 Create the following files:
 
-`~/.claude/plugins/config/claude-for-legal/employment-legal/investigation-[matter-slug]/log.yaml`:
+`~/.claude/plugins/config/claude-for-legal-zh/employment-legal/investigation-[matter-slug]/log.yaml`:
 
 ```yaml
 # [WORK-PRODUCT HEADER — per plugin config ## Outputs — differs by role; see `## Who's using this`]
@@ -139,11 +139,11 @@ entries: []
 evidentiary_gaps: []
 ```
 
-`~/.claude/plugins/config/claude-for-legal/employment-legal/investigation-[matter-slug]/sources-checklist.yaml`:
+`~/.claude/plugins/config/claude-for-legal-zh/employment-legal/investigation-[matter-slug]/sources-checklist.yaml`:
 
 Generated from the investigation type. See sources checklist templates below.
 
-`~/.claude/plugins/config/claude-for-legal/employment-legal/investigation-[matter-slug]/documents-reviewed.yaml`:
+`~/.claude/plugins/config/claude-for-legal-zh/employment-legal/investigation-[matter-slug]/documents-reviewed.yaml`:
 
 ```yaml
 # [WORK-PRODUCT HEADER — per plugin config ## Outputs — differs by role; see `## Who's using this`]
@@ -363,7 +363,7 @@ sources:
 ```
 
 After presenting the checklist, write it to
-`~/.claude/plugins/config/claude-for-legal/employment-legal/investigation-[slug]/sources-checklist.yaml`.
+`~/.claude/plugins/config/claude-for-legal-zh/employment-legal/investigation-[slug]/sources-checklist.yaml`.
 
 ---
 
@@ -374,7 +374,7 @@ investigation" or when the attorney pastes documents or interview notes.
 
 ### Step 1 — Identify the matter
 
-If multiple investigation folders exist in `~/.claude/plugins/config/claude-for-legal/employment-legal/`, ask which matter this
+If multiple investigation folders exist in `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/`, ask which matter this
 data belongs to. If only one, proceed.
 
 ### Step 2 — Identify the data type
@@ -663,7 +663,7 @@ Format: Date | Summary | Source (Entry ID)]
 [Summary table from documents-reviewed.yaml]
 ```
 
-Write the draft to `~/.claude/plugins/config/claude-for-legal/employment-legal/investigation-[slug]/memo.md`.
+Write the draft to `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/investigation-[slug]/memo.md`.
 
 ### If memo already exists — update
 
@@ -729,7 +729,7 @@ support?
 
 ## Consequential-action gate (respond to a demand or complaint)
 
-**Before producing a summary, memo, or content intended for an external response (EEOC/DFEH/state agency charge response, plaintiff's-counsel demand letter response, regulator response, or any formal complaint reply):** Read `## Who's using this` in `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md`. If the Role is **Non-lawyer**:
+**Before producing a summary, memo, or content intended for an external response (EEOC/DFEH/state agency charge response, plaintiff's-counsel demand letter response, regulator response, or any formal complaint reply):** Read `## Who's using this` in `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/CLAUDE.md`. If the Role is **Non-lawyer**:
 
 > Responding to a demand, charge, or complaint has legal consequences — positions taken here are admissions in later proceedings, waivers of defenses can be inadvertent, and privilege over the underlying investigation can be lost. Have you reviewed this response with an attorney? If yes, proceed. If no, here's a brief to bring to them:
 >

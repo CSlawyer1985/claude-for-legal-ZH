@@ -16,18 +16,18 @@ argument-hint: "<new | list | switch | close | none> [简称]"
 - `/corporate-legal:matter-workspace new <简称>` — 创建新事项工作区，运行简短的信息采集，写入 `matter.md`
 - `/corporate-legal:matter-workspace list` — 列出事项及其状态和活跃标识
 - `/corporate-legal:matter-workspace switch <简称>` — 设置活跃事项
-- `/corporate-legal:matter-workspace close <简称>` — 归档事项（移至 `~/.claude/plugins/config/claude-for-legal/corporate-legal/matters/_archived/`，绝不删除）
+- `/corporate-legal:matter-workspace close <简称>` — 归档事项（移至 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/matters/_archived/`，绝不删除）
 - `/corporate-legal:matter-workspace none` — 脱离任何活跃事项，仅以实务级工作
 
 ## 指令
 
-1. 读取 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` ——确认 `## 事项工作区` 部分已填充。如果 `Enabled` 为 `✗`，告知用户："事项工作区已关闭——你的配置为企业法务，仅服务一家公司，因此插件自动在实务级上下文下工作。如果你实际为多家客户工作，重新运行 `/corporate-legal:cold-start-interview --redo` 并选择私人执业设置。否则，你完全不需要 `/matter-workspace`。"不要报错——对于企业法务用户，关闭状态是预期状态。
+1. 读取 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` ——确认 `## 事项工作区` 部分已填充。如果 `Enabled` 为 `✗`，告知用户："事项工作区已关闭——你的配置为企业法务，仅服务一家公司，因此插件自动在实务级上下文下工作。如果你实际为多家客户工作，重新运行 `/corporate-legal:cold-start-interview --redo` 并选择私人执业设置。否则，你完全不需要 `/matter-workspace`。"不要报错——对于企业法务用户，关闭状态是预期状态。
 2. 使用以下工作流。
 3. 按 `$ARGUMENTS` 的第一个 token 分发：
-   - `new` → 运行信息采集访谈，写入 `~/.claude/plugins/config/claude-for-legal/corporate-legal/matters/<简称>/matter.md`，初始化 `history.md` 和 `notes.md`。
-   - `list` → 枚举 `~/.claude/plugins/config/claude-for-legal/corporate-legal/matters/*/matter.md`，打印表格，标记活跃事项。
+   - `new` → 运行信息采集访谈，写入 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/matters/<简称>/matter.md`，初始化 `history.md` 和 `notes.md`。
+   - `list` → 枚举 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/matters/*/matter.md`，打印表格，标记活跃事项。
    - `switch` → 更新实务级 CLAUDE.md 中的 `活跃事项：` 行。
-   - `close` → 将 `~/.claude/plugins/config/claude-for-legal/corporate-legal/matters/<简称>/` 移至 `~/.claude/plugins/config/claude-for-legal/corporate-legal/matters/_archived/<简称>/`，在 `history.md` 中记录关闭日期。
+   - `close` → 将 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/matters/<简称>/` 移至 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/matters/_archived/<简称>/`，在 `history.md` 中记录关闭日期。
    - `none` → 将 `活跃事项：` 设置为 `无 — 仅实务级上下文`。
 4. 展示变更内容并在写入前与用户确认。
 
@@ -48,7 +48,7 @@ argument-hint: "<new | list | switch | close | none> [简称]"
 所有事项数据位于：
 
 ```
-~/.claude/plugins/config/claude-for-legal/corporate-legal/
+~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/
 ├── CLAUDE.md                       # 实务级实务画像
 └── matters/
     ├── <简称>/

@@ -8,7 +8,7 @@ description: >
 
 # /related-skills-surfacer
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/legal-builder-hub/CLAUDE.md` → 实践画像。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/legal-builder-hub/CLAUDE.md` → 实践画像。
 2. 使用以下工作流。
 3. 检查其他插件最近在做什么。与注册表进行匹配。
 4. 建议："你一直在做 X — 社区有一个关于 Y 的技能与之相关。"
@@ -28,7 +28,7 @@ description: >
 
 ## 加载上下文
 
-`~/.claude/plugins/config/claude-for-legal/legal-builder-hub/CLAUDE.md` → 实践画像、已安装技能（不推荐已安装的内容）。
+`~/.claude/plugins/config/claude-for-legal-zh/legal-builder-hub/CLAUDE.md` → 实践画像、已安装技能（不推荐已安装的内容）。
 来自 registry-browser 的注册表缓存。
 
 ## 匹配
@@ -54,7 +54,7 @@ description: >
 
 ## 用户控制
 
-根据 `~/.claude/plugins/config/claude-for-legal/legal-builder-hub/CLAUDE.md` → 新技能通知设置：
+根据 `~/.claude/plugins/config/claude-for-legal-zh/legal-builder-hub/CLAUDE.md` → 新技能通知设置：
 - **全部：** 浮现任何匹配
 - **匹配实践画像：** 按画像过滤（默认）
 - **无：** 本技能关闭

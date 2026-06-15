@@ -9,14 +9,14 @@ argument-hint: "[slug] [--skip-gate] [--version=N]"
 
 # /demand-draft
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/litigation-legal/demand-letters/[slug]/intake.md`。
-2. 加载 `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md` → 律师函实践、内部风格。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/demand-letters/[slug]/intake.md`。
+2. 加载 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/CLAUDE.md` → 律师函实践、内部风格。
 3. 遵循以下工作流。
 4. 运行起草前门禁：保密过滤、自认风险、权利保留、和解谈判姿态、弃权扫描、语气、事实准确性。
 5. 模板选择：如有种子文件则使用；否则使用对应函件类型的软模板。
 6. 在对话中起草供审查。迭代至用户批准。
-7. 写入 `~/.claude/plugins/config/claude-for-legal/litigation-legal/demand-letters/[slug]/draft-v[N].docx`。
-8. 写入 `~/.claude/plugins/config/claude-for-legal/litigation-legal/demand-letters/[slug]/checklist.md`（发送后检查清单）。
+7. 写入 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/demand-letters/[slug]/draft-v[N].docx`。
+8. 写入 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/demand-letters/[slug]/checklist.md`（发送后检查清单）。
 
 ---
 

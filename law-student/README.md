@@ -71,7 +71,7 @@
 
 ## 存储
 
-你的实践画像存储在 `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md`，插件更新时不受影响。其余内容位于你的工作目录：
+你的实践画像存储在 `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md`，插件更新时不受影响。其余内容位于你的工作目录：
 
 ```
 law-student/
@@ -95,11 +95,11 @@ law-student/
 
 ## 它是如何学习的
 
-你在 `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` 中的学习画像不是静态的——它随着你使用插件而改善。技能会在输出使用了默认设置时提示你应该调整的地方。你可以重新运行设置、直接编辑文件，或者告诉某个技能记录新的偏好。
+你在 `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` 中的学习画像不是静态的——它随着你使用插件而改善。技能会在输出使用了默认设置时提示你应该调整的地方。你可以重新运行设置、直接编辑文件，或者告诉某个技能记录新的偏好。
 
 ## 注意事项
 
 - drill-me 与 explain-to-me 在 cold-start 时设定；可按训练随时切换。
 - 案例摘要和大纲使用**你的**格式。如果你有现成的大纲，在 cold-start 时指向它们。
-- 法考备考以 `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` 中的薄弱科目为目标。它会反复回到这些科目。
+- 法考备考以 `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` 中的薄弱科目为目标。它会反复回到这些科目。
 - 每个内容生成技能在不确信时均会标记。相信标记甚于没有标记——没有标记的规则是我有把握的；考试前仍请核实来源。

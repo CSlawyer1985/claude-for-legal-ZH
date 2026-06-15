@@ -9,7 +9,7 @@ argument-hint: "[搜索关键词]"
 
 # /registry-browser
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/legal-builder-hub/CLAUDE.md` → 已监视注册表。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/legal-builder-hub/CLAUDE.md` → 已监视注册表。
 2. 使用以下工作流。
 3. 搜索每个注册表。显示匹配项及描述。
 4. 对任意匹配项提供查看完整 SKILL.md 的选项。
@@ -22,7 +22,7 @@ argument-hint: "[搜索关键词]"
 
 ## 加载上下文
 
-`~/.claude/plugins/config/claude-for-legal/legal-builder-hub/CLAUDE.md` → 已监视注册表列表。
+`~/.claude/plugins/config/claude-for-legal-zh/legal-builder-hub/CLAUDE.md` → 已监视注册表列表。
 
 ## 工作流
 
@@ -67,7 +67,7 @@ argument-hint: "[搜索关键词]"
 
 1. 获取它，验证它是技能仓库（有 `skills/` 或 `.claude-plugin/`）
 2. 展示其中的内容
-3. 经确认后添加到 `~/.claude/plugins/config/claude-for-legal/legal-builder-hub/CLAUDE.md` → 已监视注册表
+3. 经确认后添加到 `~/.claude/plugins/config/claude-for-legal-zh/legal-builder-hub/CLAUDE.md` → 已监视注册表
 
 ## 默认注册表
 

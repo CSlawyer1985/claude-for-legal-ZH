@@ -6,7 +6,7 @@ argument-hint: "[GAP-ID 或差距描述]"
 
 # /policy-redraft
 
-1. 读取 `~/.claude/plugins/config/claude-for-legal/regulatory-legal/CLAUDE.md` → 政策库索引 + 实践配置。
+1. 读取 `~/.claude/plugins/config/claude-for-legal-zh/regulatory-legal/CLAUDE.md` → 政策库索引 + 实践配置。
 2. 使用以下工作流。
 3. 收集输入：差距（来自 `/regulatory-legal:gaps` 输出或直接描述）、当前已批准的政策文本、法规文本。
 4. 验证法规是有效的（按照政策差异分析的法规状态检查）。

@@ -17,7 +17,7 @@
 
 对接您的产品上线追踪器（飞书多维表格/钉钉/Teambition），读取您过往十份产品上线审查，学习您实际阻断什么、放行什么。构建每项技能均会读取的风险校准表。
 
-您的配置存储于 `~/.claude/plugins/config/claude-for-legal/product-legal/CLAUDE.md` 并在插件更新后继续生效。
+您的配置存储于 `~/.claude/plugins/config/claude-for-legal-zh/product-legal/CLAUDE.md` 并在插件更新后继续生效。
 
 ```
 /product-legal:cold-start-interview
@@ -37,7 +37,7 @@
 
 | 技能 | 用途 |
 |---|---|
-| **cold-start-interview** | 通过访谈+过往产品上线审查，写入 ~/.claude/plugins/config/claude-for-legal/product-legal/CLAUDE.md |
+| **cold-start-interview** | 通过访谈+过往产品上线审查，写入 ~/.claude/plugins/config/claude-for-legal-zh/product-legal/CLAUDE.md |
 | **launch-review** | 按类别逐项审查，依据贵公司风险标准校准 |
 | **marketing-claims-review** | 宣传主张分类：夸大宣传/事实陈述/比较性/暗示性/绝对化用语 |
 | **feature-risk-assessment** | 当产品上线审查不够时，针对单一问题进行深度分析 |
@@ -88,7 +88,7 @@
 
 ## 如何学习
 
-您在 `~/.claude/plugins/config/claude-for-legal/product-legal/CLAUDE.md` 中的实务画像并非一成不变——它会随着您使用插件而持续改进。技能会告知您何时某次输出使用了应予调整的默认值。您可以重新运行设置、直接编辑文件或告知某项技能记录新的立场。
+您在 `~/.claude/plugins/config/claude-for-legal-zh/product-legal/CLAUDE.md` 中的实务画像并非一成不变——它会随着您使用插件而持续改进。技能会告知您何时某次输出使用了应予调整的默认值。您可以重新运行设置、直接编辑文件或告知某项技能记录新的立场。
 
 ## 说明
 
@@ -103,4 +103,4 @@
 
 ## 配置
 
-您的配置存储于 `~/.claude/plugins/config/claude-for-legal/product-legal/CLAUDE.md` 并在插件更新后继续生效——设置只需运行一次。
+您的配置存储于 `~/.claude/plugins/config/claude-for-legal-zh/product-legal/CLAUDE.md` 并在插件更新后继续生效——设置只需运行一次。

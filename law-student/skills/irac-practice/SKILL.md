@@ -9,12 +9,12 @@ argument-hint: "[粘贴论文 或 草稿路径 或 --generate-hypo]"
 
 # /irac-practice
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` → 课程、考试形式、大纲位置、学习风格。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` → 课程、考试形式、大纲位置、学习风格。
 2. 应用以下框架。
 3. 确定模式：学生提供的案例假设 + 答案，或技能生成的案例假设配学生的答案。
 4. 仔细阅读答案。对照预期 IRAC 组成部分进行映射。
 5. 输出结构化反馈：识别/遗漏的考点、规则准确性、分析深度、组织、评分等级、前三位修改、最多 1-2 个标注示例句式（绝不提供完整的 IRAC 范文）。
-6. 追加到 `~/.claude/plugins/config/claude-for-legal/law-student/irac-sessions/[学生]/tracker.md` 供模式检测。3 次以上练习后呈现模式。
+6. 追加到 `~/.claude/plugins/config/claude-for-legal-zh/law-student/irac-sessions/[学生]/tracker.md` 供模式检测。3 次以上练习后呈现模式。
 
 ---
 
@@ -41,8 +41,8 @@ argument-hint: "[粘贴论文 或 草稿路径 或 --generate-hypo]"
 
 ## 加载上下文
 
-- `~/.claude/plugins/config/claude-for-legal/law-student/CLAUDE.md` → 当前课程、考试形式、大纲位置、学习风格
-- `~/.claude/plugins/config/claude-for-legal/law-student/irac-sessions/[学生]/tracker.md`（如存在）——跨练习的模式追踪
+- `~/.claude/plugins/config/claude-for-legal-zh/law-student/CLAUDE.md` → 当前课程、考试形式、大纲位置、学习风格
+- `~/.claude/plugins/config/claude-for-legal-zh/law-student/irac-sessions/[学生]/tracker.md`（如存在）——跨练习的模式追踪
 - 学生提供的案例假设（如果在练习一个特定的题目）和他们写的答案
 
 ## 工作流
@@ -140,7 +140,7 @@ argument-hint: "[粘贴论文 或 草稿路径 或 --generate-hypo]"
 
 ### 第4步：追踪模式
 
-追加到 `~/.claude/plugins/config/claude-for-legal/law-student/irac-sessions/[学生]/tracker.md`：
+追加到 `~/.claude/plugins/config/claude-for-legal-zh/law-student/irac-sessions/[学生]/tracker.md`：
 
 ```markdown
 ## [日期] — [学科 / 案例假设主题]

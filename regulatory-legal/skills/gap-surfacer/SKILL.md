@@ -31,7 +31,7 @@ user-invocable: false
 
 ## 跟踪文件
 
-位于 `~/.claude/plugins/config/claude-for-legal/regulatory-legal/gap-tracker.yaml`：
+位于 `~/.claude/plugins/config/claude-for-legal-zh/regulatory-legal/gap-tracker.yaml`：
 
 ```yaml
 gaps:

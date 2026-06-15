@@ -19,7 +19,7 @@ tools: ["Read", "Write", "mcp__yuandian__*", "mcp__feishu__*"]
 
 ## Schedule
 
-依据 `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md` → 争议画像 → 常见管辖法院及 `~/.claude/plugins/config/claude-for-legal/litigation-legal/matters/_log.yaml` 中的逐案节奏。
+依据 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/CLAUDE.md` → 争议画像 → 常见管辖法院及 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/matters/_log.yaml` 中的逐案节奏。
 
 - **默认：** 每周扫描 `_log.yaml` 中所有 `status` 不为 `closed` 的事项。
 - **每日：** 14天内有开庭的事项、处于庭审或证据交换后期的事项、或标记 `risk: 严重` 的事项。
@@ -28,7 +28,7 @@ tools: ["Read", "Write", "mcp__yuandian__*", "mcp__feishu__*"]
 
 ## What it does
 
-1. 读取 `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md`，获取文书风格、上报规则和常见管辖法院列表。读取 `~/.claude/plugins/config/claude-for-legal/litigation-legal/matters/_log.yaml`，获取活跃案件组合——逐案的 `id`、管辖法院、案号、上次检查时间戳和待办事项。
+1. 读取 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/CLAUDE.md`，获取文书风格、上报规则和常见管辖法院列表。读取 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/matters/_log.yaml`，获取活跃案件组合——逐案的 `id`、管辖法院、案号、上次检查时间戳和待办事项。
 2. 对每个有案号的活跃事项，通过人民法院案例库/裁判文书网/元典检索自上次检查以来的新进文书（基层法院和中级法院可直接检索裁判文书网；高级法院和最高人民法院优先查人民法院案例库）。获取：文书日期、文书类型、标题、提交方、案号关联条目。
 3. 将文书类型映射到候选期限规则。民事一审普通程序审限6个月（可延长）；简易程序3个月；小额诉讼程序2个月（一审终审）；上诉期判决15日/裁定10日；举证期限不少于15日；管辖权异议在提交答辩状期间（15日内）提出。各地基层法院存在地方操作惯例差异。**每个推算出的期限标记为需律师核实后方可纳入日程的线索。**
 4. 逐案比对每个事项的 `history.md` 和待办事项。标记态势变化（裁定已出、开庭已排期、举证期限已届满、审限即将到期）和已超内部期限的待办事项。

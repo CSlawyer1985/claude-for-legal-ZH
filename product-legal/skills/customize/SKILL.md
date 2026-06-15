@@ -16,8 +16,8 @@ argument-hint: "[节名称，或描述需要修改的内容]"
 ## 需要做什么
 
 1. **读取配置。** 读取
-   `~/.claude/plugins/config/claude-for-legal/product-legal/CLAUDE.md`
-   （以及上级目录的 `~/.claude/plugins/config/claude-for-legal/company-profile.md`）。
+   `~/.claude/plugins/config/claude-for-legal-zh/product-legal/CLAUDE.md`
+   （以及上级目录的 `~/.claude/plugins/config/claude-for-legal-zh/company-profile.md`）。
    如果插件配置不存在或仍包含 `[PLACEHOLDER]` 值，说：
 
    > 您尚未运行设置。请先运行 `/product-legal:cold-start-interview`——customize 用于调整已有的画像。
@@ -45,7 +45,7 @@ argument-hint: "[节名称，或描述需要修改的内容]"
    - *收紧营销宣传立场：* "`/check-claims` 将更多用语标记为需要证实或改写。"
 
 5. **对于共享画像的修改**（公司名称、行业、法域、执业场景、阶段）：写入
-   `~/.claude/plugins/config/claude-for-legal/company-profile.md` 并注明：
+   `~/.claude/plugins/config/claude-for-legal-zh/company-profile.md` 并注明：
 
    > 此修改影响全部12个插件——任何读取您法域范围的插件现在都看到 [新值]。
 

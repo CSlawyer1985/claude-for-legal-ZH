@@ -9,7 +9,7 @@ argument-hint: "[数据室文件夹路径或类别名称]"
 
 # /diligence-issue-extraction
 
-1. 加载 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` + `~/.claude/plugins/config/claude-for-legal/corporate-legal/deals/[代码]/deal-context.md`。
+1. 加载 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` + `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/deals/[代码]/deal-context.md`。
 2. 使用以下工作流。
 3. 检查 `ai-tool-handoff` ——如果类别为大批量且已配置工具，先交接。
 4. 阅读文件，适用重要性过滤，按类别提取。
@@ -19,19 +19,19 @@ argument-hint: "[数据室文件夹路径或类别名称]"
 
 ## 事项上下文
 
-**事项上下文。** 检查实务级 CLAUDE.md 中的 `## 事项工作区`。如果 `Enabled` 为 `✗`（企业法务用户的默认值），跳过本段其余内容——技能使用实务级上下文，事项机制不可见。如果已启用且无活跃事项，询问："这是哪个事项？运行 `/corporate-legal:matter-workspace switch <事项简称>` 或说 `实务级`。"加载活跃事项的 `matter.md` 获取事项特定上下文和覆盖规则。输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal/corporate-legal/matters/<事项简称>/`。除非 `跨事项上下文` 为 `开`，否则绝不读取其他事项的文件。
+**事项上下文。** 检查实务级 CLAUDE.md 中的 `## 事项工作区`。如果 `Enabled` 为 `✗`（企业法务用户的默认值），跳过本段其余内容——技能使用实务级上下文，事项机制不可见。如果已启用且无活跃事项，询问："这是哪个事项？运行 `/corporate-legal:matter-workspace switch <事项简称>` 或说 `实务级`。"加载活跃事项的 `matter.md` 获取事项特定上下文和覆盖规则。输出写入事项文件夹 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/matters/<事项简称>/`。除非 `跨事项上下文` 为 `开`，否则绝不读取其他事项的文件。
 
 ---
 
 ## 目的
 
-数据室有2,000份文件。其中约30份对交易重要。本技能按 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` 中的尽调类别和重要性阈值审阅文件，提取问题，并以内部备忘录格式书写。
+数据室有2,000份文件。其中约30份对交易重要。本技能按 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` 中的尽调类别和重要性阈值审阅文件，提取问题，并以内部备忘录格式书写。
 
 ## 加载上下文
 
-- `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` → 尽调结构（类别、重要性阈值）
-- `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` → 问题备忘录格式（发现如何陈述）
-- `~/.claude/plugins/config/claude-for-legal/corporate-legal/deals/[代码]/deal-context.md` → 交易特定阈值、数据室位置
+- `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` → 尽调结构（类别、重要性阈值）
+- `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` → 问题备忘录格式（发现如何陈述）
+- `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/deals/[代码]/deal-context.md` → 交易特定阈值、数据室位置
 
 如果 deal-context.md 不存在，询问这是哪个交易。
 
@@ -56,7 +56,7 @@ argument-hint: "[数据室文件夹路径或类别名称]"
 
 ### 第2步：适用重要性过滤
 
-按 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` / 交易上下文中的阈值。如果阈值说合同大于 ¥X，不要审查全部。
+按 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` / 交易上下文中的阈值。如果阈值说合同大于 ¥X，不要审查全部。
 
 对合同具体而言：按标明金额（如在文件名/元数据中）或按对方当事人重要性排序。自上而下审查直到达到阈值或类别穷尽。
 
@@ -104,7 +104,7 @@ argument-hint: "[数据室文件夹路径或类别名称]"
 >
 > **禁止静默补充。** 如果对已配置的法律检索工具的搜索返回很少或没有该发现所需法律依据的结果（例如控制权变更同意要求的规则、知识产权转让的学理、劳动关系分类的检验标准），报告找到的内容并停止。不要未经询问从联网搜索或模型知识填补空白。说："搜索返回了 [N] 条结果，来自 [工具]。关于 [规则/学理] 的覆盖似乎不足。选项：(1) 扩大搜索查询，(2) 尝试其他检索工具，(3) 联网搜索——结果将标注 `[联网检索 — 需复核]` 并在依赖前对照一级来源核实，或 (4) 标注为未核实并停止。你想要哪一个？"是否接受较低可信度来源由律师决定。
 
-按 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` 中的发现模板。如果种子备忘录使用以下格式：
+按 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` 中的发现模板。如果种子备忘录使用以下格式：
 
 ```
 问题 #N：[标题]
@@ -157,7 +157,7 @@ argument-hint: "[数据室文件夹路径或类别名称]"
 
 ## 交接
 
-- **至 ai-tool-handoff：** 如果按 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` 使用了 AI 工具，将批量合同审查交接过去。本技能处理微妙的文件（补充函、修订协议、任何 AI 工具费力的事项）。
+- **至 ai-tool-handoff：** 如果按 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` 使用了 AI 工具，将批量合同审查交接过去。本技能处理微妙的文件（补充函、修订协议、任何 AI 工具费力的事项）。
 - **至 deal-team-summary：** 汇总的发现馈入交易团队简报。
 - **至 material-contract-schedule：** 合同层面的提取馈入披露清单。
 - **至 closing-checklist：** 任何意味着交割前需完成的独立行动事项的发现均成为检查表项目。交接不仅限于第三方同意——还涵盖：
@@ -184,4 +184,4 @@ argument-hint: "[数据室文件夹路径或类别名称]"
 
 - 不对临界情形做重要性判断。它适用阈值；由人工决定边界情形。
 - 不谈判陈述与保证。它产出提供信息的发现。
-- 不替代批量 AI 审查。对于大批量条款提取，按 `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` 交接给 AI 工具。本技能用于判断层。
+- 不替代批量 AI 审查。对于大批量条款提取，按 `~/.claude/plugins/config/claude-for-legal-zh/corporate-legal/CLAUDE.md` 交接给 AI 工具。本技能用于判断层。

@@ -6,10 +6,10 @@ argument-hint: "[--redo | --check-integrations]"
 
 # /cold-start-interview
 
-1. 检查 `~/.claude/plugins/config/claude-for-legal/regulatory-legal/CLAUDE.md`。如果已存在已填充的 CLAUDE.md（无 `[PLACEHOLDER]` 标记），跳过除非 `--redo`。如果 `--check-integrations`，跳过访谈——仅重新运行 Part 0 的"连接了什么？"检查并重写 `## 可用集成` 表。
+1. 检查 `~/.claude/plugins/config/claude-for-legal-zh/regulatory-legal/CLAUDE.md`。如果已存在已填充的 CLAUDE.md（无 `[PLACEHOLDER]` 标记），跳过除非 `--redo`。如果 `--check-integrations`，跳过访谈——仅重新运行 Part 0 的"连接了什么？"检查并重写 `## 可用集成` 表。
 2. 使用以下访谈工作流。先 Part 0（角色 + 集成）→ 然后监测清单：哪些监管机构，政策在哪里，什么是重要的。
 3. 连接政策文件夹。索引政策。
-4. 写入 `~/.claude/plugins/config/claude-for-legal/regulatory-legal/CLAUDE.md`。
+4. 写入 `~/.claude/plugins/config/claude-for-legal-zh/regulatory-legal/CLAUDE.md`。
 
 ---
 
@@ -163,7 +163,7 @@ argument-hint: "[--redo | --check-integrations]"
 
 告知用户：
 
-> "你的配置位于 `~/.claude/plugins/config/claude-for-legal/regulatory-legal/CLAUDE.md`——一个你可以直接阅读和编辑的纯文本文件。你回答的任何内容都可以更改：
+> "你的配置位于 `~/.claude/plugins/config/claude-for-legal-zh/regulatory-legal/CLAUDE.md`——一个你可以直接阅读和编辑的纯文本文件。你回答的任何内容都可以更改：
 >
 > - 直接编辑文件进行快速更改
 > - 运行 `/regulatory-legal:cold-start-interview --redo` 进行完整重访

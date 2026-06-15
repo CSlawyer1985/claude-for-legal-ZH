@@ -10,13 +10,13 @@ argument-hint: "[--redo | --check-integrations]"
 
 # /cold-start-interview
 
-1. 检查 `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md`。如已填充且无 `--redo`，覆盖前询问。
+1. 检查 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/CLAUDE.md`。如已填充且无 `--redo`，覆盖前询问。
 2. 按以下工作流操作。
 3. 运行 Part 0（角色、立场、集成检查）。访谈按角色和立场分流。
    - **角色**路由实践画像结构：**法务**（案件组合管理、外聘律师监督、重要性评估方法）、**律所律师**（案件工作——案件理论、关键事实、文书风格），或**独立执业**（案件量 + 风险代理或固定律师费模式 + 客户期望 + 时效追踪，再加案件理论和文书风格部分）。
    - **立场**路由校准词汇：**原告**（主动主张、案件价值、风险代理、时效悬崖）、**被告**（被动应对、敞口评估、保险通知），或**两者/因案而异**（捕获默认值，由各案技能重新询问）。
 4. 浮现缺口。如用户没有成文的风险框架或报告门槛，注明并提供现在思考或留 `[PLACEHOLDER]` 供后续填写。
-5. 写入 `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md`。注明编写日期。
+5. 写入 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/CLAUDE.md`。注明编写日期。
 6. 定稿前与用户确认："这是我捕获的内容——有什么问题吗？"
 
 ---
@@ -205,7 +205,7 @@ argument-hint: "[--redo | --check-integrations]"
 
 向用户展示插件可以做什么的定制列表，并说明实践画像可以随时修改。
 
-> "您的实践画像位于 `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md` —— 一个可以直接阅读和编辑的纯文本文件。您回答的任何内容都可以修改。当输出感觉不对时，修复通常在此处。"
+> "您的实践画像位于 `~/.claude/plugins/config/claude-for-legal-zh/litigation-legal/CLAUDE.md` —— 一个可以直接阅读和编辑的纯文本文件。您回答的任何内容都可以修改。当输出感觉不对时，修复通常在此处。"
 
 ## 本技能不做什么
 

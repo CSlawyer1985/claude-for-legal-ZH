@@ -16,18 +16,18 @@ argument-hint: "<new | list | switch | close | none> [slug]"
 - `/ip-legal:matter-workspace new <slug>` — 创建新事项工作区，执行简短的采集面谈，写入 `matter.md`
 - `/ip-legal:matter-workspace list` — 列明事项及其状态和活跃标记
 - `/ip-legal:matter-workspace switch <slug>` — 设置活跃事项
-- `/ip-legal:matter-workspace close <slug>` — 归档事项（移动至 `~/.claude/plugins/config/claude-for-legal/ip-legal/matters/_archived/`，绝不删除）
+- `/ip-legal:matter-workspace close <slug>` — 归档事项（移动至 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/matters/_archived/`，绝不删除）
 - `/ip-legal:matter-workspace none` — 解除任何活跃事项，仅在实务级工作
 
 ## 使用说明
 
-1. 读取 `~/.claude/plugins/config/claude-for-legal/ip-legal/CLAUDE.md` — 确认 `## 事项工作区` 分区已填充。如 `Enabled` 为 `✗`，告知用户："事项工作区已关闭——你配置为公司法务，仅有一个客户，插件自动以实务级上下文运行。如你实际跨多个客户工作，重新运行 `/ip-legal:cold-start-interview --redo` 并选择私人执业设置。否则，你不需要 `/ip-legal:matter-workspace`。"不用报错——关闭状态是法务用户的预期状态。
+1. 读取 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/CLAUDE.md` — 确认 `## 事项工作区` 分区已填充。如 `Enabled` 为 `✗`，告知用户："事项工作区已关闭——你配置为公司法务，仅有一个客户，插件自动以实务级上下文运行。如你实际跨多个客户工作，重新运行 `/ip-legal:cold-start-interview --redo` 并选择私人执业设置。否则，你不需要 `/ip-legal:matter-workspace`。"不用报错——关闭状态是法务用户的预期状态。
 2. 按以下子命令逻辑操作。
 3. 按 `$ARGUMENTS` 的首个标记分派：
-   - `new` → 执行采集面谈，写入 `~/.claude/plugins/config/claude-for-legal/ip-legal/matters/<slug>/matter.md`，种子 `history.md` 和 `notes.md`。
-   - `list` → 枚举 `~/.claude/plugins/config/claude-for-legal/ip-legal/matters/*/matter.md`，打印表格，标记活跃事项。
+   - `new` → 执行采集面谈，写入 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/matters/<slug>/matter.md`，种子 `history.md` 和 `notes.md`。
+   - `list` → 枚举 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/matters/*/matter.md`，打印表格，标记活跃事项。
    - `switch` → 更新实务级 CLAUDE.md 中的 `Active matter:` 行。
-   - `close` → 移动 `~/.claude/plugins/config/claude-for-legal/ip-legal/matters/<slug>/` 至 `~/.claude/plugins/config/claude-for-legal/ip-legal/matters/_archived/<slug>/`，在 `history.md` 中记录关闭日期。
+   - `close` → 移动 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/matters/<slug>/` 至 `~/.claude/plugins/config/claude-for-legal-zh/ip-legal/matters/_archived/<slug>/`，在 `history.md` 中记录关闭日期。
    - `none` → 将 `Active matter:` 设置为 `none — 仅实务级上下文`。
 4. 向用户显示变更内容，写入前确认。
 
@@ -48,7 +48,7 @@ argument-hint: "<new | list | switch | close | none> [slug]"
 所有事项数据位于：
 
 ```
-~/.claude/plugins/config/claude-for-legal/ip-legal/
+~/.claude/plugins/config/claude-for-legal-zh/ip-legal/
 ├── CLAUDE.md                       # 实务级画像
 └── matters/
     ├── <slug>/

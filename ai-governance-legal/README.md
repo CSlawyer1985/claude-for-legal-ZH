@@ -38,7 +38,7 @@
 
 | 技能 | 用途 |
 |---|---|
-| **cold-start-interview** | 通过访谈 + 种子文件编写 `~/.claude/plugins/config/claude-for-legal/ai-governance-legal/CLAUDE.md` |
+| **cold-start-interview** | 通过访谈 + 种子文件编写 `~/.claude/plugins/config/claude-for-legal-zh/ai-governance-legal/CLAUDE.md` |
 | **use-case-triage** | 对照登记册分类应用场景；标注缺失的评估 |
 | **aia-generation** | 按内部格式生成 AI 影响评估（算法安全评估/科技伦理审查） |
 | **vendor-ai-review** | 针对治理立场进行 AI 特定供应商合同审查 |
@@ -57,7 +57,7 @@
 
 准备好（如存在）：你的 AI 或可接受使用政策、一份既往影响评估、关键 AI 供应商协议、模型清单或已批准工具列表。
 
-你的配置存储在 `~/.claude/plugins/config/claude-for-legal/ai-governance-legal/CLAUDE.md`，可跨插件更新保留。
+你的配置存储在 `~/.claude/plugins/config/claude-for-legal-zh/ai-governance-legal/CLAUDE.md`，可跨插件更新保留。
 
 ### 2. 分类新应用场景
 
@@ -114,7 +114,7 @@ ai-governance-legal/
 
 ## 如何持续学习
 
-你的实务画像位于 `~/.claude/plugins/config/claude-for-legal/ai-governance-legal/CLAUDE.md` 不是静态的——随着你使用插件不断改进。技能会告知你输出何时使用了应调整的默认值。`policy-monitor` 技能监测 AI 治理政策与实践之间的偏差并提议更新。你可以重新运行设置、直接编辑文件或告知技能记录新立场。
+你的实务画像位于 `~/.claude/plugins/config/claude-for-legal-zh/ai-governance-legal/CLAUDE.md` 不是静态的——随着你使用插件不断改进。技能会告知你输出何时使用了应调整的默认值。`policy-monitor` 技能监测 AI 治理政策与实践之间的偏差并提议更新。你可以重新运行设置、直接编辑文件或告知技能记录新立场。
 
 ## 注意事项
 
