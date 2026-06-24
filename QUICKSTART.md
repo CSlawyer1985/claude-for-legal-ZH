@@ -12,7 +12,7 @@
 scripts/install-codex.sh
 ```
 
-默认会把 `.agents/skills/chinese-legal-*` 链接到：
+默认会把 `.agents/skills/chinese-legal-*` 和 `codex/cflz-legal-suite` 链接到：
 
 ```text
 ~/.codex/skills
@@ -31,6 +31,8 @@ Codex 中不需要输入 Claude Code slash command，直接用自然语言提出
 ```
 
 更多说明见 [INSTALL_CODEX.md](INSTALL_CODEX.md)。
+
+如果你正在迁移 Claude Code 指令，也可以使用 `cflz-legal-suite` 的稳定映射：`/commercial-legal:review` 对应 `cflz-commercial-legal-review`，完整索引见 [`codex/manifest.json`](codex/manifest.json)。
 
 ## Claude Code 一键添加 marketplace
 
@@ -101,7 +103,7 @@ scripts/install-claude-code.sh
 
 ## 盒子里有什么
 
-12 个业务领域插件，5 个托管 Agent 蓝图，yuandian MCP 连接器。完整参考见 [README.md](README.md)。
+12 个业务领域插件，150 个源技能，5 个托管 Agent 蓝图，Codex 路由索引和 yuandian MCP 连接器。完整参考见 [README.md](README.md)。
 
 ## 遇到问题？
 

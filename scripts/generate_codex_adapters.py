@@ -16,6 +16,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS_ROOT = ROOT / ".agents" / "skills"
+CODEX_ROOT = ROOT / "codex"
+SUITE_ROOT = CODEX_ROOT / "cflz-legal-suite"
 
 DOMAINS = {
     "commercial-legal": {
@@ -127,6 +129,104 @@ def plugin_description(domain_root: Path) -> str:
     return read_json(manifest).get("description", "").strip()
 
 
+def codex_manifest() -> dict:
+    domains = []
+    for domain, meta in DOMAINS.items():
+        domain_root = ROOT / domain
+        skills = [
+            {
+                "slug": slug,
+                "source": f"{domain}/skills/{slug}/SKILL.md",
+                "codexName": f"cflz-{domain}-{slug}",
+            }
+            for slug in skill_names(domain_root)
+        ]
+        domains.append(
+            {
+                "domain": domain,
+                "codexPrefix": f"cflz-{domain}-",
+                "skills": skills,
+            }
+        )
+    return {
+        "suite": "cflz-legal-suite",
+        "sourceRoot": ".",
+        "domains": domains,
+    }
+
+
+def suite_body(manifest: dict) -> str:
+    domain_rows = []
+    examples = []
+    for domain in manifest["domains"]:
+        skills = domain["skills"]
+        domain_rows.append(
+            f"| `{domain['domain']}` | `{domain['codexPrefix']}*` | {len(skills)} | "
+            f"`{skills[0]['codexName']}` ... |"
+        )
+        if skills:
+            examples.append(f"- `/{domain['domain']}:{skills[0]['slug']}` -> `{skills[0]['codexName']}`")
+    rows = "\n".join(domain_rows)
+    example_text = "\n".join(examples[:6])
+    return f"""---
+name: cflz-legal-suite
+description: Router and public index for the claude-for-legal-ZH Chinese legal workflow suite. Use when the user mentions cflz, claude-for-legal-ZH, an original command such as /commercial-legal:review, or any Chinese legal workflow in contracts, privacy, product, corporate, employment, regulatory, AI governance, litigation, IP, legal education, legal clinic, or legal skill management.
+---
+
+# CFLZ Legal Suite Router
+
+This is the Codex/Agent Skills routing layer for `claude-for-legal-ZH`.
+
+The upstream repository is a Claude Code plugin marketplace. This adapter keeps the original legal workflow files as the source of truth and gives Codex a stable, unique naming scheme for all original skills.
+
+## Routing Rule
+
+When the user names an original Claude command:
+
+```text
+/<domain>:<skill>
+```
+
+map it to:
+
+```text
+cflz-<domain>-<skill>
+```
+
+Then read these files in order:
+
+1. `<domain>/CLAUDE.md`
+2. `<domain>/skills/<skill>/SKILL.md`
+3. Any referenced files under that domain's `references/`, `agents/`, or cookbook folder.
+
+Do not ask the user to run Claude Code slash commands inside Codex. Translate the workflow into Codex actions.
+
+## Domain Index
+
+| Original domain | Codex name pattern | Skills | Example |
+|---|---|---:|---|
+{rows}
+
+## Examples
+
+{example_text}
+
+## Manifest
+
+The complete machine-readable index is `codex/manifest.json`.
+
+## Configuration
+
+- Claude Code practice profiles usually live under `~/.claude/plugins/config/claude-for-legal-zh/<domain>/CLAUDE.md`.
+- Codex-specific profiles may live under `~/.codex/legal-zh/<domain>/CLAUDE.md`.
+- If a workflow requires setup and the profile is missing or still contains `[PLACEHOLDER]`, run the domain's `cold-start-interview` workflow conversationally before producing customized legal work.
+
+## Safety Boundary
+
+All outputs are lawyer-review drafts, not legal opinions replacing professional judgment. Current law, regulatory updates, cases, filing requirements, limitation periods, and other time-sensitive legal facts must be verified from reliable current sources before reliance.
+"""
+
+
 def adapter_body(domain: str, meta: dict, skills: list[str], description: str) -> str:
     commands = ", ".join(f"`{name}`" for name in skills)
     return f"""---
@@ -227,6 +327,14 @@ def main() -> None:
         out_dir = SKILLS_ROOT / meta["codex_name"]
         out_dir.mkdir(parents=True, exist_ok=True)
         (out_dir / "SKILL.md").write_text(cookbook_body(cookbook, meta), encoding="utf-8")
+    manifest = codex_manifest()
+    CODEX_ROOT.mkdir(parents=True, exist_ok=True)
+    SUITE_ROOT.mkdir(parents=True, exist_ok=True)
+    (CODEX_ROOT / "manifest.json").write_text(
+        json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    (SUITE_ROOT / "SKILL.md").write_text(suite_body(manifest), encoding="utf-8")
 
 
 if __name__ == "__main__":

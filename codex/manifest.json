@@ -1,0 +1,828 @@
+{
+  "suite": "cflz-legal-suite",
+  "sourceRoot": ".",
+  "domains": [
+    {
+      "domain": "commercial-legal",
+      "codexPrefix": "cflz-commercial-legal-",
+      "skills": [
+        {
+          "slug": "amendment-history",
+          "source": "commercial-legal/skills/amendment-history/SKILL.md",
+          "codexName": "cflz-commercial-legal-amendment-history"
+        },
+        {
+          "slug": "cold-start-interview",
+          "source": "commercial-legal/skills/cold-start-interview/SKILL.md",
+          "codexName": "cflz-commercial-legal-cold-start-interview"
+        },
+        {
+          "slug": "customize",
+          "source": "commercial-legal/skills/customize/SKILL.md",
+          "codexName": "cflz-commercial-legal-customize"
+        },
+        {
+          "slug": "escalation-flagger",
+          "source": "commercial-legal/skills/escalation-flagger/SKILL.md",
+          "codexName": "cflz-commercial-legal-escalation-flagger"
+        },
+        {
+          "slug": "matter-workspace",
+          "source": "commercial-legal/skills/matter-workspace/SKILL.md",
+          "codexName": "cflz-commercial-legal-matter-workspace"
+        },
+        {
+          "slug": "nda-review",
+          "source": "commercial-legal/skills/nda-review/SKILL.md",
+          "codexName": "cflz-commercial-legal-nda-review"
+        },
+        {
+          "slug": "renewal-tracker",
+          "source": "commercial-legal/skills/renewal-tracker/SKILL.md",
+          "codexName": "cflz-commercial-legal-renewal-tracker"
+        },
+        {
+          "slug": "review",
+          "source": "commercial-legal/skills/review/SKILL.md",
+          "codexName": "cflz-commercial-legal-review"
+        },
+        {
+          "slug": "review-proposals",
+          "source": "commercial-legal/skills/review-proposals/SKILL.md",
+          "codexName": "cflz-commercial-legal-review-proposals"
+        },
+        {
+          "slug": "saas-msa-review",
+          "source": "commercial-legal/skills/saas-msa-review/SKILL.md",
+          "codexName": "cflz-commercial-legal-saas-msa-review"
+        },
+        {
+          "slug": "stakeholder-summary",
+          "source": "commercial-legal/skills/stakeholder-summary/SKILL.md",
+          "codexName": "cflz-commercial-legal-stakeholder-summary"
+        },
+        {
+          "slug": "vendor-agreement-review",
+          "source": "commercial-legal/skills/vendor-agreement-review/SKILL.md",
+          "codexName": "cflz-commercial-legal-vendor-agreement-review"
+        }
+      ]
+    },
+    {
+      "domain": "privacy-legal",
+      "codexPrefix": "cflz-privacy-legal-",
+      "skills": [
+        {
+          "slug": "cold-start-interview",
+          "source": "privacy-legal/skills/cold-start-interview/SKILL.md",
+          "codexName": "cflz-privacy-legal-cold-start-interview"
+        },
+        {
+          "slug": "customize",
+          "source": "privacy-legal/skills/customize/SKILL.md",
+          "codexName": "cflz-privacy-legal-customize"
+        },
+        {
+          "slug": "dpa-review",
+          "source": "privacy-legal/skills/dpa-review/SKILL.md",
+          "codexName": "cflz-privacy-legal-dpa-review"
+        },
+        {
+          "slug": "dsar-response",
+          "source": "privacy-legal/skills/dsar-response/SKILL.md",
+          "codexName": "cflz-privacy-legal-dsar-response"
+        },
+        {
+          "slug": "matter-workspace",
+          "source": "privacy-legal/skills/matter-workspace/SKILL.md",
+          "codexName": "cflz-privacy-legal-matter-workspace"
+        },
+        {
+          "slug": "pia-generation",
+          "source": "privacy-legal/skills/pia-generation/SKILL.md",
+          "codexName": "cflz-privacy-legal-pia-generation"
+        },
+        {
+          "slug": "policy-monitor",
+          "source": "privacy-legal/skills/policy-monitor/SKILL.md",
+          "codexName": "cflz-privacy-legal-policy-monitor"
+        },
+        {
+          "slug": "reg-gap-analysis",
+          "source": "privacy-legal/skills/reg-gap-analysis/SKILL.md",
+          "codexName": "cflz-privacy-legal-reg-gap-analysis"
+        },
+        {
+          "slug": "use-case-triage",
+          "source": "privacy-legal/skills/use-case-triage/SKILL.md",
+          "codexName": "cflz-privacy-legal-use-case-triage"
+        }
+      ]
+    },
+    {
+      "domain": "product-legal",
+      "codexPrefix": "cflz-product-legal-",
+      "skills": [
+        {
+          "slug": "cold-start-interview",
+          "source": "product-legal/skills/cold-start-interview/SKILL.md",
+          "codexName": "cflz-product-legal-cold-start-interview"
+        },
+        {
+          "slug": "customize",
+          "source": "product-legal/skills/customize/SKILL.md",
+          "codexName": "cflz-product-legal-customize"
+        },
+        {
+          "slug": "feature-risk-assessment",
+          "source": "product-legal/skills/feature-risk-assessment/SKILL.md",
+          "codexName": "cflz-product-legal-feature-risk-assessment"
+        },
+        {
+          "slug": "is-this-a-problem",
+          "source": "product-legal/skills/is-this-a-problem/SKILL.md",
+          "codexName": "cflz-product-legal-is-this-a-problem"
+        },
+        {
+          "slug": "launch-review",
+          "source": "product-legal/skills/launch-review/SKILL.md",
+          "codexName": "cflz-product-legal-launch-review"
+        },
+        {
+          "slug": "marketing-claims-review",
+          "source": "product-legal/skills/marketing-claims-review/SKILL.md",
+          "codexName": "cflz-product-legal-marketing-claims-review"
+        },
+        {
+          "slug": "matter-workspace",
+          "source": "product-legal/skills/matter-workspace/SKILL.md",
+          "codexName": "cflz-product-legal-matter-workspace"
+        }
+      ]
+    },
+    {
+      "domain": "corporate-legal",
+      "codexPrefix": "cflz-corporate-legal-",
+      "skills": [
+        {
+          "slug": "ai-tool-handoff",
+          "source": "corporate-legal/skills/ai-tool-handoff/SKILL.md",
+          "codexName": "cflz-corporate-legal-ai-tool-handoff"
+        },
+        {
+          "slug": "board-minutes",
+          "source": "corporate-legal/skills/board-minutes/SKILL.md",
+          "codexName": "cflz-corporate-legal-board-minutes"
+        },
+        {
+          "slug": "closing-checklist",
+          "source": "corporate-legal/skills/closing-checklist/SKILL.md",
+          "codexName": "cflz-corporate-legal-closing-checklist"
+        },
+        {
+          "slug": "cold-start-interview",
+          "source": "corporate-legal/skills/cold-start-interview/SKILL.md",
+          "codexName": "cflz-corporate-legal-cold-start-interview"
+        },
+        {
+          "slug": "customize",
+          "source": "corporate-legal/skills/customize/SKILL.md",
+          "codexName": "cflz-corporate-legal-customize"
+        },
+        {
+          "slug": "deal-team-summary",
+          "source": "corporate-legal/skills/deal-team-summary/SKILL.md",
+          "codexName": "cflz-corporate-legal-deal-team-summary"
+        },
+        {
+          "slug": "diligence-issue-extraction",
+          "source": "corporate-legal/skills/diligence-issue-extraction/SKILL.md",
+          "codexName": "cflz-corporate-legal-diligence-issue-extraction"
+        },
+        {
+          "slug": "entity-compliance",
+          "source": "corporate-legal/skills/entity-compliance/SKILL.md",
+          "codexName": "cflz-corporate-legal-entity-compliance"
+        },
+        {
+          "slug": "integration-management",
+          "source": "corporate-legal/skills/integration-management/SKILL.md",
+          "codexName": "cflz-corporate-legal-integration-management"
+        },
+        {
+          "slug": "material-contract-schedule",
+          "source": "corporate-legal/skills/material-contract-schedule/SKILL.md",
+          "codexName": "cflz-corporate-legal-material-contract-schedule"
+        },
+        {
+          "slug": "matter-workspace",
+          "source": "corporate-legal/skills/matter-workspace/SKILL.md",
+          "codexName": "cflz-corporate-legal-matter-workspace"
+        },
+        {
+          "slug": "tabular-review",
+          "source": "corporate-legal/skills/tabular-review/SKILL.md",
+          "codexName": "cflz-corporate-legal-tabular-review"
+        },
+        {
+          "slug": "written-consent",
+          "source": "corporate-legal/skills/written-consent/SKILL.md",
+          "codexName": "cflz-corporate-legal-written-consent"
+        }
+      ]
+    },
+    {
+      "domain": "employment-legal",
+      "codexPrefix": "cflz-employment-legal-",
+      "skills": [
+        {
+          "slug": "cold-start-interview",
+          "source": "employment-legal/skills/cold-start-interview/SKILL.md",
+          "codexName": "cflz-employment-legal-cold-start-interview"
+        },
+        {
+          "slug": "customize",
+          "source": "employment-legal/skills/customize/SKILL.md",
+          "codexName": "cflz-employment-legal-customize"
+        },
+        {
+          "slug": "expansion-kickoff",
+          "source": "employment-legal/skills/expansion-kickoff/SKILL.md",
+          "codexName": "cflz-employment-legal-expansion-kickoff"
+        },
+        {
+          "slug": "expansion-update",
+          "source": "employment-legal/skills/expansion-update/SKILL.md",
+          "codexName": "cflz-employment-legal-expansion-update"
+        },
+        {
+          "slug": "handbook-updates",
+          "source": "employment-legal/skills/handbook-updates/SKILL.md",
+          "codexName": "cflz-employment-legal-handbook-updates"
+        },
+        {
+          "slug": "hiring-review",
+          "source": "employment-legal/skills/hiring-review/SKILL.md",
+          "codexName": "cflz-employment-legal-hiring-review"
+        },
+        {
+          "slug": "internal-investigation",
+          "source": "employment-legal/skills/internal-investigation/SKILL.md",
+          "codexName": "cflz-employment-legal-internal-investigation"
+        },
+        {
+          "slug": "international-expansion",
+          "source": "employment-legal/skills/international-expansion/SKILL.md",
+          "codexName": "cflz-employment-legal-international-expansion"
+        },
+        {
+          "slug": "investigation-add",
+          "source": "employment-legal/skills/investigation-add/SKILL.md",
+          "codexName": "cflz-employment-legal-investigation-add"
+        },
+        {
+          "slug": "investigation-memo",
+          "source": "employment-legal/skills/investigation-memo/SKILL.md",
+          "codexName": "cflz-employment-legal-investigation-memo"
+        },
+        {
+          "slug": "investigation-open",
+          "source": "employment-legal/skills/investigation-open/SKILL.md",
+          "codexName": "cflz-employment-legal-investigation-open"
+        },
+        {
+          "slug": "investigation-query",
+          "source": "employment-legal/skills/investigation-query/SKILL.md",
+          "codexName": "cflz-employment-legal-investigation-query"
+        },
+        {
+          "slug": "investigation-summary",
+          "source": "employment-legal/skills/investigation-summary/SKILL.md",
+          "codexName": "cflz-employment-legal-investigation-summary"
+        },
+        {
+          "slug": "leave-tracker",
+          "source": "employment-legal/skills/leave-tracker/SKILL.md",
+          "codexName": "cflz-employment-legal-leave-tracker"
+        },
+        {
+          "slug": "log-leave",
+          "source": "employment-legal/skills/log-leave/SKILL.md",
+          "codexName": "cflz-employment-legal-log-leave"
+        },
+        {
+          "slug": "matter-workspace",
+          "source": "employment-legal/skills/matter-workspace/SKILL.md",
+          "codexName": "cflz-employment-legal-matter-workspace"
+        },
+        {
+          "slug": "policy-drafting",
+          "source": "employment-legal/skills/policy-drafting/SKILL.md",
+          "codexName": "cflz-employment-legal-policy-drafting"
+        },
+        {
+          "slug": "termination-review",
+          "source": "employment-legal/skills/termination-review/SKILL.md",
+          "codexName": "cflz-employment-legal-termination-review"
+        },
+        {
+          "slug": "wage-hour-qa",
+          "source": "employment-legal/skills/wage-hour-qa/SKILL.md",
+          "codexName": "cflz-employment-legal-wage-hour-qa"
+        },
+        {
+          "slug": "worker-classification",
+          "source": "employment-legal/skills/worker-classification/SKILL.md",
+          "codexName": "cflz-employment-legal-worker-classification"
+        }
+      ]
+    },
+    {
+      "domain": "regulatory-legal",
+      "codexPrefix": "cflz-regulatory-legal-",
+      "skills": [
+        {
+          "slug": "cold-start-interview",
+          "source": "regulatory-legal/skills/cold-start-interview/SKILL.md",
+          "codexName": "cflz-regulatory-legal-cold-start-interview"
+        },
+        {
+          "slug": "comments",
+          "source": "regulatory-legal/skills/comments/SKILL.md",
+          "codexName": "cflz-regulatory-legal-comments"
+        },
+        {
+          "slug": "customize",
+          "source": "regulatory-legal/skills/customize/SKILL.md",
+          "codexName": "cflz-regulatory-legal-customize"
+        },
+        {
+          "slug": "gap-surfacer",
+          "source": "regulatory-legal/skills/gap-surfacer/SKILL.md",
+          "codexName": "cflz-regulatory-legal-gap-surfacer"
+        },
+        {
+          "slug": "gaps",
+          "source": "regulatory-legal/skills/gaps/SKILL.md",
+          "codexName": "cflz-regulatory-legal-gaps"
+        },
+        {
+          "slug": "matter-workspace",
+          "source": "regulatory-legal/skills/matter-workspace/SKILL.md",
+          "codexName": "cflz-regulatory-legal-matter-workspace"
+        },
+        {
+          "slug": "policy-diff",
+          "source": "regulatory-legal/skills/policy-diff/SKILL.md",
+          "codexName": "cflz-regulatory-legal-policy-diff"
+        },
+        {
+          "slug": "policy-redraft",
+          "source": "regulatory-legal/skills/policy-redraft/SKILL.md",
+          "codexName": "cflz-regulatory-legal-policy-redraft"
+        },
+        {
+          "slug": "reg-feed-watcher",
+          "source": "regulatory-legal/skills/reg-feed-watcher/SKILL.md",
+          "codexName": "cflz-regulatory-legal-reg-feed-watcher"
+        }
+      ]
+    },
+    {
+      "domain": "ai-governance-legal",
+      "codexPrefix": "cflz-ai-governance-legal-",
+      "skills": [
+        {
+          "slug": "ai-inventory",
+          "source": "ai-governance-legal/skills/ai-inventory/SKILL.md",
+          "codexName": "cflz-ai-governance-legal-ai-inventory"
+        },
+        {
+          "slug": "aia-generation",
+          "source": "ai-governance-legal/skills/aia-generation/SKILL.md",
+          "codexName": "cflz-ai-governance-legal-aia-generation"
+        },
+        {
+          "slug": "cold-start-interview",
+          "source": "ai-governance-legal/skills/cold-start-interview/SKILL.md",
+          "codexName": "cflz-ai-governance-legal-cold-start-interview"
+        },
+        {
+          "slug": "customize",
+          "source": "ai-governance-legal/skills/customize/SKILL.md",
+          "codexName": "cflz-ai-governance-legal-customize"
+        },
+        {
+          "slug": "matter-workspace",
+          "source": "ai-governance-legal/skills/matter-workspace/SKILL.md",
+          "codexName": "cflz-ai-governance-legal-matter-workspace"
+        },
+        {
+          "slug": "policy-monitor",
+          "source": "ai-governance-legal/skills/policy-monitor/SKILL.md",
+          "codexName": "cflz-ai-governance-legal-policy-monitor"
+        },
+        {
+          "slug": "policy-starter",
+          "source": "ai-governance-legal/skills/policy-starter/SKILL.md",
+          "codexName": "cflz-ai-governance-legal-policy-starter"
+        },
+        {
+          "slug": "reg-gap-analysis",
+          "source": "ai-governance-legal/skills/reg-gap-analysis/SKILL.md",
+          "codexName": "cflz-ai-governance-legal-reg-gap-analysis"
+        },
+        {
+          "slug": "use-case-triage",
+          "source": "ai-governance-legal/skills/use-case-triage/SKILL.md",
+          "codexName": "cflz-ai-governance-legal-use-case-triage"
+        },
+        {
+          "slug": "vendor-ai-review",
+          "source": "ai-governance-legal/skills/vendor-ai-review/SKILL.md",
+          "codexName": "cflz-ai-governance-legal-vendor-ai-review"
+        }
+      ]
+    },
+    {
+      "domain": "litigation-legal",
+      "codexPrefix": "cflz-litigation-legal-",
+      "skills": [
+        {
+          "slug": "brief-section-drafter",
+          "source": "litigation-legal/skills/brief-section-drafter/SKILL.md",
+          "codexName": "cflz-litigation-legal-brief-section-drafter"
+        },
+        {
+          "slug": "chronology",
+          "source": "litigation-legal/skills/chronology/SKILL.md",
+          "codexName": "cflz-litigation-legal-chronology"
+        },
+        {
+          "slug": "claim-chart",
+          "source": "litigation-legal/skills/claim-chart/SKILL.md",
+          "codexName": "cflz-litigation-legal-claim-chart"
+        },
+        {
+          "slug": "cold-start-interview",
+          "source": "litigation-legal/skills/cold-start-interview/SKILL.md",
+          "codexName": "cflz-litigation-legal-cold-start-interview"
+        },
+        {
+          "slug": "customize",
+          "source": "litigation-legal/skills/customize/SKILL.md",
+          "codexName": "cflz-litigation-legal-customize"
+        },
+        {
+          "slug": "demand-draft",
+          "source": "litigation-legal/skills/demand-draft/SKILL.md",
+          "codexName": "cflz-litigation-legal-demand-draft"
+        },
+        {
+          "slug": "demand-intake",
+          "source": "litigation-legal/skills/demand-intake/SKILL.md",
+          "codexName": "cflz-litigation-legal-demand-intake"
+        },
+        {
+          "slug": "demand-received",
+          "source": "litigation-legal/skills/demand-received/SKILL.md",
+          "codexName": "cflz-litigation-legal-demand-received"
+        },
+        {
+          "slug": "deposition-prep",
+          "source": "litigation-legal/skills/deposition-prep/SKILL.md",
+          "codexName": "cflz-litigation-legal-deposition-prep"
+        },
+        {
+          "slug": "legal-hold",
+          "source": "litigation-legal/skills/legal-hold/SKILL.md",
+          "codexName": "cflz-litigation-legal-legal-hold"
+        },
+        {
+          "slug": "matter-briefing",
+          "source": "litigation-legal/skills/matter-briefing/SKILL.md",
+          "codexName": "cflz-litigation-legal-matter-briefing"
+        },
+        {
+          "slug": "matter-close",
+          "source": "litigation-legal/skills/matter-close/SKILL.md",
+          "codexName": "cflz-litigation-legal-matter-close"
+        },
+        {
+          "slug": "matter-intake",
+          "source": "litigation-legal/skills/matter-intake/SKILL.md",
+          "codexName": "cflz-litigation-legal-matter-intake"
+        },
+        {
+          "slug": "matter-update",
+          "source": "litigation-legal/skills/matter-update/SKILL.md",
+          "codexName": "cflz-litigation-legal-matter-update"
+        },
+        {
+          "slug": "matter-workspace",
+          "source": "litigation-legal/skills/matter-workspace/SKILL.md",
+          "codexName": "cflz-litigation-legal-matter-workspace"
+        },
+        {
+          "slug": "oc-status",
+          "source": "litigation-legal/skills/oc-status/SKILL.md",
+          "codexName": "cflz-litigation-legal-oc-status"
+        },
+        {
+          "slug": "portfolio-status",
+          "source": "litigation-legal/skills/portfolio-status/SKILL.md",
+          "codexName": "cflz-litigation-legal-portfolio-status"
+        },
+        {
+          "slug": "privilege-log-review",
+          "source": "litigation-legal/skills/privilege-log-review/SKILL.md",
+          "codexName": "cflz-litigation-legal-privilege-log-review"
+        },
+        {
+          "slug": "subpoena-triage",
+          "source": "litigation-legal/skills/subpoena-triage/SKILL.md",
+          "codexName": "cflz-litigation-legal-subpoena-triage"
+        }
+      ]
+    },
+    {
+      "domain": "ip-legal",
+      "codexPrefix": "cflz-ip-legal-",
+      "skills": [
+        {
+          "slug": "cease-desist",
+          "source": "ip-legal/skills/cease-desist/SKILL.md",
+          "codexName": "cflz-ip-legal-cease-desist"
+        },
+        {
+          "slug": "clearance",
+          "source": "ip-legal/skills/clearance/SKILL.md",
+          "codexName": "cflz-ip-legal-clearance"
+        },
+        {
+          "slug": "cold-start-interview",
+          "source": "ip-legal/skills/cold-start-interview/SKILL.md",
+          "codexName": "cflz-ip-legal-cold-start-interview"
+        },
+        {
+          "slug": "customize",
+          "source": "ip-legal/skills/customize/SKILL.md",
+          "codexName": "cflz-ip-legal-customize"
+        },
+        {
+          "slug": "fto-triage",
+          "source": "ip-legal/skills/fto-triage/SKILL.md",
+          "codexName": "cflz-ip-legal-fto-triage"
+        },
+        {
+          "slug": "infringement-triage",
+          "source": "ip-legal/skills/infringement-triage/SKILL.md",
+          "codexName": "cflz-ip-legal-infringement-triage"
+        },
+        {
+          "slug": "invention-intake",
+          "source": "ip-legal/skills/invention-intake/SKILL.md",
+          "codexName": "cflz-ip-legal-invention-intake"
+        },
+        {
+          "slug": "ip-clause-review",
+          "source": "ip-legal/skills/ip-clause-review/SKILL.md",
+          "codexName": "cflz-ip-legal-ip-clause-review"
+        },
+        {
+          "slug": "matter-workspace",
+          "source": "ip-legal/skills/matter-workspace/SKILL.md",
+          "codexName": "cflz-ip-legal-matter-workspace"
+        },
+        {
+          "slug": "oss-review",
+          "source": "ip-legal/skills/oss-review/SKILL.md",
+          "codexName": "cflz-ip-legal-oss-review"
+        },
+        {
+          "slug": "portfolio",
+          "source": "ip-legal/skills/portfolio/SKILL.md",
+          "codexName": "cflz-ip-legal-portfolio"
+        },
+        {
+          "slug": "takedown",
+          "source": "ip-legal/skills/takedown/SKILL.md",
+          "codexName": "cflz-ip-legal-takedown"
+        }
+      ]
+    },
+    {
+      "domain": "law-student",
+      "codexPrefix": "cflz-law-student-",
+      "skills": [
+        {
+          "slug": "bar-prep-questions",
+          "source": "law-student/skills/bar-prep-questions/SKILL.md",
+          "codexName": "cflz-law-student-bar-prep-questions"
+        },
+        {
+          "slug": "case-brief",
+          "source": "law-student/skills/case-brief/SKILL.md",
+          "codexName": "cflz-law-student-case-brief"
+        },
+        {
+          "slug": "cold-call-prep",
+          "source": "law-student/skills/cold-call-prep/SKILL.md",
+          "codexName": "cflz-law-student-cold-call-prep"
+        },
+        {
+          "slug": "cold-start-interview",
+          "source": "law-student/skills/cold-start-interview/SKILL.md",
+          "codexName": "cflz-law-student-cold-start-interview"
+        },
+        {
+          "slug": "customize",
+          "source": "law-student/skills/customize/SKILL.md",
+          "codexName": "cflz-law-student-customize"
+        },
+        {
+          "slug": "exam-forecast",
+          "source": "law-student/skills/exam-forecast/SKILL.md",
+          "codexName": "cflz-law-student-exam-forecast"
+        },
+        {
+          "slug": "flashcards",
+          "source": "law-student/skills/flashcards/SKILL.md",
+          "codexName": "cflz-law-student-flashcards"
+        },
+        {
+          "slug": "irac-practice",
+          "source": "law-student/skills/irac-practice/SKILL.md",
+          "codexName": "cflz-law-student-irac-practice"
+        },
+        {
+          "slug": "legal-writing",
+          "source": "law-student/skills/legal-writing/SKILL.md",
+          "codexName": "cflz-law-student-legal-writing"
+        },
+        {
+          "slug": "outline-builder",
+          "source": "law-student/skills/outline-builder/SKILL.md",
+          "codexName": "cflz-law-student-outline-builder"
+        },
+        {
+          "slug": "session",
+          "source": "law-student/skills/session/SKILL.md",
+          "codexName": "cflz-law-student-session"
+        },
+        {
+          "slug": "socratic-drill",
+          "source": "law-student/skills/socratic-drill/SKILL.md",
+          "codexName": "cflz-law-student-socratic-drill"
+        },
+        {
+          "slug": "study-plan",
+          "source": "law-student/skills/study-plan/SKILL.md",
+          "codexName": "cflz-law-student-study-plan"
+        }
+      ]
+    },
+    {
+      "domain": "legal-clinic",
+      "codexPrefix": "cflz-legal-clinic-",
+      "skills": [
+        {
+          "slug": "build-guide",
+          "source": "legal-clinic/skills/build-guide/SKILL.md",
+          "codexName": "cflz-legal-clinic-build-guide"
+        },
+        {
+          "slug": "client-comms-log",
+          "source": "legal-clinic/skills/client-comms-log/SKILL.md",
+          "codexName": "cflz-legal-clinic-client-comms-log"
+        },
+        {
+          "slug": "client-intake",
+          "source": "legal-clinic/skills/client-intake/SKILL.md",
+          "codexName": "cflz-legal-clinic-client-intake"
+        },
+        {
+          "slug": "client-letter",
+          "source": "legal-clinic/skills/client-letter/SKILL.md",
+          "codexName": "cflz-legal-clinic-client-letter"
+        },
+        {
+          "slug": "cold-start-interview",
+          "source": "legal-clinic/skills/cold-start-interview/SKILL.md",
+          "codexName": "cflz-legal-clinic-cold-start-interview"
+        },
+        {
+          "slug": "customize",
+          "source": "legal-clinic/skills/customize/SKILL.md",
+          "codexName": "cflz-legal-clinic-customize"
+        },
+        {
+          "slug": "deadlines",
+          "source": "legal-clinic/skills/deadlines/SKILL.md",
+          "codexName": "cflz-legal-clinic-deadlines"
+        },
+        {
+          "slug": "draft",
+          "source": "legal-clinic/skills/draft/SKILL.md",
+          "codexName": "cflz-legal-clinic-draft"
+        },
+        {
+          "slug": "form-generation",
+          "source": "legal-clinic/skills/form-generation/SKILL.md",
+          "codexName": "cflz-legal-clinic-form-generation"
+        },
+        {
+          "slug": "memo",
+          "source": "legal-clinic/skills/memo/SKILL.md",
+          "codexName": "cflz-legal-clinic-memo"
+        },
+        {
+          "slug": "plain-language-letters",
+          "source": "legal-clinic/skills/plain-language-letters/SKILL.md",
+          "codexName": "cflz-legal-clinic-plain-language-letters"
+        },
+        {
+          "slug": "ramp",
+          "source": "legal-clinic/skills/ramp/SKILL.md",
+          "codexName": "cflz-legal-clinic-ramp"
+        },
+        {
+          "slug": "research-start",
+          "source": "legal-clinic/skills/research-start/SKILL.md",
+          "codexName": "cflz-legal-clinic-research-start"
+        },
+        {
+          "slug": "semester-handoff",
+          "source": "legal-clinic/skills/semester-handoff/SKILL.md",
+          "codexName": "cflz-legal-clinic-semester-handoff"
+        },
+        {
+          "slug": "status",
+          "source": "legal-clinic/skills/status/SKILL.md",
+          "codexName": "cflz-legal-clinic-status"
+        },
+        {
+          "slug": "supervisor-review-queue",
+          "source": "legal-clinic/skills/supervisor-review-queue/SKILL.md",
+          "codexName": "cflz-legal-clinic-supervisor-review-queue"
+        }
+      ]
+    },
+    {
+      "domain": "legal-builder-hub",
+      "codexPrefix": "cflz-legal-builder-hub-",
+      "skills": [
+        {
+          "slug": "auto-updater",
+          "source": "legal-builder-hub/skills/auto-updater/SKILL.md",
+          "codexName": "cflz-legal-builder-hub-auto-updater"
+        },
+        {
+          "slug": "cold-start-interview",
+          "source": "legal-builder-hub/skills/cold-start-interview/SKILL.md",
+          "codexName": "cflz-legal-builder-hub-cold-start-interview"
+        },
+        {
+          "slug": "customize",
+          "source": "legal-builder-hub/skills/customize/SKILL.md",
+          "codexName": "cflz-legal-builder-hub-customize"
+        },
+        {
+          "slug": "disable",
+          "source": "legal-builder-hub/skills/disable/SKILL.md",
+          "codexName": "cflz-legal-builder-hub-disable"
+        },
+        {
+          "slug": "registry-browser",
+          "source": "legal-builder-hub/skills/registry-browser/SKILL.md",
+          "codexName": "cflz-legal-builder-hub-registry-browser"
+        },
+        {
+          "slug": "related-skills-surfacer",
+          "source": "legal-builder-hub/skills/related-skills-surfacer/SKILL.md",
+          "codexName": "cflz-legal-builder-hub-related-skills-surfacer"
+        },
+        {
+          "slug": "skill-installer",
+          "source": "legal-builder-hub/skills/skill-installer/SKILL.md",
+          "codexName": "cflz-legal-builder-hub-skill-installer"
+        },
+        {
+          "slug": "skill-manager",
+          "source": "legal-builder-hub/skills/skill-manager/SKILL.md",
+          "codexName": "cflz-legal-builder-hub-skill-manager"
+        },
+        {
+          "slug": "skills-qa",
+          "source": "legal-builder-hub/skills/skills-qa/SKILL.md",
+          "codexName": "cflz-legal-builder-hub-skills-qa"
+        },
+        {
+          "slug": "uninstall",
+          "source": "legal-builder-hub/skills/uninstall/SKILL.md",
+          "codexName": "cflz-legal-builder-hub-uninstall"
+        }
+      ]
+    }
+  ]
+}

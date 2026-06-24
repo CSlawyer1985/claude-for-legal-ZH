@@ -19,7 +19,7 @@
   <img src="docs/assets/hero.png" alt="Claude for Legal 中国法版本 — 着陆页 Hero" width="800">
 </p>
 
-本仓库所有内容可通过**两种方式**使用：安装为 [Claude Code](https://claude.com/product/claude-code) 插件，或通过 [Claude Managed Agents API](https://docs.claude.com/en/api/managed-agents) 部署在你自己的工作流引擎后台。同一套 system prompt，同一套技能——你选择在哪里运行。
+本仓库所有内容可通过**三种方式**使用：安装为 [Claude Code](https://claude.com/product/claude-code) 插件，通过 Codex Desktop / Codex CLI adapter 使用，或通过 [Claude Managed Agents API](https://docs.claude.com/en/api/managed-agents) 部署在你自己的工作流引擎后台。同一套 system prompt，同一套技能——你选择在哪里运行。
 
 ## 在 Claude Code 中安装
 
@@ -47,6 +47,27 @@
 > **这些插件的所有输出均为律师审查草稿——不是法律意见，不是法律结论，不替代律师。** 插件在设计层面内置了相应的安全机制：每条引用标注来源，涉主观法律判断默认保守处理，管辖权假设明示标注，任何提交、发送或依赖前设有明确门槛。律师审查、核实并对所有对外产出承担专业责任。插件让审查更快，但不能替代审查。
 >
 > **这些插件不代表 Anthropic 的法律立场。** 它们是帮助律师分析问题的工具。技能中包含的清单项目、建议框架、风险标记、案例法或监管指引的定性描述，均为辅助审查律师自身分析的参考，而非 Anthropic 对法律的表态。许多领域的法律处于未定和演进之中。使用插件的律师——而非插件本身，也非 Anthropic——对其工作成果中的法律立场负责。
+
+## 在 Codex 中安装
+
+Codex 用户先运行仓库内安装脚本：
+
+```bash
+scripts/install-codex.sh
+```
+
+脚本会安装两层入口：
+
+- `.agents/skills/chinese-legal-*`：面向自然语言任务的领域 adapter。
+- `codex/cflz-legal-suite`：面向整合包索引和 Claude slash command 迁移的路由 adapter。
+
+Codex 中不需要输入 Claude Code slash command。直接说：
+
+```text
+请审查这份供应商合同，重点看责任限制、解除、赔偿、数据处理和争议解决。
+```
+
+如果你需要从原命令迁移，`/commercial-legal:review` 的唯一 Codex 映射是 `cflz-commercial-legal-review`。完整机器可读索引见 [`codex/manifest.json`](codex/manifest.json)，安装细节见 [`INSTALL_CODEX.md`](INSTALL_CODEX.md)。
 
 ## 中国法本地化改造说明
 
@@ -628,7 +649,7 @@ scripts/                  # deploy-managed-agent.sh · validate.py · orchestrat
 - **新技能** → 添加到 `<插件名>/skills/<技能名>/SKILL.md`，使用现有技能的前置元数据（`name`、`description`、`argument-hint`）。描述保持在 1024 字符以内——这是触发信号。技能可通过 `/<插件名>:<技能名>` 调用。纯参考技能标记 `user-invocable: false`。
 - **新 Agent** → 添加 `<插件名>/agents/<名称>.md`，含调度前置元数据和 system prompt。如需无头部署，添加匹配的 `managed-agent-cookbooks/<名称>/`。
 - **社区技能** → 使用 `/legal-builder-hub:skill-installer` 在你的环境中测试社区技能。Hub 在每次安装前运行 `/legal-builder-hub:skills-qa`，对技能进行评分（九个设计参数、三种法律失败模式、信任面检查），拒绝任何不通过的技能。
-- **推送前验证蓝图** → `bash scripts/test-cookbooks.sh` 对所有托管 Agent 蓝图进行预检，并对编排器工具范围进行 lint。
+- **推送前验证蓝图** → `python scripts/check-release.py --strict` 检查公开发布结构、Codex manifest、私有路径、疑似密钥和 README 必备说明；`python scripts/lint-tool-scope.py` 可在 Windows 本机运行；`bash scripts/test-cookbooks.sh` 在 Linux CI 中对所有托管 Agent 蓝图进行预检。
 
 ## 许可证
 

@@ -32,7 +32,7 @@ COOKBOOKS_DIR = ROOT / "managed-agent-cookbooks"
 def _lint_one(path: Path) -> list[str]:
     """Return a list of violation strings (empty if clean)."""
     errs: list[str] = []
-    with path.open() as f:
+    with path.open(encoding="utf-8") as f:
         doc = yaml.safe_load(f)
     tools = doc.get("tools") or []
     for idx, entry in enumerate(tools):
@@ -99,7 +99,7 @@ def main() -> int:
             print(f"  {e}", file=sys.stderr)
         return 1
     for slug in clean:
-        print(f"  ✓ {slug:24s} orchestrator tool scope clean")
+        print(f"  OK {slug:24s} orchestrator tool scope clean")
     return 0
 
 

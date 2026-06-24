@@ -1,0 +1,33 @@
+name: Release checks
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  release-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install validation dependencies
+        run: python -m pip install --upgrade PyYAML jsonschema
+
+      - name: Check public release package
+        run: python scripts/check-release.py --strict
+
+      - name: Check managed-agent tool scope
+        run: python scripts/lint-tool-scope.py
+
+      - name: Dry-run managed-agent cookbooks
+        run: bash scripts/test-cookbooks.sh

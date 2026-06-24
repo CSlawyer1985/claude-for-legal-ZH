@@ -20,6 +20,8 @@ Codex skills 位于 `.agents/skills/chinese-legal-*`。当用户提出中国法�
 - `chinese-legal-builder-hub`：法律技能发现、评估、安装和运营
 - `chinese-legal-*watcher` / `*-grid` / `*-radar`：托管工作流 cookbook 的 Codex 入口
 
+完整整合包索引位于 `codex/cflz-legal-suite/SKILL.md`，机器可读清单位于 `codex/manifest.json`。需要把 Claude Code slash command 映射成唯一 Codex skill 名称时，使用 `cflz-<domain>-<skill>` 规则。
+
 ## Claude 指令到 Codex 工作流的映射
 
 不要要求用户在 Codex 中输入 Claude Code slash command。上游说明里的：
@@ -35,6 +37,8 @@ Codex skills 位于 `.agents/skills/chinese-legal-*`。当用户提出中国法�
 3. 用 Codex 的文件、网页、文档和自动化工具执行该工作流。
 
 例如 `/commercial-legal:review` 等价于读取 `commercial-legal/skills/review/SKILL.md` 并执行合同审查流程。
+
+唯一 Codex 名称为 `cflz-commercial-legal-review`。不要只使用原始 `review` 或 `cold-start-interview` 这类短名，因为不同法律域中存在重复技能名。
 
 ## 配置与安全
 

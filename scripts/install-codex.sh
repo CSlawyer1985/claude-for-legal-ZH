@@ -3,11 +3,18 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 SOURCE_DIR="$ROOT_DIR/.agents/skills"
+SUITE_DIR="$ROOT_DIR/codex/cflz-legal-suite"
 TARGET_DIR="${CODEX_HOME:-$HOME/.codex}/skills"
 MODE="${1:-link}"
 
 if [[ ! -d "$SOURCE_DIR" ]]; then
   echo "未找到 Codex skills 目录：$SOURCE_DIR" >&2
+  echo "请先运行：python3 scripts/generate_codex_adapters.py" >&2
+  exit 1
+fi
+
+if [[ ! -d "$SUITE_DIR" ]]; then
+  echo "未找到 CFLZ suite 路由技能：$SUITE_DIR" >&2
   echo "请先运行：python3 scripts/generate_codex_adapters.py" >&2
   exit 1
 fi
@@ -23,6 +30,9 @@ case "$MODE" in
       ln -s "$skill_dir" "$TARGET_DIR/$name"
       echo "已链接：$TARGET_DIR/$name -> $skill_dir"
     done
+    rm -rf "$TARGET_DIR/cflz-legal-suite"
+    ln -s "$SUITE_DIR" "$TARGET_DIR/cflz-legal-suite"
+    echo "已链接：$TARGET_DIR/cflz-legal-suite -> $SUITE_DIR"
     ;;
   copy|--copy)
     for skill_dir in "$SOURCE_DIR"/chinese-legal-*; do
@@ -32,6 +42,9 @@ case "$MODE" in
       cp -R "$skill_dir" "$TARGET_DIR/$name"
       echo "已复制：$TARGET_DIR/$name"
     done
+    rm -rf "$TARGET_DIR/cflz-legal-suite"
+    cp -R "$SUITE_DIR" "$TARGET_DIR/cflz-legal-suite"
+    echo "已复制：$TARGET_DIR/cflz-legal-suite"
     ;;
   *)
     echo "用法：scripts/install-codex.sh [link|copy]" >&2

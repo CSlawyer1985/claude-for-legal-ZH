@@ -12,7 +12,10 @@ Codex 适配层不会重写法律工作流，而是复用原仓库中的：
 - 各领域 `skills/*/SKILL.md`
 - `managed-agent-cookbooks/*`
 
-Codex adapter 只负责把自然语言请求路由到对应工作流。
+Codex adapter 只负责把自然语言请求路由到对应工作流。仓库同时提供两种 Codex 入口：
+
+- `.agents/skills/chinese-legal-*`：面向自然语言任务的领域入口。
+- `codex/cflz-legal-suite`：面向完整整合包索引和 Claude slash command 迁移的路由入口。
 
 ## 一键安装到 Codex
 
@@ -36,6 +39,13 @@ scripts/install-codex.sh copy
 
 安装后请重启 Codex Desktop 或重新打开 Codex CLI 会话。
 
+安装脚本会同时安装 `cflz-legal-suite`。如果你只手动复制文件，至少复制：
+
+```text
+.agents/skills/chinese-legal-*
+codex/cflz-legal-suite
+```
+
 ## Codex 中怎么用
 
 不用输入 Claude Code slash command，直接自然语言描述任务即可：
@@ -52,7 +62,7 @@ scripts/install-codex.sh copy
 请根据这个尽调资料文件夹生成重大问题清单和逐项引用。
 ```
 
-Codex 会根据任务触发 `chinese-legal-*` adapter，再读取原始法律工作流。
+Codex 会根据任务触发 `chinese-legal-*` adapter，再读取原始法律工作流。如果用户明确说出原 Claude 指令，例如 `/commercial-legal:review`，可由 `cflz-legal-suite` 映射到唯一名称 `cflz-commercial-legal-review`。
 
 ## 可用 Codex skills
 
@@ -78,6 +88,14 @@ Codex 会根据任务触发 `chinese-legal-*` adapter，再读取原始法律工
 - `chinese-legal-launch-radar`
 - `chinese-legal-reg-monitor`
 - `chinese-legal-renewal-watcher`
+
+整合包路由入口：
+
+- `cflz-legal-suite`
+
+完整机器可读索引：
+
+- `codex/manifest.json`
 
 ## 配置画像
 
@@ -126,6 +144,7 @@ npx claude-legal-zh install codex
 
 ```bash
 rm -rf ~/.codex/skills/chinese-legal-*
+rm -rf ~/.codex/skills/cflz-legal-suite
 ```
 
 如使用了 `~/.codex/legal-zh` 保存个人画像，按需自行保留或删除。
