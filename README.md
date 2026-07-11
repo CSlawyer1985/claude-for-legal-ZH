@@ -279,6 +279,7 @@ regulatory-legal/         # 监管合规——法规动态监控、政策差异�
 ai-governance-legal/      # AI 治理——场景分流、算法评估、供应商AI审查、法规差距
 ip-legal/                 # 知识产权——商标检索、FTO、侵权警告、通知-删除、开源合规、组合管理
 litigation-legal/         # 争议解决——案件组合、登记、证据保全、律师函、庭前准备、要件分析
+criminal-legal/           # 刑事法律——阅卷梳理、合规不起诉、取保候审、辩护策略
 legal-clinic/             # 法律诊所——诊所设置、学生导入、接待、节点、备忘录、移交
 law-student/              # 法学教育——课堂训练、知识体系、IRAC、法考备考、记忆卡片
 legal-builder-hub/        # 社区技能发现与安装，含信任门槛
@@ -347,6 +348,7 @@ scripts/                  # deploy-managed-agent.sh · validate.py · orchestrat
 | 插件 | 功能 |
 |------|------|
 | **[litigation-legal](./litigation-legal)** | 两个工作界面。**法务/组合管理：** 案件登记、组合状态、证据保全、外部律师状态、律师函。**律所/诉讼律师：** 大事记构建、要件分析表（专利和民事）、庭前准备、证据三性审查、法律文书起草。 |
+| **[criminal-legal](./criminal-legal)** | 刑事辩护与合规（强制脱敏使用）。功能包括：证据链与阅卷笔录梳理、企业刑事合规不起诉审查、取保候审及羁押必要性审查辅助、辩护思路与类案法理分析。 |
 
 ### 学习与实践
 
@@ -565,6 +567,15 @@ scripts/                  # deploy-managed-agent.sh · validate.py · orchestrat
 | `/litigation-legal:privilege-log-review` | privilege-log-review | 第一轮证据三性审查，附标记 |
 | `/litigation-legal:brief-section-drafter` | brief-section-drafter | 按内部风格起草法律文书章节 |
 | scheduled | docket-watcher (agent) | 监控法院案件进展和截止日期 |
+
+### criminal-legal
+
+| 命令 | 技能目录 | 描述 |
+| :--- | :--- | :--- |
+| `/criminal-legal:case-analysis` | case-analysis | 刑事案卷笔录与证据链结构化梳理、矛盾点发现 |
+| `/criminal-legal:compliance-non-prosecution` | compliance-non-prosecution | 企业刑事合规不起诉审查与整改盲点提示 |
+| `/criminal-legal:bail-application` | bail-application | 提取法定事由并辅助撰写取保候审申请及羁押必要性审查 |
+| `/criminal-legal:defense-strategy` | defense-strategy | 罪与非罪、此罪与彼罪的法理分析，提取争议焦点 |
 
 ### privacy-legal
 

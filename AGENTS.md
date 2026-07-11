@@ -14,6 +14,7 @@ Codex skills 位于 `.agents/skills/chinese-legal-*`。当用户提出中国法�
 - `chinese-legal-regulatory`：监管动态、政策差异、合规差距、征求意见稿
 - `chinese-legal-ai-governance`：AI 应用、算法安全、科技伦理、AI 供应商
 - `chinese-legal-litigation`：诉讼仲裁、案件管理、证据、大事记、文书
+- `chinese-legal-criminal`：刑事辩护、阅卷笔录、取保候审、企业刑事合规不起诉整改
 - `chinese-legal-ip`：商标、专利、著作权、FTO、开源许可证
 - `chinese-legal-law-student`：法考、IRAC、案例摘要、学习计划
 - `chinese-legal-clinic`：法律诊所、接待、备忘录、结案移交
