@@ -396,9 +396,9 @@ scripts/                  # deploy-managed-agent.sh · validate.py · orchestrat
 | **飞书（Lark）** | 读取频道、搜索、发送消息和文档 | 全部插件 | 你的工作空间 |
 | **Google Drive** | 读取文档、表格、幻灯片；按链接获取 | 全部插件 | 你的账户（可选） |
 | **yuandian（元典）** | 案例检索、法规检索——覆盖裁判文书和法律法规 | 全部插件 | 公共；OAuth |
-| **北大法宝** | 法律法规、司法解释、案例检索 | `ip-legal`、`litigation-legal`、`law-student`、`legal-clinic` | 客户订阅 |
-| **威科先行** | 法律数据库——法规、案例、实务文章 | `commercial-legal`、`corporate-legal`、`litigation-legal` | 客户订阅 |
-| **聚法案例** | 案例检索和裁判文书分析 | `litigation-legal` | 客户订阅 |
+| **北大法宝** | 法律法规、司法解释、案例检索 | `ip-legal`、`litigation-legal`、`law-student`、`legal-clinic`、`criminal-legal` | 客户订阅 |
+| **威科先行** | 法律数据库——法规、案例、实务文章 | `commercial-legal`、`corporate-legal`、`litigation-legal`、`criminal-legal` | 客户订阅 |
+| **聚法案例** | 案例检索和裁判文书分析 | `litigation-legal`、`criminal-legal` | 客户订阅 |
 | **e签宝 / 法大大** | 电子合同签署和合同台账 | `commercial-legal` | 客户订阅 |
 | **国家知识产权局** | 商标/专利检索和状态查询 | `ip-legal` | 公共 |
 | **中国政府网 / 司法部法律法规数据库** | 官方法规数据库 | `regulatory-legal`、`ai-governance-legal` | 公共 |
