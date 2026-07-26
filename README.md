@@ -148,7 +148,7 @@
 
 ## 盒子里有什么
 
-- **12 个业务领域插件**——覆盖律所、法务和学术法律工作，每个插件围绕冷启动面试构建，生成实践画像（`CLAUDE.md`），所有技能从中读取配置。
+- **13 个业务领域插件**——覆盖律所、法务和学术法律工作，每个插件围绕冷启动面试构建，生成实践画像（`CLAUDE.md`），所有技能从中读取配置。
 - **托管 Agent 蓝图**——用于定时、持续监控型工作流（续签监控、案件进度监控、法规动态监控、尽调网格、产品上线雷达）。
 - **MCP 连接器**——覆盖通用生产力工具（飞书、Google Drive）和法律专属系统（元典 yuandian、北大法宝、威科先行、e签宝、聚法案例等）。
 - **命名 Agent**——端到端工作流 Agent（供应商合同审查、个人信息主体权利响应、劳动合同解除审查、要件分析表构建……），每个 Agent 有独立的职位式名称和单一启动命令。
@@ -279,6 +279,7 @@ regulatory-legal/         # 监管合规——法规动态监控、政策差异�
 ai-governance-legal/      # AI 治理——场景分流、算法评估、供应商AI审查、法规差距
 ip-legal/                 # 知识产权——商标检索、FTO、侵权警告、通知-删除、开源合规、组合管理
 litigation-legal/         # 争议解决——案件组合、登记、证据保全、律师函、庭前准备、要件分析
+criminal-legal/           # 刑事辩护与合规——阅卷梳理、取保候审、辩护策略、合规不起诉（强制脱敏）
 legal-clinic/             # 法律诊所——诊所设置、学生导入、接待、节点、备忘录、移交
 law-student/              # 法学教育——课堂训练、知识体系、IRAC、法考备考、记忆卡片
 legal-builder-hub/        # 社区技能发现与安装，含信任门槛
@@ -347,6 +348,7 @@ scripts/                  # deploy-managed-agent.sh · validate.py · orchestrat
 | 插件 | 功能 |
 |------|------|
 | **[litigation-legal](./litigation-legal)** | 两个工作界面。**法务/组合管理：** 案件登记、组合状态、证据保全、外部律师状态、律师函。**律所/诉讼律师：** 大事记构建、要件分析表（专利和民事）、庭前准备、证据三性审查、法律文书起草。 |
+| **[criminal-legal](./criminal-legal)** | 刑事辩护与合规（强制脱敏使用）。阅卷笔录与证据链梳理、供述矛盾点排查。取保候审及羁押必要性审查辅助。辩护策略分析（罪与非罪、此罪与彼罪）。涉案企业合规不起诉审查。内置刑诉法核心条文与合规评估基准参考库。 |
 
 ### 学习与实践
 
@@ -394,9 +396,9 @@ scripts/                  # deploy-managed-agent.sh · validate.py · orchestrat
 | **飞书（Lark）** | 读取频道、搜索、发送消息和文档 | 全部插件 | 你的工作空间 |
 | **Google Drive** | 读取文档、表格、幻灯片；按链接获取 | 全部插件 | 你的账户（可选） |
 | **yuandian（元典）** | 案例检索、法规检索——覆盖裁判文书和法律法规 | 全部插件 | 公共；OAuth |
-| **北大法宝** | 法律法规、司法解释、案例检索 | `ip-legal`、`litigation-legal`、`law-student`、`legal-clinic` | 客户订阅 |
-| **威科先行** | 法律数据库——法规、案例、实务文章 | `commercial-legal`、`corporate-legal`、`litigation-legal` | 客户订阅 |
-| **聚法案例** | 案例检索和裁判文书分析 | `litigation-legal` | 客户订阅 |
+| **北大法宝** | 法律法规、司法解释、案例检索 | `ip-legal`、`litigation-legal`、`law-student`、`legal-clinic`、`criminal-legal` | 客户订阅 |
+| **威科先行** | 法律数据库——法规、案例、实务文章 | `commercial-legal`、`corporate-legal`、`litigation-legal`、`criminal-legal` | 客户订阅 |
+| **聚法案例** | 案例检索和裁判文书分析 | `litigation-legal`、`criminal-legal` | 客户订阅 |
 | **e签宝 / 法大大** | 电子合同签署和合同台账 | `commercial-legal` | 客户订阅 |
 | **国家知识产权局** | 商标/专利检索和状态查询 | `ip-legal` | 公共 |
 | **中国政府网 / 司法部法律法规数据库** | 官方法规数据库 | `regulatory-legal`、`ai-governance-legal` | 公共 |
@@ -566,6 +568,17 @@ scripts/                  # deploy-managed-agent.sh · validate.py · orchestrat
 | `/litigation-legal:brief-section-drafter` | brief-section-drafter | 按内部风格起草法律文书章节 |
 | scheduled | docket-watcher (agent) | 监控法院案件进展和截止日期 |
 
+### criminal-legal
+
+| 命令 | 技能 | 功能 |
+|------|------|------|
+| `/criminal-legal:cold-start-interview` | cold-start-interview | 冷启动——执业角色、辩护立场校准、业务画像 |
+| `/criminal-legal:case-analysis` | case-analysis | 阅卷笔录与证据链梳理——时间线交叉对比、矛盾点排查 |
+| `/criminal-legal:bail-application` | bail-application | 提取法定/酌定事由，辅助撰写取保候审及羁押必要性审查申请 |
+| `/criminal-legal:compliance-non-prosecution` | compliance-non-prosecution | 涉案企业合规整改草案审查与盲点提示 |
+| `/criminal-legal:defense-strategy` | defense-strategy | 辩护策略分析——罪与非罪、此罪与彼罪、争议焦点 |
+| `/criminal-legal:matter-workspace` | matter-workspace | 管理事项工作空间 |
+
 ### privacy-legal
 
 | 命令 | 技能 | 功能 |
@@ -674,6 +687,13 @@ scripts/                  # deploy-managed-agent.sh · validate.py · orchestrat
         <b>@xingbogu</b>
       </a><br>
       插件配置路径隔离<br>避免中美版本串扰
+    </td>
+    <td align="center" width="260">
+      <a href="https://github.com/yuanweize">
+        <img src="https://github.com/yuanweize.png" width="80" style="border-radius: 50%;" alt="yuanweize"><br>
+        <b>@yuanweize</b>
+      </a><br>
+      criminal-legal 刑事模块<br>脱敏红线与防幻觉设计
     </td>
   </tr>
 </table>

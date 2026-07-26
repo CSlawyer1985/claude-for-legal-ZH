@@ -101,7 +101,7 @@ scripts/install-claude-code.sh
 
 ## 盒子里有什么
 
-12 个业务领域插件，5 个托管 Agent 蓝图，yuandian MCP 连接器。完整参考见 [README.md](README.md)。
+13 个业务领域插件，5 个托管 Agent 蓝图，yuandian MCP 连接器。完整参考见 [README.md](README.md)。
 
 ## 遇到问题？
 

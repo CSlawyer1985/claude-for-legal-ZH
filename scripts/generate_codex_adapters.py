@@ -58,6 +58,11 @@ DOMAINS = {
         "display": "诉讼仲裁",
         "triggers": "案件登记、诉讼仲裁、律师函、要件分析、大事记、证据三性、庭前准备、保全、传票、法律文书",
     },
+    "criminal-legal": {
+        "codex_name": "chinese-legal-criminal",
+        "display": "刑事辩护与合规",
+        "triggers": "刑事辩护、阅卷笔录梳理、取保候审、羁押必要性审查、辩护策略、罪与非罪、涉案企业合规不起诉、刑事控告",
+    },
     "ip-legal": {
         "codex_name": "chinese-legal-ip",
         "display": "知识产权",

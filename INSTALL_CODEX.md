@@ -56,7 +56,7 @@ Codex 会根据任务触发 `chinese-legal-*` adapter，再读取原始法律工
 
 ## 可用 Codex skills
 
-12 个领域入口：
+13 个领域入口：
 
 - `chinese-legal-commercial`
 - `chinese-legal-privacy`
@@ -66,6 +66,7 @@ Codex 会根据任务触发 `chinese-legal-*` adapter，再读取原始法律工
 - `chinese-legal-regulatory`
 - `chinese-legal-ai-governance`
 - `chinese-legal-litigation`
+- `chinese-legal-criminal`
 - `chinese-legal-ip`
 - `chinese-legal-law-student`
 - `chinese-legal-clinic`
