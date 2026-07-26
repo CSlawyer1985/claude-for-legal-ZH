@@ -641,7 +641,7 @@ scripts/                  # deploy-managed-agent.sh · validate.py · orchestrat
 - **新技能** → 添加到 `<插件名>/skills/<技能名>/SKILL.md`，使用现有技能的前置元数据（`name`、`description`、`argument-hint`）。描述保持在 1024 字符以内——这是触发信号。技能可通过 `/<插件名>:<技能名>` 调用。纯参考技能标记 `user-invocable: false`。
 - **新 Agent** → 添加 `<插件名>/agents/<名称>.md`，含调度前置元数据和 system prompt。如需无头部署，添加匹配的 `managed-agent-cookbooks/<名称>/`。
 - **社区技能** → 使用 `/legal-builder-hub:skill-installer` 在你的环境中测试社区技能。Hub 在每次安装前运行 `/legal-builder-hub:skills-qa`，对技能进行评分（九个设计参数、三种法律失败模式、信任面检查），拒绝任何不通过的技能。
-- **推送前验证蓝图** → `bash scripts/test-cookbooks.sh` 对所有托管 Agent 蓝图进行预检，并对编排器工具范围进行 lint。
+- **推送前验证蓝图** → `python scripts/check-release.py` 检查技能前置元数据、JSON/YAML 合法性和私人路径/密钥泄露（Windows 可运行）；`bash scripts/test-cookbooks.sh` 对所有托管 Agent 蓝图进行预检，并对编排器工具范围进行 lint。以上检查同时配置在 GitHub Actions（`release-check.yml`）中自动执行。
 
 ## 许可证
 
@@ -694,6 +694,13 @@ scripts/                  # deploy-managed-agent.sh · validate.py · orchestrat
         <b>@yuanweize</b>
       </a><br>
       criminal-legal 刑事模块<br>脱敏红线与防幻觉设计
+    </td>
+    <td align="center" width="260">
+      <a href="https://github.com/Jamesyu0829">
+        <img src="https://github.com/Jamesyu0829.png" width="80" style="border-radius: 50%;" alt="Jamesyu0829"><br>
+        <b>@Jamesyu0829</b>
+      </a><br>
+      发布检查脚本与 CI<br>Windows 兼容性修复
     </td>
   </tr>
 </table>
