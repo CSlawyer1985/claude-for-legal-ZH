@@ -1,6 +1,6 @@
 # Codex 使用说明
 
-本仓库上游是 Claude Code 插件 marketplace，同时提供 Codex 与 DeepSeek Harness（dsh）适配层。
+本仓库上游是 Claude Code 插件 marketplace，同时提供 Codex、DeepSeek Harness（dsh）与 WorkBuddy 适配层。
 
 ## Codex 适配入口
 
@@ -28,6 +28,14 @@ dsh 原生扫描 `.dsh/skills`（rank 100，同名时优先于 `.agents/skills`�
 - 使用 `.dsh/skills/chinese-legal-*` 中的 dsh 版 adapter（措辞、配置路径、MCP 指引均为 dsh 定制）；同名 Codex adapter 被自动覆盖，无需处理。
 - 用户级安装（`scripts/install-dsh.sh`）后，仓库相对路径以 `cat ~/.dsh/legal-zh/repo` 登记的仓库根目录为基准解析。
 - 法条/案例检索 MCP（元典、chineselaw）的 `cordis.patch.yml` 配置、权限预设与卸载说明见 `INSTALL_DSH.md`。
+
+## WorkBuddy 适配入口
+
+WorkBuddy 扫描 `.workbuddy/skills`（项目级）与 `~/.workbuddy/skills`（用户级）。当运行环境是 WorkBuddy 时：
+
+- 使用 `.workbuddy/skills/chinese-legal-*` 中的 WorkBuddy 版 adapter（中文 description 含触发词，契合其自动调用机制）。
+- 用户级安装（`scripts/install-workbuddy.sh`）后，仓库相对路径以 `cat ~/.workbuddy/legal-zh/repo` 登记的仓库根目录为基准解析。
+- 法条/案例检索 MCP 配置（`~/.workbuddy/mcp.json`，标准 mcpServers 格式）与卸载说明见 `INSTALL_WORKBUDDY.md`。
 
 ## Claude 指令到 Codex 工作流的映射
 

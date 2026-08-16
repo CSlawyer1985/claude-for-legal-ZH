@@ -52,6 +52,26 @@ scripts/install-dsh.sh
 
 法条/案例检索 MCP（元典、chineselaw）的 `cordis.patch.yml` 配置片段、权限预设与卸载说明见 [INSTALL_DSH.md](INSTALL_DSH.md)。
 
+## 在 WorkBuddy 中安装
+
+在仓库根目录运行：
+
+```bash
+scripts/install-workbuddy.sh
+```
+
+默认会把 `.workbuddy/skills/chinese-legal-*` 链接到：
+
+```text
+~/.workbuddy/skills
+```
+
+安装后在 WorkBuddy 的「专家·技能·连接器」面板确认技能已启用，即可用自然语言下达法律任务——adapter 描述为中文并含触发词，会被自动匹配调用。
+
+也可以零安装体验：把本仓库目录作为 WorkBuddy 项目目录打开，项目级 `.workbuddy/skills` 会被自动发现。
+
+MCP 法律检索配置（`~/.workbuddy/mcp.json`）、技能包分发改装与卸载说明见 [INSTALL_WORKBUDDY.md](INSTALL_WORKBUDDY.md)。
+
 ## Claude Code 一键添加 marketplace
 
 Claude Code 用户也可以先运行：

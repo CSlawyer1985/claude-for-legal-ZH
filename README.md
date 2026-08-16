@@ -6,13 +6,14 @@
   <a href="https://github.com/CSlawyer1985/claude-for-legal-ZH/stargazers"><img src="https://img.shields.io/github/stars/CSlawyer1985/claude-for-legal-ZH?style=social" alt="Stars"></a>
   <a href="https://github.com/CSlawyer1985/claude-for-legal-ZH"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>
   <a href="INSTALL_DSH.md"><img src="https://img.shields.io/badge/DeepSeek%20Harness-已适配-4D6BFE" alt="DeepSeek Harness 适配"></a>
+  <a href="INSTALL_WORKBUDDY.md"><img src="https://img.shields.io/badge/WorkBuddy-已适配-0052D9" alt="WorkBuddy 适配"></a>
   <a href="INSTALL_CODEX.md"><img src="https://img.shields.io/badge/Codex-已适配-000000" alt="Codex 适配"></a>
   <br>
   <b>为最常见的中国法律工作流提供的参考 Agent、技能和数据连接器</b>
   <br>
   涵盖商事合同 · 隐私数据 · 产品合规 · 公司并购 · 劳动用工 · 争议解决 · 监管合规 · AI 治理 · 知识产权 · 法学教育 · 法律诊所
   <br>
-  <b>一套中国法律技能插件集，多端运行：Claude Code · DeepSeek Harness（dsh） · Codex</b>
+  <b>一套中国法律技能插件集，多端运行：Claude Code · DeepSeek Harness（dsh） · Codex · WorkBuddy</b>
 </p>
 
 ---
@@ -23,7 +24,7 @@
   <img src="docs/assets/hero.png" alt="Claude for Legal 中国法版本 — 着陆页 Hero" width="800">
 </p>
 
-本仓库是一套**面向中国法律实务的通用插件集**——以 13 个业务领域的技能、领域规则与法律工作流为主体，内嵌参考材料与数据连接器，并可接入外部法律检索知识库（元典、chineselaw 等 MCP）。它不绑定单一 agent 环境：可安装为 [Claude Code](https://claude.com/product/claude-code) 插件，可通过一键脚本接入 [DeepSeek Harness（dsh）](https://github.com/deepseek-ai/deepseek-harness) 或 **Codex**，也可通过 [Claude Managed Agents API](https://docs.claude.com/en/api/managed-agents) 部署在你自己的工作流引擎后台。同一套 system prompt，同一套技能——你选择在哪里运行。
+本仓库是一套**面向中国法律实务的通用插件集**——以 13 个业务领域的技能、领域规则与法律工作流为主体，内嵌参考材料与数据连接器，并可接入外部法律检索知识库（元典、chineselaw 等 MCP）。它不绑定单一 agent 环境：可安装为 [Claude Code](https://claude.com/product/claude-code) 插件，可通过一键脚本接入 [DeepSeek Harness（dsh）](https://github.com/deepseek-ai/deepseek-harness)、**Codex** 或 **WorkBuddy**（腾讯工作智能体），也可通过 [Claude Managed Agents API](https://docs.claude.com/en/api/managed-agents) 部署在你自己的工作流引擎后台。同一套 system prompt，同一套技能——你选择在哪里运行。
 
 ## 在 Claude Code 中安装
 
@@ -52,7 +53,7 @@
 >
 > **这些插件不代表 Anthropic 的法律立场。** 它们是帮助律师分析问题的工具。技能中包含的清单项目、建议框架、风险标记、案例法或监管指引的定性描述，均为辅助审查律师自身分析的参考，而非 Anthropic 对法律的表态。许多领域的法律处于未定和演进之中。使用插件的律师——而非插件本身，也非 Anthropic——对其工作成果中的法律立场负责。
 
-## 多端适配：Claude Code · DeepSeek Harness · Codex
+## 多端适配：Claude Code · DeepSeek Harness · Codex · WorkBuddy
 
 本仓库不绑定单一 agent 环境——同一套技能、工作流与安全规则，可在以下运行环境中使用：
 
@@ -61,6 +62,9 @@
 | **Claude Code** | `/plugin marketplace add` + `/plugin install`（见上文） | [QUICKSTART.md](QUICKSTART.md) |
 | **DeepSeek Harness（dsh）** | `scripts/install-dsh.sh` | [INSTALL_DSH.md](INSTALL_DSH.md) |
 | **Codex Desktop / CLI** | `scripts/install-codex.sh` | [INSTALL_CODEX.md](INSTALL_CODEX.md) |
+| **WorkBuddy**（腾讯工作智能体） | `scripts/install-workbuddy.sh` | [INSTALL_WORKBUDDY.md](INSTALL_WORKBUDDY.md) |
+
+四套适配层共用同一组 `chinese-legal-*` 路由技能名与同一套领域工作流，可同时安装、互不干扰。
 
 ### DeepSeek Harness（dsh）
 
@@ -84,7 +88,20 @@ scripts/install-codex.sh    # 默认符号链接安装到 ~/.codex/skills
 
 Codex Desktop / CLI 适配层提供同样的 18 个 `chinese-legal-*` adapter skill，自然语言下达任务即可，无需输入 Claude Code slash command。
 
-两端适配层互不干扰：dsh 的技能发现优先级规则保证 dsh 版 adapter 自动覆盖同名 Codex 版，两套可同时安装。
+### WorkBuddy
+
+[WorkBuddy](https://cloud.tencent.com/document/product/1831/134432) 是腾讯出品的工作智能体（桌面端 / 移动端 / 鸿蒙），其技能体系与 Claude Code 同属 SKILL.md 生态。本仓库提供 WorkBuddy 原生适配层：18 个 `chinese-legal-*` adapter skill（中文 description 含触发词，匹配其自动调用机制）+ 一键安装脚本。
+
+```bash
+scripts/install-workbuddy.sh    # 默认符号链接安装到 ~/.workbuddy/skills
+```
+
+- **中文触发优化**——adapter 描述为中文并标注触发词，契合 WorkBuddy 按 description 自动匹配技能的机制
+- **零安装体验**——把本仓库目录作为 WorkBuddy 项目目录打开即可（项目级 `.workbuddy/skills` 自动发现）
+- **MCP 同构配置**——`~/.workbuddy/mcp.json` 采用标准 `mcpServers` 格式，元典、chineselaw 等法律检索服务可直接接入
+- **技能市场可分发**——18 个 adapter 可按 WorkBuddy 技能包规范打包上传，企业版可内部统一分发
+
+多端优先级说明：dsh 的技能发现优先级规则保证 dsh 版 adapter 自动覆盖同名 Codex 版；WorkBuddy 与 Codex 各有独立 skills 目录。四套适配层命名统一、可同时安装，互不干扰。
 
 ## 中国法本地化改造说明
 
@@ -119,7 +136,7 @@ Codex Desktop / CLI 适配层提供同样的 18 个 `chinese-legal-*` adapter sk
 | **时效验证流程** | 引用具体法条、司法解释、诉讼时效时强制独立检索验证 |
 | **知识库路由** | 优先源（理解与适用/类案指南/最高院审判实务）→扩展源→效力警示源，按权威分级检索 |
 | **知识库路径可配置** | `[KB_ROOT]` 变量抽象，各人按自己的环境配置一次根目录，仓库不再绑定特定机器的绝对路径 |
-| **多端适配（社区贡献）** | Codex 与 DeepSeek Harness（dsh）双适配层，各 18 个 adapter skill + 一键安装脚本，同一套技能与工作流同时服务 Claude Code、Codex 与 dsh 用户 |
+| **多端适配（社区贡献）** | Codex、DeepSeek Harness（dsh）、WorkBuddy 三套适配层，各 18 个 adapter skill + 一键安装脚本，同一套技能与工作流同时服务 Claude Code、Codex、dsh 与 WorkBuddy 用户 |
 | **知识库四步交叉引用协议** | 路由规则加载 → Wiki 概念检索 → 原始数据源检索（优先源→扩展源）→ 外部补充（MCP/联网搜索），每步强制不得跳过 |
 | **主体信用自动查询** | 首次出现非自然人主体时触发信用查询：实体锚定 → 基础画像+风险扫描（并行）→ 关键人员穿透，生成结构化信用报告 |
 | **Agentic Search 路由** | 三层 C1/C2/C3 路由：复杂多维问题自动跳过常规管线进入多源并行深度检索，常规管线不足时自动升级 |
