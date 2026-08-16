@@ -12,7 +12,7 @@
   <br>
   涵盖商事合同 · 隐私数据 · 产品合规 · 公司并购 · 劳动用工 · 争议解决 · 监管合规 · AI 治理 · 知识产权 · 法学教育 · 法律诊所
   <br>
-  <b>一套通用法律知识库，多端运行：Claude Code · DeepSeek Harness（dsh） · Codex</b>
+  <b>一套中国法律技能插件集，多端运行：Claude Code · DeepSeek Harness（dsh） · Codex</b>
 </p>
 
 ---
@@ -23,7 +23,7 @@
   <img src="docs/assets/hero.png" alt="Claude for Legal 中国法版本 — 着陆页 Hero" width="800">
 </p>
 
-本仓库是一套**通用的中国法律知识库**，不绑定单一 agent 环境：可安装为 [Claude Code](https://claude.com/product/claude-code) 插件，可通过一键脚本接入 [DeepSeek Harness（dsh）](https://github.com/deepseek-ai/deepseek-harness) 或 **Codex**，也可通过 [Claude Managed Agents API](https://docs.claude.com/en/api/managed-agents) 部署在你自己的工作流引擎后台。同一套 system prompt，同一套技能——你选择在哪里运行。
+本仓库是一套**面向中国法律实务的通用插件集**——以 13 个业务领域的技能、领域规则与法律工作流为主体，内嵌参考材料与数据连接器，并可接入外部法律检索知识库（元典、chineselaw 等 MCP）。它不绑定单一 agent 环境：可安装为 [Claude Code](https://claude.com/product/claude-code) 插件，可通过一键脚本接入 [DeepSeek Harness（dsh）](https://github.com/deepseek-ai/deepseek-harness) 或 **Codex**，也可通过 [Claude Managed Agents API](https://docs.claude.com/en/api/managed-agents) 部署在你自己的工作流引擎后台。同一套 system prompt，同一套技能——你选择在哪里运行。
 
 ## 在 Claude Code 中安装
 
@@ -54,7 +54,7 @@
 
 ## 多端适配：Claude Code · DeepSeek Harness · Codex
 
-本仓库不绑定单一 agent 环境——同一套法律知识、工作流与安全规则，可在以下运行环境中使用：
+本仓库不绑定单一 agent 环境——同一套技能、工作流与安全规则，可在以下运行环境中使用：
 
 | 运行环境 | 安装方式 | 完整指南 |
 |----------|----------|----------|
@@ -119,7 +119,7 @@ Codex Desktop / CLI 适配层提供同样的 18 个 `chinese-legal-*` adapter sk
 | **时效验证流程** | 引用具体法条、司法解释、诉讼时效时强制独立检索验证 |
 | **知识库路由** | 优先源（理解与适用/类案指南/最高院审判实务）→扩展源→效力警示源，按权威分级检索 |
 | **知识库路径可配置** | `[KB_ROOT]` 变量抽象，各人按自己的环境配置一次根目录，仓库不再绑定特定机器的绝对路径 |
-| **多端适配（社区贡献）** | Codex 与 DeepSeek Harness（dsh）双适配层，各 18 个 adapter skill + 一键安装脚本，同一套法律知识和工作流同时服务 Claude Code、Codex 与 dsh 用户 |
+| **多端适配（社区贡献）** | Codex 与 DeepSeek Harness（dsh）双适配层，各 18 个 adapter skill + 一键安装脚本，同一套技能与工作流同时服务 Claude Code、Codex 与 dsh 用户 |
 | **知识库四步交叉引用协议** | 路由规则加载 → Wiki 概念检索 → 原始数据源检索（优先源→扩展源）→ 外部补充（MCP/联网搜索），每步强制不得跳过 |
 | **主体信用自动查询** | 首次出现非自然人主体时触发信用查询：实体锚定 → 基础画像+风险扫描（并行）→ 关键人员穿透，生成结构化信用报告 |
 | **Agentic Search 路由** | 三层 C1/C2/C3 路由：复杂多维问题自动跳过常规管线进入多源并行深度检索，常规管线不足时自动升级 |
