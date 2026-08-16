@@ -1,6 +1,6 @@
 ---
 name: chinese-legal-diligence-grid
-description: Use when the user needs a Chinese legal managed workflow for 尽调问题表格工作流: 并购尽调材料读取、问题抽取、尽调表格、披露问题清单、法律尽调多文档归一化. This is a Codex adapter for claude-for-legal-ZH/managed-agent-cookbooks/diligence-grid.
+description: "Use when the user needs a Chinese legal managed workflow for 尽调问题表格工作流: 并购尽调材料读取、问题抽取、尽调表格、披露问题清单、法律尽调多文档归一化. This is a Codex adapter for claude-for-legal-ZH/managed-agent-cookbooks/diligence-grid."
 ---
 
 # 尽调问题表格工作流 Codex Adapter

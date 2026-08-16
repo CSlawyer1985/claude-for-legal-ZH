@@ -1,11 +1,11 @@
 ---
 name: chinese-legal-employment
-description: "Use when the user needs Chinese legal work in the 劳动用工 domain: 劳动合同解除、劳动关系认定、假期管理、员工调查、规章制度、工资工时、跨省用工、劳动法. This is a Codex adapter for claude-for-legal-ZH/employment-legal; it routes natural-language requests to the original domain CLAUDE.md and skills/*/SKILL.md workflows."
+description: "Use when the user needs Chinese legal work in the 劳动用工 domain: 劳动合同解除、劳动关系认定、假期管理、员工调查、规章制度、工资工时、跨省用工、劳动法. This is a DeepSeek Harness (dsh) adapter for claude-for-legal-ZH/employment-legal; it routes natural-language requests to the original domain CLAUDE.md and skills/*/SKILL.md workflows."
 ---
 
-# 劳动用工 Codex Adapter
+# 劳动用工 DeepSeek Harness Adapter
 
-This skill lets Codex use the original `claude-for-legal-ZH/employment-legal` content without requiring Claude Code slash commands.
+This skill lets DeepSeek Harness (`dsh`) use the original `claude-for-legal-ZH/employment-legal` content without requiring Claude Code slash commands.
 
 ## Source Files
 
@@ -14,23 +14,34 @@ This skill lets Codex use the original `claude-for-legal-ZH/employment-legal` co
 - Original skills directory: `employment-legal/skills`
 - Original plugin description: 中国劳动法插件：用工审查与解除风险评估、劳动关系认定（劳社部发〔2005〕12号三要素）、假期管理与法定期限跟踪、内部调查、劳动规章制度起草（含民主程序+公示要求）及各省/直辖市口径差异适配。
 
+## Path Resolution
+
+The repository-relative paths above resolve against the `claude-for-legal-ZH` repository root:
+
+- If the current workspace contains the repository, resolve them against the repository root directly.
+- Otherwise (user-level install), run `cat ~/.dsh/legal-zh/repo` once to get the absolute repository path recorded by `scripts/install-dsh.sh`, then prefix the relative paths with it.
+
 ## How To Use
 
 1. Read `employment-legal/CLAUDE.md` before substantive work.
 2. Select the closest original skill from the list below, then read its `SKILL.md`.
-3. Follow that skill's workflow, translating Claude Code slash-command wording into Codex actions and natural conversation.
+3. Follow that skill's workflow, translating Claude Code slash-command wording into dsh actions and natural conversation.
 4. If multiple original skills apply, execute them in the order implied by the workflow and merge the result.
-5. Do not run Claude-specific plugin commands. Ignore Claude hooks. Use Codex tools for local files, web verification, document rendering, and user-visible output.
+5. Do not run Claude-specific plugin commands. Ignore Claude hooks. Use dsh filesystem, shell, web, and MCP tools for local files, verification, document rendering, and user-visible output.
 
 ## Configuration Compatibility
 
-The original project stores setup profiles under `~/.claude/plugins/config/...`. For Codex, use this order:
+The original project stores setup profiles under `~/.claude/plugins/config/...`. For DeepSeek Harness, use this order:
 
 1. If a populated Claude profile exists, read it as the user's existing practice profile.
-2. Otherwise use or create `~/.codex/legal-zh/employment-legal/CLAUDE.md` for Codex-specific setup.
+2. Otherwise use or create `~/.dsh/legal-zh/employment-legal/CLAUDE.md` for dsh-specific setup.
 3. If the selected skill requires setup and the profile still contains `[PLACEHOLDER]`, run the domain's `cold-start-interview` workflow in conversation before producing customized legal work.
 
-When an original instruction says to run `/employment-legal:some-command`, interpret that as: load `skills/some-command/SKILL.md` and perform the workflow in Codex.
+When an original instruction says to run `/employment-legal:some-command`, interpret that as: load `employment-legal/skills/some-command/SKILL.md` and perform the workflow in dsh.
+
+## Legal Retrieval MCP
+
+If the active dsh profile mounts the `chineselaw` or `yuandian` MCP servers (see `INSTALL_DSH.md`), prefer `mcp__chineselaw__*` and `mcp__yuandian__*` tools for statute, case, and regulatory verification. Without them, mark time-sensitive legal facts as requiring verification before reliance.
 
 ## Available Original Skills
 

@@ -1,6 +1,6 @@
 ---
 name: chinese-legal-renewal-watcher
-description: Use when the user needs a Chinese legal managed workflow for 合同续约监控工作流: 合同续约监控、自动续约、终止通知期限、续约提醒、合同台账读取. This is a Codex adapter for claude-for-legal-ZH/managed-agent-cookbooks/renewal-watcher.
+description: "Use when the user needs a Chinese legal managed workflow for 合同续约监控工作流: 合同续约监控、自动续约、终止通知期限、续约提醒、合同台账读取. This is a Codex adapter for claude-for-legal-ZH/managed-agent-cookbooks/renewal-watcher."
 ---
 
 # 合同续约监控工作流 Codex Adapter

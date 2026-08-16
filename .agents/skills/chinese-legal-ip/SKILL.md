@@ -1,6 +1,6 @@
 ---
 name: chinese-legal-ip
-description: Use when the user needs Chinese legal work in the 知识产权 domain: 商标可注册性、FTO、侵权警告函、通知删除、开源许可证、知识产权条款、专利、著作权、商标. This is a Codex adapter for claude-for-legal-ZH/ip-legal; it routes natural-language requests to the original domain CLAUDE.md and skills/*/SKILL.md workflows.
+description: "Use when the user needs Chinese legal work in the 知识产权 domain: 商标可注册性、FTO、侵权警告函、通知删除、开源许可证、知识产权条款、专利、著作权、商标. This is a Codex adapter for claude-for-legal-ZH/ip-legal; it routes natural-language requests to the original domain CLAUDE.md and skills/*/SKILL.md workflows."
 ---
 
 # 知识产权 Codex Adapter

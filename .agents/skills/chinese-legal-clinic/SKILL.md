@@ -1,6 +1,6 @@
 ---
 name: chinese-legal-clinic
-description: Use when the user needs Chinese legal work in the 法律诊所 domain: 法律诊所、学生案件接待、诊所备忘录、研究路线、结案移交、指导老师审阅、当事人沟通. This is a Codex adapter for claude-for-legal-ZH/legal-clinic; it routes natural-language requests to the original domain CLAUDE.md and skills/*/SKILL.md workflows.
+description: "Use when the user needs Chinese legal work in the 法律诊所 domain: 法律诊所、学生案件接待、诊所备忘录、研究路线、结案移交、指导老师审阅、当事人沟通. This is a Codex adapter for claude-for-legal-ZH/legal-clinic; it routes natural-language requests to the original domain CLAUDE.md and skills/*/SKILL.md workflows."
 ---
 
 # 法律诊所 Codex Adapter

@@ -1,6 +1,6 @@
 ---
 name: chinese-legal-corporate
-description: Use when the user needs Chinese legal work in the 公司与并购 domain: 并购尽调、重大合同披露、董事会/股东会决议、交割清单、公司合规、投后整合、公司法. This is a Codex adapter for claude-for-legal-ZH/corporate-legal; it routes natural-language requests to the original domain CLAUDE.md and skills/*/SKILL.md workflows.
+description: "Use when the user needs Chinese legal work in the 公司与并购 domain: 并购尽调、重大合同披露、董事会/股东会决议、交割清单、公司合规、投后整合、公司法. This is a Codex adapter for claude-for-legal-ZH/corporate-legal; it routes natural-language requests to the original domain CLAUDE.md and skills/*/SKILL.md workflows."
 ---
 
 # 公司与并购 Codex Adapter

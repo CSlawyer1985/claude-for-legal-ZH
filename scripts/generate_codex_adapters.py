@@ -134,9 +134,12 @@ def plugin_description(domain_root: Path) -> str:
 
 def adapter_body(domain: str, meta: dict, skills: list[str], description: str) -> str:
     commands = ", ".join(f"`{name}`" for name in skills)
+    # JSON-quoted scalar = valid YAML flow scalar; descriptions contain ": "
+    # which breaks unquoted YAML plain scalars in strict frontmatter parsers.
+    desc = f'Use when the user needs Chinese legal work in the {meta["display"]} domain: {meta["triggers"]}. This is a Codex adapter for claude-for-legal-ZH/{domain}; it routes natural-language requests to the original domain CLAUDE.md and skills/*/SKILL.md workflows.'
     return f"""---
 name: {meta["codex_name"]}
-description: Use when the user needs Chinese legal work in the {meta["display"]} domain: {meta["triggers"]}. This is a Codex adapter for claude-for-legal-ZH/{domain}; it routes natural-language requests to the original domain CLAUDE.md and skills/*/SKILL.md workflows.
+description: {json.dumps(desc, ensure_ascii=False)}
 ---
 
 # {meta["display"]} Codex Adapter
@@ -183,9 +186,10 @@ When an original instruction says to run `/{domain}:some-command`, interpret tha
 
 def cookbook_body(cookbook: str, meta: dict) -> str:
     root = f"managed-agent-cookbooks/{cookbook}"
+    desc = f'Use when the user needs a Chinese legal managed workflow for {meta["display"]}: {meta["triggers"]}. This is a Codex adapter for claude-for-legal-ZH/managed-agent-cookbooks/{cookbook}.'
     return f"""---
 name: {meta["codex_name"]}
-description: Use when the user needs a Chinese legal managed workflow for {meta["display"]}: {meta["triggers"]}. This is a Codex adapter for claude-for-legal-ZH/managed-agent-cookbooks/{cookbook}.
+description: {json.dumps(desc, ensure_ascii=False)}
 ---
 
 # {meta["display"]} Codex Adapter

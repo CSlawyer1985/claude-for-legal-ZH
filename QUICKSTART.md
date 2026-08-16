@@ -32,6 +32,26 @@ Codex 中不需要输入 Claude Code slash command，直接用自然语言提出
 
 更多说明见 [INSTALL_CODEX.md](INSTALL_CODEX.md)。
 
+## 在 DeepSeek Harness（dsh）中安装
+
+在仓库根目录运行：
+
+```bash
+scripts/install-dsh.sh
+```
+
+默认会把 `.dsh/skills/chinese-legal-*` 链接到：
+
+```text
+~/.dsh/skills
+```
+
+并登记仓库路径、向 `~/.dsh/AGENTS.md` 写入法律工作守则。安装后新开 dsh 会话即可用自然语言下达法律任务。
+
+也可以零安装体验：在 dsh web 中直接把本仓库目录添加为工作区，`.dsh/skills` 与 `AGENTS.md` 会被自动发现。
+
+法条/案例检索 MCP（元典、chineselaw）的 `cordis.patch.yml` 配置片段、权限预设与卸载说明见 [INSTALL_DSH.md](INSTALL_DSH.md)。
+
 ## Claude Code 一键添加 marketplace
 
 Claude Code 用户也可以先运行：

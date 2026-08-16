@@ -1,6 +1,6 @@
 ---
 name: chinese-legal-privacy
-description: Use when the user needs Chinese legal work in the 数据合规与隐私 domain: 个人信息保护影响评估、PIPL、数据处理协议、DSAR、隐私政策、数据合规差距、数据出境和隐私合规. This is a Codex adapter for claude-for-legal-ZH/privacy-legal; it routes natural-language requests to the original domain CLAUDE.md and skills/*/SKILL.md workflows.
+description: "Use when the user needs Chinese legal work in the 数据合规与隐私 domain: 个人信息保护影响评估、PIPL、数据处理协议、DSAR、隐私政策、数据合规差距、数据出境和隐私合规. This is a Codex adapter for claude-for-legal-ZH/privacy-legal; it routes natural-language requests to the original domain CLAUDE.md and skills/*/SKILL.md workflows."
 ---
 
 # 数据合规与隐私 Codex Adapter

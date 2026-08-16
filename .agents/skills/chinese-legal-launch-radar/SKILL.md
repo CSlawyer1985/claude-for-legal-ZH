@@ -1,6 +1,6 @@
 ---
 name: chinese-legal-launch-radar
-description: Use when the user needs a Chinese legal managed workflow for 产品上线雷达工作流: 产品上线列表、功能风险分类、上线法律风险雷达、产品发布合规摘要. This is a Codex adapter for claude-for-legal-ZH/managed-agent-cookbooks/launch-radar.
+description: "Use when the user needs a Chinese legal managed workflow for 产品上线雷达工作流: 产品上线列表、功能风险分类、上线法律风险雷达、产品发布合规摘要. This is a Codex adapter for claude-for-legal-ZH/managed-agent-cookbooks/launch-radar."
 ---
 
 # 产品上线雷达工作流 Codex Adapter

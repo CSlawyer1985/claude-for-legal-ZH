@@ -1,6 +1,6 @@
 ---
 name: chinese-legal-builder-hub
-description: Use when the user needs Chinese legal work in the 法律技能运营 domain: 查找法律技能、评估社区技能、安装法律技能、技能安全审查、法律工作流构建、法律运营. This is a Codex adapter for claude-for-legal-ZH/legal-builder-hub; it routes natural-language requests to the original domain CLAUDE.md and skills/*/SKILL.md workflows.
+description: "Use when the user needs Chinese legal work in the 法律技能运营 domain: 查找法律技能、评估社区技能、安装法律技能、技能安全审查、法律工作流构建、法律运营. This is a Codex adapter for claude-for-legal-ZH/legal-builder-hub; it routes natural-language requests to the original domain CLAUDE.md and skills/*/SKILL.md workflows."
 ---
 
 # 法律技能运营 Codex Adapter

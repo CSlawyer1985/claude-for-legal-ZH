@@ -1,6 +1,6 @@
 ---
 name: chinese-legal-criminal
-description: Use when the user needs Chinese legal work in the 刑事辩护与合规 domain: 刑事辩护、阅卷笔录梳理、取保候审、羁押必要性审查、辩护策略、罪与非罪、涉案企业合规不起诉、刑事控告. This is a Codex adapter for claude-for-legal-ZH/criminal-legal; it routes natural-language requests to the original domain CLAUDE.md and skills/*/SKILL.md workflows.
+description: "Use when the user needs Chinese legal work in the 刑事辩护与合规 domain: 刑事辩护、阅卷笔录梳理、取保候审、羁押必要性审查、辩护策略、罪与非罪、涉案企业合规不起诉、刑事控告. This is a Codex adapter for claude-for-legal-ZH/criminal-legal; it routes natural-language requests to the original domain CLAUDE.md and skills/*/SKILL.md workflows."
 ---
 
 # 刑事辩护与合规 Codex Adapter

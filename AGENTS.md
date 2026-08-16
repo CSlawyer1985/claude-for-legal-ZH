@@ -1,6 +1,6 @@
 # Codex 使用说明
 
-本仓库上游是 Claude Code 插件 marketplace，同时提供 Codex 适配层。
+本仓库上游是 Claude Code 插件 marketplace，同时提供 Codex 与 DeepSeek Harness（dsh）适配层。
 
 ## Codex 适配入口
 
@@ -20,6 +20,14 @@ Codex skills 位于 `.agents/skills/chinese-legal-*`。当用户提出中国法�
 - `chinese-legal-clinic`：法律诊所、接待、备忘录、结案移交
 - `chinese-legal-builder-hub`：法律技能发现、评估、安装和运营
 - `chinese-legal-*watcher` / `*-grid` / `*-radar`：托管工作流 cookbook 的 Codex 入口
+
+## DeepSeek Harness（dsh）适配入口
+
+dsh 原生扫描 `.dsh/skills`（rank 100，同名时优先于 `.agents/skills`）。当运行环境是 dsh 时：
+
+- 使用 `.dsh/skills/chinese-legal-*` 中的 dsh 版 adapter（措辞、配置路径、MCP 指引均为 dsh 定制）；同名 Codex adapter 被自动覆盖，无需处理。
+- 用户级安装（`scripts/install-dsh.sh`）后，仓库相对路径以 `cat ~/.dsh/legal-zh/repo` 登记的仓库根目录为基准解析。
+- 法条/案例检索 MCP（元典、chineselaw）的 `cordis.patch.yml` 配置、权限预设与卸载说明见 `INSTALL_DSH.md`。
 
 ## Claude 指令到 Codex 工作流的映射
 

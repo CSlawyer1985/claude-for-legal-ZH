@@ -1,6 +1,6 @@
 ---
 name: chinese-legal-reg-monitor
-description: Use when the user needs a Chinese legal managed workflow for 监管动态监控工作流: 监管动态监控、法规 feed、监管摘要、重大性过滤、合规周报. This is a Codex adapter for claude-for-legal-ZH/managed-agent-cookbooks/reg-monitor.
+description: "Use when the user needs a Chinese legal managed workflow for 监管动态监控工作流: 监管动态监控、法规 feed、监管摘要、重大性过滤、合规周报. This is a Codex adapter for claude-for-legal-ZH/managed-agent-cookbooks/reg-monitor."
 ---
 
 # 监管动态监控工作流 Codex Adapter

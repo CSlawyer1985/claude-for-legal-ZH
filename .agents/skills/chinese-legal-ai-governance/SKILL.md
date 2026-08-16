@@ -1,6 +1,6 @@
 ---
 name: chinese-legal-ai-governance
-description: Use when the user needs Chinese legal work in the AI 治理 domain: AI 应用登记、算法安全评估、科技伦理审查、生成式 AI 合规、AI 供应商审查、AI 治理. This is a Codex adapter for claude-for-legal-ZH/ai-governance-legal; it routes natural-language requests to the original domain CLAUDE.md and skills/*/SKILL.md workflows.
+description: "Use when the user needs Chinese legal work in the AI 治理 domain: AI 应用登记、算法安全评估、科技伦理审查、生成式 AI 合规、AI 供应商审查、AI 治理. This is a Codex adapter for claude-for-legal-ZH/ai-governance-legal; it routes natural-language requests to the original domain CLAUDE.md and skills/*/SKILL.md workflows."
 ---
 
 # AI 治理 Codex Adapter

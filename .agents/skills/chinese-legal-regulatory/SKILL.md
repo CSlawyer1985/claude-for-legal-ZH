@@ -1,6 +1,6 @@
 ---
 name: chinese-legal-regulatory
-description: Use when the user needs Chinese legal work in the 监管合规 domain: 法规动态监控、监管简报、政策差异比对、合规差距、征求意见稿、监管政策重写、行政监管. This is a Codex adapter for claude-for-legal-ZH/regulatory-legal; it routes natural-language requests to the original domain CLAUDE.md and skills/*/SKILL.md workflows.
+description: "Use when the user needs Chinese legal work in the 监管合规 domain: 法规动态监控、监管简报、政策差异比对、合规差距、征求意见稿、监管政策重写、行政监管. This is a Codex adapter for claude-for-legal-ZH/regulatory-legal; it routes natural-language requests to the original domain CLAUDE.md and skills/*/SKILL.md workflows."
 ---
 
 # 监管合规 Codex Adapter

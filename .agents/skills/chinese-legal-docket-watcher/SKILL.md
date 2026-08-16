@@ -1,6 +1,6 @@
 ---
 name: chinese-legal-docket-watcher
-description: Use when the user needs a Chinese legal managed workflow for 案件期限监控工作流: 诉讼案件台账、期限监控、案件 docket、开庭和举证期限、诉讼日程提醒. This is a Codex adapter for claude-for-legal-ZH/managed-agent-cookbooks/docket-watcher.
+description: "Use when the user needs a Chinese legal managed workflow for 案件期限监控工作流: 诉讼案件台账、期限监控、案件 docket、开庭和举证期限、诉讼日程提醒. This is a Codex adapter for claude-for-legal-ZH/managed-agent-cookbooks/docket-watcher."
 ---
 
 # 案件期限监控工作流 Codex Adapter

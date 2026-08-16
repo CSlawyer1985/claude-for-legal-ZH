@@ -1,6 +1,6 @@
 ---
 name: chinese-legal-law-student
-description: Use when the user needs Chinese legal work in the 法学学习与法考 domain: 法考、案例摘要、IRAC、课堂提问、法学写作、记忆卡片、学习计划、主观题和客观题训练. This is a Codex adapter for claude-for-legal-ZH/law-student; it routes natural-language requests to the original domain CLAUDE.md and skills/*/SKILL.md workflows.
+description: "Use when the user needs Chinese legal work in the 法学学习与法考 domain: 法考、案例摘要、IRAC、课堂提问、法学写作、记忆卡片、学习计划、主观题和客观题训练. This is a Codex adapter for claude-for-legal-ZH/law-student; it routes natural-language requests to the original domain CLAUDE.md and skills/*/SKILL.md workflows."
 ---
 
 # 法学学习与法考 Codex Adapter
