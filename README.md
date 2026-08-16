@@ -5,10 +5,14 @@
   <a href="https://github.com/CSlawyer1985/claude-for-legal-ZH"><img src="https://img.shields.io/badge/version-v1.1.0-brightgreen" alt="Version"></a>
   <a href="https://github.com/CSlawyer1985/claude-for-legal-ZH/stargazers"><img src="https://img.shields.io/github/stars/CSlawyer1985/claude-for-legal-ZH?style=social" alt="Stars"></a>
   <a href="https://github.com/CSlawyer1985/claude-for-legal-ZH"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>
+  <a href="INSTALL_DSH.md"><img src="https://img.shields.io/badge/DeepSeek%20Harness-已适配-4D6BFE" alt="DeepSeek Harness 适配"></a>
+  <a href="INSTALL_CODEX.md"><img src="https://img.shields.io/badge/Codex-已适配-000000" alt="Codex 适配"></a>
   <br>
   <b>为最常见的中国法律工作流提供的参考 Agent、技能和数据连接器</b>
   <br>
   涵盖商事合同 · 隐私数据 · 产品合规 · 公司并购 · 劳动用工 · 争议解决 · 监管合规 · AI 治理 · 知识产权 · 法学教育 · 法律诊所
+  <br>
+  <b>一套通用法律知识库，多端运行：Claude Code · DeepSeek Harness（dsh） · Codex</b>
 </p>
 
 ---
@@ -19,7 +23,7 @@
   <img src="docs/assets/hero.png" alt="Claude for Legal 中国法版本 — 着陆页 Hero" width="800">
 </p>
 
-本仓库所有内容可通过**两种方式**使用：安装为 [Claude Code](https://claude.com/product/claude-code) 插件，或通过 [Claude Managed Agents API](https://docs.claude.com/en/api/managed-agents) 部署在你自己的工作流引擎后台。同一套 system prompt，同一套技能——你选择在哪里运行。
+本仓库是一套**通用的中国法律知识库**，不绑定单一 agent 环境：可安装为 [Claude Code](https://claude.com/product/claude-code) 插件，可通过一键脚本接入 [DeepSeek Harness（dsh）](https://github.com/deepseek-ai/deepseek-harness) 或 **Codex**，也可通过 [Claude Managed Agents API](https://docs.claude.com/en/api/managed-agents) 部署在你自己的工作流引擎后台。同一套 system prompt，同一套技能——你选择在哪里运行。
 
 ## 在 Claude Code 中安装
 
@@ -47,6 +51,40 @@
 > **这些插件的所有输出均为律师审查草稿——不是法律意见，不是法律结论，不替代律师。** 插件在设计层面内置了相应的安全机制：每条引用标注来源，涉主观法律判断默认保守处理，管辖权假设明示标注，任何提交、发送或依赖前设有明确门槛。律师审查、核实并对所有对外产出承担专业责任。插件让审查更快，但不能替代审查。
 >
 > **这些插件不代表 Anthropic 的法律立场。** 它们是帮助律师分析问题的工具。技能中包含的清单项目、建议框架、风险标记、案例法或监管指引的定性描述，均为辅助审查律师自身分析的参考，而非 Anthropic 对法律的表态。许多领域的法律处于未定和演进之中。使用插件的律师——而非插件本身，也非 Anthropic——对其工作成果中的法律立场负责。
+
+## 多端适配：Claude Code · DeepSeek Harness · Codex
+
+本仓库不绑定单一 agent 环境——同一套法律知识、工作流与安全规则，可在以下运行环境中使用：
+
+| 运行环境 | 安装方式 | 完整指南 |
+|----------|----------|----------|
+| **Claude Code** | `/plugin marketplace add` + `/plugin install`（见上文） | [QUICKSTART.md](QUICKSTART.md) |
+| **DeepSeek Harness（dsh）** | `scripts/install-dsh.sh` | [INSTALL_DSH.md](INSTALL_DSH.md) |
+| **Codex Desktop / CLI** | `scripts/install-codex.sh` | [INSTALL_CODEX.md](INSTALL_CODEX.md) |
+
+### DeepSeek Harness（dsh）
+
+[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 是 DeepSeek 官方开源的 agent harness（Web UI / CLI / headless）。本仓库提供 **dsh 原生适配层**：18 个 `chinese-legal-*` adapter skill、一键安装脚本、法条检索 MCP 配置片段与权限预设模板。
+
+```bash
+scripts/install-dsh.sh    # 默认符号链接安装到 ~/.dsh/skills，git pull 即更新
+```
+
+- **原生技能发现**——`.dsh/skills` 是 dsh 官方扫描根目录，适配层自动进入技能目录，热更新无需重启
+- **零安装体验**——把本仓库目录直接添加为 dsh 工作区即可使用（`AGENTS.md`、`CLAUDE.md` 指令自动注入）
+- **全局法律工作守则**——安装脚本向 `~/.dsh/AGENTS.md` 幂等写入“律师审查草稿、时效内容需验证”等底线规则
+- **法条检索 MCP**——元典（yuandian）与 chineselaw 的 `cordis.patch.yml` 现成配置，工具命名与 Claude Code 一致（`mcp__<server>__<tool>`）
+- **权限预设**——legal-readonly / matter-write / export-only 三档，与法律项目 `input/`、`scratch/`、`output/` 三层目录的合规边界对齐
+
+### Codex
+
+```bash
+scripts/install-codex.sh    # 默认符号链接安装到 ~/.codex/skills
+```
+
+Codex Desktop / CLI 适配层提供同样的 18 个 `chinese-legal-*` adapter skill，自然语言下达任务即可，无需输入 Claude Code slash command。
+
+两端适配层互不干扰：dsh 的技能发现优先级规则保证 dsh 版 adapter 自动覆盖同名 Codex 版，两套可同时安装。
 
 ## 中国法本地化改造说明
 
