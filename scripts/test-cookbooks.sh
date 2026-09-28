@@ -17,7 +17,13 @@ fi
 
 for d in "$ROOT"/managed-agent-cookbooks/*/; do
   slug=$(basename "$d")
-  if ! bash "$ROOT/scripts/deploy-managed-agent.sh" "$slug" --dry-run 2>&1 | tail -n +2 | python3 -c "
+  if ! dry_run=$(bash "$ROOT/scripts/deploy-managed-agent.sh" "$slug" --dry-run 2>&1); then
+    printf '%s\n' "$dry_run" >&2
+    echo "  ✗ $slug" >&2
+    fail=1
+    continue
+  fi
+  if ! printf '%s\n' "$dry_run" | tail -n +2 | python3 -c "
 import json,sys
 b=json.load(sys.stdin)
 errs=[]
