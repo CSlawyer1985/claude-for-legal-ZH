@@ -1,29 +1,10 @@
 {
   "mcpServers": {
-    "e签宝": {
-      "type": "http",
-      "url": "https://openapi.esign.cn/mcp",
-      "title": "e签宝",
-      "description": "电子签名服务 — 合同签署状态追踪、签署流程管理、电子存证查询，覆盖中国法域内电子签名法律效力。"
-    },
-    "法大大": {
-      "type": "http",
-      "url": "https://openapi.fadada.com/mcp",
-      "title": "法大大",
-      "description": "电子合同签署与管理平台 — 合同生命周期管理、签署流程、电子证据保全。"
-    },
-    "飞书": {
-      "type": "http",
-      "url": "https://open.feishu.cn/mcp",
-      "title": "飞书",
-      "description": "即时通讯与文档协作 — 搜索消息、阅读频道、查找讨论，管理云文档。"
-    },
     "yuandian": {
-      "type": "stdio",
-      "command": "npx",
-      "args": ["-y", "yuandian-mcp-server"],
-      "title": "yuandian（源点）",
-      "description": "中国法律法规与案例检索 — 语义搜索法律法规、法条条文、裁判文书，支持案由/法院/地区/日期范围过滤。"
+      "type": "http",
+      "url": "https://open.chineselaw.com/mcp",
+      "title": "华宇元典法律数据",
+      "description": "法规、案例、企业与证券合规检索；连接与认证须在宿主完成，结果仍需原始法源核验。"
     },
     "Slack": {
       "type": "http",

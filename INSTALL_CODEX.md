@@ -56,7 +56,7 @@ Codex 会根据任务触发 `chinese-legal-*` adapter，再读取原始法律工
 
 ## 可用 Codex skills
 
-13 个领域入口：
+16 个领域入口：
 
 - `chinese-legal-commercial`
 - `chinese-legal-privacy`
@@ -71,6 +71,9 @@ Codex 会根据任务触发 `chinese-legal-*` adapter，再读取原始法律工
 - `chinese-legal-law-student`
 - `chinese-legal-clinic`
 - `chinese-legal-builder-hub`
+- `chinese-legal-research-cn`
+- `chinese-legal-law-practice-cn`
+- `chinese-legal-procurement`
 
 5 个托管工作流入口：
 
@@ -98,9 +101,9 @@ Codex adapter 会优先读取已有的 Claude Code 画像。若没有，可在 C
 
 ## 法律检索与连接器
 
-上游 `.mcp.json` 预置了元典、飞书、Google Drive、e 签宝、法大大等连接器说明。Codex 是否能直接调用，取决于你本机 Codex 是否已安装对应连接器或 MCP 服务。
+各领域 `.mcp.json` 的法律检索部分默认声明元典统一入口；部分领域还保留协作工具的原有声明。元典地址为 `https://open.chineselaw.com/mcp`；Codex 是否能调用仍取决于当前宿主是否发现该服务、用户是否完成授权以及本次工具调用是否成功。元典[官方接入页](https://open.chineselaw.com/mcp-config/)和北大法宝[官方指南](https://mcp.pkulaw.com/docs)列有当前接入方式；服务端点与证据状态见 [CONNECTORS.md](CONNECTORS.md)。不要把 API Key 或 Access Token 写入仓库或命令日志。
 
-没有连接器时，Codex 仍可执行流程，但法规、案例、监管动态、期限等时效性内容应标注为“需验证”，并在依赖前用可靠来源核验。
+尚未接入商业 MCP 时，仍可用公开官方法源开展研究。法规、案例、期限和监管动态须记录实际来源、版本、检索日期与核验状态；配置声明和数据库命中不自动构成已核验法律依据。
 
 ## 是否需要 npx 一键安装
 

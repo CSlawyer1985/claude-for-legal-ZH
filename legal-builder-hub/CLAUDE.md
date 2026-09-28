@@ -159,7 +159,7 @@ Rules for every skill, command, and agent in this plugin:
 
 ## 法域识别（Jurisdiction recognition）
 
-技能的默认框架、检验标准、法条和程序通常以美国法为中心。当用户、事项或事实涉及非美国法域时，识别它并据此行动。
+本项目面向中国大陆法律服务；未明确法域时，以中国大陆作为待核实的工作假设。评估已安装技能时核对其实际法域、法源与程序适用范围；涉及其他法域时明确分支，不得把任何法域的框架静默套用于另一法域。
 
 ## 检索内容信任（Retrieved-content trust）
 

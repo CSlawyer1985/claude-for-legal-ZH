@@ -34,7 +34,7 @@ When an original instruction says to run `/commercial-legal:some-command`, inter
 
 ## Available Original Skills
 
-`amendment-history`, `cold-start-interview`, `customize`, `escalation-flagger`, `matter-workspace`, `nda-review`, `renewal-tracker`, `review`, `review-proposals`, `saas-msa-review`, `stakeholder-summary`, `vendor-agreement-review`
+`amendment-history`, `cold-start-interview`, `construction-contract-review`, `customize`, `escalation-flagger`, `matter-workspace`, `nda-review`, `renewal-tracker`, `review`, `review-proposals`, `saas-msa-review`, `stakeholder-summary`, `vendor-agreement-review`
 
 ## Legal Output Rules
 

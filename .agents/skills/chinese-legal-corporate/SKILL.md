@@ -34,7 +34,7 @@ When an original instruction says to run `/corporate-legal:some-command`, interp
 
 ## Available Original Skills
 
-`ai-tool-handoff`, `board-minutes`, `closing-checklist`, `cold-start-interview`, `customize`, `deal-team-summary`, `diligence-issue-extraction`, `entity-compliance`, `integration-management`, `material-contract-schedule`, `matter-workspace`, `tabular-review`, `written-consent`
+`ai-tool-handoff`, `board-minutes`, `closing-checklist`, `cold-start-interview`, `customize`, `deal-team-summary`, `diligence-evidence-matrix`, `diligence-issue-extraction`, `entity-compliance`, `integration-management`, `material-contract-schedule`, `matter-workspace`, `tabular-review`, `written-consent`
 
 ## Legal Output Rules
 

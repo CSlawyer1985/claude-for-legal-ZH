@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "yuandian": {
+      "type": "http",
+      "url": "https://open.chineselaw.com/mcp",
+      "title": "华宇元典法律数据",
+      "description": "法规、案例、企业与证券合规检索；连接与认证须在宿主完成，结果仍需原始法源核验。"
+    }
+  },
+  "recommendedCategories": ["legal-research"]
+}

@@ -41,7 +41,7 @@ description: "产品与营销合规领域法律工作：产品上线审查、营
 
 ## 法律检索连接器
 
-WorkBuddy 的 MCP 配置位于 `~/.workbuddy/mcp.json`（标准 `mcpServers` 格式）。已配置 `chineselaw` 或 `yuandian`（元典）等法律检索服务时（见 `INSTALL_WORKBUDDY.md`），优先用其核验法条、案例与监管动态；未配置时，时效性法律事实一律标注"需验证"。
+WorkBuddy 中已授权元典或北大法宝等法律检索服务时（见 `INSTALL_WORKBUDDY.md`），先检查当前工具清单，再用其发现法条、案例与监管动态；关键依据仍回查原始来源、版本和时点。未能实调时记录缺口，不将配置声明等同已验证。
 
 ## 可用原始技能
 

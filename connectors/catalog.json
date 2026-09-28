@@ -1,0 +1,75 @@
+{
+  "reviewed_on": "2026-09-28",
+  "providers": [
+    {
+      "id": "yuandian",
+      "name": "华宇元典开放平台",
+      "status": "official_documented_default_declaration",
+      "transport": "streamable_http",
+      "url": "https://open.chineselaw.com/mcp",
+      "authentication": "OAuth or provider API key, configured in the host; no credential is stored here",
+      "capabilities": ["law", "case", "company", "securities", "hallucination-check"],
+      "source": "https://open.chineselaw.com/mcp-config/",
+      "verified_live_call": false
+    },
+    {
+      "id": "pkulaw",
+      "name": "北大法宝 MCP",
+      "status": "official_documented_opt_in",
+      "transport": "streamable_http",
+      "authentication": "provider access token, configured in the host",
+      "capabilities": ["law-semantic", "law-keyword", "case-semantic", "case-keyword", "citation-validation"],
+      "source": "https://mcp.pkulaw.com/docs",
+      "verified_live_call": false,
+      "endpoints": {
+        "pkulaw-law-search": "https://apim-gateway.pkulaw.com/mcp-law-search-service",
+        "pkulaw-law-keyword": "https://apim-gateway.pkulaw.com/mcp-law",
+        "pkulaw-case-semantic-search": "https://apim-gateway.pkulaw.com/mcp-case-search-service",
+        "pkulaw-case-keyword": "https://apim-gateway.pkulaw.com/mcp-case",
+        "pkulaw-law-item-keyword": "https://apim-gateway.pkulaw.com/mcp-fatiao",
+        "pkulaw-law-recognition": "https://apim-gateway.pkulaw.com/law_recognition",
+        "pkulaw-case-number-recognition": "https://apim-gateway.pkulaw.com/case_number_recognition",
+        "pkulaw-citation-validator": "https://apim-gateway.pkulaw.com/pku_citation_validator",
+        "pkulaw-doc-link": "https://apim-gateway.pkulaw.com/add-doc-link"
+      }
+    },
+    {
+      "id": "wkinfo",
+      "name": "威科先行 MCP",
+      "status": "official_documented_opt_in",
+      "transport": "streamable_http",
+      "authentication": "OAuth preferred; host-managed Bearer token is an alternative",
+      "capabilities": ["law", "case", "citation-recognition"],
+      "source": "https://mcp.wkinfo.com.cn/docs",
+      "verified_live_call": false,
+      "endpoints": {
+        "wk-mcp": "https://mcp.wkinfo.com.cn/mcp-servers/integrated/",
+        "wk-law": "https://mcp.wkinfo.com.cn/mcp-servers/law/",
+        "wk-case": "https://mcp.wkinfo.com.cn/mcp-servers/case/",
+        "wk-citation": "https://mcp.wkinfo.com.cn/mcp-servers/citation/"
+      }
+    },
+    {
+      "id": "jufa",
+      "name": "聚法法律智能 MCP",
+      "status": "official_documented_opt_in",
+      "transport": "streamable_http_or_official_local_stdio_bridge",
+      "authentication": "provider API key, configured in the host",
+      "capabilities": ["case", "law", "prosecution-documents", "contract-template", "tender", "company", "trademark", "patent"],
+      "source": "https://www.jufaai.com/agent",
+      "bridge_source": "https://github.com/jufaai/jufa-mcp-server",
+      "verified_live_call": false,
+      "endpoints": {
+        "jufa-case": "https://www.jufaai.com/mcp/case",
+        "jufa-law": "https://www.jufaai.com/mcp/law",
+        "jufa-tender": "https://www.jufaai.com/mcp/tender"
+      }
+    }
+  ],
+  "official_web_sources_not_mcp": [
+    {"name": "国家法律法规数据库", "url": "https://flk.npc.gov.cn/"},
+    {"name": "人民法院案例库", "url": "https://rmfyalk.court.gov.cn/"},
+    {"name": "中国政府采购网", "url": "https://www.ccgp.gov.cn/"},
+    {"name": "国家企业信用信息公示系统", "url": "https://www.gsxt.gov.cn/"}
+  ]
+}

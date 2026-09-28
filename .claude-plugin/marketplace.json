@@ -102,6 +102,30 @@
       }
     },
     {
+      "name": "legal-research-cn",
+      "source": "./legal-research-cn",
+      "description": "中国法争点检索、法源版本核验、类案可比性分析和可追溯研究备忘录；保留原始法源核验与人工复核边界。",
+      "author": {
+        "name": "陈石 律师"
+      }
+    },
+    {
+      "name": "law-practice-cn",
+      "source": "./law-practice-cn",
+      "description": "中国律师业务的咨询分析、一般投诉分流、法律服务方案与报价；以项目规则、法源核验和对外审批为门禁。",
+      "author": {
+        "name": "陈石 律师"
+      }
+    },
+    {
+      "name": "procurement-legal",
+      "source": "./procurement-legal",
+      "description": "政府采购与招标投标制度路由、文件与评分审查、质疑投诉期限、合同履行及公告变化监测。",
+      "author": {
+        "name": "陈石 律师"
+      }
+    },
+    {
       "name": "ip-legal",
       "source": "./ip-legal",
       "description": "商标可注册性检索和自由实施（FTO）初步分析，起草和处理侵权警告函及通知-删除程序，开源许可证合规检查，知识产权条款审查，商标/专利/著作权组合管理及续展节点追踪。适配中国商标法、专利法、著作权法。",

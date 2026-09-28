@@ -12,6 +12,8 @@ user-invocable: false
 
 # Internal Investigation Skill
 
+> **法域门禁：** 本文件保留上游美国法域调查参考，含 work-product、Weingarten、Garrity 等美国程序。中国大陆事项不得按下文美国程序、特权标签或期限直接执行；改用本领域已本地化的 `investigation-open`、`investigation-add`、`investigation-query`、`investigation-memo`、`investigation-summary` 及目标工作区规则。仅在用户明确指定美国法域且负责律师确认适用性后，才把下文作为比较或当地律师复核材料。标注“保密”不创造中国法上的独立工作成果特权。
+
 ## Matter context
 
 **Matter context.** Check `## Matter workspaces` in the practice-level CLAUDE.md. If `Enabled` is `✗` (the default for in-house users), skip the rest of this paragraph — skills use practice-level context and the matter machinery is invisible. If enabled and there is no active matter, ask: "Which matter is this for? Run `/employment-legal:matter-workspace switch <slug>` or say `practice-level`." Load the active matter's `matter.md` for matter-specific context and overrides. Write outputs to the matter folder at `~/.claude/plugins/config/claude-for-legal-zh/employment-legal/matters/<matter-slug>/`. Never read another matter's files unless `Cross-matter context` is `on`.
@@ -82,8 +84,7 @@ Ask the following in a single block:
 >   manager observation)?
 > - Who is the respondent or subject?
 > - What is the approximate timeframe the alleged conduct occurred?
-> - Is this attorney-directed? (If yes: work product protection applies.
->   If no: flag privilege risk before proceeding.)
+> - Is this attorney-directed? Record the role and purpose; do not infer privilege solely from attorney involvement. Ask the responsible lawyer to assess confidentiality under the applicable law.
 >
 > **Investigation type** (helps me suggest the right sources checklist)
 > - HR: harassment / discrimination / retaliation

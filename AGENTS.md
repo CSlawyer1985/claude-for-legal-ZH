@@ -19,7 +19,12 @@ Codex skills 位于 `.agents/skills/chinese-legal-*`。当用户提出中国法�
 - `chinese-legal-law-student`：法考、IRAC、案例摘要、学习计划
 - `chinese-legal-clinic`：法律诊所、接待、备忘录、结案移交
 - `chinese-legal-builder-hub`：法律技能发现、评估、安装和运营
+- `chinese-legal-research-cn`：法源版本核验、类案对比、争点研究备忘录
+- `chinese-legal-law-practice-cn`：法律咨询分析、一般投诉、法律服务方案与报价
+- `chinese-legal-procurement`：政府采购、招标投标、质疑投诉和合同履行
 - `chinese-legal-*watcher` / `*-grid` / `*-radar`：托管工作流 cookbook 的 Codex 入口
+
+新领域的只读 Agent 分别位于 `legal-research-cn/agents/law-change-watch.md` 和 `procurement-legal/agents/notice-watch.md`；它们不自动定时、发信或提交文件。
 
 ## DeepSeek Harness（dsh）适配入口
 
@@ -27,7 +32,7 @@ dsh 原生扫描 `.dsh/skills`（rank 100，同名时优先于 `.agents/skills`�
 
 - 使用 `.dsh/skills/chinese-legal-*` 中的 dsh 版 adapter（措辞、配置路径、MCP 指引均为 dsh 定制）；同名 Codex adapter 被自动覆盖，无需处理。
 - 用户级安装（`scripts/install-dsh.sh`）后，仓库相对路径以 `cat ~/.dsh/legal-zh/repo` 登记的仓库根目录为基准解析。
-- 法条/案例检索 MCP（元典、chineselaw）的 `cordis.patch.yml` 配置、权限预设与卸载说明见 `INSTALL_DSH.md`。
+- 法条/案例检索 MCP 的官方元典与北大法宝接入边界、权限预设与卸载说明见 `INSTALL_DSH.md` 和 `CONNECTORS.md`。
 
 ## WorkBuddy 适配入口
 

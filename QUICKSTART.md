@@ -50,7 +50,7 @@ scripts/install-dsh.sh
 
 也可以零安装体验：在 dsh web 中直接把本仓库目录添加为工作区，`.dsh/skills` 与 `AGENTS.md` 会被自动发现。
 
-法条/案例检索 MCP（元典、chineselaw）的 `cordis.patch.yml` 配置片段、权限预设与卸载说明见 [INSTALL_DSH.md](INSTALL_DSH.md)。
+法条/案例检索 MCP（元典官方 MCP）的接入路径、权限预设与卸载说明见 [INSTALL_DSH.md](INSTALL_DSH.md)。
 
 ## 在 WorkBuddy 中安装
 
@@ -103,7 +103,7 @@ scripts/install-claude-code.sh
    ```
 
 6. **连接法律检索工具。** 没有连接检索工具时，引用的法规和案例将被标注为"未验证"。
-   本插件已预配置 yuandian（元典）MCP 连接器用于案例检索和法规检索。首次需要时系统会提示授权。
+   各领域已声明元典 MCP 统一入口；是否出现授权提示取决于宿主。先检查连接与工具清单，再用公开问题做一次实际调用。北大法宝可按需接入，详见 [CONNECTORS.md](CONNECTORS.md)。
    也可以手动配置其他中国法律检索工具（北大法宝、威科先行等）。
 
 ## 安装范围：选择用户级（user scope），而非项目级（project scope）
@@ -141,7 +141,7 @@ scripts/install-claude-code.sh
 
 ## 盒子里有什么
 
-13 个业务领域插件，5 个托管 Agent 蓝图，yuandian MCP 连接器。完整参考见 [README.md](README.md)。
+16 个业务领域插件，5 个托管 Agent 蓝图，yuandian MCP 连接器。完整参考见 [README.md](README.md)。
 
 ## 遇到问题？
 

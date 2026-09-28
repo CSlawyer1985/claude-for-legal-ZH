@@ -1,17 +1,10 @@
 {
   "mcpServers": {
-    "飞书": {
-      "type": "http",
-      "url": "https://open.feishu.cn/mcp",
-      "title": "飞书",
-      "description": "即时通讯、文档协作与多维表格 —— 搜索消息、管理云文档、追踪任务进度。"
-    },
     "yuandian": {
-      "type": "stdio",
-      "command": "npx",
-      "args": ["-y", "yuandian-mcp-server"],
-      "title": "yuandian（源点）",
-      "description": "中国法律法规与案例检索 —— 语义搜索法律法规、法条条文、裁判文书，支持案由/法院/地区/日期范围过滤。"
+      "type": "http",
+      "url": "https://open.chineselaw.com/mcp",
+      "title": "华宇元典法律数据",
+      "description": "法规、案例、企业与证券合规检索；连接与认证须在宿主完成，结果仍需原始法源核验。"
     },
     "Slack": {
       "type": "http",

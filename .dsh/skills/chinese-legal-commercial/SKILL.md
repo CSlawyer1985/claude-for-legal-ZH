@@ -41,11 +41,11 @@ When an original instruction says to run `/commercial-legal:some-command`, inter
 
 ## Legal Retrieval MCP
 
-If the active dsh profile mounts the `chineselaw` or `yuandian` MCP servers (see `INSTALL_DSH.md`), prefer `mcp__chineselaw__*` and `mcp__yuandian__*` tools for statute, case, and regulatory verification. Without them, mark time-sensitive legal facts as requiring verification before reliance.
+If the active dsh profile mounts an authenticated legal MCP such as `yuandian` or `pkulaw` (see `INSTALL_DSH.md`), inspect the live tool list before use. Database results are discovery evidence; verify key law, case status, and deadlines against original sources. If unavailable, record the gap and use official public sources where possible.
 
 ## Available Original Skills
 
-`amendment-history`, `cold-start-interview`, `customize`, `escalation-flagger`, `matter-workspace`, `nda-review`, `renewal-tracker`, `review`, `review-proposals`, `saas-msa-review`, `stakeholder-summary`, `vendor-agreement-review`
+`amendment-history`, `cold-start-interview`, `construction-contract-review`, `customize`, `escalation-flagger`, `matter-workspace`, `nda-review`, `renewal-tracker`, `review`, `review-proposals`, `saas-msa-review`, `stakeholder-summary`, `vendor-agreement-review`
 
 ## Legal Output Rules
 

@@ -34,7 +34,7 @@ When an original instruction says to run `/litigation-legal:some-command`, inter
 
 ## Available Original Skills
 
-`brief-section-drafter`, `chronology`, `claim-chart`, `cold-start-interview`, `customize`, `demand-draft`, `demand-intake`, `demand-received`, `deposition-prep`, `legal-hold`, `matter-briefing`, `matter-close`, `matter-intake`, `matter-update`, `matter-workspace`, `oc-status`, `portfolio-status`, `privilege-log-review`, `subpoena-triage`
+`brief-section-drafter`, `chronology`, `claim-chart`, `cold-start-interview`, `customize`, `demand-draft`, `demand-intake`, `demand-received`, `deposition-prep`, `legal-hold`, `matter-briefing`, `matter-close`, `matter-intake`, `matter-update`, `matter-workspace`, `neutral-hearing-outline`, `oc-status`, `portfolio-status`, `privilege-log-review`, `subpoena-triage`
 
 ## Legal Output Rules
 

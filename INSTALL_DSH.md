@@ -66,7 +66,7 @@ dsh 会根据任务匹配 `chinese-legal-*` adapter，再由 adapter 引导读�
 
 ## 可用 dsh skills
 
-13 个领域入口：
+16 个领域入口：
 
 - `chinese-legal-commercial`（商事合同）
 - `chinese-legal-privacy`（数据合规与隐私）
@@ -81,6 +81,9 @@ dsh 会根据任务匹配 `chinese-legal-*` adapter，再由 adapter 引导读�
 - `chinese-legal-law-student`（法学学习与法考）
 - `chinese-legal-clinic`（法律诊所）
 - `chinese-legal-builder-hub`（法律技能运营）
+- `chinese-legal-research-cn`（中国法研究）
+- `chinese-legal-law-practice-cn`（中国律师业务）
+- `chinese-legal-procurement`（政府采购与招标投标）
 
 5 个托管工作流入口：
 
@@ -101,35 +104,11 @@ dsh 会根据任务匹配 `chinese-legal-*` adapter，再由 adapter 引导读�
 
 ## MCP 连接器配置（法条与案例检索）
 
-各领域 `.mcp.json` 预置的连接器在 dsh 中通过 profile 的 `cordis.patch.yml` 挂载，工具命名与 Claude Code 一致（`mcp__<server>__<tool>`）。编辑 `~/.dsh/profiles/web/cordis.patch.yml`（使用桌面端或 `dsh web` 时对应 `web` profile），追加：
+元典现行官方入口为 `https://open.chineselaw.com/mcp`。DSH 可按[元典官方接入页](https://open.chineselaw.com/mcp-config/)与[官方 dsh 插件项目](https://github.com/yuandian-ailaw/yuandian_dsh_plugin)接入：先检查官方发布版本、兼容范围和包摘要，再由用户在宿主设置页选择 OAuth 或 API Key，最后以公开法条做一次真实调用。旧版 `https://mcp.yuandian.com/mcp` 配置片段不再推荐；不要在仓库或 patch 文件中保存凭据。
 
-```yaml
-- insert:
-    # 元典法律AI：案例语义检索、法规检索、企业信息查询（http）
-    - id: mcp-yuandian
-      name: '@deepseek-ai/dsh-mcp-client'
-      config:
-        serverName: yuandian
-        transport: streamable-http
-        url: https://mcp.yuandian.com/mcp
+北大法宝的 [MCP 接入指南](https://mcp.pkulaw.com/docs) 提供法规、案例、引用校验等独立端点，须用用户自己的 Access Token 在宿主配置。其公开地址登记于 `connectors/catalog.json`，本仓库没有替用户启用。
 
-    # chineselaw：法规/案例/企业信息检索（stdio，需要 API key）
-    - id: mcp-chineselaw
-      name: '@deepseek-ai/dsh-mcp-client'
-      config:
-        serverName: chineselaw
-        transport: stdio
-        command: npx
-        args: ['-y', 'chineselaw-mcp']
-        env:
-          CHINESELAW_API_KEY: !!js process.env.CHINESELAW_API_KEY
-```
-
-要点：
-
-- `CHINESELAW_API_KEY` 通过 `!!js` 从环境变量读取，**不要把密钥明文写进 patch 文件**；
-- 保存后 dsh 的 HMR 会自动断线重连该 MCP 服务，无需重启进程；
-- 没有挂载任何法律检索 MCP 时，adapter 会把法规、案例、期限等时效性内容标注为“需验证”，依赖前请用可靠来源核验。
+DSH adapter 的工具名以当前实际加载清单为准。未授权、无权限、额度不足或服务未挂载时，记录失败状态并改走官方网页核验，不将检索失败解释为法律不存在，也不以模型知识补足关键法条或期限。
 
 ## 权限预设建议（可选）
 

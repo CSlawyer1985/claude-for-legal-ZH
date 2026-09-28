@@ -57,7 +57,7 @@ scripts/install-workbuddy.sh copy
 
 ## 可用 WorkBuddy skills
 
-13 个领域入口（`chinese-legal-commercial`、`chinese-legal-privacy`、`chinese-legal-product`、`chinese-legal-corporate`、`chinese-legal-employment`、`chinese-legal-regulatory`、`chinese-legal-ai-governance`、`chinese-legal-litigation`、`chinese-legal-criminal`、`chinese-legal-ip`、`chinese-legal-law-student`、`chinese-legal-clinic`、`chinese-legal-builder-hub`）+ 5 个托管工作流入口（`chinese-legal-diligence-grid`、`chinese-legal-docket-watcher`、`chinese-legal-launch-radar`、`chinese-legal-reg-monitor`、`chinese-legal-renewal-watcher`），与 Codex、dsh 适配层同名同构。
+16 个领域入口（`chinese-legal-commercial`、`chinese-legal-privacy`、`chinese-legal-product`、`chinese-legal-corporate`、`chinese-legal-employment`、`chinese-legal-regulatory`、`chinese-legal-ai-governance`、`chinese-legal-litigation`、`chinese-legal-criminal`、`chinese-legal-ip`、`chinese-legal-law-student`、`chinese-legal-clinic`、`chinese-legal-builder-hub`、`chinese-legal-research-cn`、`chinese-legal-law-practice-cn`、`chinese-legal-procurement`）+ 5 个托管工作流入口（`chinese-legal-diligence-grid`、`chinese-legal-docket-watcher`、`chinese-legal-launch-radar`、`chinese-legal-reg-monitor`、`chinese-legal-renewal-watcher`），与 Codex、dsh 适配层同名同构。
 
 ## 配置画像
 
@@ -70,26 +70,9 @@ scripts/install-workbuddy.sh copy
 
 ## MCP 法律检索配置
 
-WorkBuddy 的 MCP 配置文件为 `~/.workbuddy/mcp.json`，采用标准 `mcpServers` 格式。接入法条与案例检索服务的最小示例：
+WorkBuddy 用户先核对当前版本的连接器能力及已加载服务；可按[元典官方接入页](https://open.chineselaw.com/mcp-config/)及[北大法宝官方指南](https://mcp.pkulaw.com/docs)选择接入方式。手动配置时，元典统一入口为 `https://open.chineselaw.com/mcp`，北大法宝端点列在 `connectors/catalog.json`。认证凭据必须保存在 WorkBuddy 的受限配置中，不写入本仓库。
 
-```json
-{
-  "mcpServers": {
-    "chineselaw": {
-      "type": "stdio",
-      "command": "npx",
-      "args": ["-y", "chineselaw-mcp"],
-      "env": { "CHINESELAW_API_KEY": "你的-api-key" }
-    },
-    "yuandian": {
-      "type": "http",
-      "url": "https://mcp.yuandian.com/mcp"
-    }
-  }
-}
-```
-
-未配置任何法律检索服务时，adapter 会把法规、案例、期限等时效性内容标注为“需验证”，依赖前请用可靠来源核验。
+配置后查看当前工具清单，再用不含客户信息的公开法条或案例做一次实际调用。连接器未加载或调用失败时，保留失败状态并改用官方来源核验；不能把配置文件存在当作服务可用。
 
 ## 已知边界
 

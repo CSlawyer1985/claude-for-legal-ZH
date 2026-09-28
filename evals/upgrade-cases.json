@@ -1,0 +1,66 @@
+{
+  "evaluation_type": "static_route_and_boundary_contract",
+  "provider_backed": false,
+  "cases": [
+    {
+      "prompt": "核对某法规第二条在交易发生日的原文及施行版本",
+      "expected_skill": "legal-research-cn/skills/authority-check/SKILL.md",
+      "boundary": "版本"
+    },
+    {
+      "prompt": "比较两份已公开裁判文书与本案的关键事实差异",
+      "expected_skill": "legal-research-cn/skills/case-comparison/SKILL.md",
+      "boundary": "不利"
+    },
+    {
+      "prompt": "判断某国企项目是否适用政府采购制度",
+      "expected_skill": "procurement-legal/skills/regime-triage/SKILL.md",
+      "boundary": "资金"
+    },
+    {
+      "prompt": "送达日期不明，判断政府采购投诉是否已经逾期",
+      "expected_skill": "procurement-legal/skills/challenge-complaint/SKILL.md",
+      "boundary": "不断言"
+    },
+    {
+      "prompt": "以仲裁员身份准备双方对称的庭审发问",
+      "expected_skill": "litigation-legal/skills/neutral-hearing-outline/SKILL.md",
+      "boundary": "中立"
+    },
+    {
+      "prompt": "站在承包人角度审查施工合同的签证、工期与结算",
+      "expected_skill": "commercial-legal/skills/construction-contract-review/SKILL.md",
+      "boundary": "角色"
+    },
+    {
+      "prompt": "股权收购尽调材料逐件入账并制作事实证据矩阵",
+      "expected_skill": "corporate-legal/skills/diligence-evidence-matrix/SKILL.md",
+      "boundary": "全量"
+    },
+    {
+      "prompt": "对比某政府采购项目的新公告和澄清附件",
+      "expected_skill": "procurement-legal/agents/notice-watch.md",
+      "boundary": "不自动"
+    },
+    {
+      "prompt": "为客户复杂法律问题准备可追溯的咨询意见",
+      "expected_skill": "law-practice-cn/skills/consultation-analysis/SKILL.md",
+      "boundary": "待核事实"
+    },
+    {
+      "prompt": "起草法律服务报价方案并评估是否能用风险代理",
+      "expected_skill": "law-practice-cn/skills/legal-service-proposal/SKILL.md",
+      "boundary": "风险代理"
+    },
+    {
+      "prompt": "处理并非政府采购事项的一般行政投诉",
+      "expected_skill": "law-practice-cn/skills/complaint-triage/SKILL.md",
+      "boundary": "政府采购"
+    },
+    {
+      "prompt": "为一场中国法讲座准备最新法源与案例",
+      "expected_skill": "legal-research-cn/skills/lecture-source-pack/SKILL.md",
+      "boundary": "讲座日期"
+    }
+  ]
+}

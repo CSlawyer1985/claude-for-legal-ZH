@@ -2,9 +2,9 @@
   "mcpServers": {
     "yuandian": {
       "type": "http",
-      "url": "https://mcp.yuandian.com/mcp",
-      "title": "元典法律AI",
-      "description": "案例语义检索、法规检索、企业信息查询——中国法律智能检索平台。"
+      "url": "https://open.chineselaw.com/mcp",
+      "title": "华宇元典法律数据",
+      "description": "法规、案例、企业与证券合规检索；连接与认证须在宿主完成，结果仍需原始法源核验。"
     },
     "filesystem": {
       "type": "local",

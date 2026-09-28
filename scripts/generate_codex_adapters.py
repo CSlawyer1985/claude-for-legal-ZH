@@ -78,10 +78,25 @@ DOMAINS = {
         "display": "法律诊所",
         "triggers": "法律诊所、学生案件接待、诊所备忘录、研究路线、结案移交、指导老师审阅、当事人沟通",
     },
+    "law-practice-cn": {
+        "codex_name": "chinese-legal-law-practice-cn",
+        "display": "中国律师业务",
+        "triggers": "法律咨询分析、客户法律答复、法律服务方案、律师报价、一般投诉分流、举报申诉",
+    },
     "legal-builder-hub": {
         "codex_name": "chinese-legal-builder-hub",
         "display": "法律技能运营",
         "triggers": "查找法律技能、评估社区技能、安装法律技能、技能安全审查、法律工作流构建、法律运营",
+    },
+    "legal-research-cn": {
+        "codex_name": "chinese-legal-research-cn",
+        "display": "中国法研究",
+        "triggers": "法源核验、法规版本、类案对比、案例状态、法律检索、争点研究备忘录、法律讲座备课",
+    },
+    "procurement-legal": {
+        "codex_name": "chinese-legal-procurement",
+        "display": "政府采购与招标投标",
+        "triggers": "政府采购、采购文件审查、投标资格、评分规则、质疑投诉、采购合同履行",
     },
 }
 
