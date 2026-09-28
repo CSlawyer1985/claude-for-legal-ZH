@@ -4,7 +4,7 @@
 <meta charset='utf-8' />
 <meta name='viewport' content='width=device-width, initial-scale=1' />
 <title>Claude for Legal ZH — 面向中国法律实务的法律技能插件集（Claude Code · DeepSeek Harness · Codex · WorkBuddy）。</title>
-<meta name='description' content='Claude for Legal ZH 是 Claude for Legal 的中国法适配版本：包含 13 个业务领域插件、157 个技能文件、MCP 连接器、托管 Agent 实践方案，以及适用于中国法工作的安全边界。同一套技能与工作流，可在 Claude Code、DeepSeek Harness（dsh）、Codex 与 WorkBuddy 中运行。' />
+<meta name='description' content='Claude for Legal ZH 是 Claude for Legal 的中国法适配版本：包含 16 个业务领域插件、174 个技能文件、MCP 连接器、托管 Agent 实践方案，以及适用于中国法工作的安全边界。同一套技能与工作流，可在 Claude Code、DeepSeek Harness（dsh）、Codex 与 WorkBuddy 中运行。' />
 <link rel='icon' href='data:,' />
 <link rel='preconnect' href='https://fonts.googleapis.com' />
 <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
@@ -1009,6 +1009,7 @@ section.tight { padding: 90px 0; }
 }
 .pill {
   padding: 9px 18px;
+  text-decoration: none;
   border-radius: 999px;
   border: 1px solid var(--line);
   font-family: var(--sans);
@@ -1131,6 +1132,53 @@ section.tight { padding: 90px 0; }
   align-self: flex-start;
 }
 .lab .arrow-mark svg { width: 11px; height: 11px; stroke: currentColor; fill: none; stroke-width: 1.6; }
+.upgrade-panel {
+  margin-top: 72px;
+  padding: 28px 30px 30px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--bone);
+}
+.upgrade-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+.upgrade-head .label { margin: 0; }
+.upgrade-head .meta, .upgrade-foot {
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--ink-mute);
+  letter-spacing: 0.04em;
+}
+.upgrade-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  padding: 28px 0;
+}
+.upgrade-item { color: var(--ink); text-decoration: none; }
+.upgrade-item .num {
+  display: block;
+  margin-bottom: 12px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--coral);
+}
+.upgrade-item h3 {
+  margin: 0 0 10px;
+  font-family: var(--sans);
+  font-size: 20px;
+  letter-spacing: -0.02em;
+}
+.upgrade-item h3::after { content: ' ↗'; color: var(--coral); font-size: 15px; }
+.upgrade-item p { margin: 0; font-size: 13px; line-height: 1.65; color: var(--ink-mute); }
+.upgrade-item:hover h3 { color: var(--coral); }
+.upgrade-foot { border-top: 1px solid var(--line); padding-top: 18px; line-height: 1.6; }
+.upgrade-foot a { color: var(--coral); text-decoration: none; border-bottom: 1px solid currentColor; }
 .labs-foot {
   display: flex;
   align-items: center;
@@ -1919,11 +1967,13 @@ footer {
 @media (max-width: 880px) {
   .container { padding: 0 24px; }
   .hero-grid, .about-grid, .capabilities-grid, .testimonial-grid, .cta-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 50px;
   }
+  .hero-art { height: auto; max-height: none; aspect-ratio: 1 / 1; margin-right: 0; }
   .labs-head, .method-head { grid-template-columns: 1fr; }
   .labs-grid { grid-template-columns: repeat(2, 1fr); }
+  .upgrade-grid { grid-template-columns: 1fr; gap: 24px; }
   .method-grid { grid-template-columns: repeat(2, 1fr); gap: 36px; }
   .method-grid::before { display: none; }
   .work { margin: 0 12px; padding: 60px 24px; }
@@ -1943,11 +1993,24 @@ footer {
 @media (max-width: 560px) {
   .container { padding: 0 16px; }
   .hero h1 { font-size: 38px; }
+  .hero-copy, .hero-art { min-width: 0; }
+  .hero-actions, .hero-foot { flex-wrap: wrap; }
+  .hero-stats { flex-wrap: wrap; gap: 14px; }
+  .capabilities-art .ribbon, .cta-art .ribbon { display: none; }
   .labs-grid { grid-template-columns: 1fr; }
   .cards { grid-template-columns: 1fr; }
   .pills { justify-content: flex-start; }
+  .topbar-inner .right > span { display: none; }
+  .upgrade-panel { padding: 24px 20px; }
+  .upgrade-head { display: block; }
+  .upgrade-head .meta { display: block; margin-top: 12px; }
+  .method-foot { align-items: flex-start; flex-direction: column; gap: 14px; }
+  .method-foot .right { max-width: 100%; overflow-wrap: anywhere; }
   section { padding: 80px 0; }
   .topbar-inner { font-size: 9px; }
+}
+@media (max-width: 360px) {
+  .topbar-inner .right { display: none; }
 }
 
 .code-inline {
@@ -1963,7 +2026,7 @@ footer {
 <body>
 
 <div class='side-rail right' data-od-id='rail-right'>
-  <span class='rail-text'>Claude for Legal ZH — 13 个插件 · 157 个技能 · 中国法来源</span>
+  <span class='rail-text'>Claude for Legal ZH — 16 个插件 · 174 个技能 · 中国法来源</span>
 </div>
 <div class='side-rail left' data-od-id='rail-left'>
   <span class='rail-text'>民法典 · 个保法 · 公司法 · 诉讼 · 合规</span>
@@ -1993,9 +2056,9 @@ footer {
     </a>
     <nav>
       <ul class='nav-links'>
-          <li><a href='https://github.com/CSlawyer1985/claude-for-legal-ZH#技能与命令参考' target='_blank' rel='noreferrer noopener'>技能<span class='num'>157</span></a></li>
-          <li><a href='https://github.com/CSlawyer1985/claude-for-legal-ZH#agent-列表' target='_blank' rel='noreferrer noopener'>Agent<span class='num'>10</span></a></li>
-          <li><a href='https://github.com/CSlawyer1985/claude-for-legal-ZH/blob/main/CONNECTORS.md' target='_blank' rel='noreferrer noopener'>连接器<span class='num'>09</span></a></li>
+          <li><a href='https://github.com/CSlawyer1985/claude-for-legal-ZH#技能与命令参考' target='_blank' rel='noreferrer noopener'>技能<span class='num'>174</span></a></li>
+          <li><a href='https://github.com/CSlawyer1985/claude-for-legal-ZH#agent-列表' target='_blank' rel='noreferrer noopener'>Agent<span class='num'>12</span></a></li>
+          <li><a href='https://github.com/CSlawyer1985/claude-for-legal-ZH/blob/main/CONNECTORS.md' target='_blank' rel='noreferrer noopener'>连接器<span class='num'>04</span></a></li>
           <li><a href='https://github.com/CSlawyer1985/claude-for-legal-ZH/blob/main/QUICKSTART.md' target='_blank' rel='noreferrer noopener'>快速开始</a></li>
           <li><a href='https://github.com/CSlawyer1985/claude-for-legal-ZH' target='_blank' rel='noreferrer noopener'>仓库</a></li>
       </ul>
@@ -2024,7 +2087,7 @@ footer {
     <div class='hero-copy'>
       <span class='label' data-reveal>中国法 Agent 框架 <span class='ix'>· Nº 01</span></span>
       <h1 class='display' data-reveal>为<em>中国法律实务</em>重构 Claude for Legal<span class='dot'>.</span></h1>
-      <p class='lead' data-reveal>这是 Claude for Legal 的中国法适配版：以业务领域插件、命令式技能、MCP 连接器和托管 Agent 蓝图，覆盖合同、公司、劳动、个保、产品合规、诉讼、监管追踪、AI 治理、知识产权、法律诊所和法学生训练等场景。同一套技能与工作流，可在 Claude Code、DeepSeek Harness（dsh）、Codex 与 WorkBuddy 中运行。</p>
+      <p class='lead' data-reveal>这是 Claude for Legal 的中国法适配版：16 个业务领域插件、174 个技能和 12 个领域 Agent，覆盖合同、公司、劳动、个保、诉讼、刑事、法律研究、政府采购与律师客户服务等工作。同一套技能与工作流，可在 Claude Code、DeepSeek Harness（dsh）、Codex 与 WorkBuddy 中运行。</p>
       <div class='hero-actions' data-reveal>
         <a class='btn btn-primary' href='https://github.com/CSlawyer1985/claude-for-legal-ZH' target='_blank' rel='noreferrer noopener'>
           打开 GitHub 仓库
@@ -2037,16 +2100,16 @@ footer {
       </div>
       <div class='hero-stats' data-reveal>
           <div class='stat'>
-    <span class='ring solid'>13</span>
+    <span class='ring solid'>16</span>
     <span class='stat-label'><b>插件</b>业务领域</span>
   </div>
           <div class='stat'>
-    <span class='ring'>157</span>
+    <span class='ring'>174</span>
     <span class='stat-label'><b>技能</b>命令工作流</span>
   </div>
           <div class='stat'>
-    <span class='ring coral'>10</span>
-    <span class='stat-label'><b>Agent</b>定时流程</span>
+    <span class='ring coral'>12</span>
+    <span class='stat-label'><b>Agent</b>按需或定时</span>
   </div>
       </div>
       <div class='hero-foot' data-reveal>
@@ -2074,13 +2137,13 @@ footer {
   </div>
 </section>
 
-<section class='wire' data-od-id='wire' aria-label='Global wire — cities and contributors'>
+<section class='wire' data-od-id='wire' aria-label='法律工作流索引'>
   <div class='container wire-inner'>
     <div class='wire-left'>
       <span class='wire-mark' aria-hidden='true'><span class='wire-pulse'></span></span>
       <span class='wire-title'>
         <b>实务地图</b>
-        <span>Open · 10 cities · 4 contributors</span>
+        <span>Open · 16 domains · 4 runtimes</span>
       </span>
     </div>
     <div class='wire-rows'>
@@ -2198,8 +2261,8 @@ footer {
     <svg class='icon' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5'>
       <rect x='4' y='4' width='7' height='7'/><rect x='13' y='4' width='7' height='7'/><rect x='4' y='13' width='7' height='7'/><rect x='13' y='13' width='7' height='7'/>
     </svg>
-    <h3>13 个业务<br/>套件</h3>
-    <p>商事、公司、劳动、隐私、产品、监管、AI 治理、知识产权、诉讼、法律诊所、法学生和构建者中心。</p>
+    <h3>16 个业务<br/>套件</h3>
+    <p>商事、公司、劳动、隐私、产品、监管、AI 治理、知识产权、诉讼、刑事、政府采购、中国法研究、律师业务、法律诊所、法学生和构建者中心。</p>
     <a class='arrow-mark' href='https://github.com/CSlawyer1985/claude-for-legal-ZH#业务领域插件' target='_blank' rel='noreferrer noopener' aria-label='Learn more about 插件'>
       <svg viewBox='0 0 24 24'><path d='M5 19L19 5M19 5H8M19 5v11'/></svg>
     </a>
@@ -2209,7 +2272,7 @@ footer {
     <svg class='icon' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5'>
       <path d='M5 7h14M5 12h14M5 17h9'/><circle cx='17' cy='17' r='2.5'/>
     </svg>
-    <h3>157 个命令<br/>工作流</h3>
+    <h3>174 个命令<br/>工作流</h3>
     <p>审合同、搭请求权图表、生成 PIA、分流 AI 场景、起草法律保全、梳理尽调问题等。</p>
     <a class='arrow-mark' href='https://github.com/CSlawyer1985/claude-for-legal-ZH#技能与命令参考' target='_blank' rel='noreferrer noopener' aria-label='Learn more about 技能'>
       <svg viewBox='0 0 24 24'><path d='M5 19L19 5M19 5H8M19 5v11'/></svg>
@@ -2221,7 +2284,7 @@ footer {
       <circle cx='7' cy='12' r='3.5'/><circle cx='17' cy='12' r='3.5'/><path d='M10.5 12h3'/>
     </svg>
     <h3>MCP 来源<br/>连接器</h3>
-    <p>元典、飞书、Google Drive、北大法宝、威科先行、e签宝、法大大、聚法案例以及官方监管来源。</p>
+    <p>元典为默认法律 MCP 声明；北大法宝、威科先行、聚法按需接入。官方法规、案例与采购网站用于原文核验。</p>
     <a class='arrow-mark' href='https://github.com/CSlawyer1985/claude-for-legal-ZH/blob/main/CONNECTORS.md' target='_blank' rel='noreferrer noopener' aria-label='Learn more about 连接'>
       <svg viewBox='0 0 24 24'><path d='M5 19L19 5M19 5H8M19 5v11'/></svg>
     </a>
@@ -2231,8 +2294,8 @@ footer {
     <svg class='icon' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5'>
       <path d='M6 7h12v10H6z'/><path d='M9 10h6M9 14h4'/><path d='M12 3v4M12 17v4'/>
     </svg>
-    <h3>托管 Agent<br/>蓝图</h3>
-    <p>监管监控、续约提醒、尽调网格、上线雷达、案件进度跟踪，并附带可迁移的 steering 示例。</p>
+    <h3>领域 Agent<br/>与蓝图</h3>
+    <p>12 个领域 Agent 涉及法规、采购公告、续约和案件监测；另有 5 个可迁移的托管工作流蓝图。</p>
     <a class='arrow-mark' href='https://github.com/CSlawyer1985/claude-for-legal-ZH/tree/main/managed-agent-cookbooks' target='_blank' rel='noreferrer noopener' aria-label='Learn more about Agent'>
       <svg viewBox='0 0 24 24'><path d='M5 19L19 5M19 5H8M19 5v11'/></svg>
     </a>
@@ -2250,21 +2313,21 @@ footer {
     <span class='meta-grp'>
       <span>业务目录</span>
       <span class='dot-mark'>•</span>
-      <span>五个入口</span>
+      <span>五个切入口 / 三个新增领域</span>
     </span>
     <span>004 / 008</span>
   </div>
     <div class='labs-head'>
       <div data-reveal>
         <span class='label'>实务入口 <span class='ix'>· Nº 04</span></span>
-        <h2 class='display' style='margin-top:30px;'>从法律工作中<em>最痛的地方</em>开始：合同、数据、争议、合规<span class='dot'>.</span></h2>
+        <h2 class='display' style='margin-top:30px;'>从具体法律工作开始：<em>交易、争议、研究</em>与采购<span class='dot'>.</span></h2>
       </div>
-      <div class='pills' data-reveal='right'>
-          <button class='pill active'>全部<span class='count'>12</span></button>
-          <button class='pill'>交易<span class='count'>04</span></button>
-          <button class='pill'>争议<span class='count'>01</span></button>
-          <button class='pill'>合规<span class='count'>03</span></button>
-          <button class='pill'>学习<span class='count'>02</span></button>
+      <div class='pills' data-reveal='right' aria-label='业务领域快捷入口'>
+          <a class='pill active' href='https://github.com/CSlawyer1985/claude-for-legal-ZH#业务领域插件' target='_blank' rel='noreferrer noopener'>全部<span class='count'>16</span></a>
+          <a class='pill' href='https://github.com/CSlawyer1985/claude-for-legal-ZH/tree/main/legal-research-cn' target='_blank' rel='noreferrer noopener'>法律研究</a>
+          <a class='pill' href='https://github.com/CSlawyer1985/claude-for-legal-ZH/tree/main/procurement-legal' target='_blank' rel='noreferrer noopener'>政府采购</a>
+          <a class='pill' href='https://github.com/CSlawyer1985/claude-for-legal-ZH/tree/main/law-practice-cn' target='_blank' rel='noreferrer noopener'>律师业务</a>
+          <a class='pill' href='https://github.com/CSlawyer1985/claude-for-legal-ZH/tree/main/criminal-legal' target='_blank' rel='noreferrer noopener'>刑事</a>
       </div>
     </div>
     <div class='labs-meta'>
@@ -2311,11 +2374,35 @@ footer {
     <a class='arrow-mark' href='https://github.com/CSlawyer1985/claude-for-legal-ZH/tree/main/ai-governance-legal' target='_blank' rel='noreferrer noopener' aria-label='Open AI 治理雷达'><svg viewBox='0 0 24 24'><path d='M5 19L19 5M19 5H8M19 5v11'/></svg></a>
   </div>
     </div>
+    <div class='upgrade-panel' data-reveal>
+      <div class='upgrade-head'>
+        <span class='label'>2026.09 / 本次升级</span>
+        <span class='meta'>新增 03 个领域 · 17 个技能 · 02 个只读监测 Agent</span>
+      </div>
+      <div class='upgrade-grid'>
+        <a class='upgrade-item' href='https://github.com/CSlawyer1985/claude-for-legal-ZH/tree/main/legal-research-cn' target='_blank' rel='noreferrer noopener'>
+          <span class='num'>01 / RESEARCH</span>
+          <h3>中国法研究</h3>
+          <p>法源与版本核验、类案可比性、争点备忘录和讲座来源包；法源变化监测仅记录公开来源线索。</p>
+        </a>
+        <a class='upgrade-item' href='https://github.com/CSlawyer1985/claude-for-legal-ZH/tree/main/procurement-legal' target='_blank' rel='noreferrer noopener'>
+          <span class='num'>02 / PROCUREMENT</span>
+          <h3>政府采购</h3>
+          <p>区分政府采购与招投标制度，审查采购文件、质疑投诉及履约；公告监测为只读工作流。</p>
+        </a>
+        <a class='upgrade-item' href='https://github.com/CSlawyer1985/claude-for-legal-ZH/tree/main/law-practice-cn' target='_blank' rel='noreferrer noopener'>
+          <span class='num'>03 / PRACTICE</span>
+          <h3>律师客户服务</h3>
+          <p>咨询分析、一般投诉分流、法律服务方案与报价；服务边界、收费规则和最终意见由律师确认。</p>
+        </a>
+      </div>
+      <div class='upgrade-foot'>元典为默认法律 MCP 声明；北大法宝、威科先行、聚法提供按需接入资料。实际调用仍需宿主认证与工具验证。<a href='https://github.com/CSlawyer1985/claude-for-legal-ZH/blob/main/CONNECTORS.md' target='_blank' rel='noreferrer noopener'>查看连接器状态 ↗</a></div>
+    </div>
     <div class='labs-foot'>
       <div class='progress'>
         <span class='on'></span><span class='on'></span><span class='on'></span><span class='on'></span><span class='on'></span><span></span><span></span><span></span>
       </div>
-      <span class='meta'>13 个插件 · 157 个技能 · <a class='library-link' href='https://github.com/CSlawyer1985/claude-for-legal-ZH#业务领域插件' target='_blank' rel='noreferrer noopener' style='color:var(--coral);'>查看模块 →</a></span>
+      <span class='meta'>16 个插件 · 174 个技能 · <a class='library-link' href='https://github.com/CSlawyer1985/claude-for-legal-ZH#业务领域插件' target='_blank' rel='noreferrer noopener' style='color:var(--coral);'>查看模块 →</a></span>
     </div>
   </div>
 </section>
@@ -2397,7 +2484,7 @@ footer {
       <a class='work-card' data-reveal href='https://github.com/CSlawyer1985/claude-for-legal-ZH/tree/main/commercial-legal' target='_blank' rel='noreferrer noopener'>
     <div class='label-row'>
       <span class='small-label'>重点插件</span>
-      <span class='index'>01 / 13</span>
+      <span class='index'>01 / 16</span>
     </div>
     <h3>commercial-legal</h3>
     <p>面向供应商协议、NDA、SaaS MSA、续约跟踪、问题升级和面向业务方摘要的合同审查套件。</p>
@@ -2410,7 +2497,7 @@ footer {
       <a class='work-card alt' data-reveal href='https://github.com/CSlawyer1985/claude-for-legal-ZH/tree/main/litigation-legal' target='_blank' rel='noreferrer noopener'>
     <div class='label-row'>
       <span class='small-label'>深度实务模块</span>
-      <span class='index'>09 / 13</span>
+      <span class='index'>09 / 16</span>
     </div>
     <h3>litigation-legal</h3>
     <p>覆盖案件接收、组合状态、法律保全、时间线、请求权图表、证据审查、律师函和诉讼文书片段。</p>
@@ -2422,8 +2509,8 @@ footer {
   </a>
     </div>
     <div class='work-arrows'>
-      <button class='nav-btn'><svg width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.6'><path d='M14 6l-6 6 6 6'/></svg></button>
-      <button class='nav-btn active'><svg width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.6'><path d='M10 6l6 6-6 6'/></svg></button>
+      <a class='nav-btn' href='#labs' aria-label='返回实务入口'><svg width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.6'><path d='M14 6l-6 6 6 6'/></svg></a>
+      <a class='nav-btn active' href='https://github.com/CSlawyer1985/claude-for-legal-ZH#业务领域插件' target='_blank' rel='noreferrer noopener' aria-label='查看全部业务领域插件'><svg width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.6'><path d='M10 6l6 6-6 6'/></svg></a>
     </div>
   </div>
 </section>
@@ -2533,7 +2620,7 @@ footer {
         </div>
         <div class='cta-foot'>
           <span class='stamp'>● 在线</span>
-          <span>2026.05.14 / Apache License, Version 2.0</span>
+          <span>2026.09 / Apache License, Version 2.0</span>
           <span style='margin-left:auto;'>31.2304° N · 121.4737° E</span>
         </div>
       </div>

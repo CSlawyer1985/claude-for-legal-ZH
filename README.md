@@ -11,20 +11,27 @@
   <br>
   <b>为最常见的中国法律工作流提供的参考 Agent、技能和数据连接器</b>
   <br>
-  涵盖商事合同 · 隐私数据 · 产品合规 · 公司并购 · 劳动用工 · 争议解决 · 监管合规 · AI 治理 · 知识产权 · 法学教育 · 法律诊所
+  涵盖商事合同 · 公司并购 · 劳动用工 · 争议解决 · 刑事辩护 · 中国法研究 · 政府采购 · 律师客户服务 · 数据与 AI 合规 · 法学教育
   <br>
   <b>一套中国法律技能插件集，多端运行：Claude Code · DeepSeek Harness（dsh） · Codex · WorkBuddy</b>
 </p>
 
 ---
 
-> **新用户？** 从 [QUICKSTART.md](QUICKSTART.md) 开始——60 秒完成安装。本文是完整参考手册。
+> **新用户？** 先看[项目网页](https://cslawyer1985.github.io/claude-for-legal-ZH/)，再从 [QUICKSTART.md](QUICKSTART.md) 开始安装。本文是完整参考手册。
 
 <p align="center">
   <img src="docs/assets/hero.png" alt="Claude for Legal 中国法版本 — 着陆页 Hero" width="800">
 </p>
 
-本仓库是一套**面向中国法律实务的通用插件集**——以 13 个业务领域的技能、领域规则与法律工作流为主体，内嵌参考材料与数据连接器，并可接入外部法律检索知识库（元典、chineselaw 等 MCP）。它不绑定单一 agent 环境：可安装为 [Claude Code](https://claude.com/product/claude-code) 插件，可通过一键脚本接入 [DeepSeek Harness（dsh）](https://github.com/deepseek-ai/deepseek-harness)、**Codex** 或 **WorkBuddy**（腾讯工作智能体），也可通过 [Claude Managed Agents API](https://docs.claude.com/en/api/managed-agents) 部署在你自己的工作流引擎后台。同一套 system prompt，同一套技能——你选择在哪里运行。
+本仓库是一套**面向中国法律实务的通用插件集**——以 16 个业务领域、174 个技能和 12 个领域 Agent 为主体，内嵌参考材料与数据连接器，并可按需接入外部法律检索服务。它不绑定单一 agent 环境：可安装为 [Claude Code](https://claude.com/product/claude-code) 插件，可通过一键脚本接入 [DeepSeek Harness（dsh）](https://github.com/deepseek-ai/deepseek-harness)、**Codex** 或 **WorkBuddy**（腾讯工作智能体），也可通过 [Claude Managed Agents API](https://docs.claude.com/en/api/managed-agents) 部署在你自己的工作流引擎后台。同一套 system prompt，同一套技能——你选择在哪里运行。
+
+### 2026 年 9 月升级
+
+- 新增 `legal-research-cn`、`procurement-legal`、`law-practice-cn` 三个领域；连同商事合同、公司尽调和诉讼模块的补充，合计新增 **17 个技能**。
+- 新增 `law-change-watch` 与 `notice-watch` 两个**只读**监测 Agent；定时运行需在宿主另行配置，不自动发送、提交或改写客户资料。
+- 元典作为默认法律 MCP 声明；北大法宝、威科先行和聚法提供按需接入资料。配置存在不代表已认证或实测可用，参见 [CONNECTORS.md](CONNECTORS.md)。
+- [项目网页](https://cslawyer1985.github.io/claude-for-legal-ZH/) 与本页同步展示现有领域和数量；升级依据、静态验证及未验证项见[升级盘点](docs/upgrade-audit-2026-09.md)。
 
 ## 在 Claude Code 中安装
 
@@ -68,7 +75,7 @@
 
 ### DeepSeek Harness（dsh）
 
-[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 是 DeepSeek 官方开源的 agent harness（Web UI / CLI / headless）。本仓库提供 **dsh 原生适配层**：18 个 `chinese-legal-*` adapter skill、一键安装脚本、法条检索 MCP 配置片段与权限预设模板。
+[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 是 DeepSeek 官方开源的 agent harness（Web UI / CLI / headless）。本仓库提供 **dsh 原生适配层**：21 个 `chinese-legal-*` adapter skill、一键安装脚本、法条检索 MCP 接入说明与权限预设模板。
 
 ```bash
 scripts/install-dsh.sh    # 默认符号链接安装到 ~/.dsh/skills，git pull 即更新
@@ -77,7 +84,7 @@ scripts/install-dsh.sh    # 默认符号链接安装到 ~/.dsh/skills，git pull
 - **原生技能发现**——`.dsh/skills` 是 dsh 官方扫描根目录，适配层自动进入技能目录，热更新无需重启
 - **零安装体验**——把本仓库目录直接添加为 dsh 工作区即可使用（`AGENTS.md`、`CLAUDE.md` 指令自动注入）
 - **全局法律工作守则**——安装脚本向 `~/.dsh/AGENTS.md` 幂等写入“律师审查草稿、时效内容需验证”等底线规则
-- **法条检索 MCP**——元典（yuandian）与 chineselaw 的 `cordis.patch.yml` 现成配置，工具命名与 Claude Code 一致（`mcp__<server>__<tool>`）
+- **法条检索 MCP**——元典官方 MCP 接入说明及按需授权配置，工具命名与 Claude Code 一致（`mcp__<server>__<tool>`）
 - **权限预设**——legal-readonly / matter-write / export-only 三档，与法律项目 `input/`、`scratch/`、`output/` 三层目录的合规边界对齐
 
 ### Codex
@@ -86,11 +93,11 @@ scripts/install-dsh.sh    # 默认符号链接安装到 ~/.dsh/skills，git pull
 scripts/install-codex.sh    # 默认符号链接安装到 ~/.codex/skills
 ```
 
-Codex Desktop / CLI 适配层提供同样的 18 个 `chinese-legal-*` adapter skill，自然语言下达任务即可，无需输入 Claude Code slash command。
+Codex Desktop / CLI 适配层提供同样的 21 个 `chinese-legal-*` adapter skill，自然语言下达任务即可，无需输入 Claude Code slash command。
 
 ### WorkBuddy
 
-[WorkBuddy](https://cloud.tencent.com/document/product/1831/134432) 是腾讯出品的工作智能体（桌面端 / 移动端 / 鸿蒙），其技能体系与 Claude Code 同属 SKILL.md 生态。本仓库提供 WorkBuddy 原生适配层：18 个 `chinese-legal-*` adapter skill（中文 description 含触发词，匹配其自动调用机制）+ 一键安装脚本。
+[WorkBuddy](https://cloud.tencent.com/document/product/1831/134432) 是腾讯出品的工作智能体（桌面端 / 移动端 / 鸿蒙），其技能体系与 Claude Code 同属 SKILL.md 生态。本仓库提供 WorkBuddy 原生适配层：21 个 `chinese-legal-*` adapter skill（中文 description 含触发词，匹配其自动调用机制）+ 一键安装脚本。
 
 ```bash
 scripts/install-workbuddy.sh    # 默认符号链接安装到 ~/.workbuddy/skills
@@ -98,8 +105,8 @@ scripts/install-workbuddy.sh    # 默认符号链接安装到 ~/.workbuddy/skill
 
 - **中文触发优化**——adapter 描述为中文并标注触发词，契合 WorkBuddy 按 description 自动匹配技能的机制
 - **零安装体验**——把本仓库目录作为 WorkBuddy 项目目录打开即可（项目级 `.workbuddy/skills` 自动发现）
-- **MCP 同构配置**——`~/.workbuddy/mcp.json` 采用标准 `mcpServers` 格式，元典、chineselaw 等法律检索服务可直接接入
-- **技能市场可分发**——18 个 adapter 可按 WorkBuddy 技能包规范打包上传，企业版可内部统一分发
+- **MCP 同构配置**——`~/.workbuddy/mcp.json` 采用标准 `mcpServers` 格式，元典等法律检索服务需按宿主流程授权后验证
+- **技能市场可分发**——21 个 adapter 可按 WorkBuddy 技能包规范打包上传，企业版可内部统一分发
 
 多端优先级说明：dsh 的技能发现优先级规则保证 dsh 版 adapter 自动覆盖同名 Codex 版；WorkBuddy 与 Codex 各有独立 skills 目录。四套适配层命名统一、可同时安装，互不干扰。
 
@@ -136,7 +143,7 @@ scripts/install-workbuddy.sh    # 默认符号链接安装到 ~/.workbuddy/skill
 | **时效验证流程** | 引用具体法条、司法解释、诉讼时效时强制独立检索验证 |
 | **知识库路由** | 优先源（理解与适用/类案指南/最高院审判实务）→扩展源→效力警示源，按权威分级检索 |
 | **知识库路径可配置** | `[KB_ROOT]` 变量抽象，各人按自己的环境配置一次根目录，仓库不再绑定特定机器的绝对路径 |
-| **多端适配（社区贡献）** | Codex、DeepSeek Harness（dsh）、WorkBuddy 三套适配层，各 18 个 adapter skill + 一键安装脚本，同一套技能与工作流同时服务 Claude Code、Codex、dsh 与 WorkBuddy 用户 |
+| **多端适配（社区贡献）** | Codex、DeepSeek Harness（dsh）、WorkBuddy 三套适配层，各 21 个 adapter skill + 一键安装脚本，同一套技能与工作流同时服务 Claude Code、Codex、dsh 与 WorkBuddy 用户 |
 | **知识库四步交叉引用协议** | 路由规则加载 → Wiki 概念检索 → 原始数据源检索（优先源→扩展源）→ 外部补充（MCP/联网搜索），每步强制不得跳过 |
 | **主体信用自动查询** | 首次出现非自然人主体时触发信用查询：实体锚定 → 基础画像+风险扫描（并行）→ 关键人员穿透，生成结构化信用报告 |
 | **Agentic Search 路由** | 三层 C1/C2/C3 路由：复杂多维问题自动跳过常规管线进入多源并行深度检索，常规管线不足时自动升级 |
@@ -194,8 +201,8 @@ scripts/install-workbuddy.sh    # 默认符号链接安装到 ~/.workbuddy/skill
 | `due-diligence-workflow.md` | corporate-legal | 六阶段尽调方法论——项目立项 → 指引加载 → 底稿摄入与转换 → 事实查明与证据映射（含证据链格式）→ 问题条线推进 → 交付输出（三段式报告写作+质量门禁） |
 | `trial-preparation-framework.md` | litigation-legal | 庭审准备框架——案件材料收集 → 分析（基础信息/时间线/法律问题/检索）→ 五模块庭审提纲（案件概览/争议焦点/事实查明/法律适用/发问提纲），支持原告/被告/仲裁员多角色适配 |
 | `contract-review-quality-gates.md` | commercial-legal | 合同审核质量门禁——效力审查（名实不符/格式条款/审批登记）→ 主体与授权 → 八维条款审查 → 修订方式路由决策树（自检四问）→ 终稿三件套 → 特殊合同类型矩阵 |
-| `consulting-workflow.md` | legal-clinic | 法律咨询分析工作流——启动门禁（先建文件夹再检索）→ 意图分析与问题拆解 → 分层检索研究 → 综合解答 → 效力审计，四档服务深度自动匹配（法条确认/单一问题/复杂商业法律问题/正式法律意见书） |
-| `pricing-proposal-framework.md` | legal-clinic | 法律服务报价八阶段流程——项目启动与意图分析 → 客户需求结构化分析（七维度+复杂度评估）→ 知识库检索与研究 → 服务策略制定（核心/推荐/可选/排除四级服务范围）→ 报价策略选择与计算（六种方式决策矩阵+费用调整机制）→ 方案撰写 → 质量审核 → 输出，支持三类方案结构（诉讼代理/非诉专项/常年顾问） |
+| `consulting-workflow.md` | law-practice-cn / legal-clinic | 法律咨询分析共享参考；具体项目的目录规则优先，按问题拆解、研究、综合解答及效力审计四档深度执行 |
+| `pricing-proposal-framework.md` | law-practice-cn | 法律服务报价八阶段参考；收费方式、市场数据和风险代理限制须按事项与当前规则核验，不直接套用示例价格 |
 
 所有共享工作流参考文件均来源于中国法律实务经验，不包含个人路径或密钥。各插件 CLAUDE.md 的"共享安全机制"段落中已内联引用对应文件。
 
@@ -203,9 +210,9 @@ scripts/install-workbuddy.sh    # 默认符号链接安装到 ~/.workbuddy/skill
 
 ## 盒子里有什么
 
-- **13 个业务领域插件**——覆盖律所、法务和学术法律工作，每个插件围绕冷启动面试构建，生成实践画像（`CLAUDE.md`），所有技能从中读取配置。
+- **16 个业务领域插件**——覆盖律所、法务和学术法律工作，每个插件围绕冷启动面试构建，生成实践画像（`CLAUDE.md`），所有技能从中读取配置。
 - **托管 Agent 蓝图**——用于定时、持续监控型工作流（续签监控、案件进度监控、法规动态监控、尽调网格、产品上线雷达）。
-- **MCP 连接器**——覆盖通用生产力工具（飞书、Google Drive）和法律专属系统（元典 yuandian、北大法宝、威科先行、e签宝、聚法案例等）。
+- **MCP 连接器**——元典为默认法律检索声明；北大法宝、威科先行和聚法有官方按需接入资料。Google Drive 等既有协作声明须分别验证；飞书与电子签章历史端点不再作为默认配置。
 - **命名 Agent**——端到端工作流 Agent（供应商合同审查、个人信息主体权利响应、劳动合同解除审查、要件分析表构建……），每个 Agent 有独立的职位式名称和单一启动命令。
 
 <p align="center">
@@ -272,6 +279,14 @@ scripts/install-workbuddy.sh    # 默认符号链接安装到 ~/.workbuddy/skill
 | **知识产权组合管理** | 注册、续展、维护费、使用声明管理 | `ip-legal` | `/ip-legal:portfolio` |
 | **IP 续展监控** | 知识产权组合台账的定时截止日期报告 | `ip-legal` | scheduled agent |
 | **要件分析表** | 逐要件分析表——专利侵权或民事案由 | `litigation-legal` | `/litigation-legal:claim-chart` |
+| **中立庭审提纲** | 按仲裁员/中立主持人角色生成双方对称的发问与程序清单 | `litigation-legal` | `/litigation-legal:neutral-hearing-outline` |
+| **中国法法源核验** | 核实原文、版本、效力及案例引用姿态 | `legal-research-cn` | `/legal-research-cn:authority-check` |
+| **类案对比** | 核实全文、生效状态、不利段落和事实可比性 | `legal-research-cn` | `/legal-research-cn:case-comparison` |
+| **法源变化线索** | 只读检查指定官方来源的变更 | `legal-research-cn` | `law-change-watch` agent |
+| **法律讲座来源包** | 主张、法源、案例及讲前更新核验 | `legal-research-cn` | `/legal-research-cn:lecture-source-pack` |
+| **采购文件审查** | 资格、评分与响应证据矩阵 | `procurement-legal` | `/procurement-legal:bid-review` |
+| **采购质疑投诉** | 争点、证据和候选期限 | `procurement-legal` | `/procurement-legal:challenge-complaint` |
+| **采购公告监测** | 只读比较公开公告及澄清 | `procurement-legal` | `notice-watch` agent |
 | **案件进度监控** | 监控法院案件进展和截止日期 | `litigation-legal` | scheduled agent |
 | **律师函起草** | 起草律师函，设置发送门槛 | `litigation-legal` | `/litigation-legal:demand-draft` |
 | **律师函准备** | 起草前背景收集——当事人、事实、依据、谈判筹码 | `litigation-legal` | `/litigation-legal:demand-intake` |
@@ -287,6 +302,9 @@ scripts/install-workbuddy.sh    # 默认符号链接安装到 ~/.workbuddy/skill
 | **案件组合状态** | 风险分布、临近截止日期、停滞案件 | `litigation-legal` | `/litigation-legal:portfolio-status` |
 | **外部律师状态** | 为活跃案件组合生成每周状态催问草稿 | `litigation-legal` | `/litigation-legal:oc-status` |
 | **法律诊所接待** | 结构化客户接待，含跨领域问题识别和冲突标记 | `legal-clinic` | `/legal-clinic:client-intake` |
+| **法律咨询分析** | 事实、法源、相反观点及客户可行动方案 | `law-practice-cn` | `/law-practice-cn:consultation-analysis` |
+| **法律服务方案与报价** | 服务范围、计价底稿、收费规则与审批边界 | `law-practice-cn` | `/law-practice-cn:legal-service-proposal` |
+| **一般投诉分流** | 投诉、举报、申诉的渠道、证据及候选期限 | `law-practice-cn` | `/law-practice-cn:complaint-triage` |
 | **案件备忘录框架** | IRAC 结构案件分析备忘录，标注研究缺口 | `legal-clinic` | `/legal-clinic:memo` |
 | **检索路线图** | 需检查的法条、案例领域、检索关键词——线索而非引用 | `legal-clinic` | `/legal-clinic:research-start` |
 | **法律诊所节点追踪** | 添加、报告、更新和关闭案件节点，含执业风险警告 | `legal-clinic` | `/legal-clinic:deadlines` |
@@ -397,6 +415,7 @@ scripts/                  # deploy-managed-agent.sh · validate.py · orchestrat
 | **[ai-governance-legal](./ai-governance-legal)** | AI 应用场景对照登记册分流。算法安全评估/科技伦理审查。AI 供应商审查。法规到政策差距分析。 |
 | **[regulatory-legal](./regulatory-legal)** | 法规动态监控、政策差异分析、合规差距追踪、征求意见稿追踪。你的团队真正会读的周一晨报。 |
 | **[ip-legal](./ip-legal)** | 商标可注册性检索、FTO 初步分析、侵权警告函起草和分流、通知-删除及反通知（信息网络传播权保护条例/电子商务法）、开源合规、知识产权条款审查、组合管理。 |
+| **[procurement-legal](./procurement-legal)** | 政府采购与招标投标制度路由、采购文件与评分审查、质疑投诉、合同履行及公告变化线索。 |
 
 ### 争议解决
 
@@ -405,12 +424,19 @@ scripts/                  # deploy-managed-agent.sh · validate.py · orchestrat
 | **[litigation-legal](./litigation-legal)** | 两个工作界面。**法务/组合管理：** 案件登记、组合状态、证据保全、外部律师状态、律师函。**律所/诉讼律师：** 大事记构建、要件分析表（专利和民事）、庭前准备、证据三性审查、法律文书起草。 |
 | **[criminal-legal](./criminal-legal)** | 刑事辩护与合规（强制脱敏使用）。阅卷笔录与证据链梳理、供述矛盾点排查。取保候审及羁押必要性审查辅助。辩护策略分析（罪与非罪、此罪与彼罪）。涉案企业合规不起诉审查。内置刑诉法核心条文与合规评估基准参考库。 |
 
+### 法律研究
+
+| 插件 | 功能 |
+|------|------|
+| **[legal-research-cn](./legal-research-cn)** | 法源与版本核验、类案可比性、争点研究备忘录、讲座来源包与法律变化线索；区分官方原文、数据库结果和待核推断。 |
+| **[law-practice-cn](./law-practice-cn)** | 律师客户服务的咨询分析、一般投诉分流及法律服务方案与报价；与法学院诊所的教学流程分开。 |
+
 ### 学习与实践
 
 | 插件 | 功能 |
 |------|------|
 | **[law-student](./law-student)** | 课堂问答训练、案例摘要、知识体系搭建、IRAC 写作批改、课堂准备、记忆卡片、法考备考、考试预测、学习计划。**学习模式而非替答模式**——从不替你写答案。 |
-| **[legal-clinic](./legal-clinic)** | 指导老师设置和学生学期导入。按业务领域的指导手册（含教学模式：辅助/引导/教学）。结构化接待（含跨领域问题识别）。含执业风险警告的节点追踪。备忘录框架、客户信函（常规+通俗语言）、学期移交。 |
+| **[legal-clinic](./legal-clinic)** | 指导老师设置、学生导入与结构化接待；另有节点追踪、备忘录、客户信函及学期移交。 |
 
 ### 生态系统
 
@@ -442,24 +468,23 @@ scripts/                  # deploy-managed-agent.sh · validate.py · orchestrat
 ## MCP 连接器
 
 > [!IMPORTANT]
-> **先连接检索工具。** 每个插件已预配置法律检索连接器——yuandian（元典）MCP 用于案例检索和法规检索。首次需要时系统会提示授权。连接后，Claude 从权威来源获取信息并对引用进行验证。通过检索连接器获取的引用标注来源标签。仅来自模型知识的引用标记为 `[需验证]`，如果完全没有连接检索工具，交付物上方的审查备注会记录来源未经验证，提醒你核实。连接器让引用可信——在任何其他设置之前先配置它。
+> **先核实来源与连接状态。** 各领域声明元典 MCP 用于法律数据发现；宿主仍需完成认证、工具发现和实际调用。重要引用回查原始来源、版本和适用时点。数据库命中标注检索来源；仅来自模型知识的引用标记为 `[需验证]`，关键依据缺失时停止确定性结论。
 
-以下连接器随插件提供：
+法律检索连接器的当前状态与来源见 [CONNECTORS.md](CONNECTORS.md)；以下表格区分默认声明与按需接入：
 
 | 连接器 | 功能 | 适用插件 | 备注 |
 |--------|------|----------|------|
-| **飞书（Lark）** | 读取频道、搜索、发送消息和文档 | 全部插件 | 你的工作空间 |
-| **Google Drive** | 读取文档、表格、幻灯片；按链接获取 | 全部插件 | 你的账户（可选） |
-| **yuandian（元典）** | 案例检索、法规检索——覆盖裁判文书和法律法规 | 全部插件 | 公共；OAuth |
-| **北大法宝** | 法律法规、司法解释、案例检索 | `ip-legal`、`litigation-legal`、`law-student`、`legal-clinic`、`criminal-legal` | 客户订阅 |
-| **威科先行** | 法律数据库——法规、案例、实务文章 | `commercial-legal`、`corporate-legal`、`litigation-legal`、`criminal-legal` | 客户订阅 |
-| **聚法案例** | 案例检索和裁判文书分析 | `litigation-legal`、`criminal-legal` | 客户订阅 |
-| **e签宝 / 法大大** | 电子合同签署和合同台账 | `commercial-legal` | 客户订阅 |
-| **国家知识产权局** | 商标/专利检索和状态查询 | `ip-legal` | 公共 |
-| **中国政府网 / 司法部法律法规数据库** | 官方法规数据库 | `regulatory-legal`、`ai-governance-legal` | 公共 |
-| **Linear / Jira / Asana** | 产品上线追踪器、项目管理 | `product-legal` | 客户工作空间（可选） |
+| **飞书（Lark）** | 消息和文档协作 | 按需在宿主配置 | 历史默认端点已移除；须先核实官方端点、认证和工具范围 |
+| **Google Drive** | 文档读取与协作 | 部分领域的既有声明 | 本次未核实认证和工具范围 |
+| **yuandian（元典）** | 法规、案例、企业、证券合规检索 | 16 个领域的默认声明 | 官方端点；需在宿主认证，未做本机实调 |
+| **北大法宝** | 法规、案例、法条识别与引用校验 | 按需接入 | 官方公布 9 个端点；需用户 Token，未做本机实调 |
+| **威科先行** | 法规、案例和引用识别 | 按需接入 | 官方综合及单项端点已记录；需授权，未做本机实调 |
+| **聚法** | 案例、法规、招投标等 | 按需接入 | 官方远程服务及本地桥接已记录；需自有 API Key，未做本机实调 |
+| **e签宝 / 法大大** | 电子合同签署和合同台账 | 按需在宿主配置 | 历史默认端点已移除；须先核实官方端点，签署需明确授权 |
+| **国家法律法规数据库 / 人民法院案例库 / 中国政府采购网** | 法规、案例、公告原文 | 按任务网页核验 | 官方网页来源，本仓库未配置官方 MCP |
+| **任务与协作工具（如 Linear、Jira）** | 产品上线追踪器、项目管理 | `product-legal` | 按需接入；具体可用性以宿主配置与授权为准 |
 
-> "客户订阅"标记的连接器需要客户自身的账户和 API 密钥。在各插件的 `.mcp.json` 中配置，或通过 Claude Code 的 `claude mcp` 进行设置。
+> 付费连接器须使用自己的授权账户，在宿主的受限凭据机制中配置；不要把 Key 或 Token 提交进仓库。连接器声明不是已连接或已实测的证据。
 
 > **构建连接器？** 详见 [CONNECTORS.md](./CONNECTORS.md)，了解优秀法律 MCP 服务器的标准及提交方式。
 
@@ -493,6 +518,37 @@ scripts/                  # deploy-managed-agent.sh · validate.py · orchestrat
 | `/ai-governance-legal:policy-monitor` | policy-monitor | 保持 AI 政策与实践同步 |
 | `/ai-governance-legal:policy-starter` | policy-starter | 基于已发布的示范政策起草律所/企业 AI 使用政策 |
 | `/ai-governance-legal:matter-workspace` | matter-workspace | 管理事项工作空间 |
+
+### legal-research-cn
+
+| 命令 | 技能 | 功能 |
+|------|------|------|
+| `/legal-research-cn:cold-start-interview` | cold-start-interview | 研究角色、深度、来源与保密画像 |
+| `/legal-research-cn:authority-check` | authority-check | 法源原文、版本和效力核验 |
+| `/legal-research-cn:case-comparison` | case-comparison | 类案全文、状态、事实差异与引用姿态 |
+| `/legal-research-cn:issue-memo` | issue-memo | 争点研究备忘录和相反论证 |
+| `/legal-research-cn:lecture-source-pack` | lecture-source-pack | 法律讲座的来源包与讲前复核 |
+| on demand | law-change-watch (agent) | 指定官方法源的只读变化线索 |
+
+### law-practice-cn
+
+| 命令 | 技能 | 功能 |
+|------|------|------|
+| `/law-practice-cn:cold-start-interview` | cold-start-interview | 律师团队服务与审批画像 |
+| `/law-practice-cn:consultation-analysis` | consultation-analysis | 可追溯的法律咨询分析 |
+| `/law-practice-cn:legal-service-proposal` | legal-service-proposal | 法律服务方案与报价草稿 |
+| `/law-practice-cn:complaint-triage` | complaint-triage | 一般投诉、举报及申诉程序分流 |
+
+### procurement-legal
+
+| 命令 | 技能 | 功能 |
+|------|------|------|
+| `/procurement-legal:cold-start-interview` | cold-start-interview | 采购角色、地区和工作画像 |
+| `/procurement-legal:regime-triage` | regime-triage | 政府采购与招投标制度路由 |
+| `/procurement-legal:bid-review` | bid-review | 资格、评分、响应和文件一致性审查 |
+| `/procurement-legal:challenge-complaint` | challenge-complaint | 质疑投诉争点、证据和候选期限 |
+| `/procurement-legal:contract-performance` | contract-performance | 签约、变更、验收及付款风险 |
+| on demand | notice-watch (agent) | 公开采购公告与澄清变化线索 |
 
 ### legal-builder-hub
 
@@ -532,6 +588,7 @@ scripts/                  # deploy-managed-agent.sh · validate.py · orchestrat
 |------|------|------|
 | `/commercial-legal:cold-start-interview` | cold-start-interview | 冷启动——了解你的商事合同实践 |
 | `/commercial-legal:review` | vendor-agreement-review · nda-review · saas-msa-review | 审查供应商协议、保密协议或 SaaS 订阅合同 |
+| `/commercial-legal:construction-contract-review` | construction-contract-review | 建设工程合同专项审查 |
 | `/commercial-legal:amendment-history` | amendment-history | 追踪合同从原始版本到历次修订的变更 |
 | `/commercial-legal:renewal-tracker` | renewal-tracker | 显示 90 天内解约截止日期的合同 |
 | `/commercial-legal:escalation-flagger` | escalation-flagger | 路由合同问题并起草请示 |
@@ -549,6 +606,7 @@ scripts/                  # deploy-managed-agent.sh · validate.py · orchestrat
 | `/corporate-legal:cold-start-interview` | cold-start-interview | 内部冷启动，可选 `--new-deal` 启动新交易 |
 | `/corporate-legal:tabular-review` | tabular-review | 表格式审查——每份文件一行，每格附带引用 |
 | `/corporate-legal:diligence-issue-extraction` | diligence-issue-extraction | 按内部阈值从数据室文件中提取问题 |
+| `/corporate-legal:diligence-evidence-matrix` | diligence-evidence-matrix | 全量底稿入账、事实证据映射及矛盾追踪 |
 | `/corporate-legal:material-contract-schedule` | material-contract-schedule | 编制重大合同披露清单 |
 | `/corporate-legal:closing-checklist` | closing-checklist | 阻碍交割的事项和关键路径 |
 | `/corporate-legal:written-consent` | written-consent | 按内部格式起草董事会/股东会决议 |
@@ -619,6 +677,7 @@ scripts/                  # deploy-managed-agent.sh · validate.py · orchestrat
 | `/litigation-legal:claim-chart` | claim-chart | 要件分析表——专利或民事案由 |
 | `/litigation-legal:chronology` | chronology | 从来源和上传材料构建或更新大事记 |
 | `/litigation-legal:deposition-prep` | deposition-prep | 庭前准备提纲——与案件理论挂钩 |
+| `/litigation-legal:neutral-hearing-outline` | neutral-hearing-outline | 仲裁员/中立主持人的双方对称庭审提纲 |
 | `/litigation-legal:privilege-log-review` | privilege-log-review | 第一轮证据三性审查，附标记 |
 | `/litigation-legal:brief-section-drafter` | brief-section-drafter | 按内部风格起草法律文书章节 |
 | scheduled | docket-watcher (agent) | 监控法院案件进展和截止日期 |
